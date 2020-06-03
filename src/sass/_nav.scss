@@ -1,0 +1,95 @@
+nav {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    background: white;
+    width: 100%;
+
+    .title {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 5px 15px;
+        box-shadow: 0 3px 2px -2px gray;
+
+        img {
+            margin: 10px;
+            width: 240px;
+        }
+
+        .logo {
+            margin-left: 5%;
+        }
+
+
+
+        .button {
+            font-size: 26px;
+            margin-top: 5px;
+            color: rgb(66, 66, 66);
+            margin-right: 5%;
+        }
+    }
+
+    ul {
+        margin: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 10px;
+        display: none;
+
+        li {
+            padding: 5px;
+            width: 80%;
+            margin: 2px auto;
+            text-transform: uppercase;
+            font-weight: 480;
+            font-size: 18px;
+
+            &:hover {
+                color: green;
+            }
+        }
+    }
+
+    .pressed {
+        display: flex;
+    }
+
+    .border-remove {
+        box-shadow: none;
+    }
+
+    @include for-tablet-landscape-up {
+        top: 55px;
+
+        .button {
+            display: none;
+        }
+
+        .title {
+            justify-content: space-around;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            width: auto;
+            animation: none;
+            margin-right: 5%;
+            max-height: 62px;
+            margin-top: 10px;
+
+            li {
+                width: 120px;
+            }
+        }
+    }
+}

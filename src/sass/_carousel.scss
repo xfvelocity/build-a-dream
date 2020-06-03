@@ -1,0 +1,40 @@
+.mySlides1,
+.mySlides2,
+.mySlides3,
+.mySlides4 {
+    display: none
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 70%;
+  margin: 5px;
+  margin: 0 auto;
+
+    img {
+        vertical-align: middle;
+        width: 100%;
+        box-shadow: 15px 10px 18px 0px rgba(0,0,0,0.13);
+    }
+
+    @include for-tablet-landscape-up {
+        width: 25%;
+        margin: 10px;
+        max-width: 315px;
+    }
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  padding: 2px;
+  font-weight: bold;
+  font-size: 22px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  border-radius: 3px 0 0 3px;
+}

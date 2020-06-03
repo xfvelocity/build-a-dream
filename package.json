@@ -1,0 +1,26 @@
+{
+  "name": "buildadream",
+  "version": "1.0.0",
+  "description": "This is a webpage that was made for a family members landscaping business.\r The first project I worked on whilst learning Web Development with frequent updates.\r HTML, CSS, JS, Gulp.\r Plans to remake using SASS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-uglify-es": "^1.0.4"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xfvelocity/build-a-dream.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xfvelocity/build-a-dream/issues"
+  },
+  "homepage": "https://github.com/xfvelocity/build-a-dream#readme"
+}
