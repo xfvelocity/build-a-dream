@@ -18,8 +18,8 @@ $: mobile = screenWidth < 1000;
         </div>
     </div>
     <div class="py-4 border-b border-gray-500 shadow-md bg-white">
-        <div class="w-3/4 mx-auto flex justify-center 1024px:justify-between 1024px:max-w-48rem 1440px:max-w-62rem">
-            <img class="w-8 mr-1 cursor-pointer 1024px:hidden" src="/icons/nav-button.svg" alt="" on:click={() => navPressed = !navPressed }>
+        <div class="w-3/4 mx-auto flex justify-center items-center 1024px:justify-between 1024px:max-w-48rem 1440px:max-w-62rem">
+            <img class="w-8 h-8 mr-1 cursor-pointer 1024px:hidden" src="/icons/nav-button.svg" alt="" on:click={() => navPressed = !navPressed }>
             <img class="w-64 mx-auto 1024px:w-auto 1024px:mx-0" src="/images/build-a-dream-logo.png" alt="">
             <div class="hidden 1024px:flex items-center list-none">
                 <a class="py-2 hover:text-primary" href="/"><li class="text-lg mx-2">HOME</li></a>

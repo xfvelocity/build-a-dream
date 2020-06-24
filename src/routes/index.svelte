@@ -1,4 +1,6 @@
 <script>
+import { onMount } from 'svelte';
+
 let services = [
   {
     img: '/icons/sprout.svg',
@@ -25,6 +27,36 @@ let services = [
     ]
   }
 ]
+
+let ourWork;
+let servicesBackground;
+let quote;
+
+onMount(() => {
+    let options = {
+      rootMargin: '-100px'
+    };
+    
+    let children = document.querySelectorAll('section');
+    let observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting && entry.target.classList.contains('ourwork')) {
+              ourWork = true;
+            }
+            if(entry.isIntersecting && entry.target.classList.contains('services-container')) {
+              servicesBackground = true;
+            }
+            if(entry.isIntersecting && entry.target.classList.contains('quote')) {
+              quote = true;
+            }
+        })
+    }, options)
+
+    children.forEach((child) => {
+      observer.observe(child);
+    })
+})
+
 </script>
 
 <svelte:head>
@@ -45,52 +77,62 @@ let services = [
   <p class="text-lg">If you have any questions or comments, please don't hesitate to <a class="text-primary hover:opacity-75" href="/contact">contact us.</a></p>
 </div>
 
-<div class="services text-center py-8 768px:py-12"> 
-<div class="flex-wrap justify-center items-center 768px:flex 1024px:max-w-48rem 1024px:mx-auto 1440px:max-w-62rem">
-  <h2 class="w-full text-white text-4xl font-semibold mb-4">Services</h2>
-  {#each services as service}
-    <div class="bg-white mx-auto py-6 w-3/4 my-4 768px:w-32% 768px:mx-1">
-      <img class="w-20 mx-auto my-4 1440px:mb-8" src={service.img} alt="">
-      <ul>
-        {#each service.items as item}
-          <li class="my-1 text-lg">{item}</li> 
-        {/each}   
-      </ul>
+<section class="services-container">
+  {#if servicesBackground}
+    <div class="services text-center py-8 768px:py-12"> 
+    <div class="flex-wrap justify-center items-center 768px:flex 1024px:max-w-48rem 1024px:mx-auto 1440px:max-w-62rem">
+      <h2 class="w-full text-white text-4xl font-semibold mb-4">Services</h2>
+      {#each services as service}
+        <div class="bg-white mx-auto py-6 w-3/4 my-4 768px:w-32% 768px:mx-1">
+          <img class="w-20 mx-auto my-4 1440px:mb-8" src={service.img} alt="">
+          <ul>
+            {#each service.items as item}
+              <li class="my-1 text-lg">{item}</li> 
+            {/each}   
+          </ul>
+        </div>
+      {/each}
+      </div>
     </div>
-  {/each}
-  </div>
-</div>
+  {/if}
+</section>
 
-<div class="w-3/4 mx-auto py-8 768px:py-24 1024px:max-w-48rem 1440px:max-w-62rem">
+<section class="ourwork w-3/4 mx-auto py-8 768px:py-24 1024px:max-w-48rem 1440px:max-w-62rem">
   <h2 class="text-3xl font-semibold text-primary text-center my-6 w-full">Our Latest Work</h2>
-  <div class="flex flex-wrap justify-center items-start">
-    <img class="m-1 shadow-md rounded-sm 768px:w-48% 1024px:w-32%" src="/images/Home/1.jpg" alt="">
-    <img class="m-1 shadow-md rounded-sm 768px:w-48% 1024px:w-32%" src="/images/Home/2.jpg" alt="">
-    <img class="m-1 shadow-md rounded-sm 768px:w-48% 1024px:w-32%" src="/images/Home/3.jpg" alt="">
-    <img class="m-1 shadow-md rounded-sm 768px:w-48% 1024px:w-32%" src="/images/Home/4.jpg" alt="">
-    <img class="m-1 shadow-md rounded-sm 768px:w-48% 1024px:w-32%" src="/images/Home/5.jpg" alt="">
-    <img class="m-1 shadow-md rounded-sm 768px:w-48% 1024px:w-32%" src="/images/Home/6.jpg" alt="">
-  </div>
+  {#if ourWork}
+    <div class="flex flex-wrap justify-center items-start">
+      <img class="m-1 shadow-md rounded-sm 768px:w-48% 1024px:w-32%" src="/images/Home/1.jpg" alt="">
+      <img class="m-1 shadow-md rounded-sm 768px:w-48% 1024px:w-32%" src="/images/Home/2.jpg" alt="">
+      <img class="m-1 shadow-md rounded-sm 768px:w-48% 1024px:w-32%" src="/images/Home/3.jpg" alt="">
+      <img class="m-1 shadow-md rounded-sm 768px:w-48% 1024px:w-32%" src="/images/Home/4.jpg" alt="">
+      <img class="m-1 shadow-md rounded-sm 768px:w-48% 1024px:w-32%" src="/images/Home/5.jpg" alt="">
+      <img class="m-1 shadow-md rounded-sm 768px:w-48% 1024px:w-32%" src="/images/Home/6.jpg" alt="">
+    </div>
+  {/if}
   <div class="w-full text-center my-10">
     <a href="/work">
       <button class="btn shadow-lg text-white text-lg py-3 rounded-md w-48 mx-auto hover:opacity-75 1440px:text-xl 1440px:w-56 1440px:py-4">View More</button>
     </a>
   </div>
-</div>
+</section>
 
-<div class="p-2 quotation flex flex-wrap items-center justify-center">
-  <div class="w-3/4 mx-auto 768px:flex flex-wrap justify-between 1024px:max-w-48rem 1440px:max-w-62rem">
-    <div class="text-center 768px:text-left 768px:w-3/5">
-      <h3 class="text-white text-3xl font-semibold 1440px:text-4xl">WANT A <span class="text-primary-light">FREE</span> QUOTATION?</h3>
-      <p class="text-white text-sm my-3 w-3/4 mx-auto 768px:mx-0 1440px:text-base">Wondering what would complete your dream garden and how much it’d cost? Then get in touch for a Free Quote.</p>
+<section class="quote">
+  {#if quote}
+    <div class="p-2 quotation flex flex-wrap items-center justify-center">
+      <div class="w-3/4 mx-auto 768px:flex flex-wrap justify-between 1024px:max-w-48rem 1440px:max-w-62rem">
+        <div class="text-center 768px:text-left 768px:w-3/5">
+          <h3 class="text-white text-3xl font-semibold 1440px:text-4xl">WANT A <span class="text-primary-light">FREE</span> QUOTATION?</h3>
+          <p class="text-white text-sm my-3 w-3/4 mx-auto 768px:mx-0 1440px:text-base">Wondering what would complete your dream garden and how much it’d cost? Then get in touch for a Free Quote.</p>
+        </div>
+        <div class="flex justify-center mt-8 768px:justify-start">
+          <a href="/contact">
+            <button class="btn p-2 w-32 rounded-md text-lg text-white shadow-lg 768px:h-16 768px:w-40 hover:opacity-75 768px:font-semibold 1440px:text-xl 1440px:w-48">CONTACT US</button>
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="flex justify-center mt-8 768px:justify-start">
-      <a href="/contact">
-        <button class="btn p-2 w-32 rounded-md text-lg text-white shadow-lg 768px:h-16 768px:w-40 hover:opacity-75 768px:font-semibold 1440px:text-xl 1440px:w-48">CONTACT US</button>
-      </a>
-    </div>
-  </div>
-</div>
+  {/if}
+</section>
 
 
 <style>

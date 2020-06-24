@@ -1,5 +1,7 @@
 <script>
+import { onMount } from 'svelte';
 import Carousel from '/compounds/Carousel'
+
 let carousel = [
     {
         title: 'North Hykeham | Patio',
@@ -34,6 +36,7 @@ let carousel = [
         ]
     }
 ]
+
 </script>
 
 <svelte:head>
@@ -48,25 +51,27 @@ let carousel = [
   </div>
 </header>
 
-{#each carousel as section}
-<div class="w-full py-24 slide 1440px:py-32">
-    <div class="1024px:max-w-48rem 1024px:mx-auto" style="max-width: none; width: 90%;">
-        <div class="text-center w-3/4 mx-auto">
-            <h2 class="font-semibold text-2xl 1440px:text-3xl">{section.title}</h2>
-            <p class="text-sm my-3 768px:w-3/5 768px:mx-auto">{section.desc}</p>
-            <p class="text-xs text-gray-700">{section.date}</p>
-        </div>
-        <Carousel perPage={{ 768: 2, 1440: 3 }}>
-            {#each section.images as image}
-                <div class="slide-content my-10 mx-1">
-                    <img class="w-full rounded-sm shadow-md" src={image} alt="">
-                </div>
-            {/each}
-        </Carousel>
-    </div>
-</div>
-{/each}
 
+{#each carousel as section}
+    <section class={section.class}>
+        <div class="w-full py-24 slide 1440px:py-32">
+            <div class="1024px:max-w-48rem 1024px:mx-auto" style="max-width: none; width: 90%;">
+                <div class="text-center w-3/4 mx-auto">
+                    <h2 class="font-semibold text-2xl 1440px:text-3xl">{section.title}</h2>
+                    <p class="text-sm my-3 768px:w-3/5 768px:mx-auto">{section.desc}</p>
+                    <p class="text-xs text-gray-700">{section.date}</p>
+                </div>
+                <Carousel perPage={{ 768: 2, 1440: 3 }}>
+                    {#each section.images as image}
+                        <div class="slide-content my-10 mx-1">
+                            <img class="w-full rounded-sm shadow-md" src={image} alt="">
+                        </div>
+                    {/each}
+                </Carousel>
+            </div>
+        </div>
+    </section>
+{/each}
 
 <style>
 .slide:nth-child(even) {
