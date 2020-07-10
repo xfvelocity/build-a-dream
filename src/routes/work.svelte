@@ -75,8 +75,7 @@ let carousel = [
 
 <style>
 .slide:nth-child(even) {
-    background: rgb(250, 250, 250);
-    box-shadow: inset 0px 2px 43px -9px rgba(0,0,0,0.30);
+    background: rgb(245, 245, 245);
 }
 </style>
 
