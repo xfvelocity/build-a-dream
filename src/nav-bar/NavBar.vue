@@ -8,7 +8,7 @@
         <span
           v-for="(link, i) in navLinks"
           :key="i"
-          class="nav-link mr-3"
+          class="link mr-3"
           @click="goToLink(link.link)"
           >{{ link.name }}</span
         >
@@ -34,12 +34,6 @@ export default class NavBar extends Vue {
 </script>
 <style lang="scss">
 #nav-bar {
-  .nav-link {
-    cursor: pointer;
-    &:hover {
-      color: green;
-    }
-  }
   .v-toolbar__content {
     width: 80%;
     margin: 0 auto;

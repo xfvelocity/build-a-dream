@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <ContactBar v-if="!isMobile"></ContactBar>
     <MobileNavBar v-if="isMobile"></MobileNavBar>
     <NavBar v-if="!isMobile"></NavBar>
     <v-main>
@@ -12,11 +13,13 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import MobileNavBar from "./nav-bar/MobileNavBar.vue";
 import NavBar from "./nav-bar/NavBar.vue";
+import ContactBar from "./nav-bar/ContactBar.vue";
 
 @Component({
   components: {
     NavBar,
     MobileNavBar,
+    ContactBar,
   },
 })
 export default class App extends Vue {
@@ -34,3 +37,11 @@ export default class App extends Vue {
   }
 }
 </script>
+<style lang="scss">
+.link {
+  cursor: pointer;
+  &:hover {
+    color: green;
+  }
+}
+</style>
