@@ -5,9 +5,13 @@
         <img src="@/assets/build-a-dream-logo.png" />
       </div>
       <div class="d-flex">
-        <span class="nav-link" @click="goToLink('/')">Home</span>
-        <span class="nav-link mx-4">Our Work</span>
-        <span class="nav-link">Contact</span>
+        <span
+          v-for="(link, i) in navLinks"
+          :key="i"
+          class="nav-link mr-3"
+          @click="goToLink(link.link)"
+          >{{ link.name }}</span
+        >
       </div>
     </v-app-bar>
   </v-card>
@@ -15,9 +19,14 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import { NavLinks, SocialNavLinks } from "./data/nav.types";
+import { navLinks, socialLinks } from "./data/navLinks";
 
 @Component
 export default class NavBar extends Vue {
+  navLinks: NavLinks[] = navLinks;
+  socialLinks: SocialNavLinks[] = socialLinks;
+
   goToLink(link: string): void {
     this.$router.push(link);
   }
