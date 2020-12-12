@@ -1,61 +1,36 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
+    <MobileNavBar v-if="isMobile"></MobileNavBar>
+    <NavBar v-if="!isMobile"></NavBar>
     <v-main>
-      <HelloWorld/>
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import MobileNavBar from "./nav-bar/MobileNavBar.vue";
+import NavBar from "./nav-bar/NavBar.vue";
 
-export default Vue.extend({
-  name: 'App',
-
+@Component({
   components: {
-    HelloWorld,
+    NavBar,
+    MobileNavBar,
   },
+})
+export default class App extends Vue {
+  windowWidth: number = 0;
 
-  data: () => ({
-    //
-  }),
-});
+  get isMobile(): boolean {
+    return this.windowWidth < 960;
+  }
+
+  mounted(): void {
+    this.windowWidth = window.innerWidth;
+    window.addEventListener("resize", () => {
+      this.windowWidth = window.innerWidth;
+    });
+  }
+}
 </script>
