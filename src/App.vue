@@ -3,7 +3,7 @@
     <ContactBar v-if="!isMobile"></ContactBar>
     <MobileNavBar v-if="isMobile"></MobileNavBar>
     <NavBar v-if="!isMobile"></NavBar>
-    <v-main>
+    <v-main class="pa-0">
       <router-view />
     </v-main>
   </v-app>
