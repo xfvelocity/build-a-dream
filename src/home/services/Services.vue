@@ -10,7 +10,9 @@
         illum ipsum officia nostrum eum tempora quasi iure ut hic alias deleniti
         consequuntur assumenda eos voluptatum autem.
       </p>
-      <v-btn color="primary" class="white--text">Our Work</v-btn>
+      <v-btn color="primary" class="white--text" @click="goToLink"
+        >Our Work</v-btn
+      >
     </div>
     <div
       v-for="(services, i) in servicesInfo"
@@ -27,39 +29,27 @@
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, et,
         illum ipsum officia nostrum eum tempora quasi iure ut hic alias.
       </p>
-      <v-btn color="primary" class="white--text">Our Work</v-btn>
+      <v-btn color="primary" class="white--text" @click="goToLink"
+        >Our Work</v-btn
+      >
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import { ServicesInfo, servicesInfo } from "./data/servicesInfo";
 
 @Component
 export default class Services extends Vue {
   @Prop()
   isMobile!: boolean;
 
-  servicesInfo: any[] = [
-    {
-      title: "Garden Care",
-      desc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget magna eget.",
-      img: require("@/assets/fence.svg"),
-    },
-    {
-      title: "Driveways",
-      desc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget magna eget.",
-      img: require("@/assets/driveway.svg"),
-    },
-    {
-      title: "Patios",
-      desc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget magna eget.",
-      img: require("@/assets/patio.svg"),
-    },
-  ];
+  servicesInfo: ServicesInfo[] = servicesInfo;
+
+  goToLink(): void {
+    this.$router.push("/ourwork");
+  }
 }
 </script>
 <style lang="scss">

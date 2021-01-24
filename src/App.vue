@@ -4,7 +4,7 @@
     <MobileNavBar v-if="isMobile"></MobileNavBar>
     <NavBar v-if="!isMobile"></NavBar>
     <v-main class="pa-0">
-      <router-view />
+      <router-view transition="slide-x-transition" />
     </v-main>
   </v-app>
 </template>
