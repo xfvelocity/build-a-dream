@@ -7,10 +7,17 @@
           ><v-icon class="mr-2" color="white" small>fas fa-phone-alt</v-icon
           >07414 095408</span
         >
-        <span class="white--text d-flex align-center contact-link" @click="sendEmail"
-          ><v-icon class="mr-2" color="white" small>fas fa-envelope</v-icon
-          >contact@builda-dream.com</span
-        >
+        <v-hover>
+          <span
+            slot-scope="{ hover }"
+            class="d-flex align-center contact-link"
+            :class="hover ? 'green--text' : 'white--text'"
+            @click="sendEmail"
+            ><v-icon class="mr-2" :color="hover ? 'green' : 'white'" small
+              >fas fa-envelope</v-icon
+            >contact@builda-dream.com</span
+          >
+        </v-hover>
         <v-hover>
           <v-icon
             slot-scope="{ hover }"
