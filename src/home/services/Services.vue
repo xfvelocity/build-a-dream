@@ -59,7 +59,7 @@ export default class Services extends Vue {
   padding: 50px 0;
 
   .services-box {
-    box-shadow: -3px 4px 8px 4px #000000 5%;
+    box-shadow: -3px 4px 8px 4px rgba(17, 17, 17, 0.06);
     border-radius: 5px;
     border: 1px solid #e5e5e5;
     max-width: 350px;

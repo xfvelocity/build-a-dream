@@ -3,6 +3,7 @@
     <Header></Header>
     <Services :isMobile="isMobile"></Services>
     <Projects></Projects>
+    <Reviews></Reviews>
   </div>
 </template>
 
@@ -11,12 +12,14 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import Header from "./header/Header.vue";
 import Services from "./services/Services.vue";
 import Projects from "./projects/Projects.vue";
+import Reviews from "./reviews/Reviews.vue";
 
 @Component({
   components: {
     Header,
     Services,
     Projects,
+    Reviews,
   },
 })
 export default class Home extends Vue {
