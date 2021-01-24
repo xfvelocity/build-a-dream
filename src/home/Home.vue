@@ -4,6 +4,7 @@
     <Services :isMobile="isMobile"></Services>
     <Projects></Projects>
     <Reviews></Reviews>
+    <Contact></Contact>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import Header from "./header/Header.vue";
 import Services from "./services/Services.vue";
 import Projects from "./projects/Projects.vue";
 import Reviews from "./reviews/Reviews.vue";
+import Contact from "./contact/Contact.vue";
 
 @Component({
   components: {
@@ -20,6 +22,7 @@ import Reviews from "./reviews/Reviews.vue";
     Services,
     Projects,
     Reviews,
+    Contact
   },
 })
 export default class Home extends Vue {
