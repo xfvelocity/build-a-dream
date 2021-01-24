@@ -35,8 +35,6 @@ export default class NavBar extends Vue {
 <style lang="scss">
 #nav-bar {
   .v-toolbar__content {
-    width: 80%;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
   }

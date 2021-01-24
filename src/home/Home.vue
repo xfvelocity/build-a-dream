@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header></Header>
-    <Services></Services>
+    <Services :isMobile="isMobile"></Services>
   </div>
 </template>
 
@@ -16,5 +16,17 @@ import Services from "./services/Services.vue";
     Services,
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  windowWidth: number = 0;
+
+  get isMobile(): boolean {
+    return this.windowWidth < 960;
+  }
+  created(): void {
+    this.windowWidth = window.innerWidth;
+    window.addEventListener("resize", () => {
+      this.windowWidth = window.innerWidth;
+    });
+  }
+}
 </script>

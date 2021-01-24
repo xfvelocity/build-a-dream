@@ -3,17 +3,23 @@
     <v-app-bar :height="30" color="grey darken-4">
       <v-spacer></v-spacer>
       <div class="d-flex">
-        <span class="white--text d-flex align-center mr-4"
+        <span
+          class="white--text d-flex align-center mr-4"
+          style="cursor: default"
           ><v-icon class="mr-2" color="white" small>fas fa-phone-alt</v-icon
           >07414 095408</span
         >
         <v-hover>
           <span
             slot-scope="{ hover }"
-            class="d-flex align-center contact-link"
-            :class="hover ? 'green--text' : 'white--text'"
+            style="cursor: pointer"
+            class="d-flex align-center"
+            :class="hover ? 'primary-lighter--text' : 'white--text'"
             @click="sendEmail"
-            ><v-icon class="mr-2" :color="hover ? 'green' : 'white'" small
+            ><v-icon
+              class="mr-2"
+              :color="hover ? 'primary-lighter' : 'white'"
+              small
               >fas fa-envelope</v-icon
             >contact@builda-dream.com</span
           >
@@ -21,7 +27,7 @@
         <v-hover>
           <v-icon
             slot-scope="{ hover }"
-            :color="hover ? 'green' : 'white'"
+            :color="hover ? 'primary-lighter' : 'white'"
             class="ml-2"
             @click="goToSocialLink"
             small
@@ -48,12 +54,10 @@ export default class ContactBar extends Vue {
 }
 </script>
 <style lang="scss">
-#contact-bar {
-  .contact-link {
-    cursor: pointer;
-  }
-  .v-toolbar__content {
-    width: 90%;
-  }
+.v-toolbar__content {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4px 0;
 }
 </style>
