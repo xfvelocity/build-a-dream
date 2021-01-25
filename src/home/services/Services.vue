@@ -6,9 +6,9 @@
     <div v-if="isMobile" class="mb-8 services-info">
       <h3>Services</h3>
       <p class="mt-2">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, et,
-        illum ipsum officia nostrum eum tempora quasi iure ut hic alias deleniti
-        consequuntur assumenda eos voluptatum autem.
+        Here are just a small amount of services that we offer. If a service
+        which you are looking for isn't listed here then get in touch and we
+        will most likely be able to provide it for you.
       </p>
       <v-btn color="primary" class="white--text" @click="goToLink"
         >Our Work</v-btn
@@ -19,15 +19,16 @@
       :key="i"
       class="services-box my-2 pa-4 py-8 text-center"
     >
-      <img :src="services.img" alt="" />
+      <img :src="services.img" :alt="services.title" />
       <h2 class="mb-2">{{ services.title }}</h2>
       <p class="my-0">{{ services.desc }}</p>
     </div>
     <div v-if="!isMobile" class="services-info ml-4">
       <h3>Services</h3>
       <p class="mt-2">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, et,
-        illum ipsum officia nostrum eum tempora quasi iure ut hic alias.
+        Here are just a small amount of services that we offer. If a service
+        which you are looking for isn't listed here then get in touch and we
+        will most likely be able to provide it for you.
       </p>
       <v-btn color="primary" class="white--text" @click="goToLink"
         >Our Work</v-btn
@@ -45,6 +46,7 @@ export default class Services extends Vue {
   @Prop()
   isMobile!: boolean;
 
+  isActive: boolean = false;
   servicesInfo: ServicesInfo[] = servicesInfo;
 
   goToLink(): void {

@@ -1,10 +1,14 @@
 <template>
-  <v-row id="header" class="justify-space-around align-center ma-0 pa-0">
+  <v-row
+    :style="`height: ${height}`"
+    id="header"
+    class="justify-space-around align-center ma-0 pa-0"
+  >
     <v-col class="text-center" cols="12" md="9">
-      <h1 class="white--text ma-0">Build A-Dream</h1>
-      <h1 class="white--text ma-0">Landscape Gardening</h1>
+      <h1 class="white--text ma-0">{{ titleOne }}</h1>
+      <h1 class="white--text ma-0">{{ titleTwo }}</h1>
       <p class="white--text">
-        Dream gardens that don’t cost the earth
+        {{ subHeading }}
       </p>
       <!-- <div class="mt-2">
         <v-btn color="white" outlined class="mr-2" large>Our Work</v-btn>
@@ -18,7 +22,16 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
-export default class Header extends Vue {}
+export default class Header extends Vue {
+  @Prop()
+  titleOne!: string;
+  @Prop()
+  titleTwo!: string;
+  @Prop()
+  subHeading!: string;
+  @Prop({ default: "55vh" })
+  height!: string;
+}
 </script>
 <style lang="scss">
 #header {
@@ -28,7 +41,6 @@ export default class Header extends Vue {}
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  height: 55vh;
   text-shadow: 2px 2px 4px #111;
   letter-spacing: 1.6px;
   h1 {

@@ -6,6 +6,7 @@
     <v-main class="pa-0">
       <router-view transition="slide-x-transition" />
     </v-main>
+    <Footer :windowWidth="windowWidth"></Footer>
   </v-app>
 </template>
 
@@ -14,12 +15,14 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import MobileNavBar from "./nav-bar/MobileNavBar.vue";
 import NavBar from "./nav-bar/NavBar.vue";
 import ContactBar from "./nav-bar/ContactBar.vue";
+import Footer from "./footer/Footer.vue";
 
 @Component({
   components: {
     NavBar,
     MobileNavBar,
     ContactBar,
+    Footer,
   },
 })
 export default class App extends Vue {

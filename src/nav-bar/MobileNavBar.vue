@@ -11,7 +11,10 @@
     <v-navigation-drawer class="pt-8" v-model="isNavDrawerOpen" app>
       <template v-slot:prepend>
         <div class="d-flex justify-center">
-          <img src="@/assets/build-a-dream-logo-text.png" alt="" />
+          <img
+            src="@/assets/build-a-dream-logo-text.png"
+            alt="Build A-Dream Logo"
+          />
         </div>
         <hr style="width: 80%" class="mx-auto mt-4" />
         <v-list>

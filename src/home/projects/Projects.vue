@@ -1,30 +1,43 @@
 <template>
-  <div class="max-width my-12" id="projects">
-    <div class="text-center mb-10">
-      <h2>Recent Projects</h2>
-      <p class="my-0">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus
-        consectetur aperiam nobis quis.
-      </p>
+  <v-lazy
+    v-model="isActive"
+    :options="{
+      threshold: 0.5,
+    }"
+    min-height="200"
+    transition="fade-transition"
+  >
+    <div class="max-width my-12" id="projects">
+      <SectionTitle
+        title="Projects"
+        desc="Here is a just a few examples of our work, if you wish to see more navigate to the our work page."
+        :width="100"
+      ></SectionTitle>
+      <div class="my-8 d-flex flex-wrap justify-center align-center">
+        <img
+          class="ma-1"
+          style="border: 1px solid #e5e5e5"
+          v-for="(img, i) in imgList"
+          :key="i"
+          :src="img"
+          alt="Landscaping Project Example"
+        />
+      </div>
     </div>
-    <div class="my-8 d-flex flex-wrap justify-center align-center">
-      <img
-        class="ma-1"
-        style="border: 1px solid #e5e5e5"
-        v-for="(img, i) in imgList"
-        :key="i"
-        :src="img"
-        alt=""
-      />
-    </div>
-  </div>
+  </v-lazy>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import SectionTitle from "@/shared/components/SectionTitle.vue";
 
-@Component
+@Component({
+  components: {
+    SectionTitle,
+  },
+})
 export default class Projects extends Vue {
+  isActive: boolean = false;
   imgList: string[] = [
     require("@/assets/home/1.jpg"),
     require("@/assets/home/2.jpg"),
@@ -39,17 +52,8 @@ export default class Projects extends Vue {
 #projects {
   width: 90%;
   margin: 0 auto;
-  h2 {
-    width: 180px;
-    margin: 10px auto;
-    border-bottom: 1px solid #086500;
-  }
-  p {
-      width: 80%;
-      margin: 0 auto;
-      max-width: 400px;
-  }
   @media (min-width: 600px) {
+    margin-bottom: 140px !important;
     img {
       width: 45%;
       max-width: 420px;

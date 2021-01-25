@@ -21,7 +21,7 @@
               :color="hover ? 'primary-lighter' : 'white'"
               small
               >fas fa-envelope</v-icon
-            >contact@builda-dream.com</span
+            >contact@buildadream.co.uk</span
           >
         </v-hover>
         <v-hover>
@@ -45,7 +45,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class ContactBar extends Vue {
   sendEmail(): void {
-    window.location.href = "mailto:contact@builda-dream.com";
+    window.location.href = "mailto:contact@buildadream.co.uk";
   }
 
   goToSocialLink(): void {
