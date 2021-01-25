@@ -1,5 +1,5 @@
 <template>
-  <div class="white py-6" id="footer">
+  <div class="white py-4" id="footer">
     <div class="footer-content max-width">
       <div class="contact-links" v-if="windowWidth < 768">
         <span

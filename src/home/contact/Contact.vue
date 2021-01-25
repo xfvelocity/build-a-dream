@@ -5,33 +5,19 @@
       desc="Looking for a free quote or simply got a question to ask? Then get in touch."
       :width="130"
     ></SectionTitle>
-    <div>
-      <v-text-field label="Name" v-model="name" hide-details></v-text-field>
-      <v-text-field
-        label="Phone Number"
-        v-model="phoneNumber"
-        hide-details
-      ></v-text-field>
-      <v-text-field
-        label="Email Address"
-        v-model="emailAddress"
-        hide-details
-      ></v-text-field>
-      <v-textarea label="Message" v-model="message" hide-details></v-textarea>
-      <v-btn style="width: 100%" color="primary" @click="submitMessage"
-        >Submit</v-btn
-      >
-    </div>
+    <ContactForm></ContactForm>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import SectionTitle from "@/shared/components/SectionTitle.vue";
+import ContactForm from "@/shared/components/ContactForm.vue";
 
 @Component({
   components: {
     SectionTitle,
+    ContactForm,
   },
 })
 export default class Contact extends Vue {

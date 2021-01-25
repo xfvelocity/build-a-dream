@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header titleOne="Our Work" height="45vh"></Header>
+    <Header titleOne="Our Work" height="30vh"></Header>
     <CaseStudyView></CaseStudyView>
   </div>
 </template>
@@ -16,5 +16,9 @@ import CaseStudyView from "./case-study/CaseStudyView.vue";
     CaseStudyView,
   },
 })
-export default class OurWork extends Vue {}
+export default class OurWork extends Vue {
+  created(): void {
+    document.title = 'Build A-Dream | Our Work'
+  }
+}
 </script>
