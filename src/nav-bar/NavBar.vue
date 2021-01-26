@@ -1,20 +1,22 @@
 <template>
-  <v-card :height="80" id="nav-bar">
-    <v-app-bar class="py-2 d-flex align-center" :height="80">
-      <div>
-        <img src="@/assets/build-a-dream-logo.png" />
-      </div>
-      <div class="d-flex">
-        <span
-          v-for="(link, i) in navLinks"
-          :key="i"
-          class="link mr-3"
-          @click="goToLink(link.link)"
-          >{{ link.name }}</span
-        >
-      </div>
-    </v-app-bar>
-  </v-card>
+  <nav>
+    <v-card :height="80" id="nav-bar">
+      <v-app-bar class="py-2 d-flex align-center" :height="80">
+        <div>
+          <img src="@/assets/build-a-dream-logo.png" alt="Build A-Dream logo" />
+        </div>
+        <div class="d-flex">
+          <span
+            v-for="(link, i) in navLinks"
+            :key="i"
+            class="link mr-3"
+            @click="goToLink(link.link)"
+            >{{ link.name }}</span
+          >
+        </div>
+      </v-app-bar>
+    </v-card>
+  </nav>
 </template>
 
 <script lang="ts">

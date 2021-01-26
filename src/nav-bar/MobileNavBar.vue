@@ -16,7 +16,7 @@
             alt="Build A-Dream Logo"
           />
         </div>
-        <hr style="width: 80%" class="mx-auto mt-4" />
+        <hr color="#e5e5e5" style="width: 80%;" class="mx-auto my-8" />
         <v-list>
           <v-list-item
             v-for="(link, i) in navLinks"
@@ -30,13 +30,14 @@
         </v-list>
       </template>
       <template v-slot:append>
-        <div class="d-flex flex-wrap justify-center my-4" id="nav-bar-footer">
+        <div class="d-flex flex-wrap justify-center my-6" id="nav-bar-footer">
           <div class="mb-4">
             <v-hover v-for="(link, i) in socialLinks" :key="i">
               <v-icon
                 slot-scope="{ hover }"
                 :color="hover ? 'primary' : ''"
                 class="mx-1"
+                aria-label="facebook"
                 @click="goToSocialLink(link.link)"
                 >{{ link.iconName }}</v-icon
               >

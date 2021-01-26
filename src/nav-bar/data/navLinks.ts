@@ -18,14 +18,6 @@ export const navLinks: NavLinks[] = [
 export const socialLinks: SocialNavLinks[] = [
   {
     iconName: "fab fa-facebook-square",
-    link: "https://www.facebook.com",
-  },
-  {
-    iconName: "fab fa-instagram",
-    link: "https://www.instagram.com",
-  },
-  {
-    iconName: "fab fa-twitter",
-    link: "https://www.twitter.com",
+    link: "https://www.facebook.com/BuildADreamLandscapers",
   },
 ];

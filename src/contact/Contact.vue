@@ -3,7 +3,7 @@
     <Header titleOne="Contact" height="30vh"></Header>
     <div id="contact-page">
       <ContactInfo :windowWidth="windowWidth"></ContactInfo>
-      <ContactForm id="contact-page-form"></ContactForm>
+      <ContactForm class="mt-8" id="contact-page-form"></ContactForm>
     </div>
   </div>
 </template>
@@ -41,7 +41,7 @@ export default class Contact extends Vue {
   #contact-page-form {
     width: 90%;
     margin: 20px auto 60px auto;
-    max-width: 400px;
+    max-width: 500px;
   }
   @media (min-width: 768px) {
     display: flex;

@@ -6,7 +6,8 @@
         <span
           class="white--text d-flex align-center mr-4"
           style="cursor: default"
-          ><v-icon class="mr-2" color="white" small>fas fa-phone-alt</v-icon
+          ><v-icon class="mr-2" color="white" aria-label="mobile phone" small
+            >fas fa-phone-alt</v-icon
           >07414 095408</span
         >
         <v-hover>
@@ -20,6 +21,7 @@
               class="mr-2"
               :color="hover ? 'primary-lighter' : 'white'"
               small
+              aria-label="email"
               >fas fa-envelope</v-icon
             >contact@buildadream.co.uk</span
           >
@@ -31,6 +33,7 @@
             class="ml-2"
             @click="goToSocialLink"
             small
+            aria-label="facebook"
             >fab fa-facebook-square</v-icon
           >
         </v-hover>
@@ -49,7 +52,7 @@ export default class ContactBar extends Vue {
   }
 
   goToSocialLink(): void {
-    window.open("https://www.facebook.com");
+    window.open("https://www.facebook.com/BuildADreamLandscapers");
   }
 }
 </script>

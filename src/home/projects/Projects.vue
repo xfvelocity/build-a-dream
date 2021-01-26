@@ -7,7 +7,7 @@
     min-height="200"
     transition="fade-transition"
   >
-    <div class="max-width my-12" id="projects">
+    <div class="max-width" id="projects">
       <SectionTitle
         title="Projects"
         desc="Here is a just a few examples of our work, if you wish to see more navigate to the our work page."
@@ -51,7 +51,7 @@ export default class Projects extends Vue {
 <style lang="scss">
 #projects {
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 120px auto;
   @media (min-width: 600px) {
     margin-bottom: 140px !important;
     img {

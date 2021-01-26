@@ -5,9 +5,9 @@
     class="justify-space-around align-center ma-0 pa-0"
   >
     <v-col class="text-center" cols="12" md="9">
-      <h1 class="white--text ma-0">{{ titleOne }}</h1>
-      <h1 class="white--text ma-0">{{ titleTwo }}</h1>
-      <p class="white--text">
+      <h1 class="white--text ma-0" v-if="titleOne">{{ titleOne }}</h1>
+      <h1 class="white--text ma-0" v-if="titleTwo">{{ titleTwo }}</h1>
+      <p class="white--text" v-if="subHeading">
         {{ subHeading }}
       </p>
       <!-- <div class="mt-2">

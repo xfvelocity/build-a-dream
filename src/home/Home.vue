@@ -5,7 +5,7 @@
       titleTwo="Landscape Gardening"
       subHeading="Dream gardens that don't cost the earth"
     ></Header>
-    <Services :isMobile="isMobile"></Services>
+    <Services :windowWidth="windowWidth"></Services>
     <About></About>
     <Projects></Projects>
     <Reviews></Reviews>
@@ -38,6 +38,7 @@ export default class Home extends Vue {
   get isMobile(): boolean {
     return this.windowWidth < 960;
   }
+
   created(): void {
     document.title = "Build A-Dream | Home";
     this.windowWidth = window.innerWidth;

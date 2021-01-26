@@ -3,7 +3,7 @@
     class="d-flex justify-center align-center flex-wrap max-width"
     id="services"
   >
-    <div v-if="isMobile" class="mb-8 services-info">
+    <div v-if="windowWidth <= 1050" class="mb-8 services-info">
       <h3>Services</h3>
       <p class="mt-2">
         Here are just a small amount of services that we offer. If a service
@@ -20,10 +20,10 @@
       class="services-box my-2 pa-4 py-8 text-center"
     >
       <img :src="services.img" :alt="services.title" />
-      <h2 class="mb-2">{{ services.title }}</h2>
+      <h2 class="mb-3">{{ services.title }}</h2>
       <p class="my-0">{{ services.desc }}</p>
     </div>
-    <div v-if="!isMobile" class="services-info ml-4">
+    <div v-if="windowWidth > 1050" class="services-info ml-4">
       <h3>Services</h3>
       <p class="mt-2">
         Here are just a small amount of services that we offer. If a service
@@ -44,7 +44,7 @@ import { ServicesInfo, servicesInfo } from "./data/servicesInfo";
 @Component
 export default class Services extends Vue {
   @Prop()
-  isMobile!: boolean;
+  windowWidth!: number;
 
   isActive: boolean = false;
   servicesInfo: ServicesInfo[] = servicesInfo;
@@ -58,7 +58,7 @@ export default class Services extends Vue {
 #services {
   width: 90%;
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 70px 0 90px 0;
 
   .services-box {
     box-shadow: -3px 4px 8px 4px rgba(17, 17, 17, 0.06);
@@ -67,19 +67,22 @@ export default class Services extends Vue {
     max-width: 350px;
   }
   @media (min-width: 768px) {
+    padding: 100px 0 120px 0;
     width: 100%;
     .services-box {
       width: 200px;
       margin: 0 5px;
+      height: 290px;
     }
     .services-info {
       width: 80%;
     }
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1100px) {
     padding: 100px 0;
     .services-box {
       width: 20%;
+      height: 250px;
     }
     .services-info {
       width: 30%;

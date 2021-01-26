@@ -1,5 +1,5 @@
 <template>
-  <div  class="max-width my-10 d-flex justify-center flex-wrap">
+  <div class="max-width my-10 d-flex justify-center flex-wrap" id="case-study-view">
     <CaseStudy
       v-for="(caseStudy, i) in caseStudyList"
       class="my-6"

@@ -7,7 +7,7 @@
     ></SectionTitle>
     <div class="contact-links">
       <span class="d-flex align-center mb-2" style="cursor: default">
-        <v-icon class="mr-2" small>fas fa-phone-alt</v-icon>
+        <v-icon class="mr-2" small aria-label="mobile phone">fas fa-phone-alt</v-icon>
         07414 095408
       </span>
       <v-hover>
@@ -18,13 +18,13 @@
           :class="hover ? 'primary-lighter--text' : ''"
           @click="sendEmail"
         >
-          <v-icon class="mr-2" :color="hover ? 'primary-lighter' : ''" small
+          <v-icon class="mr-2" :color="hover ? 'primary-lighter' : ''" small aria-label="email"
             >fas fa-envelope</v-icon
           >contact@buildadream.co.uk
         </span>
       </v-hover>
       <span class="d-flex align-center mobile-icon" style="cursor: default">
-        <v-icon class="mr-2" small>fas fa-map-marker-alt</v-icon>
+        <v-icon class="mr-2" small aria-label="location">fas fa-map-marker-alt</v-icon>
         Lincolnshire
       </span>
     </div>
