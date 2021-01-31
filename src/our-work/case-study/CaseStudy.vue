@@ -9,7 +9,7 @@
     class="case-study"
   >
     <div>
-      <img :src="img" alt="" />
+      <img :src="img" alt="Project IMG" />
       <div class="mt-2">
         <p class="my-0" style="font-size: 14px;">{{ subheading }}</p>
         <h2 class="mb-2">{{ title }}</h2>

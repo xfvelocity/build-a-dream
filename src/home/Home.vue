@@ -1,8 +1,7 @@
 <template>
   <div>
     <Header
-      titleOne="Build A-Dream"
-      titleTwo="Landscape Gardening"
+      title="Build A-Dream <br/> Landscape Gardening"
       subHeading="Dream gardens that don't cost the earth"
     ></Header>
     <Services :windowWidth="windowWidth"></Services>

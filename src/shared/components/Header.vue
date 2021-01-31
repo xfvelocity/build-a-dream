@@ -5,15 +5,10 @@
     class="justify-space-around align-center ma-0 pa-0"
   >
     <v-col class="text-center" cols="12" md="9">
-      <h1 class="white--text ma-0" v-if="titleOne">{{ titleOne }}</h1>
-      <h1 class="white--text ma-0" v-if="titleTwo">{{ titleTwo }}</h1>
+      <h1 class="white--text ma-0" v-if="title" v-html="title">{{ title }}</h1>
       <p class="white--text" v-if="subHeading">
         {{ subHeading }}
       </p>
-      <!-- <div class="mt-2">
-        <v-btn color="white" outlined class="mr-2" large>Our Work</v-btn>
-        <v-btn color="white" outlined large>Contact</v-btn>
-      </div> -->
     </v-col>
   </v-row>
 </template>
@@ -24,7 +19,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class Header extends Vue {
   @Prop()
-  titleOne!: string;
+  title!: string;
   @Prop()
   titleTwo!: string;
   @Prop()

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header titleOne="Contact" height="30vh"></Header>
+    <Header title="Contact" height="30vh"></Header>
     <div id="contact-page">
       <ContactInfo :windowWidth="windowWidth"></ContactInfo>
       <ContactForm class="mt-8" id="contact-page-form"></ContactForm>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header titleOne="Our Work" height="30vh"></Header>
+    <Header title="Our Work" height="30vh"></Header>
     <CaseStudyView></CaseStudyView>
   </div>
 </template>

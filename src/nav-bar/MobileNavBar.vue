@@ -4,11 +4,11 @@
       <v-app-bar class="py-2 d-flex align-center" :height="80" app>
         <v-app-bar-nav-icon @click="toggleNavDrawer" />
         <v-spacer></v-spacer>
-        <img src="@/assets/build-a-dream-logo.png" />
+        <img @click="goToLink('/')" src="@/assets/build-a-dream-logo.png" alt="Build A-Dream Logo" />
         <v-spacer></v-spacer>
       </v-app-bar>
     </v-card>
-    <v-navigation-drawer class="pt-8" v-model="isNavDrawerOpen" app>
+    <v-navigation-drawer style="height: 100vh;" class="pt-8" v-model="isNavDrawerOpen" app>
       <template v-slot:prepend>
         <div class="d-flex justify-center">
           <img

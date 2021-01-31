@@ -59,7 +59,7 @@ export default class Reviews extends Vue {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url("../../assets/grass-background.png");
   background-position: center;
-  height: 50vh;
+  height: 60vh;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -76,7 +76,7 @@ export default class Reviews extends Vue {
     margin: 0 auto;
   }
   .v-window {
-    height: 280px !important;
+    height: 300px !important;
   }
   .user-review {
     max-width: 500px;
@@ -93,11 +93,11 @@ export default class Reviews extends Vue {
       align-self: flex-end;
     }
   }
-  @media(min-width: 600px) {
+  @media (min-width: 600px) {
     height: 40vh;
-      .v-window {
-    height: 230px !important;
-  }
+    .v-window {
+      height: 230px !important;
+    }
   }
 }
 </style>
