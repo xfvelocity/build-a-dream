@@ -1,19 +1,5 @@
 # build-a-dream
 
-## Project setup
-```
-npm install
-```
+Live: https://buildadream.co.uk
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+This was a project I started when I first was getting into web which was to create a new website for my Dad's Landscaping business. It has been through a lot of changes and has been a great way to help me learn. It was originally created using HTML/CSS but since then it has been remade in Svelte & Vue. Checkout other branches to see the previous versions.
