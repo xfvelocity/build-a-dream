@@ -32,7 +32,10 @@
       <div :class="windowWidth < 768 ? 'text-center' : ''">
         <p class="my-0">&copy; 2021 Build A-Dream. All Rights Reserved.</p>
         <p class="my-0">
-          Site created by <a class="white--text" href="">Alex</a>
+          Site created by
+          <a class="white--text" href="https://alex-long.co.uk/" target="_blank"
+            >Alex</a
+          >
         </p>
       </div>
       <div class="contact-links" v-if="windowWidth >= 768">
