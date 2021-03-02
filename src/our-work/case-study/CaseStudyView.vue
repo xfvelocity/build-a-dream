@@ -1,13 +1,13 @@
 <template>
-  <div class="max-width my-10 d-flex justify-center flex-wrap" id="case-study-view">
+  <div
+    class="max-width my-10 d-flex justify-center flex-wrap"
+    id="case-study-view"
+  >
     <CaseStudy
       v-for="(caseStudy, i) in caseStudyList"
+      :item="caseStudy"
       class="my-6"
       :key="i"
-      :img="caseStudy.img"
-      :subheading="caseStudy.subheading"
-      :title="caseStudy.title"
-      :desc="caseStudy.desc"
     ></CaseStudy>
   </div>
 </template>

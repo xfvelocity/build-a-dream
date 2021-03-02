@@ -1,40 +1,58 @@
 <template>
-  <v-lazy
-    v-model="isActive"
-    :options="{
-      threshold: 0.5,
-    }"
-    min-height="200"
-    transition="fade-transition"
-    class="case-study"
-  >
-    <div>
-      <img :src="img" alt="Project IMG" />
-      <div class="mt-2">
-        <p class="my-0" style="font-size: 14px;">{{ subheading }}</p>
-        <h2 class="mb-2">{{ title }}</h2>
-        <p class="my-0">{{ desc }}</p>
-        <!-- <p style="cursor: pointer;" class="primary--text my-0 mt-4">Read More</p> -->
+  <div class="case-study">
+    <v-lazy
+      v-model="isActive"
+      :options="{
+        threshold: 0.5,
+      }"
+      min-height="200"
+      transition="fade-transition"
+    >
+      <div>
+        <img :src="item.img" alt="Project IMG" />
+        <div class="mt-2">
+          <p class="my-0" style="font-size: 14px;">
+            {{ item.subheading }}
+          </p>
+          <h2 class="mb-2">{{ item.title }}</h2>
+          <p class="my-0">{{ item.desc }}</p>
+          <p
+            style="cursor: pointer;"
+            class="primary--text my-0 mt-4"
+            @click="caseStudyToggleModal"
+          >
+            View More
+          </p>
+        </div>
       </div>
-    </div>
-  </v-lazy>
+    </v-lazy>
+    <CaseStudyDetailedModal
+      :isModalOpen="isModalOpen"
+      :item="item"
+      @toggle-modal="caseStudyToggleModal"
+    ></CaseStudyDetailedModal>
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import CaseStudyDetailedModal from "./CaseStudyDetailedModal.vue";
 
-@Component
+@Component({
+  components: {
+    CaseStudyDetailedModal,
+  },
+})
 export default class CaseStudy extends Vue {
   @Prop()
-  img!: string;
-  @Prop()
-  subheading!: string;
-  @Prop()
-  title!: string;
-  @Prop()
-  desc!: string;
+  item!: CaseStudy;
 
   isActive: boolean = false;
+  isModalOpen: boolean = false;
+
+  caseStudyToggleModal(): void {
+    this.isModalOpen = !this.isModalOpen;
+  }
 }
 </script>
 <style lang="scss">
