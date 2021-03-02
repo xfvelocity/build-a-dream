@@ -33,7 +33,11 @@
         <p class="my-0">&copy; 2021 Build A-Dream. All Rights Reserved.</p>
         <p class="my-0">
           Site created by
-          <a class="white--text" href="https://alex-long.co.uk/" target="_blank"
+          <a
+            class="white--text"
+            href="https://alex-long.co.uk/"
+            target="_blank"
+            rel="noreferrer"
             >Alex</a
           >
         </p>
