@@ -3,7 +3,7 @@
     <v-lazy
       v-model="isActive"
       :options="{
-        threshold: 0.5,
+        rootMargin: '-50px',
       }"
       min-height="200"
       transition="fade-transition"

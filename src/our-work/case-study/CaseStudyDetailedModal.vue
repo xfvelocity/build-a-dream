@@ -14,7 +14,11 @@
         style="width: 680px; margin: 0 auto;"
         :show-arrows="false"
       >
-        <v-carousel-item v-for="(img, i) in item.detailedImgList" :key="i">
+        <v-carousel-item
+          v-for="(img, i) in item.detailedImgList"
+          :key="i"
+          eager
+        >
           <div class="carousel-item">
             <img
               style="width: 100%; transform: translateY(6px);"
@@ -33,7 +37,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import CaseStudy from "./CaseStudy.vue";
 
 @Component
@@ -49,14 +53,4 @@ export default class CaseStudyDetailedModal extends Vue {
     this.$emit("toggle-modal");
   }
 }
-//
 </script>
-//
-<style lang="scss">
-// #case-study-modal {
-//   .carousel {
-//     height: 210px;
-//   }
-// }
-//
-</style>

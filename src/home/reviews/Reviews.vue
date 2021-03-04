@@ -59,7 +59,7 @@ export default class Reviews extends Vue {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url("../../assets/grass-background.png");
   background-position: center;
-  height: 60vh;
+  height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -94,7 +94,7 @@ export default class Reviews extends Vue {
     }
   }
   @media (min-width: 600px) {
-    height: 40vh;
+    height: 450px;
     .v-window {
       height: 230px !important;
     }

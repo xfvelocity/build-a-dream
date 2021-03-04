@@ -2,7 +2,7 @@
   <v-lazy
     v-model="isActive"
     :options="{
-      threshold: 0.5,
+      rootMargin: '-50px',
     }"
     min-height="200"
     transition="fade-transition"
@@ -39,12 +39,12 @@ import SectionTitle from "@/shared/components/SectionTitle.vue";
 export default class Projects extends Vue {
   isActive: boolean = false;
   imgList: string[] = [
-    require("@/assets/home/1.jpg"),
-    require("@/assets/home/2.jpg"),
-    require("@/assets/home/3.jpg"),
-    require("@/assets/home/4.jpg"),
-    require("@/assets/home/5.jpg"),
-    require("@/assets/home/6.jpg"),
+    require("@/assets/home/1-min.jpg"),
+    require("@/assets/home/2-min.jpg"),
+    require("@/assets/home/3-min.jpg"),
+    require("@/assets/home/4-min.jpg"),
+    require("@/assets/home/5-min.jpg"),
+    require("@/assets/home/6-min.jpg"),
   ];
 }
 </script>

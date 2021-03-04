@@ -51,7 +51,7 @@ export default class About extends Vue {
   }
   @media (min-width: 768px) {
     padding: 0;
-    height: 35vh;
+    height: 400px;
   }
 }
 </style>
