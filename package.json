@@ -1,0 +1,26 @@
+{
+  "name": "nuxtjs",
+  "version": "1.0.0",
+  "description": "My astonishing Nuxt.js project",
+  "author": "msweeneydev",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt generate",
+    "start": "nuxt start"
+  },
+  "dependencies": {
+    "@nuxtjs/vuetify": "^1.11.3",
+    "nuxt": "^2.0.0",
+    "nuxt-property-decorator": "^2.9.1",
+    "vuetify": "^2.4.5"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.15.2",
+    "@nuxt/typescript-build": "^2.0.6",
+    "nodemon": "^2.0.7"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
+  }
+}
