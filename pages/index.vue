@@ -38,11 +38,12 @@ export default class Home extends Vue {
     return this.windowWidth < 960;
   }
 
-  // created(): void {
-  //   this.windowWidth = window.innerWidth;
-  //   window.addEventListener("resize", () => {
-  //     this.windowWidth = window.innerWidth;
-  //   });
-  // }
+  mounted(): void {
+    if (!process.browser) return;
+    this.windowWidth = window.innerWidth;
+    window.addEventListener("resize", () => {
+      this.windowWidth = window.innerWidth;
+    });
+  }
 }
 </script>

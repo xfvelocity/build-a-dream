@@ -7,9 +7,7 @@
     ></SectionTitle>
     <div class="contact-links">
       <span class="d-flex align-center mb-2" style="cursor: default">
-        <v-icon class="mr-2" small aria-label="mobile phone"
-          >fas fa-phone-alt</v-icon
-        >
+        <v-icon class="mr-2" small aria-label="mobile phone">fa-phone</v-icon>
         07414 095408
       </span>
       <v-hover>
@@ -25,14 +23,12 @@
             :color="hover ? 'primary-lighter' : ''"
             small
             aria-label="email"
-            >fas fa-envelope</v-icon
+            >fa-envelope</v-icon
           >contact@buildadream.co.uk
         </span>
       </v-hover>
       <span class="d-flex align-center mobile-icon" style="cursor: default">
-        <v-icon class="mr-2" small aria-label="location"
-          >fas fa-map-marker-alt</v-icon
-        >
+        <v-icon class="mr-2" small aria-label="location">fa-map-marker</v-icon>
         Lincolnshire
       </span>
     </div>
@@ -41,7 +37,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import SectionTitle from "@/shared/components/SectionTitle.vue";
+import SectionTitle from "@/components/shared/components/SectionTitle.vue";
 
 @Component({
   components: {

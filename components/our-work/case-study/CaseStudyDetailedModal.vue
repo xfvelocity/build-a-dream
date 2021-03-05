@@ -10,7 +10,7 @@
       <v-carousel
         height="auto"
         v-model="carousel"
-        delimiter-icon="far fa-circle"
+        delimiter-icon="fa-circle"
         style="width: 680px; margin: 0 auto;"
         :show-arrows="false"
       >

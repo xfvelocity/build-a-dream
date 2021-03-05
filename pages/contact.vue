@@ -10,9 +10,9 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import Header from "../shared/components/Header.vue";
-import ContactForm from "../shared/components/ContactForm.vue";
-import ContactInfo from "./ContactInfo.vue";
+import Header from "@/components/shared/components/Header.vue";
+import ContactForm from "@/components/shared/components/ContactForm.vue";
+import ContactInfo from "@/components/contact/ContactInfo.vue";
 
 @Component({
   components: {
@@ -24,11 +24,8 @@ import ContactInfo from "./ContactInfo.vue";
 export default class Contact extends Vue {
   windowWidth: number = 0;
 
-  created(): void {
-    document.title = "Build A-Dream | Contact";
-  }
-
   mounted(): void {
+    if (!process.browser) return;
     this.windowWidth = window.innerWidth;
     window.addEventListener("resize", () => {
       this.windowWidth = window.innerWidth;

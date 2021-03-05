@@ -2,7 +2,7 @@
   <nav>
     <v-card :height="80" id="nav-bar">
       <v-app-bar class="py-2 d-flex align-center" :height="80">
-        <div>
+        <div class="link" @click="goToLink('/')">
           <img
             src="@/assets/img/build-a-dream-logo.png"
             alt="Build A-Dream logo"
