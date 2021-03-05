@@ -1,8 +1,8 @@
 {
-  "name": "nuxtjs",
+  "name": "builda-dream",
   "version": "1.0.0",
-  "description": "My astonishing Nuxt.js project",
-  "author": "msweeneydev",
+  "description": "",
+  "author": "xfvelocity",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -10,9 +10,14 @@
     "start": "nuxt start"
   },
   "dependencies": {
+    "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/vuetify": "^1.11.3",
+    "axios": "^0.21.1",
+    "node-sass": "^5.0.0",
     "nuxt": "^2.0.0",
     "nuxt-property-decorator": "^2.9.1",
+    "sass-loader": "^10.1.1",
+    "vee-validate": "^3.4.5",
     "vuetify": "^2.4.5"
   },
   "devDependencies": {

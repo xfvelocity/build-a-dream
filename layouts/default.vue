@@ -1,55 +1,42 @@
 <template>
-  <div>
-    <nuxt />
-  </div>
+  <v-app>
+    <ContactBar v-if="!isMobile"></ContactBar>
+    <MobileNavBar v-if="isMobile"></MobileNavBar>
+    <NavBar v-if="!isMobile"></NavBar>
+    <v-main>
+      <nuxt />
+    </v-main>
+    <Footer :windowWidth="windowWidth"></Footer>
+  </v-app>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+import MobileNavBar from "../components/nav-bar/MobileNavBar.vue";
+import NavBar from "../components/nav-bar/NavBar.vue";
+import ContactBar from "../components/nav-bar/ContactBar.vue";
+import Footer from "../components/footer/Footer.vue";
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-}
+@Component({
+  components: {
+    NavBar,
+    MobileNavBar,
+    ContactBar,
+    Footer,
+  },
+})
+export default class Layout extends Vue {
+  windowWidth: number = 0;
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
+  get isMobile(): boolean {
+    return this.windowWidth < 960;
+  }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+  mounted(): void {
+    this.windowWidth = window.innerWidth;
+    window.addEventListener("resize", () => {
+      this.windowWidth = window.innerWidth;
+    });
+  }
 }
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
-</style>
+</script>

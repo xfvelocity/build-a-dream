@@ -5,17 +5,35 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || "",
+    title: "Build A-Dream",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || "",
+        content:
+          "Build A-Dream Lincoln Landscape Garderners with over 25 years experience.",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "@/assets/img/favicon.ico" },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap",
+      },
+      {
+        rel: "stylesheet",
+        href:
+          "https://cdn.jsdelivr.net/npm/font-awesome@4.x/css/font-awesome.min.css",
+      },
+      {
+        rel: "stylesheet",
+        href:
+          "https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css",
+      },
+    ],
   },
   /*
    ** Customize the progress-bar color
@@ -24,16 +42,35 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ["@/assets/css/main.css"],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ["~/plugins/vee-validate.js", "~/plugins/axios.js"],
   /*
    ** Nuxt.js modules
    */
-  buildModules: ["@nuxt/typescript-build", "@nuxtjs/vuetify"],
+  buildModules: [
+    "@nuxt/typescript-build",
+    "@nuxtjs/style-resources",
+    [
+      "@nuxtjs/vuetify",
+      {
+        icons: {
+          iconfont: "fa",
+        },
+      },
+    ],
+  ],
+  styleResources: {
+    scss: [
+      "~/assets/vars/*.scss",
+      "~/assets/abstracts/_mixins.scss", // use underscore "_" & also file extension ".scss"
+    ],
+  },
   modules: [],
+  transformIgnorePatterns: ["/node_modules/(?!vee-validate/dist/rules)"],
+  transpile: ["vee-validate/dist/rules"],
   /*
    ** Build configuration
    */
