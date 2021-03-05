@@ -7,7 +7,7 @@
           style="cursor: default"
         >
           <v-icon color="white" class="mr-2" small aria-label="mobile phone"
-            >fas fa-phone-alt</v-icon
+            >fa-phone</v-icon
           >
           07414 095408
         </span>
@@ -24,7 +24,7 @@
               :color="hover ? 'primary-lighter' : 'white'"
               small
               aria-label="email"
-              >fas fa-envelope</v-icon
+              >fa-envelope</v-icon
             >contact@buildadream.co.uk
           </span>
         </v-hover>
@@ -45,7 +45,7 @@
       <div class="contact-links" v-if="windowWidth >= 768">
         <span class="d-flex align-center mobile-icon" style="cursor: default">
           <v-icon color="white" class="mr-2" aria-label="mobile phone" small
-            >fas fa-phone-alt</v-icon
+            >fa-phone</v-icon
           >
           07414 095408
         </span>
@@ -62,7 +62,7 @@
               :color="hover ? 'primary-lighter' : 'white'"
               small
               aria-label="email"
-              >fas fa-envelope</v-icon
+              >fa-envelope</v-icon
             >contact@buildadream.co.uk
           </span>
         </v-hover>

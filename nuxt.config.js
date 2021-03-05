@@ -28,11 +28,6 @@ export default {
         href:
           "https://cdn.jsdelivr.net/npm/font-awesome@4.x/css/font-awesome.min.css",
       },
-      {
-        rel: "stylesheet",
-        href:
-          "https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css",
-      },
     ],
   },
   /*
@@ -58,6 +53,14 @@ export default {
       {
         icons: {
           iconfont: "fa",
+        },
+        theme: {
+          themes: {
+            light: {
+              primary: "086500",
+              "primary-lighter": "2FA625",
+            },
+          },
         },
       },
     ],

@@ -8,7 +8,7 @@
       <div class="mt-10 review-section">
         <v-carousel
           v-model="carousel"
-          delimiter-icon="far fa-circle"
+          delimiter-icon="fa-circle"
           hide-delimiter-background
           :show-arrows="false"
         >
