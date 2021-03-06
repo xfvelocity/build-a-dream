@@ -15,6 +15,9 @@ import CaseStudyView from "@/components/our-work/case-study/CaseStudyView.vue";
     Header,
     CaseStudyView,
   },
+  head: {
+    title: "Our Work | Build A-Dream | Lincoln Landscape Gardeners",
+  },
 })
 export default class OurWork extends Vue {}
 </script>

@@ -20,6 +20,9 @@ import ContactInfo from "@/components/contact/ContactInfo.vue";
     ContactForm,
     ContactInfo,
   },
+  head: {
+    title: "Contact Us | Build A-Dream | Lincoln Landscape Gardeners",
+  },
 })
 export default class Contact extends Vue {
   windowWidth: number = 0;

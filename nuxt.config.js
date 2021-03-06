@@ -1,15 +1,19 @@
 export default {
   target: "static",
   head: {
-    title: "Build A-Dream",
+    title: "Build A-Dream | Lincoln Landscape Gardeners",
+    htmlAttrs: {
+      lang: "en-GB",
+    },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       {
         hid: "description",
         name: "description",
         content:
-          "Build A-Dream, Lincoln landscapers with over 25 years experience. Professional and affordable offering services such as Fencing, Gardening, Driveways, Patios",
+          "Lincoln based lanscapers with over 25 years experience. Professional and affordable offering services such as Fencing, Gardening, Driveways, Patios",
       },
     ],
     link: [
