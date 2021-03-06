@@ -13,7 +13,7 @@ export default {
         hid: "description",
         name: "description",
         content:
-          "Lincoln based lanscapers with over 25 years experience. Professional and affordable offering services such as Fencing, Gardening, Driveways, Patios",
+          "Lincoln based landscapers with over 25 years experience. Profesional & affordable landscaping. Services include, fencing, patios, garden edging etc.",
       },
     ],
     link: [

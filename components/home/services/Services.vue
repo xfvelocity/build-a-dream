@@ -6,9 +6,9 @@
     <div v-if="windowWidth <= 1050" class="mb-8 services-info">
       <h3>Services</h3>
       <p class="mt-2">
-        Here are just a small amount of services that we offer. If a service
-        which you are looking for isn't listed here then get in touch and we
-        will most likely be able to provide it for you.
+        Here are just a small amount of landscaping services that we offer. If a
+        service which you are looking for isn't listed here then get in touch
+        and we will most likely be able to provide it for you.
       </p>
       <NuxtLink to="ourwork">
         <v-btn color="primary" class="white--text">Our Work</v-btn>
@@ -20,15 +20,15 @@
       class="services-box my-2 pa-4 py-8 text-center"
     >
       <img :src="services.img" :alt="services.title" />
-      <h2 class="mb-3">{{ services.title }}</h2>
+      <h3 class="mb-3">{{ services.title }}</h3>
       <p class="my-0">{{ services.desc }}</p>
     </div>
     <div v-if="windowWidth > 1050" class="services-info ml-4">
       <h3>Services</h3>
       <p class="mt-2">
-        Here are just a small amount of services that we offer. If a service
-        which you are looking for isn't listed here then get in touch and we
-        will most likely be able to provide it for you.
+        Here are just a small amount of landscaping services that we offer. If a
+        service which you are looking for isn't listed here then get in touch
+        and we will most likely be able to provide it for you.
       </p>
       <NuxtLink to="ourwork">
         <v-btn color="primary" class="white--text">Our Work</v-btn>
