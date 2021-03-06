@@ -4,16 +4,17 @@
       <v-app-bar class="py-2 d-flex align-center" :height="80" app>
         <v-app-bar-nav-icon @click="toggleNavDrawer" />
         <v-spacer></v-spacer>
-        <img
-          @click="goToLink('/')"
-          src="@/assets/img/build-a-dream-logo.png"
-          alt="Build A-Dream Logo"
-        />
+        <NuxtLink to="/">
+          <img
+            src="@/assets/img/build-a-dream-logo.png"
+            alt="Build A-Dream Logo"
+          />
+        </NuxtLink>
         <v-spacer></v-spacer>
       </v-app-bar>
     </v-card>
     <v-navigation-drawer
-      style="height: 100vh;"
+      style="height: 100%"
       class="pt-8"
       v-model="isNavDrawerOpen"
       app

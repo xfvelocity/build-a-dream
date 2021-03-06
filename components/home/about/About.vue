@@ -11,9 +11,12 @@
         long list of regular clients.
       </p>
       <p class="my-0 mt-8">
-        If you have any questions or comments, please don't hesitate to
-        <span class="text-decoration-underline link" @click="goToLink"
-          >Contact Us</span
+        If you have any questions or would like a free quote, please don't
+        hesitate to
+        <NuxtLink
+          class="internal-link text-decoration-underline white--text"
+          to="/contact"
+          >Contact Us</NuxtLink
         >
       </p>
     </div>

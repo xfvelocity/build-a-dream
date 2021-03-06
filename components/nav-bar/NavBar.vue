@@ -2,20 +2,21 @@
   <nav>
     <v-card :height="80" id="nav-bar">
       <v-app-bar class="py-2 d-flex align-center" :height="80">
-        <div class="link" @click="goToLink('/')">
+        <NuxtLink to="/">
           <img
             src="@/assets/img/build-a-dream-logo.png"
             alt="Build A-Dream logo"
           />
-        </div>
+        </NuxtLink>
         <div class="d-flex">
-          <span
+          <NuxtLink
+            class="internal-link mr-3"
             v-for="(link, i) in navLinks"
             :key="i"
-            class="link nav-link mr-3"
+            :to="link.link"
           >
-            <NuxtLink :to="link.link">{{ link.name }}</NuxtLink></span
-          >
+            {{ link.name }}
+          </NuxtLink>
         </div>
       </v-app-bar>
     </v-card>
@@ -38,11 +39,6 @@ export default class NavBar extends Vue {
   .v-toolbar__content {
     display: flex;
     justify-content: space-between;
-  }
-  .nav-link {
-    a {
-      text-decoration: none !important;
-    }
   }
 }
 </style>

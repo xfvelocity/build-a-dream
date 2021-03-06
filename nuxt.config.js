@@ -1,9 +1,5 @@
 export default {
-  ssr: true,
-  target: "server",
-  /*
-   ** Headers of the page
-   */
+  target: "static",
   head: {
     title: "Build A-Dream",
     meta: [
@@ -13,7 +9,7 @@ export default {
         hid: "description",
         name: "description",
         content:
-          "Build A-Dream Lincoln Landscape Garderners with over 25 years experience.",
+          "Build A-Dream, Lincoln landscapers with over 25 years experience. Professional and affordable offering services such as Fencing, Gardening, Driveways, Patios",
       },
     ],
     link: [
@@ -30,21 +26,9 @@ export default {
       },
     ],
   },
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: "#fff" },
-  /*
-   ** Global CSS
-   */
-  css: ["@/assets/css/main.css"],
-  /*
-   ** Plugins to load before mounting the App
-   */
+  loading: { color: "#2FA625" },
+  css: ["@/assets/css/main.scss"],
   plugins: ["~/plugins/vee-validate.js", "~/plugins/axios.js"],
-  /*
-   ** Nuxt.js modules
-   */
   buildModules: [
     "@nuxt/typescript-build",
     "@nuxtjs/style-resources",
@@ -66,21 +50,12 @@ export default {
     ],
   ],
   styleResources: {
-    scss: [
-      "~/assets/vars/*.scss",
-      "~/assets/abstracts/_mixins.scss", // use underscore "_" & also file extension ".scss"
-    ],
+    scss: ["~/assets/css/*.scss"],
   },
   modules: [],
   transformIgnorePatterns: ["/node_modules/(?!vee-validate/dist/rules)"],
   transpile: ["vee-validate/dist/rules"],
-  /*
-   ** Build configuration
-   */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
     extend(config, ctx) {},
   },
 };

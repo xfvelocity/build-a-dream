@@ -34,7 +34,7 @@
         <p class="my-0">
           Site created by
           <a
-            class="white--text"
+            class="link white--text"
             href="https://alex-long.co.uk/"
             target="_blank"
             rel="noreferrer"
