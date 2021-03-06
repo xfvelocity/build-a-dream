@@ -12,9 +12,9 @@
           <span
             v-for="(link, i) in navLinks"
             :key="i"
-            class="link mr-3"
-            @click="goToLink(link.link)"
-            >{{ link.name }}</span
+            class="link nav-link mr-3"
+          >
+            <NuxtLink :to="link.link">{{ link.name }}</NuxtLink></span
           >
         </div>
       </v-app-bar>
@@ -31,10 +31,6 @@ import { navLinks, socialLinks } from "./data/navLinks";
 export default class NavBar extends Vue {
   navLinks: NavLinks[] = navLinks;
   socialLinks: SocialNavLinks[] = socialLinks;
-
-  goToLink(link: string): void {
-    this.$router.push(link);
-  }
 }
 </script>
 <style lang="scss">
@@ -42,6 +38,11 @@ export default class NavBar extends Vue {
   .v-toolbar__content {
     display: flex;
     justify-content: space-between;
+  }
+  .nav-link {
+    a {
+      text-decoration: none !important;
+    }
   }
 }
 </style>

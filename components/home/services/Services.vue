@@ -10,9 +10,9 @@
         which you are looking for isn't listed here then get in touch and we
         will most likely be able to provide it for you.
       </p>
-      <v-btn color="primary" class="white--text" @click="goToLink"
-        >Our Work</v-btn
-      >
+      <NuxtLink to="ourwork">
+        <v-btn color="primary" class="white--text">Our Work</v-btn>
+      </NuxtLink>
     </div>
     <div
       v-for="(services, i) in servicesInfo"
@@ -30,9 +30,9 @@
         which you are looking for isn't listed here then get in touch and we
         will most likely be able to provide it for you.
       </p>
-      <v-btn color="primary" class="white--text" @click="goToLink"
-        >Our Work</v-btn
-      >
+      <NuxtLink to="ourwork">
+        <v-btn color="primary" class="white--text">Our Work</v-btn>
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -48,10 +48,6 @@ export default class Services extends Vue {
 
   isActive: boolean = false;
   servicesInfo: ServicesInfo[] = servicesInfo;
-
-  goToLink(): void {
-    this.$router.push("/ourwork");
-  }
 }
 </script>
 <style lang="scss">
