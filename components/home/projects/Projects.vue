@@ -1,30 +1,30 @@
 <template>
-  <v-lazy
+  <!-- <v-lazy
     v-model="isActive"
     :options="{
       rootMargin: '-20px',
     }"
     min-height="200"
     transition="fade-transition"
-  >
-    <div class="max-width" id="projects">
-      <SectionTitle
-        title="Projects"
-        desc="Here is a just a few examples of our work, if you wish to see more navigate to the our work page."
-        :width="100"
-      ></SectionTitle>
-      <div class="my-8 d-flex flex-wrap justify-center align-center">
-        <img
-          class="ma-1"
-          style="border: 1px solid #e5e5e5"
-          v-for="(img, i) in imgList"
-          :key="i"
-          :src="img"
-          alt="Landscaping Project Example"
-        />
-      </div>
+  > -->
+  <div class="max-width" id="projects">
+    <SectionTitle
+      title="Projects"
+      desc="Here is a just a few examples of our work, if you wish to see more navigate to the our work page."
+      :width="100"
+    ></SectionTitle>
+    <div class="my-8 d-flex flex-wrap justify-center align-center">
+      <img
+        class="ma-1"
+        style="border: 1px solid #e5e5e5"
+        v-for="(img, i) in imgList"
+        :key="i"
+        :src="img"
+        alt="Landscaping Project Example"
+      />
     </div>
-  </v-lazy>
+  </div>
+  <!-- </v-lazy> -->
 </template>
 
 <script lang="ts">
