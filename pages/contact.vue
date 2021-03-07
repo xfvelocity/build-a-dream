@@ -22,6 +22,14 @@ import ContactInfo from "@/components/contact/ContactInfo.vue";
   },
   head: {
     title: "Contact Us | Build A-Dream | Lincoln Landscape Gardeners",
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Contact us now to get a professional free quotation from landscapers with over 25 years experience to help transform your garden",
+      },
+    ],
   },
 })
 export default class Contact extends Vue {
