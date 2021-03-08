@@ -4,9 +4,9 @@ export const caseStudyList: CaseStudyType[] = [
     subheading: "Potterhanworth",
     img: require("@/assets/img/nov-2020/1-min.jpg"),
     detailedImgList: [
+      require("@/assets/img/nov-2020/1-min.jpg"),
       require("@/assets/img/nov-2020/2-min.jpg"),
       require("@/assets/img/nov-2020/3-min.jpg"),
-      require("@/assets/img/nov-2020/1-min.jpg"),
     ],
     desc:
       "Our ever popular Indian Sandstone paving slabs.All our paving work is laid on Tarram / Hardcore / full wet mortar base. Raised planters built using new pressure treated sleepers with the addition of low voltage LED lights.",
@@ -16,9 +16,9 @@ export const caseStudyList: CaseStudyType[] = [
     subheading: "North Hykehamm",
     img: require("@/assets/img/jan-2020/2-min.jpg"),
     detailedImgList: [
+      require("@/assets/img/jan-2020/2-min.jpg"),
       require("@/assets/img/jan-2020/3-min.jpg"),
       require("@/assets/img/jan-2020/4-min.jpg"),
-      require("@/assets/img/jan-2020/2-min.jpg"),
     ],
     desc:
       "Silver grey Indian sandstone paving slabs in four different sizes with Marshall Harena circle pack",
@@ -40,8 +40,8 @@ export const caseStudyList: CaseStudyType[] = [
     subheading: "Lincoln",
     img: require("@/assets/img/nov-2018/1.jpg"),
     detailedImgList: [
-      require("@/assets/img/nov-2018/4.jpg"),
       require("@/assets/img/nov-2018/1.jpg"),
+      require("@/assets/img/nov-2018/4.jpg"),
       require("@/assets/img/nov-2018/2.jpg"),
       require("@/assets/img/nov-2018/3.jpg"),
     ],
@@ -53,9 +53,9 @@ export const caseStudyList: CaseStudyType[] = [
     subheading: "Burton Waters",
     img: require("@/assets/img/oct-2018/1-min.jpg"),
     detailedImgList: [
+      require("@/assets/img/oct-2018/1-min.jpg"),
       require("@/assets/img/oct-2018/3-min.jpg"),
       require("@/assets/img/oct-2018/2-min.jpg"),
-      require("@/assets/img/oct-2018/1-min.jpg"),
     ],
     desc:
       "New decking work carried out to give easy access to the waters edge.",
@@ -65,8 +65,8 @@ export const caseStudyList: CaseStudyType[] = [
     subheading: "North Greetwell",
     img: require("@/assets/img/july-2018/3-min.jpg"),
     detailedImgList: [
-      require("@/assets/img/july-2018/2-min.jpg"),
       require("@/assets/img/july-2018/3-min.jpg"),
+      require("@/assets/img/july-2018/2-min.jpg"),
       require("@/assets/img/july-2018/5-min.jpg"),
     ],
     desc:
