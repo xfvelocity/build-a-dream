@@ -1,31 +1,31 @@
 <template>
   <div class="case-study">
-    <v-lazy
+    <!-- <v-lazy
       v-model="isActive"
       :options="{
         rootMargin: '-50px',
       }"
       min-height="200"
       transition="fade-transition"
-    >
-      <div>
-        <img :src="item.img" alt="Project IMG" />
-        <div class="mt-2">
-          <p class="my-0" style="font-size: 14px;">
-            {{ item.subheading }}
-          </p>
-          <h2 class="mb-2">{{ item.title }}</h2>
-          <p class="my-0">{{ item.desc }}</p>
-          <p
-            style="cursor: pointer;"
-            class="primary--text my-0 mt-4"
-            @click="caseStudyToggleModal"
-          >
-            View More
-          </p>
-        </div>
+    > -->
+    <div>
+      <img :src="item.img" alt="Project IMG" />
+      <div class="mt-2">
+        <p class="my-0" style="font-size: 14px;">
+          {{ item.subheading }}
+        </p>
+        <h2 class="mb-2">{{ item.title }}</h2>
+        <p class="my-0">{{ item.desc }}</p>
+        <p
+          style="cursor: pointer;"
+          class="primary--text my-0 mt-4"
+          @click="caseStudyToggleModal"
+        >
+          View More
+        </p>
       </div>
-    </v-lazy>
+    </div>
+    <!-- </v-lazy> -->
     <CaseStudyDetailedModal
       :isModalOpen="isModalOpen"
       :item="item"
