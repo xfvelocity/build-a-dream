@@ -78,12 +78,16 @@ export default class ContactForm extends Vue {
     }
     const message = {
       name: this.name,
+      email: this.emailAddress,
       phoneNumber: this.phoneNumber,
-      emailAddress: this.emailAddress,
       message: this.message,
+      subject: `${this.name} - Build A-Dream Enquiry`,
+      from: "smtpalexlongtest@gmail.com",
+      to: "alexlong2001@outlook.com",
+      html: `<b>Name:</b> ${this.name}<br/><b>Phone Number:</b> ${this.phoneNumber}<br/><b>Email:</b> ${this.emailAddress}<br/><br/>${this.message}`,
     };
     axios
-      .post("https://usebasin.com/f/5d041ec64531", message)
+      .post("http://localhost:5000/api/email", message)
       .then((res) => {
         console.log(res);
         this.emailSendMsg = "Email sent.";
