@@ -9,7 +9,7 @@
           :error-messages="errors"
         ></v-text-field>
       </ValidationProvider>
-      <ValidationProvider rules="required|integer|min:11" v-slot="{ errors }">
+      <ValidationProvider rules="required|integer" v-slot="{ errors }">
         <v-text-field
           label="Phone Number"
           @keydown.space.prevent
@@ -41,11 +41,19 @@
         @click="submitMessage(validate, invalid)"
         >Submit</v-btn
       >
-      <p class="text-center mt-2">{{ emailSendMsg }}</p>
-      <!-- <SnackBar
-        :isSnackBarOpen="isSnackBarOpen"
-        :snackBarMode="snackBarMode"
-      ></SnackBar> -->
+      <v-snackbar
+        class="mb-4 pa-6"
+        v-model="isSnackbarOpen"
+        :color="snackbarColor"
+      >
+        {{ emailSendMsg }}
+      </v-snackbar>
+      <v-progress-linear
+        v-if="isLoading"
+        class="mt-2"
+        indeterminate
+        color="green"
+      ></v-progress-linear>
     </ValidationObserver>
   </div>
 </template>
@@ -53,14 +61,12 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { ValidationProvider, ValidationObserver } from "vee-validate";
-import SnackBar from "./SnackBar.vue";
 import axios from "axios";
 
 @Component({
   components: {
     ValidationObserver,
     ValidationProvider,
-    SnackBar,
   },
 })
 export default class ContactForm extends Vue {
@@ -69,32 +75,51 @@ export default class ContactForm extends Vue {
   emailAddress: string = "";
   message: string = "";
   emailSendMsg: string = "";
+  isSnackbarOpen: boolean = false;
+  isLoading: boolean = false;
+  snackbarColor: string = "";
 
   submitMessage(validate: Function, invalid: boolean): void {
     validate();
     if (invalid) {
+      this.snackbarColor = "orange darken-4";
+      this.isSnackbarOpen = true;
       this.emailSendMsg = "Please fill in the required fields.";
       return;
     }
+    this.isLoading = true;
     const message = {
       name: this.name,
       email: this.emailAddress,
       phoneNumber: this.phoneNumber,
       message: this.message,
       subject: `${this.name} - Build A-Dream Enquiry`,
-      from: "smtpalexlongtest@gmail.com",
-      to: "alexlong2001@outlook.com",
-      html: `<b>Name:</b> ${this.name}<br/><b>Phone Number:</b> ${this.phoneNumber}<br/><b>Email:</b> ${this.emailAddress}<br/><br/>${this.message}`,
     };
     axios
-      .post("http://localhost:5000/api/email", message)
+      .post(
+        "https://alex-backend-express.herokuapp.com/api/builda-dream/email",
+        message
+      )
       .then((res) => {
-        console.log(res);
-        this.emailSendMsg = "Email sent.";
+        this.snackbarColor = "light-green darken-4";
+        this.emailSendMsg = "Message sent";
+        this.isSnackbarOpen = true;
       })
       .catch(() => {
-        this.emailSendMsg = "An error occured sending email.";
-      });
+        this.snackbarColor = "red darken-3";
+        this.emailSendMsg = "An error occured sending message";
+        this.isSnackbarOpen = true;
+      })
+      .finally(() => (this.isLoading = false));
   }
 }
 </script>
+<style lang="scss">
+#contact-form {
+  .v-snack__content {
+    font-size: 16px !important;
+    text-align: center;
+    font-weight: 500;
+  }
+}
+</style>
