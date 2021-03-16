@@ -93,8 +93,17 @@ export default class ContactForm extends Vue {
   isLoading: boolean = false;
   snackbarColor: string = "";
 
+  created(): void {
+    console.log(process.env.NODE_ENV);
+    console.log(process.env.API);
+  }
+
   get recaptchaKey(): string | undefined {
     return "6LeCCYAaAAAAAD3jrdHxKSLExCQAXhr9__ovWBNP";
+  }
+
+  onCaptchaExpired(): void {
+    this.$refs.recaptcha.reset();
   }
 
   submitMessage(recaptcha: string, validate: Function, invalid: boolean): void {
@@ -117,10 +126,7 @@ export default class ContactForm extends Vue {
       recaptcha: recaptcha,
     };
     axios
-      .post(
-        "https://alex-backend-express.herokuapp.com/api/builda-dream/email",
-        message
-      )
+      .post(`${process.env.API}/api/builda-dream/email`, message)
       .then((res) => {
         this.snackbarColor = "light-green darken-4";
         this.emailSendMsg = "Message sent";

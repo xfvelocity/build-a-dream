@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt generate",
-    "start": "nuxt start"
+    "build:stage": "nuxt start --mode staging",
+    "build:prod": "nuxt start --mode production"
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
