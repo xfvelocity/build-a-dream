@@ -6,9 +6,9 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt generate",
-    "build:stage": "nuxt start --mode staging",
-    "build:prod": "nuxt start --mode production"
+    "generate:stage": "nuxt generate --mode staging",
+    "generate:prod": "nuxt generate --mode prod",
+    "build": "nuxt start"
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
