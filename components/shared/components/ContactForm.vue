@@ -34,13 +34,22 @@
           :error-messages="errors"
         ></v-textarea>
       </ValidationProvider>
-      <v-btn
-        class="mt-2"
-        style="width: 100%"
-        color="primary"
-        @click="submitMessage(validate, invalid)"
-        >Submit</v-btn
+      <VueRecaptcha
+        ref="recaptcha"
+        :sitekey="recaptchaKey"
+        :loadRecaptchaScript="true"
+        @verify="submitMessage($event, validate, invalid)"
+        @expired="onCaptchaExpired"
+        size="invisible"
       >
+        <v-btn
+          :disabled="isLoading"
+          class="mt-2"
+          style="width: 100%"
+          color="primary"
+          >Submit</v-btn
+        >
+      </VueRecaptcha>
       <v-snackbar
         class="mb-4 pa-6"
         v-model="isSnackbarOpen"
@@ -61,15 +70,20 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { ValidationProvider, ValidationObserver } from "vee-validate";
+import VueRecaptcha from "vue-recaptcha";
 import axios from "axios";
 
 @Component({
   components: {
     ValidationObserver,
     ValidationProvider,
+    VueRecaptcha,
   },
 })
 export default class ContactForm extends Vue {
+  $refs!: {
+    recaptcha: VueRecaptcha;
+  };
   name: string = "";
   phoneNumber: string = "";
   emailAddress: string = "";
@@ -79,7 +93,11 @@ export default class ContactForm extends Vue {
   isLoading: boolean = false;
   snackbarColor: string = "";
 
-  submitMessage(validate: Function, invalid: boolean): void {
+  get recaptchaKey(): string | undefined {
+    return "6LeCCYAaAAAAAD3jrdHxKSLExCQAXhr9__ovWBNP";
+  }
+
+  submitMessage(recaptcha: string, validate: Function, invalid: boolean): void {
     validate();
     if (invalid) {
       this.snackbarColor = "orange darken-4";
@@ -88,12 +106,15 @@ export default class ContactForm extends Vue {
       return;
     }
     this.isLoading = true;
+    this.$refs.recaptcha.execute();
+    this.$refs.recaptcha.reset();
     const message = {
       name: this.name,
       email: this.emailAddress,
       phoneNumber: this.phoneNumber,
       message: this.message,
       subject: `${this.name} - Build A-Dream Enquiry`,
+      recaptcha: recaptcha,
     };
     axios
       .post(
