@@ -6,9 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "generate:stage": "nuxt generate --mode staging",
     "generate:prod": "nuxt generate --mode production",
-    "build": "nuxt start"
+    "start": "nuxt start"
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
