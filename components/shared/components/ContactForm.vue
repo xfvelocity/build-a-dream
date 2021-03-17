@@ -94,9 +94,6 @@ export default class ContactForm extends Vue {
   snackbarColor: string = "";
 
   get recaptchaKey(): string | undefined {
-    console.log(process.env.NODE_ENV);
-    console.log(process.env.API_URL);
-    console.log(process.env);
     return "6LeCCYAaAAAAAD3jrdHxKSLExCQAXhr9__ovWBNP";
   }
 
