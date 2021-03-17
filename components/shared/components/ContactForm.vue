@@ -95,7 +95,8 @@ export default class ContactForm extends Vue {
 
   get recaptchaKey(): string | undefined {
     console.log(process.env.NODE_ENV);
-    console.log(process.env.API);
+    console.log(process.env.API_URL);
+    console.log(process.env);
     return "6LeCCYAaAAAAAD3jrdHxKSLExCQAXhr9__ovWBNP";
   }
 
@@ -124,7 +125,7 @@ export default class ContactForm extends Vue {
     };
 
     axios
-      .post(`${process.env.API}/api/builda-dream/email`, message)
+      .post(`${process.env.API_URL}/api/builda-dream/email`, message)
       .then((res) => {
         this.snackbarColor = "light-green darken-4";
         this.emailSendMsg = "Message sent";
