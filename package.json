@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt generate",
+    "generate:prod": "nuxt generate --mode production",
     "start": "nuxt start"
   },
   "dependencies": {
