@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 export default {
   target: "static",
   head: {
@@ -36,6 +38,7 @@ export default {
   buildModules: [
     "@nuxt/typescript-build",
     "@nuxtjs/style-resources",
+    "@nuxtjs/dotenv",
     [
       "@nuxtjs/vuetify",
       {
@@ -61,5 +64,9 @@ export default {
   transpile: ["vee-validate/dist/rules"],
   build: {
     extend(config, ctx) {},
+  },
+  env: {
+    API_URL: process.env.API,
+    RECAPTCHA_KEY: process.env.RECAPTCHA_KEY,
   },
 };

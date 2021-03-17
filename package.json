@@ -7,18 +7,21 @@
   "scripts": {
     "dev": "nuxt",
     "generate:stage": "nuxt generate --mode staging",
-    "generate:prod": "nuxt generate --mode prod",
+    "generate:prod": "nuxt generate --mode production",
     "build": "nuxt start"
   },
   "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/vuetify": "^1.11.3",
     "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
     "node-sass": "^5.0.0",
     "nuxt": "^2.0.0",
     "nuxt-property-decorator": "^2.9.1",
     "sass-loader": "^10.1.1",
     "vee-validate": "^3.4.5",
+    "vue-axios": "^3.2.4",
     "vue-recaptcha": "^1.3.0",
     "vuetify": "^2.4.5"
   },

@@ -5,7 +5,14 @@
     class="justify-space-around align-center ma-0 pa-0"
   >
     <v-col class="text-center" cols="12" md="9">
-      <h1 class="white--text ma-0" v-if="title" v-html="title">{{ title }}</h1>
+      <h1
+        :style="`max-width: ${headingMaxWidth}`"
+        :class="headingMaxWidth ? 'mx-auto' : ''"
+        class="white--text ma-0"
+        v-if="title"
+      >
+        {{ title }}
+      </h1>
       <p class="white--text" v-if="subHeading">
         {{ subHeading }}
       </p>
@@ -26,6 +33,8 @@ export default class Header extends Vue {
   subHeading!: string;
   @Prop({ default: "55vh" })
   height!: string;
+  @Prop({ default: "100%" })
+  headingMaxWidth!: string;
 }
 </script>
 <style lang="scss">

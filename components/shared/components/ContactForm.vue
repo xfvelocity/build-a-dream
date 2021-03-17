@@ -93,12 +93,9 @@ export default class ContactForm extends Vue {
   isLoading: boolean = false;
   snackbarColor: string = "";
 
-  created(): void {
+  get recaptchaKey(): string | undefined {
     console.log(process.env.NODE_ENV);
     console.log(process.env.API);
-  }
-
-  get recaptchaKey(): string | undefined {
     return "6LeCCYAaAAAAAD3jrdHxKSLExCQAXhr9__ovWBNP";
   }
 
@@ -125,6 +122,7 @@ export default class ContactForm extends Vue {
       subject: `${this.name} - Build A-Dream Enquiry`,
       recaptcha: recaptcha,
     };
+
     axios
       .post(`${process.env.API}/api/builda-dream/email`, message)
       .then((res) => {
