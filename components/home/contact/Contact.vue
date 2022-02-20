@@ -1,0 +1,33 @@
+<template>
+  <div id="contact">
+    <SectionTitle
+      title="Contact Us"
+      desc="Looking for a free quote or simply got a question to ask? Then get in touch."
+      :width="130"
+    />
+    <ContactForm />
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import SectionTitle from "../../shared/components/SectionTitle.vue";
+import ContactForm from "../../shared/components/ContactForm.vue";
+
+export default defineComponent({
+  name: "Contact",
+  components: {
+    SectionTitle,
+    ContactForm,
+  },
+});
+</script>
+
+<style lang="scss" scoped>
+#contact {
+  width: 90%;
+  padding-bottom: 120px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+</style>
