@@ -14,7 +14,7 @@
         If you have any questions or would like a free quote, please don't
         hesitate to
         <NuxtLink
-          class="internal-link text-decoration-underline white--text"
+          class="internal-link text-decoration-underline text-white"
           to="/contact"
         >
           Contact Us

@@ -9,9 +9,9 @@
       <img
         class="ma-1"
         style="border: 1px solid #e5e5e5"
-        v-for="(img, i) in imgList"
-        :key="i"
-        :src="img"
+        v-for="index in 6"
+        :key="index"
+        :src="`../../../assets/img/home/${index}-min.jpg`"
         alt="Landscaping Project Example"
       />
     </div>
@@ -26,13 +26,6 @@ export default defineComponent({
   name: "Projects",
   components: {
     SectionTitle,
-  },
-  setup() {
-    const imgList: string[] = [""];
-
-    return {
-      imgList,
-    };
   },
 });
 </script>
