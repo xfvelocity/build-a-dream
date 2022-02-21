@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <ContactBar v-if="!isMobile"></ContactBar>
-    <MobileNavBar v-if="isMobile"></MobileNavBar>
-    <NavBar v-if="!isMobile"></NavBar>
+    <ContactBar v-if="!isMobile" />
+    <MobileNavBar v-if="isMobile" />
+    <NavBar v-if="!isMobile" />
     <v-main class="pa-0">
-      <nuxt />
+      <slot />
     </v-main>
-    <Footer :windowWidth="windowWidth"></Footer>
+    <Footer :windowWidth="windowWidth" />
   </v-app>
 </template>
 
@@ -26,7 +26,7 @@ export default defineComponent({
     ContactBar,
     Footer,
   },
-  setup(props, context) {
+  setup() {
     const windowWidth = ref<number>(0);
 
     const isMobile = computed<boolean>(() => windowWidth.value < 960);
@@ -46,5 +46,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped></style>
