@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div id="contact-info">
     <SectionTitle
       title="Contact Info"
@@ -75,4 +75,4 @@ export default defineComponent({
     }
   }
 }
-</style>
+</style> -->

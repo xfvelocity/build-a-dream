@@ -17,7 +17,7 @@ export const navLinksData: NavLinks[] = [
 
 export const socialLinksData: SocialNavLinks[] = [
   {
-    iconName: "fa-facebook-square",
+    iconName: "mdi-facebook",
     link: "https://www.facebook.com/BuildADreamLandscapers",
   },
 ];

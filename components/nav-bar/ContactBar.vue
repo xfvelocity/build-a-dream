@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <v-card :height="30" tile id="contact-bar">
     <v-app-bar :height="30" color="grey darken-4">
       <v-spacer></v-spacer>
@@ -71,4 +71,4 @@ export default defineComponent({
   margin: 0 auto;
   padding: 4px 0;
 }
-</style>
+</style> -->

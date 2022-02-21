@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div id="reviews">
     <div class="content text-center max-width">
       <h2>Reviews</h2>
@@ -116,4 +116,4 @@ export default defineComponent({
     }
   }
 }
-</style>
+</style> -->

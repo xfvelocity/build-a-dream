@@ -1,13 +1,13 @@
 <template>
   <div>
     <Header
-      title="Build A-Dream <br/> Landscape Gardening"
+      title="Build A-Dream Landscape Gardening"
       subHeading="Dream gardens that don't cost the earth"
     />
     <Services :windowWidth="windowWidth" />
     <About />
     <Projects />
-    <Reviews />
+    <!-- <Reviews /> -->
     <Contact />
   </div>
 </template>

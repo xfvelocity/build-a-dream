@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <nav>
     <v-card :height="80" id="nav-bar">
       <v-app-bar class="py-2 d-flex align-center" :height="80">
@@ -47,4 +47,4 @@ export default defineComponent({
     justify-content: space-between;
   }
 }
-</style>
+</style> -->

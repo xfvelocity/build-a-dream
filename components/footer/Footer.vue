@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <footer class="grey darken-4 white--text py-4" id="footer">
     <div class="footer-content max-width">
       <div class="contact-links" v-if="windowWidth < 768">
@@ -115,4 +115,4 @@ export default defineComponent({
     }
   }
 }
-</style>
+</style> -->

@@ -1,68 +1,59 @@
 <template>
-  <div>
-    <v-card :height="80">
-      <v-app-bar class="py-2 d-flex align-center" :height="80" app>
-        <v-app-bar-nav-icon @click="toggleNavDrawer" />
-        <v-spacer></v-spacer>
-        <NuxtLink to="/">
-          <img
-            src="@/assets/img/build-a-dream-logo.png"
-            alt="Build A-Dream Logo"
-          />
-        </NuxtLink>
-        <v-spacer></v-spacer>
+  <div class="">
+    <v-card :height="70">
+      <v-app-bar class="pb-2 px-4 d-flex align-center" :height="70" app>
+        <img
+          class="ml-2"
+          style="height: 70%"
+          src="@/assets/img/build-a-dream-logo.png"
+          alt="Build A-Dream Logo"
+          @click="$router.push('/')"
+        />
+
+        <v-spacer />
+
+        <v-app-bar-nav-icon @click="isNavDrawerOpen = !isNavDrawerOpen" />
       </v-app-bar>
     </v-card>
+
     <v-navigation-drawer
-      style="height: 100%"
-      class="pt-8"
       v-model="isNavDrawerOpen"
+      class="pt-2"
+      position="right"
       app
     >
       <template v-slot:prepend>
-        <div class="d-flex justify-center">
-          <img
-            src="@/assets/img/build-a-dream-logo-text.png"
-            alt="Build A-Dream Logo"
-          />
-        </div>
-        <hr color="#e5e5e5" style="width: 80%" class="mx-auto my-8" />
         <v-list>
           <v-list-item
             v-for="(link, i) in navLinks"
             :key="i"
-            @click="goToLink(link.link)"
+            @click="$router.push(link.link)"
           >
-            <v-list-item-content class="justify-center">{{
-              link.name
-            }}</v-list-item-content>
+            {{ link.name }}
           </v-list-item>
         </v-list>
       </template>
+
       <template v-slot:append>
         <div class="d-flex flex-wrap justify-center my-6" id="nav-bar-footer">
           <div class="mb-4">
-            <v-hover v-for="(link, i) in socialLinks" :key="i">
-              <v-icon
-                slot-scope="{ hover }"
-                :color="hover ? 'primary' : ''"
-                class="mx-1"
-                aria-label="facebook"
-                @click="goToSocialLink(link.link)"
-                >{{ link.iconName }}</v-icon
-              >
-            </v-hover>
+            <v-icon
+              v-for="(link, i) in socialLinks"
+              :key="i"
+              class="mx-1"
+              aria-label="facebook"
+              @click="goToSocialLink(link.link)"
+            >
+              {{ link.iconName }}
+            </v-icon>
           </div>
+
           <p class="disclaimer-text">
             Created by
-            <a
-              style="text-decoration: none"
-              href="https://www.alex-long.co.uk"
-              target="_blank"
-              >Alex</a
-            >
+            <a href="https://www.alexlong.dev" target="_blank"> Alex </a>
           </p>
-          <p class="disclaimer-text">&copy; 2021. All rights reserved.</p>
+
+          <p class="disclaimer-text">&copy; 2022. All rights reserved.</p>
         </div>
       </template>
     </v-navigation-drawer>
@@ -83,14 +74,6 @@ export default defineComponent({
 
     const isNavDrawerOpen = ref<boolean>(false);
 
-    const toggleNavDrawer = (): void => {
-      isNavDrawerOpen.value = !isNavDrawerOpen.value;
-    };
-
-    const goToLink = (link: string): void => {
-      router.push(link);
-    };
-
     const goToSocialLink = (link: string): void => {
       window.open(link);
     };
@@ -99,8 +82,6 @@ export default defineComponent({
       navLinks,
       socialLinks,
       isNavDrawerOpen,
-      toggleNavDrawer,
-      goToLink,
       goToSocialLink,
     };
   },
@@ -115,6 +96,10 @@ export default defineComponent({
     text-align: center;
     color: #616161;
     margin: 0;
+
+    a {
+      color: #616161;
+    }
   }
 }
 </style>

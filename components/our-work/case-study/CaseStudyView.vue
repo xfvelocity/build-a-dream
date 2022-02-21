@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div
     class="max-width my-10 d-flex justify-center flex-wrap"
     id="case-study-view"
@@ -30,4 +30,4 @@ export default defineComponent({
     };
   },
 });
-</script>
+</script> -->

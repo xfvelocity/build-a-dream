@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <v-dialog
     width="750"
     v-model="isModalOpen"
@@ -66,4 +66,4 @@ export default defineComponent({
     };
   },
 });
-</script>
+</script> -->

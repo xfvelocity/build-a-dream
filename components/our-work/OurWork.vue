@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div>
     <Header title="Our Work" height="30vh" />
     <CaseStudyView />
@@ -22,4 +22,4 @@ export default defineComponent({
     });
   },
 });
-</script>
+</script> -->

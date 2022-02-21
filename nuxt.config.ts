@@ -7,4 +7,9 @@ export default defineNuxtConfig({
   build: {
     transpile: ["@vuetify/nightly"],
   },
+  vite: {
+    define: {
+      "process.env.DEBUG": "false",
+    },
+  },
 });

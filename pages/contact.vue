@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div>
     <Header title="Contact" height="30vh" />
     <div id="contact-page">
@@ -77,4 +77,4 @@ export default defineComponent({
     }
   }
 }
-</style>
+</style> -->

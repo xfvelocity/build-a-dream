@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="case-study">
     <div>
       <img :src="item.img" alt="Project IMG" />
@@ -77,4 +77,4 @@ export default defineComponent({
     }
   }
 }
-</style>
+</style> -->
