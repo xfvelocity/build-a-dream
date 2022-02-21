@@ -10,10 +10,12 @@
         service which you are looking for isn't listed here then get in touch
         and we will most likely be able to provide it for you.
       </p>
-      <NuxtLink to="ourwork">
-        <v-btn color="primary" class="white--text">Our Work</v-btn>
-      </NuxtLink>
+
+      <v-btn class="mt-4" color="primary" @click="$router.push('ourwork')">
+        Our Work
+      </v-btn>
     </div>
+
     <div
       v-for="(services, i) in servicesInfo"
       :key="i"
@@ -23,6 +25,7 @@
       <h3 class="mb-3">{{ services.title }}</h3>
       <p class="my-0">{{ services.desc }}</p>
     </div>
+
     <div v-if="windowWidth > 1050" class="services-info ml-4">
       <h3>Services</h3>
       <p class="mt-2">
@@ -30,9 +33,8 @@
         service which you are looking for isn't listed here then get in touch
         and we will most likely be able to provide it for you.
       </p>
-      <NuxtLink to="ourwork">
-        <v-btn color="primary" class="white--text">Our Work</v-btn>
-      </NuxtLink>
+
+      <v-btn color="primary" @click="$router.push('ourwork')">Our Work</v-btn>
     </div>
   </div>
 </template>

@@ -6,6 +6,7 @@ body {
 
 .link {
   cursor: pointer;
+
   &:hover {
     color: #2fa625 !important;
   }
@@ -14,6 +15,7 @@ body {
 .internal-link {
   color: black !important;
   text-decoration: none;
+
   &:hover {
     color: #2fa625 !important;
   }

@@ -1,12 +1,12 @@
 <template>
   <v-row
-    :style="`height: ${height}`"
     id="header"
     class="justify-space-around align-center ma-0 pa-0"
+    :style="`height: ${height}`"
   >
     <v-col class="text-center" cols="12" md="9">
-      <h1 class="white--text ma-0" v-if="title">{{ title }}</h1>
-      <p class="white--text" v-if="subHeading">
+      <h1 class="ma-0" v-if="title">{{ title }}</h1>
+      <p v-if="subHeading">
         {{ subHeading }}
       </p>
     </v-col>
@@ -49,6 +49,7 @@ export default defineComponent({
   position: relative;
   text-shadow: 2px 2px 4px #111;
   letter-spacing: 1.6px;
+  color: white;
 
   h1 {
     font-size: 40px;

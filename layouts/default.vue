@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <!-- <ContactBar v-if="!isMobile" /> -->
+    <ContactBar v-if="!isMobile" />
     <MobileNavBar v-if="isMobile" />
     <!-- <NavBar v-if="!isMobile" /> -->
     <v-main class="pa-0">
       <slot />
     </v-main>
-    <!-- <Footer :windowWidth="windowWidth" /> -->
+    <Footer :windowWidth="windowWidth" />
   </v-app>
 </template>
 
