@@ -78,7 +78,7 @@ export default defineComponent({
   }
 
   .review-section {
-    width: 85%;
+    width: 90%;
     margin: 0 auto;
   }
 
@@ -92,7 +92,7 @@ export default defineComponent({
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    height: 180px;
+    height: 220px;
     max-width: 500px;
 
     .reviews-name {

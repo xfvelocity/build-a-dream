@@ -18,12 +18,12 @@
 
     <v-navigation-drawer
       v-model="isNavDrawerOpen"
-      class="pt-2"
+      class="pt-4"
       position="right"
       app
     >
       <template v-slot:prepend>
-        <v-list>
+        <v-list class="pl-4">
           <v-list-item
             v-for="(link, i) in navLinks"
             :key="i"
@@ -53,7 +53,7 @@
             <a href="https://www.alexlong.dev" target="_blank"> Alex </a>
           </p>
 
-          <p class="disclaimer-text">&copy; 2022. All rights reserved.</p>
+          <p class="disclaimer-text">&copy; 2022. Build A-Dream</p>
         </div>
       </template>
     </v-navigation-drawer>
