@@ -7,8 +7,8 @@
     />
     <div class="my-8 d-flex flex-wrap justify-center align-center">
       <img
-        class="ma-1"
-        style="border: 1px solid #e5e5e5"
+        class="ma-1 my-2"
+        style="border: 1px solid #a0a0a0"
         v-for="index in 6"
         :key="index"
         :src="`../../../assets/img/home/${index}-min.jpg`"

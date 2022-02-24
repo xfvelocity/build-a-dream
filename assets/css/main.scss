@@ -11,6 +11,14 @@ body {
   cursor: pointer;
 }
 
+.v-input {
+  .v-input__details {
+    padding-top: 3px;
+    align-items: center;
+    margin-bottom: 3px;
+  }
+}
+
 .cursor-default {
   cursor: default;
 }

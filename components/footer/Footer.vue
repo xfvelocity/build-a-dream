@@ -1,8 +1,7 @@
 <template>
-  <footer id="footer" class="py-4">
+  <footer id="footer" class="py-6">
     <div class="footer-content max-width">
-      <div :class="windowWidth < 768 ? 'text-center' : ''">
-        <p class="my-0">&copy; 2021 Build A-Dream. All Rights Reserved.</p>
+      <div class="d-flex" :class="windowWidth < 768 ? 'text-center' : ''">
         <p class="my-0">
           Site created by
           <a
@@ -14,6 +13,8 @@
             Alex
           </a>
         </p>
+        <v-spacer />
+        <p class="my-0 link">&copy; 2022 Build A-Dream</p>
       </div>
     </div>
   </footer>
@@ -37,6 +38,11 @@ export default defineComponent({
 #footer {
   box-shadow: 4px -5px 6px 0px #00000015;
   border-top: 1px solid #e5e5e5;
+  font-size: 12px;
+
+  a {
+    color: black;
+  }
 
   .footer-content {
     width: 90%;

@@ -5,7 +5,7 @@
     :style="`height: ${height}`"
   >
     <v-col class="text-center" cols="12" md="9">
-      <h1 class="ma-0" v-if="title">{{ title }}</h1>
+      <h1 v-if="title">{{ title }}</h1>
       <p v-if="subHeading">
         {{ subHeading }}
       </p>
@@ -33,7 +33,7 @@ export default defineComponent({
     },
     height: {
       type: String,
-      default: "55vh",
+      default: "65vh",
     },
   },
 });
@@ -48,16 +48,18 @@ export default defineComponent({
   background-size: cover;
   position: relative;
   text-shadow: 2px 2px 4px #111;
-  letter-spacing: 1.6px;
   color: white;
 
   h1 {
     font-size: 40px;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
   }
 
   p {
     width: 70%;
-    margin: 20px auto;
+    font-size: 18px;
+    margin: 0 auto;
   }
 
   @media (min-width: 960px) {

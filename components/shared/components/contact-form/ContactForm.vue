@@ -9,6 +9,7 @@
         v-bind="field"
         label="Name"
         placeholder="John Smith"
+        outline
         :error-messages="errors"
       />
     </Field>
@@ -54,7 +55,7 @@
     </Field>
 
     <v-btn
-      class="mt-2"
+      class="mt-2 py-6"
       style="width: 100%"
       color="primary"
       @click="submitMessage(validate)"

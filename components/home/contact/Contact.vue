@@ -26,7 +26,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 #contact {
   width: 90%;
-  padding-bottom: 120px;
+  padding-top: 40px;
+  padding-bottom: 160px;
   max-width: 500px;
   margin: 0 auto;
 }

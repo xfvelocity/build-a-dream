@@ -17,7 +17,7 @@
           class="internal-link text-decoration-underline text-white"
           to="/contact"
         >
-          Contact Us
+          contact us
         </NuxtLink>
       </p>
     </div>
@@ -36,7 +36,7 @@ export default defineComponent({
 #about {
   color: white;
   font-size: 18px;
-  padding: 70px 0;
+  padding: 90px 0;
   display: flex;
   align-items: center;
   margin: 20px 0 80px 0;
@@ -50,6 +50,10 @@ export default defineComponent({
     margin: 0 auto;
     width: 90%;
     max-width: 950px;
+  }
+
+  p {
+    letter-spacing: 1.5px;
   }
 
   @media (min-width: 768px) {

@@ -1,17 +1,14 @@
 <template>
-  <div
-    class="d-flex justify-center align-center flex-wrap max-width"
-    id="services"
-  >
-    <div v-if="windowWidth <= 1050" class="mb-8 services-info">
+  <div class="services d-flex justify-center align-center flex-wrap max-width">
+    <div v-if="windowWidth <= 1050" class="mb-12 services-info">
       <h3>Services</h3>
-      <p class="mt-2">
+      <p class="mt-4">
         Here are just a small amount of landscaping services that we offer. If a
         service which you are looking for isn't listed here then get in touch
         and we will most likely be able to provide it for you.
       </p>
 
-      <v-btn class="mt-4" color="primary" @click="$router.push('ourwork')">
+      <v-btn class="mt-6 px-8" color="primary" @click="$router.push('ourwork')">
         Our Work
       </v-btn>
     </div>
@@ -19,10 +16,10 @@
     <div
       v-for="(services, i) in servicesInfo"
       :key="i"
-      class="services-box my-2 pa-4 py-8 text-center"
+      class="services-box my-2 px-10 py-8 text-center"
     >
       <img :src="services.img" :alt="services.title" />
-      <h3 class="mb-3">{{ services.title }}</h3>
+      <h3 class="mt-2 mb-1">{{ services.title }}</h3>
       <p class="my-0">{{ services.desc }}</p>
     </div>
 
@@ -62,12 +59,16 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-#services {
+.services {
   width: 90%;
   margin: 0 auto;
-  padding: 70px 0 90px 0;
+  padding: 80px 0;
 
-  .services-box {
+  h3 {
+    font-size: 24px;
+  }
+
+  &-box {
     box-shadow: -3px 4px 8px 4px rgba(17, 17, 17, 0.06);
     border-radius: 5px;
     border: 1px solid #e5e5e5;
@@ -78,13 +79,13 @@ export default defineComponent({
     padding: 100px 0 120px 0;
     width: 100%;
 
-    .services-box {
+    &-box {
       width: 200px;
       margin: 0 5px;
       height: 290px;
     }
 
-    .services-info {
+    &-info {
       width: 80%;
     }
   }
@@ -92,12 +93,12 @@ export default defineComponent({
   @media (min-width: 1100px) {
     padding: 100px 0;
 
-    .services-box {
+    &-box {
       width: 20%;
       height: 250px;
     }
 
-    .services-info {
+    &-info {
       width: 30%;
       max-width: 250px;
     }
