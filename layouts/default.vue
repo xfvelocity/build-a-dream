@@ -2,7 +2,7 @@
   <v-app>
     <ContactBar v-if="!isMobile" />
     <MobileNavBar v-if="isMobile" />
-    <!-- <NavBar v-if="!isMobile" /> -->
+    <NavBar v-else />
     <v-main class="pa-0">
       <slot />
     </v-main>

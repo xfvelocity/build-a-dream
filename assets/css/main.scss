@@ -4,6 +4,18 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.w-100 {
+  width: 100%;
+}
+
 .link {
   cursor: pointer;
 
@@ -15,6 +27,7 @@ body {
 .internal-link {
   color: black !important;
   text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     color: #2fa625 !important;

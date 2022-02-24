@@ -2,6 +2,9 @@ import { defineNuxtConfig } from "nuxt3";
 
 export default defineNuxtConfig({
   target: "static",
+  nitro: {
+    preset: "server",
+  },
   head: {
     title: "Build A-Dream | Lincoln Landscape Gardeners",
     htmlAttrs: {

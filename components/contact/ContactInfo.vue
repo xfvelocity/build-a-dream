@@ -1,34 +1,25 @@
-<!-- <template>
+<template>
   <div id="contact-info">
-    <SectionTitle
-      title="Contact Info"
-      class="section-title"
-      :width="145"
-    ></SectionTitle>
+    <SectionTitle title="Contact Info" class="section-title" :width="145" />
+
     <div class="contact-links">
-      <span class="d-flex align-center mb-2" style="cursor: default">
-        <v-icon class="mr-2" small aria-label="mobile phone">fa-phone</v-icon>
+      <span class="d-flex align-center mb-2 cursor-default">
+        <v-icon class="mr-2" small aria-label="mobile phone">mdi-phone</v-icon>
         07414 095408
       </span>
-      <v-hover>
-        <span
-          slot-scope="{ hover }"
-          style="cursor: pointer"
-          class="d-flex align-center mb-2"
-          :class="hover ? 'primary-lighter--text' : ''"
-          @click="sendEmail"
-        >
-          <v-icon
-            class="mr-2"
-            :color="hover ? 'primary-lighter' : ''"
-            small
-            aria-label="email"
-            >fa-envelope</v-icon
-          >contact@buildadream.co.uk
-        </span>
-      </v-hover>
-      <span class="d-flex align-center mobile-icon" style="cursor: default">
-        <v-icon class="mr-2" small aria-label="location">fa-map-marker</v-icon>
+
+      <span
+        class="d-flex align-center mb-2 text-primary-lighter cursor-pointer"
+        @click="sendEmail"
+      >
+        <v-icon class="mr-2" color="primary-lighter" small aria-label="email">
+          mdi-email
+        </v-icon>
+        contact@buildadream.co.uk
+      </span>
+
+      <span class="d-flex align-center mobile-icon cursor-default">
+        <v-icon class="mr-2" small aria-label="location">mdi-map-marker</v-icon>
         Lincolnshire
       </span>
     </div>
@@ -67,12 +58,14 @@ export default defineComponent({
   width: 90%;
   margin: 40px auto 20px auto;
   max-width: 500px;
+
   .section-title {
     margin: 0 !important;
+
     h2 {
       margin: 0;
       margin-bottom: 15px;
     }
   }
 }
-</style> -->
+</style>

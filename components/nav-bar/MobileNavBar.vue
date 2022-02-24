@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <v-card :height="70">
       <v-app-bar class="pb-2 px-4 d-flex align-center" :height="70" app>
         <img

@@ -1,6 +1,7 @@
-<!-- <template>
+<template>
   <div>
     <Header title="Contact" height="30vh" />
+
     <div id="contact-page">
       <ContactInfo :windowWidth="windowWidth" />
       <ContactForm class="mt-8" id="contact-page-form" />
@@ -9,14 +10,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import Header from "@/components/shared/components/Header.vue";
-import ContactForm from "@/components/shared/components/ContactForm.vue";
+import ContactForm from "@/components/shared/components/contact-form/ContactForm.vue";
 import ContactInfo from "@/components/contact/ContactInfo.vue";
 
 export default defineComponent({
   name: "Contact",
-  props: {
+  components: {
     Header,
     ContactForm,
     ContactInfo,
@@ -77,4 +78,4 @@ export default defineComponent({
     }
   }
 }
-</style> -->
+</style>

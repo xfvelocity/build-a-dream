@@ -1,9 +1,11 @@
 {
+  "package-name": "buildadream",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
-    "start": "node .output/server/index.mjs"
+    "start": "node .nuxt/dist/server/server.mjs"
   },
   "devDependencies": {
     "nuxt3": "latest",

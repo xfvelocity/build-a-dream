@@ -1,22 +1,27 @@
-<!-- <template>
+<template>
   <nav>
     <v-card :height="80" id="nav-bar">
-      <v-app-bar class="py-2 d-flex align-center" :height="80">
-        <NuxtLink to="/">
+      <v-app-bar :height="80">
+        <div class="pb-2 d-flex align-center max-width w-100 px-12">
           <img
+            class="cursor-pointer"
             src="@/assets/img/build-a-dream-logo.png"
             alt="Build A-Dream logo"
+            @click="$router.push('/')"
           />
-        </NuxtLink>
-        <div class="d-flex">
-          <NuxtLink
-            class="internal-link mr-3"
-            v-for="(link, i) in navLinks"
-            :key="i"
-            :to="link.link"
-          >
-            {{ link.name }}
-          </NuxtLink>
+
+          <v-spacer />
+
+          <div class="d-flex">
+            <span
+              class="internal-link mr-3"
+              v-for="(link, i) in navLinks"
+              :key="i"
+              @click="$router.push(link.link)"
+            >
+              {{ link.name }}
+            </span>
+          </div>
         </div>
       </v-app-bar>
     </v-card>
@@ -39,12 +44,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-#nav-bar {
-  .v-toolbar__content {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-</style> -->
