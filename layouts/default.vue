@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <ContactBar v-if="!isMobile" />
-    <MobileNavBar v-if="isMobile" />
+    <ContactBar v-if="windowWidth >= 960" />
+    <MobileNavBar v-if="windowWidth < 960" />
     <NavBar v-else />
     <v-main class="pa-0">
       <slot />
@@ -11,12 +11,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed, onMounted } from "vue";
-
 import MobileNavBar from "../components/nav-bar/MobileNavBar.vue";
 import NavBar from "../components/nav-bar/NavBar.vue";
 import ContactBar from "../components/nav-bar/ContactBar.vue";
 import Footer from "../components/footer/Footer.vue";
+import { getWindowWidth } from "~~/components/shared/utility/utility";
 
 export default defineComponent({
   name: "default",
@@ -29,18 +28,11 @@ export default defineComponent({
   setup() {
     const windowWidth = ref<number>(0);
 
-    const isMobile = computed<boolean>(() => windowWidth.value < 960);
-
     onMounted(() => {
-      windowWidth.value = window.innerWidth;
-
-      window.addEventListener("resize", () => {
-        windowWidth.value = window.innerWidth;
-      });
+      windowWidth.value = getWindowWidth();
     });
 
     return {
-      isMobile,
       windowWidth,
     };
   },

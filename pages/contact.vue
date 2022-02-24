@@ -14,6 +14,7 @@ import { ref, onMounted } from "vue";
 import Header from "@/components/shared/components/Header.vue";
 import ContactForm from "@/components/shared/components/contact-form/ContactForm.vue";
 import ContactInfo from "@/components/contact/ContactInfo.vue";
+import { getWindowWidth } from "~~/components/shared/utility/utility";
 
 export default defineComponent({
   name: "Contact",
@@ -37,13 +38,7 @@ export default defineComponent({
     const windowWidth = ref<number>(0);
 
     onMounted(() => {
-      if (!process.browser) return;
-
-      windowWidth.value = window.innerWidth;
-
-      window.addEventListener("resize", () => {
-        windowWidth.value = window.innerWidth;
-      });
+      windowWidth.value = getWindowWidth();
     });
 
     return {

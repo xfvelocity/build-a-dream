@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div id="reviews">
     <div class="content text-center max-width">
       <h2>Reviews</h2>
@@ -6,7 +6,7 @@
         Here's what some of our customers had to say
       </p>
       <div class="mt-10 review-section">
-        <v-carousel
+        <!-- <v-carousel
           v-model="carousel"
           delimiter-icon="fa-circle"
           hide-delimiter-background
@@ -22,15 +22,13 @@
               </p>
             </div>
           </v-carousel-item>
-        </v-carousel>
+        </v-carousel> -->
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
-
 export default defineComponent({
   name: "Reviews",
   setup() {
@@ -116,4 +114,4 @@ export default defineComponent({
     }
   }
 }
-</style> -->
+</style>

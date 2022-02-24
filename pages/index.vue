@@ -7,7 +7,7 @@
     <Services :windowWidth="windowWidth" />
     <About />
     <Projects />
-    <!-- <Reviews /> -->
+    <Reviews />
     <Contact />
   </div>
 </template>
@@ -21,6 +21,7 @@ import Projects from "../components/home/projects/Projects.vue";
 import Reviews from "../components/home/reviews/Reviews.vue";
 import Contact from "../components/home/contact/Contact.vue";
 import About from "../components/home/about/About.vue";
+import { getWindowWidth } from "~~/components/shared/utility/utility";
 
 export default defineComponent({
   name: "Index",
@@ -36,12 +37,7 @@ export default defineComponent({
     const windowWidth = ref<number>(0);
 
     onMounted(() => {
-      if (!process.browser) return;
-
-      windowWidth.value = window.innerWidth;
-      window.addEventListener("resize", () => {
-        windowWidth.value = window.innerWidth;
-      });
+      windowWidth.value = getWindowWidth();
     });
 
     return {
