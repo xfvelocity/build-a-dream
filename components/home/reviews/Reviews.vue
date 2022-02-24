@@ -6,53 +6,55 @@
         Here's what some of our customers had to say
       </p>
       <div class="mt-10 review-section">
-        <!-- <v-carousel
-          v-model="carousel"
-          delimiter-icon="fa-circle"
-          hide-delimiter-background
-          :show-arrows="false"
-        >
-          <v-carousel-item v-for="(review, i) in reviewsList" :key="i">
+        <carousel wrap-around :autoplay="12000">
+          <slide
+            class="cursor-pointer"
+            v-for="(review, i) in reviewsList"
+            :key="i"
+          >
             <div class="carousel-item">
               <p class="my-0 mb-4 user-review">
-                {{ review.review }}
+                {{ review.comment }}
               </p>
               <p class="reviewers-name" style="font-weight: 500">
                 {{ review.name }}
               </p>
             </div>
-          </v-carousel-item>
-        </v-carousel> -->
+          </slide>
+
+          <template #addons>
+            <pagination
+              style="
+                --vc-pgn-active-color: #2fa625;
+                --vc-pgn-background-color: #fff;
+                --vc-pgn-height: 10px;
+                --vc-pgn-width: 10px;
+              "
+            />
+          </template>
+        </carousel>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+import { reviewsListData } from "./data/reviews.data";
+import { Review } from "./types/reviews.types";
+
 export default defineComponent({
   name: "Reviews",
+  components: {
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
+  },
   setup() {
-    const carousel = ref<number>(1);
-    const reviewsList: any[] = [
-      {
-        name: "Keith Duke",
-        review:
-          '"Dominic has done several pieces of work from laying a patio circle to a full brick driveway. The quality of work is excellent, I have no hesitation in recommending him."',
-      },
-      {
-        name: "Michelle Rachael",
-        review:
-          '"Completed my decking, turfing and patio exactly as requested. Could not be happier. Hassle free and excellent quality end result. Would recommend 100%"',
-      },
-      {
-        name: "Zara MacDougall",
-        review:
-          '"Experienced, professional and competitive, Dominic is reliable and very creative and can easily turn your dream garden into a reality!!"',
-      },
-    ];
+    const reviewsList: Review[] = reviewsListData;
 
     return {
-      carousel,
       reviewsList,
     };
   },
@@ -82,10 +84,6 @@ export default defineComponent({
   .review-section {
     width: 85%;
     margin: 0 auto;
-  }
-
-  .v-window {
-    height: 300px !important;
   }
 
   .user-review {
