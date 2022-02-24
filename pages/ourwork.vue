@@ -1,20 +1,20 @@
-<!-- <template>
+<template>
   <div>
     <Header title="Our Work" height="30vh" />
-    <CaseStudyView />
+    <CaseStudy />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import Header from "@/components/shared/components/Header.vue";
-import CaseStudyView from "@/components/our-work/case-study/CaseStudyView.vue";
+import CaseStudy from "@/components/our-work/CaseStudy.vue";
 
 export default defineComponent({
   name: "OurWork",
   components: {
     Header,
-    CaseStudyView,
+    CaseStudy,
   },
   head: {
     title: "Our Work | Build A-Dream | Lincoln Landscape Gardeners",
@@ -28,4 +28,4 @@ export default defineComponent({
     ],
   },
 });
-</script> -->
+</script>

@@ -1,13 +1,13 @@
-<!-- <template>
+<template>
   <v-dialog
-    width="750"
-    v-model="isModalOpen"
-    @click:outside="toggleModal"
     id="case-study-modal"
+    :modelValue="modelValue"
+    @click:outside="toggleModal"
   >
     <v-card class="pa-4">
       <h3 class="mb-4 text-center">{{ item.title }}</h3>
-      <v-carousel
+
+      <!-- <v-carousel
         height="auto"
         v-model="carousel"
         delimiter-icon="fa-circle"
@@ -27,37 +27,38 @@
             />
           </div>
         </v-carousel-item>
-      </v-carousel>
+      </v-carousel> -->
+
       <div class="d-flex mt-4">
-        <v-spacer></v-spacer>
-        <v-btn text color="red" @click="toggleModal">Close</v-btn>
+        <v-spacer />
+        <v-btn color="red" variant="text" @click="toggleModal">Close</v-btn>
       </div>
     </v-card>
   </v-dialog>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, PropType } from "vue";
-import { CaseStudyType } from "./data/caseStudyList";
+import { PropType } from "vue";
+import { CaseStudyData } from "../types/caseStudy.types";
 
 export default defineComponent({
   name: "CaseStudyDetailedModal",
   props: {
     item: {
-      type: Object as PropType<CaseStudyType>,
+      type: Object as PropType<CaseStudyData>,
       default: () => ({}),
     },
-    isModalOpen: {
+    modelValue: {
       type: Boolean,
       default: false,
     },
   },
-  emits: ["toggle-modal"],
+  emits: ["update:modelValue"],
   setup(props, context) {
     const carousel = ref<number>(0);
 
     const toggleModal = (): void => {
-      context.emit("toggle-modal");
+      context.emit("update:modelValue");
     };
 
     return {
@@ -66,4 +67,4 @@ export default defineComponent({
     };
   },
 });
-</script> -->
+</script>

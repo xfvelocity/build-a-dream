@@ -27,7 +27,7 @@
           <v-list-item
             v-for="(link, i) in navLinks"
             :key="i"
-            @click="$router.push(link.link)"
+            @click="goToLink(link.link)"
           >
             {{ link.name }}
           </v-list-item>
@@ -78,11 +78,17 @@ export default defineComponent({
       window.open(link);
     };
 
+    const goToLink = (link: string): void => {
+      router.push(link);
+      isNavDrawerOpen.value = false;
+    };
+
     return {
       navLinks,
       socialLinks,
       isNavDrawerOpen,
       goToSocialLink,
+      goToLink,
     };
   },
 });
