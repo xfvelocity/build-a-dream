@@ -24,12 +24,8 @@
 
           <template #addons>
             <pagination
-              style="
-                --vc-pgn-active-color: #2fa625;
-                --vc-pgn-background-color: #fff;
-                --vc-pgn-height: 10px;
-                --vc-pgn-width: 10px;
-              "
+              class="carousel-actions"
+              style="--vc-pgn-background-color: #fff"
             />
           </template>
         </carousel>
