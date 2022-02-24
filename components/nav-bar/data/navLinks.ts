@@ -10,7 +10,7 @@ export const navLinksData: NavLinks[] = [
     link: "/ourwork",
   },
   {
-    name: "Contact",
+    name: "Contact Us",
     link: "/contact",
   },
 ];

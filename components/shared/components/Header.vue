@@ -53,13 +53,13 @@ export default defineComponent({
   h1 {
     font-size: 40px;
     letter-spacing: 3px;
-    margin-bottom: 40px;
   }
 
   p {
     width: 70%;
     font-size: 18px;
     margin: 0 auto;
+    margin-top: 40px;
   }
 
   @media (min-width: 960px) {

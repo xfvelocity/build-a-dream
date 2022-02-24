@@ -4,7 +4,7 @@
     id="case-study-view"
   >
     <div
-      class="case-study my-6"
+      class="case-study my-8"
       v-for="(caseStudy, i) in caseStudyList"
       :item="caseStudy"
       :key="`case-study-${i}`"
@@ -18,8 +18,7 @@
         <h2 class="mb-2">{{ caseStudy.title }}</h2>
         <p class="my-0">{{ caseStudy.desc }}</p>
         <p
-          style="cursor: pointer"
-          class="primary--text my-0 mt-4"
+          class="text-primary my-0 mt-4 cursor-pointer"
           @click="caseStudyToggleModal(caseStudy)"
         >
           View More

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header title="Contact" height="30vh" />
+    <Header title="Contact Us" height="40vh" />
 
     <div id="contact-page">
       <ContactInfo :windowWidth="windowWidth" />
@@ -50,9 +50,12 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 #contact-page {
+  padding-top: 20px;
+  padding-bottom: 60px;
+
   #contact-page-form {
-    width: 90%;
-    margin: 20px auto 60px auto;
+    width: 85%;
+    margin: 30px auto 60px auto;
     max-width: 500px;
   }
 
