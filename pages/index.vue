@@ -1,7 +1,8 @@
 <template>
   <div>
     <Header
-      title="Build A-Dream Landscape Gardening"
+      title="Build A-Dream"
+      titleTwo="Landscape Gardening"
       subHeading="Dream gardens that don't cost the earth"
     />
     <Services :windowWidth="windowWidth" />
@@ -13,15 +14,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "vue";
-
 import Header from "../components/shared/components/Header.vue";
 import Services from "../components/home/services/Services.vue";
 import Projects from "../components/home/projects/Projects.vue";
 import Reviews from "../components/home/reviews/Reviews.vue";
 import Contact from "../components/home/contact/Contact.vue";
 import About from "../components/home/about/About.vue";
-import { getWindowWidth } from "~~/components/shared/utility/utility";
 
 export default defineComponent({
   name: "Index",
@@ -36,8 +34,15 @@ export default defineComponent({
   setup() {
     const windowWidth = ref<number>(0);
 
+    const getWindowWidth = (): void => {
+      windowWidth.value = window.innerWidth;
+      window.addEventListener("resize", () => {
+        windowWidth.value = window.innerWidth;
+      });
+    };
+
     onMounted(() => {
-      windowWidth.value = getWindowWidth();
+      getWindowWidth();
     });
 
     return {

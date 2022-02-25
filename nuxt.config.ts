@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: "server",
   },
-  head: {
+  meta: {
     title: "Build A-Dream | Lincoln Landscape Gardeners",
     htmlAttrs: {
       lang: "en-GB",

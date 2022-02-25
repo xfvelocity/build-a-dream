@@ -29,7 +29,6 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 import { NavLinks } from "./data/nav.types";
 import { navLinksData } from "./data/navLinks";
 

@@ -37,7 +37,6 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 import { ServicesInfo, servicesInfoData } from "./data/servicesInfo";
 
 export default defineComponent({

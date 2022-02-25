@@ -66,7 +66,6 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 import { validationSchema } from "@/components/shared/utility/validation";
 import { Form, Field, ValidationResult } from "vee-validate";
 import axios from "axios";

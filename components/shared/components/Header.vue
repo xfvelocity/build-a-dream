@@ -6,6 +6,7 @@
   >
     <v-col class="text-center" cols="12" md="9">
       <h1 v-if="title">{{ title }}</h1>
+      <h1 v-if="titleTwo">{{ titleTwo }}</h1>
       <p v-if="subHeading">
         {{ subHeading }}
       </p>
@@ -14,8 +15,6 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-
 export default defineComponent({
   name: "Header",
   props: {

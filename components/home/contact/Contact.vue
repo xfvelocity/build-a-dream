@@ -10,7 +10,6 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 import SectionTitle from "../../shared/components/SectionTitle.vue";
 import ContactForm from "../../shared/components/contact-form/ContactForm.vue";
 

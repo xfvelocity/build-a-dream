@@ -10,11 +10,9 @@
 </template>
 
 <script lang="ts">
-import { ref, onMounted } from "vue";
 import Header from "@/components/shared/components/Header.vue";
 import ContactForm from "@/components/shared/components/contact-form/ContactForm.vue";
 import ContactInfo from "@/components/contact/ContactInfo.vue";
-import { getWindowWidth } from "~~/components/shared/utility/utility";
 
 export default defineComponent({
   name: "Contact",
@@ -37,8 +35,15 @@ export default defineComponent({
   setup() {
     const windowWidth = ref<number>(0);
 
+    const getWindowWidth = (): void => {
+      windowWidth.value = window.innerWidth;
+      window.addEventListener("resize", () => {
+        windowWidth.value = window.innerWidth;
+      });
+    };
+
     onMounted(() => {
-      windowWidth.value = getWindowWidth();
+      getWindowWidth();
     });
 
     return {

@@ -27,7 +27,6 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 import SectionTitle from "@/components/shared/components/SectionTitle.vue";
 
 export default defineComponent({

@@ -15,7 +15,6 @@ import MobileNavBar from "../components/nav-bar/MobileNavBar.vue";
 import NavBar from "../components/nav-bar/NavBar.vue";
 import ContactBar from "../components/nav-bar/ContactBar.vue";
 import Footer from "../components/footer/Footer.vue";
-import { getWindowWidth } from "~~/components/shared/utility/utility";
 
 export default defineComponent({
   name: "default",
@@ -28,8 +27,15 @@ export default defineComponent({
   setup() {
     const windowWidth = ref<number>(0);
 
+    const getWindowWidth = (): void => {
+      windowWidth.value = window.innerWidth;
+      window.addEventListener("resize", () => {
+        windowWidth.value = window.innerWidth;
+      });
+    };
+
     onMounted(() => {
-      windowWidth.value = getWindowWidth();
+      getWindowWidth();
     });
 
     return {

@@ -1,46 +1,46 @@
 <template>
   <v-card :height="35" tile id="contact-bar">
     <v-app-bar :height="35" color="grey-darken-4">
-      <v-spacer />
-      <div class="d-flex">
-        <span
-          class="white--text d-flex align-center mr-4"
-          style="cursor: default"
-        >
-          <v-icon class="mr-2" color="white" aria-label="mobile phone" small>
-            mdi-phone
-          </v-icon>
-          07414 095408
-        </span>
+      <div class="d-flex align-center max-width w-100 px-12">
+        <v-spacer />
+        <div class="d-flex">
+          <span
+            class="white--text d-flex align-center mr-4"
+            style="cursor: default"
+          >
+            <v-icon class="mr-2" color="white" aria-label="mobile phone" small>
+              mdi-phone
+            </v-icon>
+            07414 095408
+          </span>
 
-        <span
-          style="cursor: pointer"
-          class="d-flex align-center white--text"
-          @click="sendEmail"
-        >
-          <v-icon class="mr-2" color="white" small aria-label="email">
-            mdi-email
-          </v-icon>
-          contact@buildadream.co.uk
-        </span>
+          <span
+            style="cursor: pointer"
+            class="d-flex align-center white--text"
+            @click="sendEmail"
+          >
+            <v-icon class="mr-2" color="white" small aria-label="email">
+              mdi-email
+            </v-icon>
+            contact@buildadream.co.uk
+          </span>
 
-        <v-icon
-          color="white"
-          class="ml-4"
-          @click="goToSocialLink"
-          small
-          aria-label="facebook"
-        >
-          mdi-facebook
-        </v-icon>
+          <v-icon
+            color="white"
+            class="ml-4"
+            @click="goToSocialLink"
+            small
+            aria-label="facebook"
+          >
+            mdi-facebook
+          </v-icon>
+        </div>
       </div>
     </v-app-bar>
   </v-card>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-
 export default defineComponent({
   name: "ContactBar",
   setup() {
@@ -59,12 +59,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-.v-toolbar__content {
-  width: 95%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 4px 0;
-}
-</style>
