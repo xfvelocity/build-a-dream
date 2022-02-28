@@ -1,21 +1,21 @@
 <template>
   <footer id="footer" class="py-6">
-    <div class="footer-content max-width">
-      <div class="d-flex" :class="windowWidth < 768 ? 'text-center' : ''">
-        <p class="my-0">
-          Site created by
-          <a
-            class="grey-text"
-            href="https://alexlong.dev"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Alex
-          </a>
-        </p>
-        <v-spacer />
-        <p class="my-0 link">&copy; 2022 Build A-Dream</p>
-      </div>
+    <div class="d-flex footer-content max-width">
+      <p class="my-0">
+        Site created by
+        <a
+          class="grey-text"
+          href="https://alexlong.dev"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Alex
+        </a>
+      </p>
+
+      <v-spacer />
+
+      <p class="my-0">&copy; 2022 Build A-Dream</p>
     </div>
   </footer>
 </template>

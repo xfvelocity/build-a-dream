@@ -5,7 +5,7 @@
         <v-spacer />
         <div class="d-flex">
           <span
-            class="white--text d-flex align-center mr-4"
+            class="text-white d-flex align-center mr-4"
             style="cursor: default"
           >
             <v-icon class="mr-2" color="white" aria-label="mobile phone" small>
@@ -16,7 +16,7 @@
 
           <span
             style="cursor: pointer"
-            class="d-flex align-center white--text"
+            class="d-flex align-center text-white"
             @click="sendEmail"
           >
             <v-icon class="mr-2" color="white" small aria-label="email">

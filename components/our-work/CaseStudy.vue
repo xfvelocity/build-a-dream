@@ -12,13 +12,15 @@
       <img :src="caseStudy.img" alt="Project IMG" />
 
       <div class="mt-2">
-        <p class="my-0" style="font-size: 14px">
-          {{ caseStudy.subheading }}
-        </p>
-        <h2 class="mb-2">{{ caseStudy.title }}</h2>
-        <p class="my-0">{{ caseStudy.desc }}</p>
+        <span>
+          <p class="my-0" style="font-size: 14px">
+            {{ caseStudy.subheading }}
+          </p>
+          <h2 class="mb-2">{{ caseStudy.title }}</h2>
+          <p class="my-0 case-study-desc">{{ caseStudy.desc }}</p>
+        </span>
         <p
-          class="text-primary my-0 mt-4 cursor-pointer"
+          class="text-primary mb-0 mt-4 cursor-pointer case-study-link"
           @click="caseStudyToggleModal(caseStudy)"
         >
           View More
@@ -63,20 +65,35 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 #case-study-view {
+  padding-bottom: 60px;
+
   .case-study {
     width: 80%;
-    margin: 20px auto;
+    margin: 10px auto;
+    height: 400px;
 
     img {
       width: 100%;
       border: 1px solid #e5e5e5;
     }
 
+    &-desc {
+      height: 70px;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     @media (min-width: 768px) {
+      height: 460px;
       width: 45%;
     }
 
     @media (min-width: 1150px) {
+      height: 500px;
       width: 30%;
       max-width: 450px;
     }

@@ -13,14 +13,16 @@
       </v-btn>
     </div>
 
-    <div
-      v-for="(services, i) in servicesInfo"
-      :key="i"
-      class="services-box my-2 px-10 py-8 text-center"
-    >
-      <img :src="services.img" :alt="services.title" />
-      <h3 class="mt-2 mb-1">{{ services.title }}</h3>
-      <p class="my-0">{{ services.desc }}</p>
+    <div class="d-flex services-boxes max-width">
+      <div
+        v-for="(services, i) in servicesInfo"
+        :key="i"
+        class="services-boxes-box my-2 px-6 py-8 text-center"
+      >
+        <img :src="services.img" :alt="services.title" />
+        <h3 class="mt-2 mb-1">{{ services.title }}</h3>
+        <p class="my-0">{{ services.desc }}</p>
+      </div>
     </div>
 
     <div v-if="windowWidth > 1050" class="services-info ml-4">
@@ -67,21 +69,27 @@ export default defineComponent({
     font-size: 24px;
   }
 
-  &-box {
-    box-shadow: -3px 4px 8px 4px rgba(17, 17, 17, 0.06);
-    border-radius: 5px;
-    border: 1px solid #e5e5e5;
-    max-width: 350px;
+  &-boxes {
+    flex-wrap: wrap;
+
+    &-box {
+      box-shadow: -3px 4px 8px 4px rgba(17, 17, 17, 0.06);
+      border-radius: 5px;
+      border: 1px solid #e5e5e5;
+    }
   }
 
   @media (min-width: 768px) {
     padding: 100px 0 120px 0;
     width: 100%;
 
-    &-box {
-      width: 200px;
-      margin: 0 5px;
-      height: 290px;
+    &-boxes {
+      width: 90%;
+      flex-wrap: nowrap;
+
+      &-box {
+        margin: 0 5px;
+      }
     }
 
     &-info {
