@@ -55,3 +55,21 @@ body {
   --vc-pgn-height: 10px;
   --vc-pgn-width: 10px;
 }
+
+@mixin sm {
+  @media (min-width: 390px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}

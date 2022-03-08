@@ -1,6 +1,7 @@
 import "@mdi/font/css/materialdesignicons.css";
 import "@vuetify/nightly/lib/styles/main.sass";
 import "vue3-carousel/dist/carousel.css";
+import "vueperslides/dist/vueperslides.css";
 
 import { defineNuxtPlugin } from "#app";
 import { createVuetify, ThemeDefinition } from "@vuetify/nightly";

@@ -70,7 +70,8 @@ export default defineComponent({
   .case-study {
     width: 80%;
     margin: 10px auto;
-    height: 400px;
+    height: 420px;
+    max-width: 360px;
 
     img {
       width: 100%;
@@ -90,12 +91,13 @@ export default defineComponent({
     @media (min-width: 768px) {
       height: 460px;
       width: 45%;
+      max-width: 420px;
     }
 
     @media (min-width: 1150px) {
       height: 500px;
       width: 30%;
-      max-width: 450px;
+      max-width: none;
     }
   }
 }
