@@ -13,7 +13,7 @@
         <h3 class="mb-2 text-center">{{ item.title }}</h3>
         <v-carousel progress="primary" continuous hide-delimiters>
           <v-carousel-item v-for="(img, i) in item.detailedImgList" :key="i">
-            <img :src="img" style="width: 100%" />
+            <img :src="`./img/${img}.jpg`" style="width: 100%" />
           </v-carousel-item>
         </v-carousel>
       </div>
@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { PropType, onBeforeMount } from "vue";
+import { PropType } from "vue";
 import { CaseStudyData } from "../types/caseStudy.types";
 
 export default defineComponent({

@@ -4,7 +4,7 @@
       <v-app-bar class="px-4 d-flex align-center" :height="70" app>
         <img
           style="height: 100%"
-          src="@/assets/img/build-a-dream-logo.png"
+          src="@/public/img/build-a-dream-logo.png"
           alt="Build A-Dream Logo"
           @click="$router.push('/')"
         />
@@ -29,7 +29,10 @@
       </v-app-bar>
     </v-card>
 
-    <mobile-nav-bar :is-open="isNavDrawerOpen && isMobile" />
+    <mobile-nav-bar
+      :is-open="isNavDrawerOpen && isMobile"
+      @close-modal="isNavDrawerOpen = !isNavDrawerOpen"
+    />
   </nav>
 </template>
 

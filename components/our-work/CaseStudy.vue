@@ -9,7 +9,7 @@
       :item="caseStudy"
       :key="`case-study-${i}`"
     >
-      <img :src="caseStudy.img" alt="Project IMG" />
+      <img :src="`./img/${caseStudy.img}.jpg`" alt="Project IMG" />
 
       <div class="mt-2">
         <span>
@@ -46,7 +46,7 @@ export default defineComponent({
     const caseStudyList: CaseStudyData[] = caseStudyListData;
 
     const isModalOpen = ref<boolean>(false);
-    const selectedCaseStudy = ref<CaseStudyData>(null);
+    const selectedCaseStudy = ref<CaseStudyData>();
 
     const caseStudyToggleModal = (caseStudy: CaseStudyData): void => {
       selectedCaseStudy.value = caseStudy;
@@ -54,12 +54,11 @@ export default defineComponent({
     };
 
     const preloadImages = (): void => {
-      caseStudyList.forEach((item) => {
-        item.detailedImgList.forEach((url) => {
-          const image = (new Image().src = url);
-          console.log(image);
-        });
-      });
+      caseStudyList.forEach((item) =>
+        item.detailedImgList.forEach(
+          (url) => (new Image().src = `./img/${url}.jpg`)
+        )
+      );
     };
 
     onBeforeMount(preloadImages);

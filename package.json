@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
-    "start": "node .nuxt/dist/server/server.mjs"
+    "start": "nuxi preview",
+    "view": "nuxi build && nuxi preview"
   },
   "devDependencies": {
     "nuxt3": "latest",

@@ -49,26 +49,28 @@ export default defineComponent({
       default: false,
     },
   },
-  setup() {
+  setup(props, context) {
     const router = useRouter();
     const navLinks: NavLinks[] = navLinksData;
     const socialLinks: SocialNavLinks[] = socialLinksData;
 
-    const isNavDrawerOpen = ref<boolean>(false);
-
     const goToSocialLink = (link: string): void => {
       window.open(link);
+      closeModal();
     };
 
     const goToLink = (link: string): void => {
       router.push(link);
-      isNavDrawerOpen.value = false;
+      closeModal();
+    };
+
+    const closeModal = (): void => {
+      context.emit("close-modal");
     };
 
     return {
       navLinks,
       socialLinks,
-      isNavDrawerOpen,
       goToSocialLink,
       goToLink,
     };

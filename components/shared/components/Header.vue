@@ -41,7 +41,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 #header {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../../../assets/img/background.jpg");
+    url("../../../public/img/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

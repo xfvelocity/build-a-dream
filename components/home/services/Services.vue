@@ -15,7 +15,7 @@
         :key="i"
         class="services-boxes-box px-6 py-8 text-center"
       >
-        <img :src="services.img" :alt="services.title" />
+        <img :src="`./img/${services.img}.svg`" :alt="services.title" />
         <h3 class="mt-2 mb-1">{{ services.title }}</h3>
         <p class="my-0">{{ services.desc }}</p>
       </div>
