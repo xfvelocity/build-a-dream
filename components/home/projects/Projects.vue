@@ -11,7 +11,7 @@
         style="border: 1px solid #a0a0a0"
         v-for="index in 6"
         :key="index"
-        :src="`../../../assets/img/home/${index}-min.jpg`"
+        :src="`../../../assets/img/home/${index}.jpg`"
         alt="Landscaping Project Example"
       />
     </div>

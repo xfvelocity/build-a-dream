@@ -3,7 +3,7 @@
     <Header title="Contact Us" height="40vh" />
 
     <div id="contact-page">
-      <ContactInfo :windowWidth="windowWidth" />
+      <ContactInfo />
       <ContactForm class="mt-8" id="contact-page-form" />
     </div>
   </div>
@@ -31,24 +31,6 @@ export default defineComponent({
           "Contact us now to get a professional free quotation from landscapers with over 25 years experience to help transform your garden",
       },
     ],
-  },
-  setup() {
-    const windowWidth = ref<number>(0);
-
-    const getWindowWidth = (): void => {
-      windowWidth.value = window.innerWidth;
-      window.addEventListener("resize", () => {
-        windowWidth.value = window.innerWidth;
-      });
-    };
-
-    onMounted(() => {
-      getWindowWidth();
-    });
-
-    return {
-      windowWidth,
-    };
   },
 });
 </script>

@@ -53,6 +53,17 @@ export default defineComponent({
       isModalOpen.value = true;
     };
 
+    const preloadImages = (): void => {
+      caseStudyList.forEach((item) => {
+        item.detailedImgList.forEach((url) => {
+          const image = (new Image().src = url);
+          console.log(image);
+        });
+      });
+    };
+
+    onBeforeMount(preloadImages);
+
     return {
       caseStudyList,
       selectedCaseStudy,

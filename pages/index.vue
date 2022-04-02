@@ -5,7 +5,7 @@
       titleTwo="Landscape Gardening"
       subHeading="Dream gardens that don't cost the earth"
     />
-    <Services :windowWidth="windowWidth" />
+    <Services />
     <About />
     <Projects />
     <Reviews />
@@ -30,24 +30,6 @@ export default defineComponent({
     Reviews,
     Contact,
     About,
-  },
-  setup() {
-    const windowWidth = ref<number>(0);
-
-    const getWindowWidth = (): void => {
-      windowWidth.value = window.innerWidth;
-      window.addEventListener("resize", () => {
-        windowWidth.value = window.innerWidth;
-      });
-    };
-
-    onMounted(() => {
-      getWindowWidth();
-    });
-
-    return {
-      windowWidth,
-    };
   },
 });
 </script>

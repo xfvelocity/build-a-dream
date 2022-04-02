@@ -66,10 +66,10 @@
 </template>
 
 <script lang="ts">
-import { validationSchema } from "@/components/shared/utility/validation";
+import { validationSchema } from "@/utility/validation";
 import { Form, Field, ValidationResult } from "vee-validate";
-import axios from "axios";
 import { ContactInfo } from "./types/contactForm.data";
+import axios from "axios";
 
 export default defineComponent({
   name: "ContactForm",

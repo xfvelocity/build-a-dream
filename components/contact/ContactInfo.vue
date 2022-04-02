@@ -34,12 +34,6 @@ export default defineComponent({
   components: {
     SectionTitle,
   },
-  props: {
-    windowWidth: {
-      type: Number,
-      defualt: 0,
-    },
-  },
   setup() {
     const sendEmail = (): void => {
       window.location.href = "mailto:contact@builda-dream.com";

@@ -1,16 +1,18 @@
 <template>
   <v-app>
-    <ContactBar v-if="windowWidth >= 960" />
-    <MobileNavBar v-if="windowWidth < 960" />
-    <NavBar v-else />
+    <ContactBar v-if="!isMobile" />
+    <NavBar />
     <v-main class="pa-0">
       <slot />
     </v-main>
-    <Footer :windowWidth="windowWidth" />
+    <Footer />
   </v-app>
 </template>
 
 <script lang="ts">
+import { onMounted } from "vue";
+import { isMobile, setWidthValues } from "@/utility/width";
+
 import MobileNavBar from "../components/nav-bar/MobileNavBar.vue";
 import NavBar from "../components/nav-bar/NavBar.vue";
 import ContactBar from "../components/nav-bar/ContactBar.vue";
@@ -25,21 +27,16 @@ export default defineComponent({
     Footer,
   },
   setup() {
-    const windowWidth = ref<number>(0);
-
-    const getWindowWidth = (): void => {
-      windowWidth.value = window.innerWidth;
-      window.addEventListener("resize", () => {
-        windowWidth.value = window.innerWidth;
-      });
-    };
-
     onMounted(() => {
-      getWindowWidth();
+      setWidthValues(window.innerWidth);
+
+      window.addEventListener("resize", () => {
+        setWidthValues(window.innerWidth);
+      });
     });
 
     return {
-      windowWidth,
+      isMobile,
     };
   },
 });

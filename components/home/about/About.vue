@@ -1,7 +1,7 @@
 <template>
   <div id="about">
     <div class="content mb-6">
-      <h2 class="mb-2">About</h2>
+      <h2>About</h2>
       <p class="my-0">
         We're dedicated to providing you with the best garden in your
         neighbourhood with an emphasis on perfection, high standards and
@@ -51,7 +51,8 @@ export default defineComponent({
   }
 
   p {
-    letter-spacing: 1.5px;
+    font-size: 16px;
+    letter-spacing: 2px;
   }
 
   @media (min-width: 768px) {

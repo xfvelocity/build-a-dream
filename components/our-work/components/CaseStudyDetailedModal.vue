@@ -4,7 +4,7 @@
     :modelValue="modelValue"
     @click:outside="toggleModal"
   >
-    <v-card class="">
+    <v-card>
       <div class="d-flex align-center mr-2 mt-2">
         <v-spacer />
         <v-icon size="small" @click="toggleModal">mdi-close</v-icon>
@@ -13,7 +13,7 @@
         <h3 class="mb-2 text-center">{{ item.title }}</h3>
         <v-carousel progress="primary" continuous hide-delimiters>
           <v-carousel-item v-for="(img, i) in item.detailedImgList" :key="i">
-            <img :src="img" alt="" style="width: 100%" />
+            <img :src="img" style="width: 100%" />
           </v-carousel-item>
         </v-carousel>
       </div>
@@ -22,11 +22,12 @@
 </template>
 
 <script lang="ts">
-import { PropType } from "vue";
+import { PropType, onBeforeMount } from "vue";
 import { CaseStudyData } from "../types/caseStudy.types";
 
 export default defineComponent({
   name: "CaseStudyDetailedModal",
+
   props: {
     item: {
       type: Object as PropType<CaseStudyData>,
