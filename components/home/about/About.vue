@@ -38,7 +38,7 @@ export default defineComponent({
   display: flex;
   align-items: center;
   margin: 20px 0 80px 0;
-  background: url("../../../public/img/bg.png");
+  background: url("/img/bg.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

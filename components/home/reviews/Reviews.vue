@@ -61,7 +61,7 @@ export default defineComponent({
 #reviews {
   margin-bottom: 60px;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("../../../public/img/grass-background.png");
+    url("/img/grass-background.png");
   background-position: center;
   height: 500px;
   background-repeat: no-repeat;

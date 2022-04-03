@@ -4,7 +4,7 @@
       <v-app-bar class="px-4 d-flex align-center" :height="70" app>
         <img
           style="height: 100%"
-          src="@/public/img/build-a-dream-logo.png"
+          src="/img/build-a-dream-logo.png"
           alt="Build A-Dream Logo"
           @click="$router.push('/')"
         />

@@ -7,13 +7,19 @@
     <v-card>
       <div class="d-flex align-center mr-2 mt-2">
         <v-spacer />
-        <v-icon size="small" @click="toggleModal">mdi-close</v-icon>
+        <v-icon class="cursor-pointer" size="small" @click="toggleModal"
+          >mdi-close</v-icon
+        >
       </div>
       <div class="pa-4 pt-0">
-        <h3 class="mb-2 text-center">{{ item.title }}</h3>
+        <h3 class="mb-4 text-center">{{ item.title }}</h3>
         <v-carousel progress="primary" continuous hide-delimiters>
           <v-carousel-item v-for="(img, i) in item.detailedImgList" :key="i">
-            <img :src="`./img/${img}.jpg`" style="width: 100%" />
+            <img
+              class="case-study-modal-img"
+              :src="`./img/${img}.jpg`"
+              style="width: 100%"
+            />
           </v-carousel-item>
         </v-carousel>
       </div>
@@ -52,6 +58,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+.case-study-modal {
+  &-img {
+    border: 1px solid rgb(233, 233, 233);
+  }
+}
 .v-overlay {
   &__content {
     max-width: 450px !important;
