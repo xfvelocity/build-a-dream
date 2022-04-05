@@ -1,31 +1,32 @@
 <template>
   <nav>
     <v-card :height="70">
-      <v-app-bar class="px-4 d-flex align-center" :height="70" app>
-        <img
-          class="cursor-pointer"
-          style="height: 100%"
-          src="/img/build-a-dream-logo.png"
-          alt="Build A-Dream Logo"
-          @click="$router.push('/')"
-        />
+      <v-app-bar :height="70" app>
+        <div class="px-4 d-flex align-center max-width w-100">
+          <img
+            class="cursor-pointer h-100"
+            src="/img/build-a-dream-logo.png"
+            alt="Build A-Dream Logo"
+            @click="$router.push('/')"
+          />
 
-        <v-spacer />
+          <v-spacer />
 
-        <v-app-bar-nav-icon
-          v-if="isMobile"
-          @click="isNavDrawerOpen = !isNavDrawerOpen"
-        />
+          <v-app-bar-nav-icon
+            v-if="isMobile"
+            @click="isNavDrawerOpen = !isNavDrawerOpen"
+          />
 
-        <div v-else class="d-flex">
-          <span
-            class="internal-link mr-3"
-            v-for="(link, i) in navLinks"
-            :key="i"
-            @click="$router.push(link.link)"
-          >
-            {{ link.name }}
-          </span>
+          <div v-else class="d-flex">
+            <span
+              class="internal-link mr-3"
+              v-for="(link, i) in navLinks"
+              :key="i"
+              @click="$router.push(link.link)"
+            >
+              {{ link.name }}
+            </span>
+          </div>
         </div>
       </v-app-bar>
     </v-card>
