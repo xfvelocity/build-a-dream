@@ -3,6 +3,7 @@
     <v-card :height="70">
       <v-app-bar class="px-4 d-flex align-center" :height="70" app>
         <img
+          class="cursor-pointer"
           style="height: 100%"
           src="/img/build-a-dream-logo.png"
           alt="Build A-Dream Logo"
