@@ -1,22 +1,33 @@
 <template>
-  <v-row
-    id="header"
-    class="justify-space-around align-center ma-0 pa-0"
-    :style="`height: ${height}`"
-  >
-    <v-col class="text-center" cols="12" md="9">
-      <h1 v-if="title">{{ title }}</h1>
-      <h1 v-if="titleTwo">{{ titleTwo }}</h1>
-      <p v-if="subHeading">
-        {{ subHeading }}
-      </p>
-    </v-col>
-  </v-row>
+  <div class="header">
+    <v-row
+      class="justify-space-around align-center ma-0 pa-0"
+      :style="`height: ${height}`"
+    >
+      <v-col class="text-center" cols="12" md="9">
+        <h1 v-if="title">{{ title }}</h1>
+        <h1 v-if="titleTwo">{{ titleTwo }}</h1>
+        <p v-if="subHeading">
+          {{ subHeading }}
+        </p>
+      </v-col>
+    </v-row>
+    <FuzzyImage
+      img="/img/background.jpg"
+      min-img="/img/background-min.jpg"
+      background
+    />
+  </div>
 </template>
 
 <script lang="ts">
+import FuzzyImage from "./fuzzy-image/FuzzyImage.vue";
+
 export default defineComponent({
   name: "Header",
+  components: {
+    FuzzyImage,
+  },
   props: {
     title: {
       type: String,
@@ -39,12 +50,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-#header {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("/img/background.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.header {
   position: relative;
   text-shadow: 2px 2px 4px #111;
   color: white;

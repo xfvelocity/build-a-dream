@@ -68,6 +68,7 @@ export default defineComponent({
   },
 });
 </script>
+
 <style lang="scss" scoped>
 .fuzzy-image {
   background-size: cover;
@@ -76,9 +77,12 @@ export default defineComponent({
 
   &-background {
     position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     z-index: -1;
+    background-position: center;
   }
 
   & > img {

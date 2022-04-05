@@ -1,11 +1,11 @@
 <template>
-  <div id="reviews">
-    <div class="content text-center max-width">
+  <div class="reviews">
+    <div class="revies-content text-center max-width">
       <h2>Reviews</h2>
       <p style="font-size: 16px" class="my-0">
         Here's what some of our customers had to say
       </p>
-      <div class="mt-10 review-section">
+      <div class="mt-10 reviews-section">
         <carousel wrap-around :autoplay="12000">
           <slide
             class="cursor-pointer"
@@ -31,6 +31,11 @@
         </carousel>
       </div>
     </div>
+    <FuzzyImage
+      img="/img/grass-background.png"
+      min-img="/img/grass-background-min.png"
+      background
+    />
   </div>
 </template>
 
@@ -38,6 +43,7 @@
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 import { reviewsListData } from "./data/reviews.data";
 import { Review } from "./types/reviews.types";
+import FuzzyImage from "~~/components/shared/components/fuzzy-image/FuzzyImage.vue";
 
 export default defineComponent({
   name: "Reviews",
@@ -46,6 +52,7 @@ export default defineComponent({
     Slide,
     Pagination,
     Navigation,
+    FuzzyImage,
   },
   setup() {
     const reviewsList: Review[] = reviewsListData;
@@ -58,45 +65,40 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-#reviews {
+.reviews {
   margin-bottom: 60px;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("/img/grass-background.png");
-  background-position: center;
   height: 500px;
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
   color: white;
   display: flex;
   align-items: center;
   font-size: 20px;
 
-  .content {
+  &-content {
     width: 90%;
     margin: 0 auto;
   }
 
-  .review-section {
+  &-section {
     width: 90%;
     margin: 0 auto;
-  }
 
-  .user-review {
-    max-width: 500px;
-    margin: 0 auto;
-  }
+    .user-review {
+      max-width: 500px;
+      margin: 0 auto;
+    }
 
-  .carousel-item {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-    height: 220px;
-    max-width: 500px;
+    .carousel-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 auto;
+      height: 220px;
+      max-width: 500px;
 
-    .reviews-name {
-      align-self: flex-end;
+      .reviews-name {
+        align-self: flex-end;
+      }
     }
   }
 
