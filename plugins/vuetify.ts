@@ -1,11 +1,11 @@
 import "@mdi/font/css/materialdesignicons.css";
-import "@vuetify/nightly/lib/styles/main.sass";
+import "vuetify/lib/styles/main.sass";
 import "vue3-carousel/dist/carousel.css";
 
 import { defineNuxtPlugin } from "#app";
-import { createVuetify, ThemeDefinition } from "@vuetify/nightly";
-import * as components from "@vuetify/nightly/lib/components/index";
-import * as directives from "@vuetify/nightly/lib/directives/index";
+import { createVuetify, ThemeDefinition } from "vuetify";
+import * as components from "vuetify/lib/components/index";
+import * as directives from "vuetify/lib/directives/index";
 
 const customTheme: ThemeDefinition = {
   dark: false,

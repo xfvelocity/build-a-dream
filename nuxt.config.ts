@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from "nuxt3";
+import { defineNuxtConfig } from "nuxt";
 
 export default defineNuxtConfig({
   // target: "static",
@@ -34,9 +34,9 @@ export default defineNuxtConfig({
     ],
   },
   loading: { color: "#2FA625" },
-  css: ["@/assets/css/main.scss", "@vuetify/nightly"],
+  css: ["@/assets/css/main.scss", "vuetify"],
   build: {
-    transpile: ["@vuetify/nightly"],
+    transpile: ["vuetify"],
   },
   vite: {
     define: {
