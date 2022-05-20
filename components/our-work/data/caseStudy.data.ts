@@ -4,8 +4,8 @@ export const caseStudyListData: CaseStudyData[] = [
   {
     title: "Indian Sandstone Patio",
     subheading: "Potterhanworth",
-    img: "nov-2020/1-min",
-    detailedImgList: ["nov-2020/1-min", "nov-2020/2-min", "nov-2020/3-min"],
+    img: "nov-2020/1",
+    detailedImgList: ["nov-2020/1", "nov-2020/2", "nov-2020/3"],
     desc: "Our ever popular Indian Sandstone paving slabs.All our paving work is laid on Tarram / Hardcore / full wet mortar base. Raised planters built using new pressure treated sleepers with the addition of low voltage LED lights.",
   },
   {
