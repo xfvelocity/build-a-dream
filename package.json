@@ -8,18 +8,18 @@
     "start": "nuxi build && nuxi preview"
   },
   "devDependencies": {
-    "nuxt": "^3.0.0-rc.3",
+    "nuxt": "^3.0.0-rc.4",
     "sass": "^1.49.8",
     "sass-loader": "^12.6.0"
   },
   "dependencies": {
     "@mdi/font": "^6.5.95",
-    "@nuxt/kit": "^3.0.0-rc.3",
+    "@nuxt/kit": "^3.0.0-rc.4",
     "axios": "^0.26.0",
     "node-sass": "^7.0.1",
     "vee-validate": "^4.5.8",
     "vue-gtag": "^2.0.1",
     "vue3-carousel": "^0.1.36",
-    "vuetify": "^3.0.0-beta.2"
+    "vuetify": "^3.0.0-beta.4"
   }
 }
