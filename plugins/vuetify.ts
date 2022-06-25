@@ -11,6 +11,7 @@ const customTheme: ThemeDefinition = {
   dark: false,
   colors: {
     primary: "#086500",
+    secondary: "#2fa625",
   },
 };
 
