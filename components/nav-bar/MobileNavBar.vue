@@ -1,8 +1,15 @@
 <template>
-  <v-navigation-drawer v-model="isOpen" class="pt-4" position="right" app>
+  <v-navigation-drawer
+    :model-value="modelValue"
+    class="pt-6 w-80"
+    location="right"
+    @update:model-value="closeModal"
+  >
     <template v-slot:prepend>
-      <v-list class="pl-2">
+      <v-list>
         <v-list-item
+          class="justify-center text-20"
+          :class="{ 'text-primary': link.active }"
           v-for="(link, i) in navLinks"
           :key="i"
           @click="goToLink(link.link)"
@@ -14,7 +21,8 @@
 
     <template v-slot:append>
       <div class="d-flex flex-wrap justify-center my-6" id="nav-bar-footer">
-        <div class="mb-4">
+        <!-- Add back in once facebook is re-created -->
+        <!-- <div class="mb-4">
           <v-icon
             v-for="(link, i) in socialLinks"
             :key="i"
@@ -24,14 +32,16 @@
           >
             {{ link.iconName }}
           </v-icon>
-        </div>
+        </div> -->
 
         <p class="disclaimer-text">
           Created by
           <a href="https://www.alexlong.dev" target="_blank"> Alex </a>
         </p>
 
-        <p class="disclaimer-text">&copy; 2022. Build A-Dream</p>
+        <p class="disclaimer-text">
+          &copy; {{ currentYear }} Build A-Dream Landscape Gardeners
+        </p>
       </div>
     </template>
   </v-navigation-drawer>
@@ -44,15 +54,19 @@ import { navLinksData, socialLinksData } from "./data/navLinks";
 export default defineComponent({
   name: "MobileNavBar",
   props: {
-    isOpen: {
+    modelValue: {
       type: Boolean,
       default: false,
     },
   },
+  emits: ["update:modelValue"],
   setup(props, context) {
+    const route = useRoute();
     const router = useRouter();
-    const navLinks: NavLinks[] = navLinksData;
+
+    const navLinks = ref<NavLinks[]>([]);
     const socialLinks: SocialNavLinks[] = socialLinksData;
+    const currentYear: number = new Date().getFullYear();
 
     const goToSocialLink = (link: string): void => {
       window.open(link);
@@ -65,12 +79,21 @@ export default defineComponent({
     };
 
     const closeModal = (): void => {
-      context.emit("close-modal");
+      context.emit("update:modelValue", false);
     };
+
+    const setActiveRoute = (path: string): void => {
+      navLinks.value = JSON.parse(JSON.stringify([...navLinksData]));
+      navLinks.value.find((link) => link.link === path).active = true;
+    };
+
+    watch(route, () => setActiveRoute(route.path), { immediate: true });
 
     return {
       navLinks,
       socialLinks,
+      currentYear,
+      closeModal,
       goToSocialLink,
       goToLink,
     };
