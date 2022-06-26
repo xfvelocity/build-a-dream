@@ -1,4 +1,4 @@
-export type CaseStudyData = {
+export type Project = {
   title: string;
   subheading: string;
   img: string;

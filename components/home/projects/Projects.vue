@@ -6,10 +6,12 @@
       :width="120"
     />
     <Carousel :items-to-show="isMobile ? 1 : 3" wrap-around>
-      <Slide v-for="index in 6" :key="index">
+      <Slide v-for="project in homeProjects" :key="project">
         <img
-          :src="`./img/home/${index}.jpg`"
+          class="cursor-pointer"
+          :src="`./img/${project.img}.jpg`"
           alt="Landscaping Project Example"
+          @click="openModal(project)"
         />
       </Slide>
 
@@ -19,12 +21,18 @@
       </template>
     </Carousel>
   </div>
+
+  <project-modal v-model="isModalOpen" :item="selectedProject" />
 </template>
 
 <script lang="ts">
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 import { isMobile } from "@/utility/width";
+import { Project } from "@/assets/types/app.types";
+import { homeProjects } from "@/assets/data/project.data";
+
 import SectionTitle from "../../shared/components/SectionTitle.vue";
+import ProjectModal from "@/components/basic/project-modal/ProjectModal.vue";
 
 export default defineComponent({
   name: "Projects",
@@ -34,10 +42,23 @@ export default defineComponent({
     Pagination,
     Navigation,
     SectionTitle,
+    ProjectModal,
   },
   setup() {
+    const isModalOpen = ref<boolean>(false);
+    const selectedProject = ref<Project>();
+
+    const openModal = (project: Project): void => {
+      selectedProject.value = project;
+      isModalOpen.value = true;
+    };
+
     return {
+      isModalOpen,
       isMobile,
+      selectedProject,
+      homeProjects,
+      openModal,
     };
   },
 });

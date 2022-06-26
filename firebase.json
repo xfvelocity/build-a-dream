@@ -1,9 +1,0 @@
-{
-  "hosting": {
-    "public": ".output/public",
-    "site": "build-a-dream-5d3e7",
-    "cleanUrls": true,
-    "rewrites": [{ "source": "**", "function": "server" }],
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
-  }
-}

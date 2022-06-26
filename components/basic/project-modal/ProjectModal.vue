@@ -7,9 +7,9 @@
     <v-card>
       <div class="d-flex align-center mr-2 mt-2">
         <v-spacer />
-        <v-icon class="cursor-pointer" size="small" @click="toggleModal"
-          >mdi-close</v-icon
-        >
+        <v-icon class="cursor-pointer" size="small" @click="toggleModal">
+          mdi-close
+        </v-icon>
       </div>
       <div class="pa-4 pt-0">
         <h3 class="mb-4 text-center">{{ item.title }}</h3>
@@ -29,14 +29,13 @@
 
 <script lang="ts">
 import { PropType } from "vue";
-import { CaseStudyData } from "../types/caseStudy.types";
+import { Project } from "@/assets/types/app.types";
 
 export default defineComponent({
-  name: "CaseStudyDetailedModal",
-
+  name: "ProjectModal",
   props: {
     item: {
-      type: Object as PropType<CaseStudyData>,
+      type: Object as PropType<Project>,
       default: () => ({}),
     },
     modelValue: {
@@ -63,6 +62,7 @@ export default defineComponent({
     border: 1px solid rgb(233, 233, 233);
   }
 }
+
 .v-overlay {
   &__content {
     max-width: 450px !important;

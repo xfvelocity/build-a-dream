@@ -1,19 +1,19 @@
 <template>
   <div>
     <Header title="Our Work" height="40vh" />
-    <CaseStudy />
+    <Project />
   </div>
 </template>
 
 <script lang="ts">
 import Header from "@/components/shared/components/Header.vue";
-import CaseStudy from "@/components/our-work/CaseStudy.vue";
+import Project from "@/components/our-work/Project.vue";
 
 export default defineComponent({
   name: "OurWork",
   components: {
     Header,
-    CaseStudy,
+    Project,
   },
   head: {
     title: "Our Work | Build A-Dream | Lincoln Landscape Gardeners",

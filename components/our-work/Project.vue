@@ -5,56 +5,56 @@
   >
     <div
       class="case-study my-8"
-      v-for="(caseStudy, i) in caseStudyList"
-      :item="caseStudy"
+      v-for="(project, i) in projectsList"
+      :item="project"
       :key="`case-study-${i}`"
     >
-      <img :src="`./img/${caseStudy.img}.jpg`" alt="Project IMG" />
+      <img :src="`./img/${project.img}.jpg`" alt="Project IMG" />
 
       <div class="mt-2">
         <span>
           <p class="my-0" style="font-size: 14px">
-            {{ caseStudy.subheading }}
+            {{ project.subheading }}
           </p>
-          <h2 class="mb-2">{{ caseStudy.title }}</h2>
-          <p class="my-0 case-study-desc">{{ caseStudy.desc }}</p>
+          <h2 class="mb-2">{{ project.title }}</h2>
+          <p class="my-0 case-study-desc">{{ project.desc }}</p>
         </span>
         <p
           class="text-primary mb-0 mt-4 cursor-pointer case-study-link"
-          @click="caseStudyToggleModal(caseStudy)"
+          @click="toggleModal(project)"
         >
           View More
         </p>
       </div>
     </div>
 
-    <CaseStudyDetailedModal v-model="isModalOpen" :item="selectedCaseStudy" />
+    <project-modal v-model="isModalOpen" :item="selectedProject" />
   </div>
 </template>
 
 <script lang="ts">
-import { caseStudyListData } from "./data/caseStudy.data";
-import { CaseStudyData } from "./types/caseStudy.types";
-import CaseStudyDetailedModal from "./components/CaseStudyDetailedModal.vue";
+import { projects } from "@/assets/data/project.data";
+import { Project } from "@/assets/types/app.types";
+import ProjectModal from "@/components/basic/project-modal/ProjectModal.vue";
 
 export default defineComponent({
-  name: "CaseStudy",
+  name: "Project",
   components: {
-    CaseStudyDetailedModal,
+    ProjectModal,
   },
   setup() {
-    const caseStudyList: CaseStudyData[] = caseStudyListData;
+    const projectsList: Project[] = projects;
 
     const isModalOpen = ref<boolean>(false);
-    const selectedCaseStudy = ref<CaseStudyData>();
+    const selectedProject = ref<Project>();
 
-    const caseStudyToggleModal = (caseStudy: CaseStudyData): void => {
-      selectedCaseStudy.value = caseStudy;
+    const toggleModal = (caseStudy: Project): void => {
+      selectedProject.value = caseStudy;
       isModalOpen.value = true;
     };
 
     const preloadImages = (): void => {
-      caseStudyList.forEach((item) =>
+      projectsList.forEach((item) =>
         item.detailedImgList.forEach(
           (url) => (new Image().src = `./img/${url}.jpg`)
         )
@@ -64,10 +64,10 @@ export default defineComponent({
     onBeforeMount(preloadImages);
 
     return {
-      caseStudyList,
-      selectedCaseStudy,
+      projectsList,
+      selectedProject,
       isModalOpen,
-      caseStudyToggleModal,
+      toggleModal,
     };
   },
 });
