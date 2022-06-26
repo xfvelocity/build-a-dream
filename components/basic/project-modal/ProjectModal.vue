@@ -11,17 +11,33 @@
           mdi-close
         </v-icon>
       </div>
-      <div class="pa-4 pt-0">
-        <h3 class="mb-4 text-center">{{ item.title }}</h3>
-        <v-carousel progress="primary" continuous hide-delimiters>
-          <v-carousel-item v-for="(img, i) in item.detailedImgList" :key="i">
+      <div class="pa-8 pt-2">
+        <div class="case-study-modal-section">
+          <div class="case-study-modal-section-main">
             <img
-              class="case-study-modal-img"
-              :src="`./img/${img}.jpg`"
-              style="width: 100%"
+              class="case-study-modal-img w-100 h-100"
+              :src="`./img/${selectedImage}.jpg`"
             />
-          </v-carousel-item>
-        </v-carousel>
+          </div>
+
+          <div class="case-study-modal-section-side">
+            <img
+              v-for="(img, i) in item.detailedImgList"
+              :key="i"
+              class="case-study-modal-img w-100 h-100"
+              :src="`./img/${img}.jpg`"
+              @click="selectedImage = img"
+            />
+          </div>
+        </div>
+
+        <div class="my-6">
+          <p class="text-primary my-0 text-14">
+            {{ item.subheading }}
+          </p>
+          <h2 class="mb-2">{{ item.title }}</h2>
+          <p class="my-0 case-study-desc">{{ item.desc }}</p>
+        </div>
       </div>
     </v-card>
   </v-dialog>
@@ -45,11 +61,22 @@ export default defineComponent({
   },
   emits: ["update:modelValue"],
   setup(props, context) {
+    const selectedImage = ref<string>("");
+
     const toggleModal = (): void => {
       context.emit("update:modelValue");
     };
 
+    watch(
+      () => props.item,
+      () => {
+        selectedImage.value = props.item.img;
+      },
+      { immediate: true }
+    );
+
     return {
+      selectedImage,
       toggleModal,
     };
   },
@@ -61,16 +88,27 @@ export default defineComponent({
   &-img {
     border: 1px solid rgb(233, 233, 233);
   }
+
+  &-section {
+    display: flex;
+
+    &-main {
+      flex-grow: 3;
+    }
+
+    &-side {
+      margin-left: 5px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
 
 .v-overlay {
   &__content {
-    max-width: 450px !important;
     width: 90% !important;
-
-    @media (min-width: 1024px) {
-      max-width: 600px !important;
-    }
+    max-width: 700px !important;
   }
 }
 
