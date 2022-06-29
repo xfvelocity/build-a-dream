@@ -5,13 +5,7 @@
     @click:outside="toggleModal"
   >
     <v-card>
-      <div class="d-flex align-center mr-2 mt-2">
-        <v-spacer />
-        <v-icon class="cursor-pointer" size="small" @click="toggleModal">
-          mdi-close
-        </v-icon>
-      </div>
-      <div class="pa-4 pt-2">
+      <div class="pa-6">
         <div class="case-study-modal-section">
           <div class="case-study-modal-section-main">
             <img
@@ -51,7 +45,7 @@
           </div>
         </div>
 
-        <div class="my-6">
+        <div class="mt-2">
           <p class="text-primary my-0 text-12">
             {{ item.subheading }}
           </p>
@@ -59,6 +53,15 @@
           <p class="my-0 text-14">{{ item.desc }}</p>
         </div>
       </div>
+
+      <v-btn
+        class="mb-4 mx-6 text-white"
+        color="primary"
+        size="small"
+        @click="toggleModal"
+      >
+        Close
+      </v-btn>
     </v-card>
   </v-dialog>
 </template>
@@ -106,7 +109,7 @@ export default defineComponent({
 <style lang="scss">
 .case-study-modal {
   &-img {
-    border: 1px solid rgb(233, 233, 233);
+    border: 1px solid #828282;
 
     &-active {
       filter: brightness(0.5);

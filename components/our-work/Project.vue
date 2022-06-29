@@ -4,27 +4,19 @@
     id="case-study-view"
   >
     <div
-      class="case-study my-8"
+      class="case-study my-2 cursor-pointer pa-4"
       v-for="(project, i) in projectsList"
       :item="project"
       :key="`case-study-${i}`"
+      @click="toggleModal(project)"
     >
       <img :src="`./img/${project.img}.jpg`" alt="Project IMG" />
 
       <div class="mt-2">
-        <span>
-          <p class="my-0" style="font-size: 14px">
-            {{ project.subheading }}
-          </p>
-          <h2 class="mb-2">{{ project.title }}</h2>
-          <p class="my-0 case-study-desc">{{ project.desc }}</p>
-        </span>
-        <p
-          class="text-primary mb-0 mt-4 cursor-pointer case-study-link"
-          @click="toggleModal(project)"
-        >
-          View More
+        <p class="my-0" style="font-size: 14px">
+          {{ project.subheading }}
         </p>
+        <h2>{{ project.title }}</h2>
       </div>
     </div>
 
@@ -80,7 +72,6 @@ export default defineComponent({
   .case-study {
     width: 80%;
     margin: 10px auto;
-    height: 420px;
     max-width: 360px;
 
     img {
@@ -88,24 +79,17 @@ export default defineComponent({
       border: 1px solid #e5e5e5;
     }
 
-    &-desc {
-      height: 70px;
-
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.1);
     }
 
     @media (min-width: 768px) {
-      height: 460px;
       width: 45%;
       max-width: 420px;
     }
 
     @media (min-width: 1150px) {
-      height: 500px;
       width: 30%;
       max-width: none;
     }

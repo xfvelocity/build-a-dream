@@ -12,6 +12,7 @@ const customTheme: ThemeDefinition = {
   colors: {
     primary: "#086500",
     secondary: "#2fa625",
+    border: "#828282",
   },
 };
 

@@ -75,23 +75,26 @@ export default defineComponent({
 
   .carousel {
     &__slide {
-      opacity: 0.5;
-
       img {
         width: 100%;
+        border: 1px solid #828282;
       }
 
-      &--visible {
-        transform: scale(1);
+      @media (min-width: 769px) {
         opacity: 0.5;
-        transition: 0.5s;
-      }
 
-      &--active {
-        transform: scale(1.1);
-        opacity: 1;
-        border: 1px solid black;
-        z-index: 10;
+        &--visible {
+          transform: scale(1);
+          opacity: 0.5;
+          transition: 0.5s;
+        }
+
+        &--active {
+          transform: scale(1.1);
+          opacity: 1;
+          border: 1px solid black;
+          z-index: 10;
+        }
       }
     }
   }
