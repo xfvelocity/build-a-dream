@@ -2,8 +2,8 @@
   <div class="projects max-width">
     <SectionTitle
       title="Our work"
-      desc="Here is a just a few examples of our work, if you wish to see more navigate to the our work page."
-      :width="120"
+      desc="Here are a few examples of our work, if you wish to see more click here"
+      :width="150"
     />
     <Carousel :items-to-show="isMobile ? 1 : 3" wrap-around>
       <Slide v-for="project in homeProjects" :key="project">
