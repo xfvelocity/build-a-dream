@@ -5,7 +5,7 @@
     @click:outside="toggleModal"
   >
     <v-card>
-      <div class="pa-6">
+      <div :class="isMobile ? 'pa-6' : 'pa-12'">
         <div class="case-study-modal-section">
           <div class="case-study-modal-section-main">
             <img
@@ -45,23 +45,20 @@
           </div>
         </div>
 
-        <div class="mt-2">
-          <p class="text-primary my-0 text-12">
-            {{ item.subheading }}
-          </p>
-          <h2 class="mb-1">{{ item.title }}</h2>
+        <div class="my-6 mb-12">
+          <h2>{{ item.title }}</h2>
           <p class="my-0 text-14">{{ item.desc }}</p>
         </div>
-      </div>
 
-      <v-btn
-        class="mb-4 mx-6 text-white"
-        color="primary"
-        size="small"
-        @click="toggleModal"
-      >
-        Close
-      </v-btn>
+        <v-btn
+          class="text-white w-100"
+          color="primary"
+          :size="isMobile ? 'small' : 'default'"
+          @click="toggleModal"
+        >
+          Close
+        </v-btn>
+      </div>
     </v-card>
   </v-dialog>
 </template>
@@ -69,6 +66,7 @@
 <script lang="ts">
 import { PropType } from "vue";
 import { Project } from "@/assets/types/app.types";
+import { isMobile } from "@/utility/width";
 
 export default defineComponent({
   name: "ProjectModal",
@@ -99,6 +97,7 @@ export default defineComponent({
     );
 
     return {
+      isMobile,
       selectedImage,
       toggleModal,
     };
@@ -137,7 +136,11 @@ export default defineComponent({
 .v-overlay {
   &__content {
     width: 95% !important;
-    max-width: 800px !important;
+    max-width: 600px !important;
+
+    @media (min-width: 1024px) {
+      max-width: 700px !important;
+    }
   }
 }
 
