@@ -31,7 +31,7 @@ import { isMobile } from "@/utility/width";
 import { Project } from "@/assets/types/app.types";
 import { homeProjects } from "@/assets/data/project.data";
 
-import SectionTitle from "../../shared/components/SectionTitle.vue";
+import SectionTitle from "@/components/basic/title/SectionTitle.vue";
 import ProjectModal from "@/components/basic/project-modal/ProjectModal.vue";
 
 export default defineComponent({

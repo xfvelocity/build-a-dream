@@ -10,8 +10,8 @@
 </template>
 
 <script lang="ts">
-import Header from "@/components/shared/components/Header.vue";
-import ContactForm from "@/components/shared/components/contact-form/ContactForm.vue";
+import Header from "@/components/basic/header/Header.vue";
+import ContactForm from "@/components/basic/contact-form/ContactForm.vue";
 import ContactInfo from "@/components/contact/ContactInfo.vue";
 
 export default defineComponent({

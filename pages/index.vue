@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import Header from "../components/shared/components/Header.vue";
+import Header from "../components/basic/header/Header.vue";
 import Services from "../components/home/services/Services.vue";
 import Projects from "../components/home/projects/Projects.vue";
 import Reviews from "../components/home/reviews/Reviews.vue";

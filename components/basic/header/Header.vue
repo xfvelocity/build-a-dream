@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import FuzzyImage from "./fuzzy-image/FuzzyImage.vue";
+import FuzzyImage from "../fuzzy-image/FuzzyImage.vue";
 
 export default defineComponent({
   name: "Header",

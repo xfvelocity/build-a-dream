@@ -10,8 +10,8 @@
 </template>
 
 <script lang="ts">
-import SectionTitle from "../../shared/components/SectionTitle.vue";
-import ContactForm from "../../shared/components/contact-form/ContactForm.vue";
+import SectionTitle from "@/components/basic/title/SectionTitle.vue";
+import ContactForm from "@/components/basic/contact-form/ContactForm.vue";
 
 export default defineComponent({
   name: "Contact",

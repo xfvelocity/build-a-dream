@@ -43,7 +43,8 @@
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 import { reviewsListData } from "./data/reviews.data";
 import { Review } from "./types/reviews.types";
-import FuzzyImage from "~~/components/shared/components/fuzzy-image/FuzzyImage.vue";
+
+import FuzzyImage from "@/components/basic/fuzzy-image/FuzzyImage.vue";
 
 export default defineComponent({
   name: "Reviews",

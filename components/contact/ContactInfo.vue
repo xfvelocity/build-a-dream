@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts">
-import SectionTitle from "@/components/shared/components/SectionTitle.vue";
+import SectionTitle from "@/components/basic/title/SectionTitle.vue";
 
 export default defineComponent({
   name: "ContactInfo",

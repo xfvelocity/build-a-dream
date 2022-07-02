@@ -34,6 +34,7 @@ export default defineComponent({
   setup(props) {
     const imgContainer = ref<HTMLDivElement>();
     const image = ref<HTMLImageElement>();
+
     const minImgBackground = computed<string>(() => `url(${props.minImg})`);
 
     const setNewImage = (imageUrl: string | null): void => {
