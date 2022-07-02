@@ -4,10 +4,7 @@
       <div class="d-flex align-center max-width w-100 px-3">
         <v-spacer />
         <div class="d-flex">
-          <span
-            class="text-white d-flex align-center mr-4"
-            style="cursor: default"
-          >
+          <span class="text-white d-flex align-center mr-4 cursor-default">
             <v-icon class="mr-2" color="white" aria-label="mobile phone" small>
               mdi-phone
             </v-icon>
@@ -15,8 +12,7 @@
           </span>
 
           <span
-            style="cursor: pointer"
-            class="d-flex align-center text-white"
+            class="d-flex align-center text-white cursor-pointer"
             @click="sendEmail"
           >
             <v-icon class="mr-2" color="white" small aria-label="email">
