@@ -22,7 +22,8 @@
 
         <div v-else class="d-flex">
           <span
-            class="internal-link mr-3"
+            class="link mr-3"
+            :class="{ 'text-primary': link.active }"
             v-for="(link, i) in navLinks"
             :key="i"
             @click="$router.push(link.link)"
@@ -41,6 +42,7 @@
 import { NavLinks } from "./data/nav.types";
 import { navLinksData } from "./data/navLinks";
 import { isMobile } from "@/utility/width";
+
 import MobileNavBar from "./MobileNavBar.vue";
 
 export default defineComponent({
@@ -49,8 +51,17 @@ export default defineComponent({
     MobileNavBar,
   },
   setup() {
-    const navLinks: NavLinks[] = navLinksData;
+    const route = useRoute();
+
+    const navLinks = ref<NavLinks[]>(navLinksData);
     const isNavDrawerOpen = ref<boolean>(false);
+
+    const setActiveRoute = (path: string): void => {
+      navLinks.value = JSON.parse(JSON.stringify([...navLinksData]));
+      navLinks.value.find((link) => link.link === path).active = true;
+    };
+
+    watch(route, () => setActiveRoute(route.path), { immediate: true });
 
     return {
       isMobile,
