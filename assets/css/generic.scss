@@ -81,6 +81,12 @@ h3 {
   }
 }
 
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .internal-link {
   color: black !important;
   text-decoration: none;

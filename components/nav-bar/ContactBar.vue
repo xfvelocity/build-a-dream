@@ -59,3 +59,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+#contact-bar {
+  z-index: 999;
+}
+</style>

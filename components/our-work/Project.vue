@@ -1,10 +1,10 @@
 <template>
   <div
-    class="max-width my-10 d-flex justify-center flex-wrap"
+    class="max-width my-6 d-flex justify-center flex-wrap"
     id="case-study-view"
   >
     <div
-      class="case-study my-2 cursor-pointer pa-4"
+      class="case-study my-4 cursor-pointer pa-4"
       v-for="(project, i) in projectsList"
       :item="project"
       :key="`case-study-${i}`"
@@ -13,10 +13,11 @@
       <img :src="`./img/${project.img}.jpg`" alt="Project IMG" />
 
       <div class="mt-2">
-        <p class="my-0" style="font-size: 14px">
+        <p class="my-0 text-primary" style="font-size: 14px">
           {{ project.subheading }}
         </p>
         <h2>{{ project.title }}</h2>
+        <p class="text-ellipsis">{{ project.desc }}</p>
       </div>
     </div>
 
@@ -70,7 +71,7 @@ export default defineComponent({
   padding-bottom: 60px;
 
   .case-study {
-    width: 80%;
+    width: 90%;
     margin: 10px auto;
     max-width: 360px;
 
@@ -81,7 +82,7 @@ export default defineComponent({
 
     &:hover {
       transform: scale(1.02);
-      box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.05);
     }
 
     @media (min-width: 768px) {
