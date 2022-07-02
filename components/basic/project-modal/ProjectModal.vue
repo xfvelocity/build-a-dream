@@ -1,27 +1,27 @@
 <template>
   <v-dialog
-    class="case-study-modal"
+    class="project-modal"
     :modelValue="modelValue"
     @click:outside="toggleModal"
   >
     <v-card>
       <div :class="isMobile ? 'pa-6' : 'pa-12'">
-        <div class="case-study-modal-section">
-          <div class="case-study-modal-section-main">
+        <div class="project-modal-section">
+          <div class="project-modal-section-main">
             <img
-              class="case-study-modal-img w-100 h-100"
+              class="project-modal-img w-100 h-100"
               :src="`./img/${selectedImage}.jpg`"
             />
           </div>
 
-          <div class="case-study-modal-section-side">
+          <div class="project-modal-section-side">
             <template v-for="i in 5">
               <div
                 v-if="item.detailedImgList[i - 1]"
-                class="case-study-modal-img"
+                class="project-modal-img"
                 :class="[
                   selectedImage === item.detailedImgList[i - 1]
-                    ? 'case-study-modal-img-active'
+                    ? 'project-modal-img-active'
                     : 'cursor-pointer',
                   {
                     'mr-1': i !== 5,
@@ -35,7 +35,7 @@
                 />
               </div>
               <div
-                class="case-study-modal-section-no-img"
+                class="project-modal-section-no-img"
                 :class="{
                   'mr-1': i !== 5,
                 }"
@@ -106,7 +106,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.case-study-modal {
+.project-modal {
   &-img {
     border: 1px solid #828282;
 
@@ -121,7 +121,7 @@ export default defineComponent({
       width: 100%;
       display: flex;
 
-      .case-study-modal-img {
+      .project-modal-img {
         width: 20%;
       }
     }
