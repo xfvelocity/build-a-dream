@@ -1,25 +1,27 @@
 <template>
-  <Header title="Our Work" height="40vh" />
-  <div class="our-work max-width my-6 d-flex justify-center flex-wrap">
-    <div
-      class="our-work-project my-4 cursor-pointer pa-4"
-      v-for="(project, i) in projectsList"
-      :item="project"
-      :key="`project-${i}`"
-      @click="toggleModal(project)"
-    >
-      <img :src="`./img/${project.img}.jpg`" alt="" />
+  <div>
+    <Header title="Our Work" height="40vh" />
+    <div class="our-work max-width my-6 d-flex justify-center flex-wrap">
+      <div
+        class="our-work-project my-4 cursor-pointer pa-4"
+        v-for="(project, i) in projectsList"
+        :item="project"
+        :key="`project-${i}`"
+        @click="toggleModal(project)"
+      >
+        <img :src="`./img/${project.img}.jpg`" alt="" />
 
-      <div class="mt-2">
-        <p class="my-0 text-primary" style="font-size: 14px">
-          {{ project.subheading }}
-        </p>
-        <h2>{{ project.title }}</h2>
-        <p class="text-ellipsis">{{ project.desc }}</p>
+        <div class="mt-2">
+          <p class="my-0 text-primary" style="font-size: 14px">
+            {{ project.subheading }}
+          </p>
+          <h2>{{ project.title }}</h2>
+          <p class="text-ellipsis">{{ project.desc }}</p>
+        </div>
       </div>
-    </div>
 
-    <project-modal v-model="isModalOpen" :item="selectedProject" />
+      <project-modal v-model="isModalOpen" :item="selectedProject" />
+    </div>
   </div>
 </template>
 

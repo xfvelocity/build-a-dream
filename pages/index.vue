@@ -1,14 +1,16 @@
 <template>
-  <Header
-    title="Build A-Dream"
-    titleTwo="Landscape Gardening"
-    subHeading="Dream gardens that don't cost the earth"
-  />
-  <Services />
-  <About />
-  <Projects />
-  <Reviews />
-  <Contact />
+  <div>
+    <Header
+      title="Build A-Dream"
+      titleTwo="Landscape Gardening"
+      subHeading="Dream gardens that don't cost the earth"
+    />
+    <Services />
+    <About />
+    <Projects />
+    <Reviews />
+    <Contact />
+  </div>
 </template>
 
 <script lang="ts">
