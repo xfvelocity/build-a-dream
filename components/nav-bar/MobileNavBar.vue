@@ -20,7 +20,7 @@
     </template>
 
     <template v-slot:append>
-      <div class="d-flex flex-wrap justify-center my-6" id="nav-bar-footer">
+      <div class="d-flex flex-wrap justify-center my-6">
         <!-- Add back in once facebook is re-created -->
         <!-- <div class="mb-4">
           <v-icon
@@ -102,17 +102,15 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-#nav-bar-footer {
-  .disclaimer-text {
-    font-size: 12px;
-    width: 100%;
-    text-align: center;
-    color: #616161;
-    margin: 0;
+.disclaimer-text {
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  color: #616161;
+  margin: 0;
 
-    a {
-      color: #616161;
-    }
+  a {
+    color: #616161;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center mb-10" id="section-title">
+  <div class="section-title text-center mb-10">
     <h2
       :style="`width: ${width}px; ${
         underline ? 'border-bottom: 1px solid #086500;' : ''
@@ -36,7 +36,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-#section-title {
+.section-title {
   h2 {
     margin: 10px auto;
   }

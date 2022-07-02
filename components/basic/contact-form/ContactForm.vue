@@ -1,9 +1,5 @@
 <template>
-  <Form
-    id="contact-form"
-    v-slot="{ validate }"
-    :validation-schema="validationSchema"
-  >
+  <Form v-slot="{ validate }" :validation-schema="validationSchema">
     <Field v-model="contactInfo.name" name="name" v-slot="{ field, errors }">
       <v-text-field
         v-bind="field"

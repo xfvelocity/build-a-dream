@@ -1,5 +1,5 @@
 <template>
-  <v-card :height="35" tile id="contact-bar">
+  <v-card :height="35" tile class="contact-bar">
     <v-app-bar :height="35" color="grey-darken-4">
       <div class="d-flex align-center max-width w-100 px-3">
         <v-spacer />
@@ -57,7 +57,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-#contact-bar {
+.contact-bar {
   z-index: 999;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div id="contact">
+  <div class="contact">
     <SectionTitle
       title="Contact Us"
       desc="Looking for a free quote or simply got a question to ask? Then get in touch."
@@ -23,7 +23,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-#contact {
+.contact {
   width: 90%;
   padding-top: 40px;
   padding-bottom: 160px;

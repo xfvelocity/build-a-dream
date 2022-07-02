@@ -1,5 +1,5 @@
 <template>
-  <footer id="footer" class="py-4">
+  <footer class="footer py-4">
     <div class="d-flex footer-content max-width">
       <p class="my-0">
         Site created by
@@ -36,7 +36,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-#footer {
+.footer {
   box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.03);
   border-top: 1px solid #e5e5e5;
   font-size: 14px;
@@ -45,12 +45,12 @@ export default defineComponent({
     color: black;
   }
 
-  .footer-content {
+  &-content {
     width: 90%;
   }
 
   @media (min-width: 768px) {
-    .footer-content {
+    &-content {
       display: flex;
       justify-content: space-between;
     }

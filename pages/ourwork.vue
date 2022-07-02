@@ -60,16 +60,6 @@ export default defineComponent({
       isModalOpen.value = true;
     };
 
-    const preloadImages = (): void => {
-      projectsList.forEach((item) =>
-        item.detailedImgList.forEach(
-          (url) => (new Image().src = `./img/${url}.jpg`)
-        )
-      );
-    };
-
-    onBeforeMount(preloadImages);
-
     return {
       projectsList,
       selectedProject,

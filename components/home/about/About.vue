@@ -1,5 +1,5 @@
 <template>
-  <div id="about">
+  <div class="about">
     <div class="content mb-6">
       <h2 class="mb-4">About</h2>
       <p class="my-0">
@@ -31,7 +31,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-#about {
+.about {
   color: white;
   font-size: 18px;
   padding: 90px 0;
