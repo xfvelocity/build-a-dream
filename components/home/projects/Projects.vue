@@ -5,13 +5,17 @@
       desc="Here are a few examples of our work, if you wish to see more click here"
       :width="150"
     />
-    <Carousel :items-to-show="isMobile ? 1 : 3" wrap-around>
-      <Slide v-for="project in homeProjects" :key="project">
+    <Carousel
+      ref="projectsCarousel"
+      :items-to-show="isMobile ? 1 : 3"
+      wrap-around
+    >
+      <Slide v-for="(project, i) in homeProjects" :key="project">
         <img
-          class="cursor-pointer"
+          :class="{ 'cursor-pointer': i === currentSlide }"
           :src="`./img/${project.img}.jpg`"
           alt="Landscaping Project Example"
-          @click="openModal(project)"
+          @click="i === currentSlide ? openModal(project) : ''"
         />
       </Slide>
 
@@ -47,17 +51,24 @@ export default defineComponent({
   setup() {
     const isModalOpen = ref<boolean>(false);
     const selectedProject = ref<Project>();
+    const projectsCarousel = ref();
 
     const openModal = (project: Project): void => {
       selectedProject.value = project;
       isModalOpen.value = true;
     };
 
+    const currentSlide = computed<number>(
+      () => projectsCarousel.value?.data?.currentSlide?.value
+    );
+
     return {
       isModalOpen,
       isMobile,
       selectedProject,
       homeProjects,
+      projectsCarousel,
+      currentSlide,
       openModal,
     };
   },

@@ -55,8 +55,7 @@
     </Field>
 
     <v-btn
-      class="mt-2 py-6"
-      style="width: 100%"
+      class="mt-2 py-6 w-100"
       color="primary"
       @click="submitMessage(validate)"
     >

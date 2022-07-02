@@ -21,11 +21,7 @@
       </div>
     </div>
 
-    <v-btn
-      class="mt-6 px-14 py-5"
-      color="primary"
-      @click="$router.push('ourwork')"
-    >
+    <v-btn class="mt-6 px-14" color="primary" @click="$router.push('ourwork')">
       Our Work
     </v-btn>
   </div>
