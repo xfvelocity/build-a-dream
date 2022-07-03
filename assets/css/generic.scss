@@ -32,6 +32,12 @@ h3 {
     padding-top: 3px;
     align-items: center;
     margin-bottom: 3px;
+    color: red;
+    padding-inline-start: 5px !important;
+
+    .v-messages {
+      padding-inline-start: 5px !important;
+    }
   }
 }
 

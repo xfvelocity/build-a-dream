@@ -22,8 +22,8 @@
 
         <div v-else class="d-flex">
           <span
-            class="link mr-3"
-            :class="{ 'text-primary': link.active }"
+            class="mr-3"
+            :class="link.active ? 'text-primary' : 'link'"
             v-for="(link, i) in navLinks"
             :key="i"
             @click="$router.push(link.link)"

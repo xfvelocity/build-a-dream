@@ -12,12 +12,10 @@
           </span>
 
           <span
-            class="d-flex align-center text-white cursor-pointer"
+            class="d-flex align-center text-white cursor-pointer link"
             @click="sendEmail"
           >
-            <v-icon class="mr-2" color="white" small aria-label="email">
-              mdi-email
-            </v-icon>
+            <v-icon class="mr-2" small aria-label="email"> mdi-email </v-icon>
             contact@buildadream.co.uk
           </span>
 

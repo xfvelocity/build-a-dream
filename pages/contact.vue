@@ -14,18 +14,8 @@
             07414 095408
           </span>
 
-          <span
-            class="d-flex align-center mb-4 text-primary-lighter cursor-pointer"
-            @click="sendEmail"
-          >
-            <v-icon
-              class="mr-3"
-              color="primary-lighter"
-              small
-              aria-label="email"
-            >
-              mdi-email
-            </v-icon>
+          <span class="d-flex align-center mb-4 link" @click="sendEmail">
+            <v-icon class="mr-3" small aria-label="email"> mdi-email </v-icon>
             contact@buildadream.co.uk
           </span>
 
