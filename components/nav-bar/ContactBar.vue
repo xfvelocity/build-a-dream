@@ -1,7 +1,7 @@
 <template>
   <v-card :height="35" tile class="contact-bar">
     <v-app-bar :height="35" color="grey-darken-4">
-      <div class="d-flex align-center max-width w-100 px-3">
+      <div class="d-flex align-center max-width w-100 pr-7">
         <v-spacer />
         <div class="d-flex">
           <span class="text-white d-flex align-center mr-4 cursor-default">
