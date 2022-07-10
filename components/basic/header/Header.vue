@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" style="margin-top: 70px;">
     <v-row
       class="justify-space-around align-center ma-0 pa-0"
       :style="`height: ${height}`"
