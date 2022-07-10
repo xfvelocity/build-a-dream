@@ -20,6 +20,6 @@
     "vee-validate": "^4.5.8",
     "vue-gtag": "^2.0.1",
     "vue3-carousel": "^0.1.40",
-    "vuetify": "^3.0.0-beta.4"
+    "vuetify": "^3.0.0-beta.5"
   }
 }
