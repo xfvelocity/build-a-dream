@@ -1,5 +1,6 @@
 <template>
   <v-dialog
+    v-if="modelValue"
     class="case-study-modal"
     :modelValue="modelValue"
     @click:outside="toggleModal"
