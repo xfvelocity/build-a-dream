@@ -1,7 +1,7 @@
 <template>
   <Form
     id="contact-form"
-    v-slot="{ validate }"
+    v-slot="{ validate, handleReset }"
     :validation-schema="validationSchema"
   >
     <Field v-model="contactInfo.name" name="name" v-slot="{ field, errors }">
@@ -45,17 +45,27 @@
       class="mt-2"
       style="width: 100%"
       color="primary"
-      @click="submitMessage(validate)"
+      :loading="loading"
+      @click="submitMessage(validate, handleReset)"
     >
       Submit
     </v-btn>
+
+    <v-snackbar
+      v-if="snackbar.value"
+      content-class="text-center text-white fw-600"
+      v-model="snackbar.value"
+      :color="snackbar.color"
+    >
+      {{ snackbar.message }}
+    </v-snackbar>
   </Form>
 </template>
 
 <script lang="ts">
 import { validationSchema } from "@/utility/validation";
 import { Form, Field, ValidationResult } from "vee-validate";
-import { ContactInfo } from "./types/contactForm.data";
+import { ContactInfo, Snackbar } from "./types/contactForm.data";
 import axios from "axios";
 
 export default defineComponent({
@@ -65,21 +75,59 @@ export default defineComponent({
     Field,
   },
   setup() {
+    const loading = ref<boolean>(false);
+    const snackbar = ref<Snackbar>({
+      message: "",
+      value: false,
+      color: "",
+    });
     const contactInfo = ref<ContactInfo>({
       name: "",
       phoneNumber: "",
       message: "",
     });
 
-    const submitMessage = async (validateFn: Function): Promise<void> => {
+    const submitMessage = async (
+      validateFn: Function,
+      handleReset: Function
+    ): Promise<void> => {
       const valid: ValidationResult = await validateFn();
 
       if (valid.valid) {
-        axios.post("https://usebasin.com/f/5d041ec64531", contactInfo.value);
+        loading.value = true;
+
+        axios
+          .post("https://usebasin.com/f/5d041ec64531", contactInfo.value)
+          .then(() => {
+            snackbar.value = {
+              message: "Your email has been sent, we will be in touch shortly",
+              value: true,
+              color: "primary",
+            };
+            contactInfo.value = {
+              name: "",
+              phoneNumber: "",
+              message: "",
+            };
+
+            handleReset();
+          })
+          .catch(() => {
+            snackbar.value = {
+              message: "An error occured, please try again",
+              value: true,
+              color: "red",
+            };
+          })
+          .finally(() => {
+            loading.value = false;
+          });
       }
     };
 
     return {
+      loading,
+      snackbar,
       validationSchema,
       contactInfo,
       submitMessage,

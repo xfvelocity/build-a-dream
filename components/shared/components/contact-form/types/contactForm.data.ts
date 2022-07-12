@@ -3,3 +3,9 @@ export type ContactInfo = {
   phoneNumber: string;
   message: string;
 };
+
+export type Snackbar = {
+  message: string;
+  value: boolean;
+  color: string;
+};
