@@ -1,5 +1,8 @@
 <template>
-  <div class="header">
+  <div
+    class="header"
+    :style="isMobile ? 'margin-top: 70px' : 'margin-top: 105px'"
+  >
     <v-row
       class="justify-space-around align-center ma-0 pa-0"
       :style="`height: ${height}`"
@@ -21,6 +24,7 @@
 </template>
 
 <script lang="ts">
+import { isMobile } from "@/utility/width";
 import FuzzyImage from "./fuzzy-image/FuzzyImage.vue";
 
 export default defineComponent({
@@ -45,6 +49,11 @@ export default defineComponent({
       type: String,
       default: "65vh",
     },
+  },
+  setup() {
+    return {
+      isMobile,
+    };
   },
 });
 </script>

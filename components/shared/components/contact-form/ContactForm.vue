@@ -29,19 +29,6 @@
     </Field>
 
     <Field
-      v-model="contactInfo.emailAddress"
-      name="email"
-      v-slot="{ field, errors }"
-    >
-      <v-text-field
-        v-bind="field"
-        label="Email Address"
-        placeholder="johnsmith@gmail.com"
-        :error-messages="errors"
-      />
-    </Field>
-
-    <Field
       v-model="contactInfo.message"
       name="message"
       v-slot="{ field, errors }"
@@ -55,7 +42,7 @@
     </Field>
 
     <v-btn
-      class="mt-2 py-6"
+      class="mt-2"
       style="width: 100%"
       color="primary"
       @click="submitMessage(validate)"
@@ -81,7 +68,6 @@ export default defineComponent({
     const contactInfo = ref<ContactInfo>({
       name: "",
       phoneNumber: "",
-      emailAddress: "",
       message: "",
     });
 
@@ -89,7 +75,7 @@ export default defineComponent({
       const valid: ValidationResult = await validateFn();
 
       if (valid.valid) {
-        axios.post("https://usebasin.com/f/5d041ec64531", contactInfo);
+        axios.post("https://usebasin.com/f/5d041ec64531", contactInfo.value);
       }
     };
 
