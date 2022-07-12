@@ -2,13 +2,15 @@
   <div class="projects max-width">
     <SectionTitle
       title="Our work"
-      desc="Here are a few examples of our work, if you wish to see more click here"
+      desc="Here is a just a few examples of our work, if you wish to see more navigate to the our work page."
       :width="150"
     />
     <Carousel
       ref="projectsCarousel"
       :items-to-show="isMobile ? 1 : 3"
       wrap-around
+      :mouse-drag="false"
+      :touch-drag="false"
     >
       <Slide v-for="(project, i) in homeProjects" :key="project">
         <img

@@ -6,7 +6,7 @@
     @click:outside="toggleModal"
   >
     <v-card>
-      <div :class="isMobile ? 'pa-6' : 'pa-12'">
+      <div :class="isMobile ? 'pa-6' : 'pa-8'">
         <div class="project-modal-section">
           <div class="project-modal-section-main">
             <img
@@ -46,7 +46,7 @@
           </div>
         </div>
 
-        <div class="my-6 mb-12">
+        <div class="my-6">
           <h2>{{ item.title }}</h2>
           <p class="my-0 text-14">{{ item.desc }}</p>
         </div>
