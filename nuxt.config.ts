@@ -34,7 +34,7 @@ export default defineNuxtConfig({
     ],
   },
   loading: { color: "#2FA625" },
-  css: ["@/assets/css/main.scss", "vuetify"],
+  css: ["@/assets/scss/main.scss", "vuetify"],
   build: {
     transpile: ["vuetify"],
   },
