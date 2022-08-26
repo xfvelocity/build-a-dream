@@ -31,11 +31,11 @@
         </carousel>
       </div>
     </div>
-    <FuzzyImage
+    <!-- <FuzzyImage
       img="/img/grass-background.png"
       min-img="/img/grass-background-min.png"
       background
-    />
+    /> -->
   </div>
 </template>
 
@@ -44,7 +44,7 @@ import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 import { reviewsListData } from "./data/reviews.data";
 import { Review } from "./types/reviews.types";
 
-import FuzzyImage from "@/components/basic/fuzzy-image/FuzzyImage.vue";
+// import FuzzyImage from "@/components/basic/fuzzy-image/FuzzyImage.vue";
 
 export default defineComponent({
   name: "Reviews",
@@ -53,7 +53,7 @@ export default defineComponent({
     Slide,
     Pagination,
     Navigation,
-    FuzzyImage,
+    // FuzzyImage,
   },
   setup() {
     const reviewsList: Review[] = reviewsListData;
@@ -74,6 +74,10 @@ export default defineComponent({
   display: flex;
   align-items: center;
   font-size: 20px;
+
+  background: url("/img/grass-background.png") no-repeat;
+  background-size: cover;
+  background-position: center;
 
   &-content {
     width: 90%;

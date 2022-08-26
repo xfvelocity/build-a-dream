@@ -15,7 +15,7 @@
       <Slide v-for="(project, i) in homeProjects" :key="project">
         <img
           :class="{ 'cursor-pointer': i === currentSlide }"
-          :src="`./img/${project.img}.jpg`"
+          :src="`img/${project.img}.jpg`"
           alt="Landscaping Project Example"
           @dragstart="() => false"
           @click="i === currentSlide ? openModal(project) : ''"

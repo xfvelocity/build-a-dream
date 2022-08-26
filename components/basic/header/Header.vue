@@ -1,5 +1,5 @@
 <template>
-  <div class="header" style="margin-top: 70px;">
+  <div class="header" style="margin-top: 70px">
     <v-row
       class="justify-space-around align-center ma-0 pa-0"
       :style="`height: ${height}`"
@@ -12,21 +12,22 @@
         </p>
       </v-col>
     </v-row>
-    <FuzzyImage
+
+    <!-- <FuzzyImage
       img="/img/background.jpg"
       min-img="/img/background-min.jpg"
       background
-    />
+    /> -->
   </div>
 </template>
 
 <script lang="ts">
-import FuzzyImage from "../fuzzy-image/FuzzyImage.vue";
+// import FuzzyImage from "../fuzzy-image/FuzzyImage.vue";
 
 export default defineComponent({
   name: "Header",
   components: {
-    FuzzyImage,
+    // FuzzyImage,
   },
   props: {
     title: {
@@ -54,6 +55,9 @@ export default defineComponent({
   position: relative;
   text-shadow: 2px 2px 4px #111;
   color: white;
+  background: url("/img/background.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
 
   h1 {
     font-size: 40px;

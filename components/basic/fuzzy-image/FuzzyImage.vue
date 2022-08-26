@@ -35,11 +35,16 @@ export default defineComponent({
     const imgContainer = ref<HTMLDivElement>();
     const image = ref<HTMLImageElement>();
 
-    const minImgBackground = computed<string>(() => `url(${props.minImg})`);
+    const minImgBackground = computed<string>(
+      () => new URL(props.minImg, import.meta.url).href
+    );
 
     const setNewImage = (imageUrl: string | null): void => {
       if (imgContainer.value && imageUrl) {
-        imgContainer.value.style.backgroundImage = `url(${imageUrl})`;
+        imgContainer.value.style.backgroundImage = new URL(
+          imageUrl,
+          import.meta.url
+        ).href;
         imgContainer.value.classList.add("fuzzy-image-loaded");
       }
     };
