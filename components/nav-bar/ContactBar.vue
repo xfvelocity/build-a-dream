@@ -1,6 +1,6 @@
 <template>
   <v-card :height="35" tile class="contact-bar">
-    <v-app-bar :height="35" color="grey-darken-4">
+    <v-app-bar class="yd-w-100" :height="35" color="grey-darken-4">
       <div class="d-flex align-center max-width w-100 pr-7">
         <v-spacer />
         <div class="d-flex">
@@ -18,16 +18,6 @@
             <v-icon class="mr-2" small aria-label="email"> mdi-email </v-icon>
             contact@buildadream.co.uk
           </span>
-
-          <!-- <v-icon
-            color="white"
-            class="ml-4"
-            @click="goToSocialLink"
-            small
-            aria-label="facebook"
-          >
-            mdi-facebook
-          </v-icon> -->
         </div>
       </div>
     </v-app-bar>

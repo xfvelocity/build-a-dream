@@ -1,6 +1,6 @@
 import { ref } from "vue";
 
-const isMobile = ref<boolean>(false);
+const isMobile = ref<boolean>(true);
 const isTablet = ref<boolean>(false);
 const isDesktop = ref<boolean>(false);
 const windowWidth = ref<number>(0);

@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar">
-    <v-app-bar :height="70" app>
+    <v-app-bar class="w-100" :height="70" app>
       <div class="d-flex align-center max-width w-100 px-4">
         <img
           class="cursor-pointer"
