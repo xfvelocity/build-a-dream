@@ -52,7 +52,6 @@ export default defineComponent({
 
   p {
     font-size: 16px;
-    letter-spacing: 1.5px;
   }
 
   @media (min-width: 768px) {

@@ -7,11 +7,19 @@
     >
       {{ title }}
     </h2>
-    <p class="my-0">{{ desc }}</p>
+    <p class="my-0">
+      {{ desc }}
+      <nuxt-link v-if="link" class="text-primary" :to="link.to">{{
+        link.name
+      }}</nuxt-link>
+    </p>
   </div>
 </template>
 
 <script lang="ts">
+import { PropType } from "vue";
+import { TitleLink } from "./types/sectionTitle.types";
+
 export default defineComponent({
   name: "SectionTitle",
   props: {
@@ -30,6 +38,9 @@ export default defineComponent({
     underline: {
       type: Boolean,
       default: false,
+    },
+    link: {
+      type: Object as PropType<TitleLink>,
     },
   },
 });

@@ -1,41 +1,39 @@
 <template>
-  <nav class="navbar">
-    <v-app-bar class="w-100" :height="70" app>
-      <div class="d-flex align-center max-width w-100 px-4">
-        <img
-          class="cursor-pointer"
-          src="/img/build-a-dream-logo.png"
-          alt="Build A-Dream Logo"
-          @click="$router.push('/')"
-        />
+  <v-app-bar class="w-100 navbar" :height="70" app>
+    <div class="d-flex align-center max-width w-100 px-4">
+      <img
+        class="cursor-pointer"
+        src="/img/build-a-dream-logo.png"
+        alt="Build A-Dream Logo"
+        @click="$router.push('/')"
+      />
 
-        <v-spacer />
+      <v-spacer />
 
-        <div
-          v-if="isMobile"
-          class="navbar-mobile-btn"
-          :class="isNavDrawerOpen ? 'navbar-mobile-btn__open' : ''"
-          @click="isNavDrawerOpen = !isNavDrawerOpen"
-        >
-          <span v-for="i in 4" :key="i" />
-        </div>
-
-        <div v-else class="d-flex">
-          <span
-            class="mr-3"
-            :class="link.active ? 'text-primary' : 'link'"
-            v-for="(link, i) in navLinks"
-            :key="i"
-            @click="$router.push(link.link)"
-          >
-            {{ link.name }}
-          </span>
-        </div>
+      <div
+        v-if="isMobile"
+        class="navbar-mobile-btn"
+        :class="isNavDrawerOpen ? 'navbar-mobile-btn__open' : ''"
+        @click="isNavDrawerOpen = !isNavDrawerOpen"
+      >
+        <span v-for="i in 4" :key="i" />
       </div>
-    </v-app-bar>
 
-    <mobile-nav-bar v-if="isMobile" v-model="isNavDrawerOpen" />
-  </nav>
+      <div v-else class="d-flex">
+        <span
+          class="mr-3"
+          :class="link.active ? 'text-primary' : 'link'"
+          v-for="(link, i) in navLinks"
+          :key="i"
+          @click="$router.push(link.link)"
+        >
+          {{ link.name }}
+        </span>
+      </div>
+    </div>
+  </v-app-bar>
+
+  <mobile-nav-bar v-if="isMobile" v-model="isNavDrawerOpen" />
 </template>
 
 <script lang="ts">

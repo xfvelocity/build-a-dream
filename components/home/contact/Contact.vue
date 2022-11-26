@@ -2,7 +2,7 @@
   <div class="contact">
     <SectionTitle
       title="Contact Us"
-      desc="Looking for a free quote or simply got a question to ask? Then get in touch."
+      desc="Looking for a free quote or simply got a question to ask? Get in touch."
       :width="130"
     />
     <ContactForm />

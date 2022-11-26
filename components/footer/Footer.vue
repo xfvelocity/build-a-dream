@@ -13,7 +13,7 @@
         </a>
       </p>
 
-      <v-spacer />
+      <v-spacer v-if="!isMobile" />
 
       <p class="my-0">
         &copy; {{ currentYear }} Build A-Dream Landscape Gardeners
@@ -23,6 +23,8 @@
 </template>
 
 <script lang="ts">
+import { isMobile } from "@/utility/width";
+
 export default defineComponent({
   name: "Footer",
   setup() {
@@ -30,6 +32,7 @@ export default defineComponent({
 
     return {
       currentYear,
+      isMobile,
     };
   },
 });
@@ -47,12 +50,21 @@ export default defineComponent({
 
   &-content {
     width: 90%;
+    flex-wrap: wrap;
+    text-align: center;
+
+    p {
+      width: 100%;
+    }
   }
 
   @media (min-width: 768px) {
     &-content {
-      display: flex;
       justify-content: space-between;
+
+      p {
+        width: auto;
+      }
     }
   }
 }

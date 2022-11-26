@@ -2,10 +2,21 @@
   <v-dialog
     v-if="modelValue"
     class="project-modal"
+    :fullscreen="isMobile"
     :modelValue="modelValue"
     @click:outside="toggleModal"
   >
     <v-card>
+      <v-card
+        class="bg-primary d-flex align-center py-4 rounded-0"
+        :class="isMobile ? 'px-6' : 'px-8 rounded-t'"
+      >
+        <h3>{{ item.title }}</h3>
+        <v-spacer />
+        <v-icon class="cursor-pointer pa-2" @click="toggleModal">
+          mdi-close
+        </v-icon>
+      </v-card>
       <div :class="isMobile ? 'pa-6' : 'pa-8'">
         <div class="project-modal-section">
           <div class="project-modal-section-main">
@@ -46,19 +57,7 @@
           </div>
         </div>
 
-        <div class="my-6">
-          <h2>{{ item.title }}</h2>
-          <p class="my-0 text-14">{{ item.desc }}</p>
-        </div>
-
-        <v-btn
-          class="text-white w-100"
-          color="primary"
-          :size="isMobile ? 'small' : 'default'"
-          @click="toggleModal"
-        >
-          Close
-        </v-btn>
+        <p class="my-3 text-18">{{ item.desc }}</p>
       </div>
     </v-card>
   </v-dialog>
@@ -129,15 +128,17 @@ export default defineComponent({
 
     &-no-img {
       width: 20%;
-      background: rgb(220, 220, 220);
+      background: rgb(230, 230, 230);
     }
   }
 }
 
 .v-overlay {
   &__content {
-    width: 95% !important;
-    max-width: 600px !important;
+    @media (min-width: 768px) {
+      width: 95% !important;
+      max-width: 600px !important;
+    }
 
     @media (min-width: 1024px) {
       max-width: 700px !important;

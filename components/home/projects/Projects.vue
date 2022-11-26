@@ -2,7 +2,11 @@
   <div class="projects max-width">
     <SectionTitle
       title="Our work"
-      desc="Here is a just a few examples of our work, if you wish to see more navigate to the our work page."
+      desc="Here are just a few examples of our work, if you wish to see more click"
+      :link="{
+        name: 'here',
+        to: '/ourwork',
+      }"
       :width="150"
     />
     <Carousel
@@ -12,7 +16,7 @@
       :mouse-drag="false"
       :touch-drag="false"
     >
-      <Slide v-for="(project, i) in homeProjects" :key="project">
+      <Slide v-for="(project, i) in homeProjects" :key="i">
         <img
           :class="{ 'cursor-pointer': i === currentSlide }"
           :src="`img/${project.img}.jpg`"
