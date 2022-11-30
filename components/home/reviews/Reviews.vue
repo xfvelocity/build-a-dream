@@ -2,35 +2,22 @@
   <div class="reviews">
     <div class="revies-content text-center max-width">
       <h2>Reviews</h2>
-      <p style="font-size: 16px" class="my-0">
-        Here's what some of our customers had to say
-      </p>
-      <div class="mt-10 reviews-section">
-        <carousel wrap-around :autoplay="12000">
-          <slide
-            class="cursor-pointer"
-            v-for="(review, i) in reviewsList"
-            :key="i"
-          >
-            <div class="carousel-item">
-              <p class="my-0 mb-4 user-review">
-                {{ review.comment }}
-              </p>
-              <p class="reviewers-name" style="font-weight: 500">
-                {{ review.name }}
-              </p>
-            </div>
-          </slide>
+      <p class="text-16 my-0">Here's what some of our customers had to say</p>
 
-          <template #addons>
-            <pagination
-              class="carousel-actions"
-              style="--vc-pgn-background-color: #fff"
-            />
-          </template>
-        </carousel>
+      <div class="mt-10 reviews-section">
+        <v-carousel :show-arrows="false" hide-delimiter-background>
+          <v-carousel-item v-for="(review, i) in reviewsList" :key="i">
+            <p class="my-0 mb-4 user-review">
+              {{ review.comment }}
+            </p>
+            <p class="reviewers-name" style="font-weight: 500">
+              {{ review.name }}
+            </p>
+          </v-carousel-item>
+        </v-carousel>
       </div>
     </div>
+
     <!-- <FuzzyImage
       img="/img/grass-background.png"
       min-img="/img/grass-background-min.png"
@@ -40,7 +27,6 @@
 </template>
 
 <script lang="ts">
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 import { reviewsListData } from "./data/reviews.data";
 import { Review } from "./types/reviews.types";
 
@@ -48,13 +34,6 @@ import { Review } from "./types/reviews.types";
 
 export default defineComponent({
   name: "Reviews",
-  components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
-    // FuzzyImage,
-  },
   setup() {
     const reviewsList: Review[] = reviewsListData;
 
@@ -91,19 +70,6 @@ export default defineComponent({
     .user-review {
       max-width: 500px;
       margin: 0 auto;
-    }
-
-    .carousel-item {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 0 auto;
-      height: 220px;
-      max-width: 500px;
-
-      .reviews-name {
-        align-self: flex-end;
-      }
     }
   }
 

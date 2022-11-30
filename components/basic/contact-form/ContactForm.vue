@@ -37,7 +37,7 @@
       />
     </Field>
 
-    <v-btn class="mt-2 w-100" color="primary" @click="submitMessage(validate)">
+    <v-btn class="w-100" color="primary" @click="submitMessage(validate)">
       Submit
     </v-btn>
   </Form>

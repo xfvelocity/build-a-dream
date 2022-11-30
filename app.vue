@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <!-- <ContactBar v-if="!isMobile" /> -->
+    <ContactBar v-if="!isMobile" />
     <NavBar />
 
     <v-main class="pa-0">

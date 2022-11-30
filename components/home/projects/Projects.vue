@@ -9,12 +9,11 @@
       }"
       :width="150"
     />
+
     <Carousel
       ref="projectsCarousel"
       :items-to-show="isMobile ? 1 : 3"
       wrap-around
-      :mouse-drag="false"
-      :touch-drag="false"
     >
       <Slide v-for="(project, i) in homeProjects" :key="i">
         <img
@@ -82,7 +81,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .projects {
   width: 90%;
   margin: 0 auto 120px auto;
@@ -92,6 +91,21 @@ export default defineComponent({
   }
 
   .carousel {
+    &__next,
+    &__prev {
+      background: #086500;
+      border-radius: 50% !important;
+      color: white;
+    }
+
+    &__pagination-item {
+      button:after {
+        border-radius: 50% !important;
+        width: 10px;
+        height: 10px;
+      }
+    }
+
     &__slide {
       img {
         width: 100%;

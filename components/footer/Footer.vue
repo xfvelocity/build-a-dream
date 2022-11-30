@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer py-4">
+  <footer class="footer py-6">
     <div class="d-flex footer-content max-width">
       <p class="my-0">
         Site created by
