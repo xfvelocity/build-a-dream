@@ -1,23 +1,9 @@
 <template>
   <footer class="footer py-6">
     <div class="d-flex footer-content max-width">
-      <p class="my-0">
-        Site created by
-        <a
-          class="grey-text"
-          href="https://alexlong.dev"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Alex
-        </a>
-      </p>
-
       <v-spacer v-if="!isMobile" />
 
-      <p class="my-0">
-        &copy; {{ currentYear }} Build A-Dream Landscape Gardeners
-      </p>
+      <p>&copy; {{ currentYear }} Build A-Dream Landscape Gardeners</p>
     </div>
   </footer>
 </template>
@@ -43,10 +29,6 @@ export default defineComponent({
   box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.03);
   border-top: 1px solid #e5e5e5;
   font-size: 14px;
-
-  a {
-    color: black;
-  }
 
   &-content {
     width: 90%;

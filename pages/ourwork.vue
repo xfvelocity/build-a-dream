@@ -24,8 +24,8 @@
 </template>
 
 <script lang="ts">
-import { projects } from "@/assets/data/project.data";
-import { Project } from "@/assets/types/app.types";
+import { projects } from "@/content/ourwork";
+import { Project } from "@/types/app.types";
 
 import ProjectModal from "@/components/basic/project-modal/ProjectModal.vue";
 import Header from "@/components/basic/header/Header.vue";

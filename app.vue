@@ -14,8 +14,8 @@
 <script lang="ts">
 import { onMounted } from "vue";
 import { isMobile, setWidthValues } from "@/utility/width";
-import { projects } from "@/assets/data/project.data";
-import { Project } from "@/assets/types/app.types";
+// import { projects } from "@/assets/data/project.data";
+// import { Project } from "@/assets/types/app.types";
 
 import NavBar from "@/components/nav-bar/NavBar.vue";
 import ContactBar from "@/components/nav-bar/ContactBar.vue";
@@ -29,15 +29,15 @@ export default defineComponent({
     Footer,
   },
   setup() {
-    const projectsList: Project[] = projects;
+    // const projectsList: Project[] = projects;
 
-    const preloadImages = (): void => {
-      projectsList.forEach((item) =>
-        item.detailedImgList.forEach(
-          (url) => (new Image().src = `./img/${url}.jpg`)
-        )
-      );
-    };
+    // const preloadImages = (): void => {
+    //   projectsList.forEach((item) =>
+    //     item.detailedImgList.forEach(
+    //       (url) => (new Image().src = `./img/${url}.jpg`)
+    //     )
+    //   );
+    // };
 
     onMounted(() => {
       setWidthValues(window.innerWidth);
@@ -46,7 +46,7 @@ export default defineComponent({
         setWidthValues(window.innerWidth);
       });
 
-      preloadImages();
+      // preloadImages();
     });
 
     return {
