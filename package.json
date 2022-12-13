@@ -8,6 +8,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@funken-studio/sitemap-nuxt-3": "^4.0.4",
     "@mdi/font": "^7.0.96",
     "axios": "^1.1.3",
     "node-sass": "^7.0.3",
@@ -17,7 +18,7 @@
     "vuetify": "^3.0.2"
   },
   "devDependencies": {
-    "nuxt": "3.0.0",
+    "nuxt": "^3.0.0",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0"
   }

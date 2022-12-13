@@ -38,4 +38,13 @@ export default defineNuxtConfig({
       "process.env.DEBUG": "false",
     },
   },
+  modules: ["@funken-studio/sitemap-nuxt-3"],
+  sitemap: {
+    hostname: "https://buildadream.co.uk",
+    defaults: {
+      changefreq: "daily",
+      priority: 1,
+      lastmod: new Date().toISOString(),
+    },
+  },
 });
