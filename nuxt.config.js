@@ -25,7 +25,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  plugins: [{ src: "~/plugins/vercel.js", mode: "client" }],
   css: ["vuetify"],
   build: {
     transpile: ["vuetify", "mixins"],
