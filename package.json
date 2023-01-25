@@ -11,6 +11,7 @@
   "dependencies": {
     "@funken-studio/sitemap-nuxt-3": "^4.0.4",
     "@mdi/font": "^7.1.96",
+    "@vercel/analytics": "^0.1.8",
     "axios": "^1.2.4",
     "node-sass": "^7.0.3",
     "vee-validate": "^4.7.3",
