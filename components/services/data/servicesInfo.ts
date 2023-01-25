@@ -1,3 +1,5 @@
+import { ServicesInfo } from "../types/services.types";
+
 export const servicesInfoData: ServicesInfo[] = [
   {
     title: "Garden Care",
@@ -15,9 +17,3 @@ export const servicesInfoData: ServicesInfo[] = [
     img: "patio",
   },
 ];
-
-export type ServicesInfo = {
-  title: string;
-  desc: string;
-  img: string;
-};

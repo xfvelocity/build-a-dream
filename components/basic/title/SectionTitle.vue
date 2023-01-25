@@ -9,9 +9,9 @@
     </h2>
     <p class="my-0">
       {{ desc }}
-      <nuxt-link v-if="link" class="text-primary" :to="link.to">{{
-        link.name
-      }}</nuxt-link>
+      <nuxt-link v-if="link" class="text-primary" :to="link.to">
+        {{ link.name }}
+      </nuxt-link>
     </p>
   </div>
 </template>

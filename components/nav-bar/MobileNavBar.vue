@@ -48,7 +48,7 @@
 </template>
 
 <script lang="ts">
-import { NavLinks, SocialNavLinks } from "./data/nav.types";
+import { NavLink, SocialNavLink } from "./types/nav.types";
 import { navLinksData, socialLinksData } from "./data/navLinks";
 
 export default defineComponent({
@@ -61,13 +61,16 @@ export default defineComponent({
   },
   emits: ["update:modelValue"],
   setup(props, context) {
+    // Variables
     const route = useRoute();
     const router = useRouter();
 
-    const navLinks = ref<NavLinks[]>([]);
-    const socialLinks: SocialNavLinks[] = socialLinksData;
+    const socialLinks: SocialNavLink[] = socialLinksData;
     const currentYear: number = new Date().getFullYear();
 
+    const navLinks = ref<NavLink[]>([]);
+
+    // Methods
     const goToSocialLink = (link: string): void => {
       window.open(link);
       closeModal();
@@ -84,9 +87,17 @@ export default defineComponent({
 
     const setActiveRoute = (path: string): void => {
       navLinks.value = JSON.parse(JSON.stringify([...navLinksData]));
-      navLinks.value.find((link) => link.link === path).active = true;
+
+      const matchingNavLink: NavLink | undefined = navLinks.value.find(
+        (link) => link.link === path
+      );
+
+      if (matchingNavLink) {
+        matchingNavLink.active = true;
+      }
     };
 
+    // Watchers
     watch(route, () => setActiveRoute(route.path), { immediate: true });
 
     return {

@@ -28,6 +28,7 @@
 export default defineComponent({
   name: "ContactBar",
   setup() {
+    // Methods
     const sendEmail = (): void => {
       window.location.href = "mailto:contact@buildadream.co.uk";
     };

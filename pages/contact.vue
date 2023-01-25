@@ -32,17 +32,8 @@
 </template>
 
 <script lang="ts">
-import Header from "@/components/basic/header/Header.vue";
-import ContactForm from "@/components/basic/contact-form/ContactForm.vue";
-import SectionTitle from "~~/components/basic/title/SectionTitle.vue";
-
 export default defineComponent({
   name: "Contact",
-  components: {
-    Header,
-    ContactForm,
-    SectionTitle,
-  },
   head: {
     title: "Contact Us | Build A-Dream | Lincoln Landscape Gardeners",
     meta: [
@@ -55,6 +46,7 @@ export default defineComponent({
     ],
   },
   setup() {
+    // Methods
     const sendEmail = (): void => {
       window.location.href = "mailto:contact@builda-dream.com";
     };

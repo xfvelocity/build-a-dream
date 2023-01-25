@@ -1,5 +1,6 @@
 <template>
-  <Header title="Our Work" height="40vh" />
+  <header title="Our Work" height="40vh" />
+
   <div class="our-work max-width my-6 d-flex justify-center flex-wrap">
     <div
       class="our-work-project my-4 cursor-pointer pa-4"
@@ -27,15 +28,8 @@
 import { projects } from "@/content/ourwork";
 import { Project } from "@/types/app.types";
 
-import ProjectModal from "@/components/basic/project-modal/ProjectModal.vue";
-import Header from "@/components/basic/header/Header.vue";
-
 export default defineComponent({
   name: "OurWork",
-  components: {
-    Header,
-    ProjectModal,
-  },
   head: {
     title: "Our Work | Build A-Dream | Lincoln Landscape Gardeners",
     meta: [
@@ -48,11 +42,13 @@ export default defineComponent({
     ],
   },
   setup() {
+    // Variables
     const projectsList: Project[] = projects;
 
     const isModalOpen = ref<boolean>(false);
     const selectedProject = ref<Project>();
 
+    // Methods
     const toggleModal = (caseStudy: Project): void => {
       selectedProject.value = caseStudy;
       isModalOpen.value = true;

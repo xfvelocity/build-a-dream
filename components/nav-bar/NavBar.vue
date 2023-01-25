@@ -37,28 +37,34 @@
 </template>
 
 <script lang="ts">
-import { NavLinks } from "./data/nav.types";
+import { NavLink } from "./types/nav.types";
 import { navLinksData } from "./data/navLinks";
 import { isMobile } from "@/utility/width";
 
-import MobileNavBar from "./MobileNavBar.vue";
-
 export default defineComponent({
   name: "NavBar",
-  components: {
-    MobileNavBar,
-  },
+
   setup() {
+    // Variables
     const route = useRoute();
 
-    const navLinks = ref<NavLinks[]>(navLinksData);
+    const navLinks = ref<NavLink[]>(navLinksData);
     const isNavDrawerOpen = ref<boolean>(false);
 
+    // Methods
     const setActiveRoute = (path: string): void => {
       navLinks.value = JSON.parse(JSON.stringify([...navLinksData]));
-      navLinks.value.find((link) => link.link === path).active = true;
+
+      const matchingNavLink: NavLink | undefined = navLinks.value.find(
+        (link) => link.link === path
+      );
+
+      if (matchingNavLink) {
+        matchingNavLink.active = true;
+      }
     };
 
+    // Watchers
     watch(route, () => setActiveRoute(route.path), { immediate: true });
 
     return {

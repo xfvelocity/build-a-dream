@@ -57,12 +57,14 @@ export default defineComponent({
     Field,
   },
   setup() {
+    // Variables
     const contactInfo = ref<ContactInfo>({
       name: "",
       phoneNumber: "",
       message: "",
     });
 
+    // Methods
     const submitMessage = async (validateFn: Function): Promise<void> => {
       const valid: ValidationResult = await validateFn();
 

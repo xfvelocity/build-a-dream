@@ -29,16 +29,23 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ["@/assets/css/main.scss", "vuetify"],
+  css: ["vuetify"],
   build: {
-    transpile: ["vuetify"],
+    transpile: ["vuetify", "mixins"],
   },
   vite: {
     define: {
       "process.env.DEBUG": "false",
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/assets/styles/_variables.scss";',
+        },
+      },
+    },
   },
-  modules: ["@funken-studio/sitemap-nuxt-3"],
+  modules: ["@funken-studio/sitemap-nuxt-3", "@vueuse/nuxt"],
   sitemap: {
     hostname: "https://buildadream.co.uk",
     defaults: {
@@ -47,4 +54,10 @@ export default defineNuxtConfig({
       lastmod: new Date().toISOString(),
     },
   },
+  components: [
+    {
+      path: "~/components",
+      pathPrefix: false,
+    },
+  ],
 });

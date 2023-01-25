@@ -1,6 +1,6 @@
-import { NavLinks, SocialNavLinks } from "./nav.types";
+import { NavLink, SocialNavLink } from "../types/nav.types";
 
-export const navLinksData: NavLinks[] = [
+export const navLinksData: NavLink[] = [
   {
     name: "Home",
     link: "/",
@@ -18,7 +18,7 @@ export const navLinksData: NavLinks[] = [
   },
 ];
 
-export const socialLinksData: SocialNavLinks[] = [
+export const socialLinksData: SocialNavLink[] = [
   {
     iconName: "mdi-facebook",
     link: "https://www.facebook.com/BuildADreamLandscapers",

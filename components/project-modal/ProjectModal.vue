@@ -17,6 +17,7 @@
           mdi-close
         </v-icon>
       </v-card>
+
       <div :class="isMobile ? 'pa-6' : 'pa-8'">
         <div class="project-modal-section">
           <div class="project-modal-section-main">
@@ -65,7 +66,7 @@
 
 <script lang="ts">
 import { PropType } from "vue";
-import { Project } from "@/assets/types/app.types";
+import { Project } from "@/types/app.types";
 import { isMobile } from "@/utility/width";
 
 export default defineComponent({
@@ -82,12 +83,15 @@ export default defineComponent({
   },
   emits: ["update:modelValue"],
   setup(props, context) {
+    // Variables
     const selectedImage = ref<string>("");
 
+    // Methods
     const toggleModal = (): void => {
       context.emit("update:modelValue");
     };
 
+    // Watchers
     watch(
       () => props.item,
       () => {

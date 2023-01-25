@@ -1,10 +1,10 @@
-export type NavLinks = {
+export type NavLink = {
   name: string;
   link: string;
   active: boolean;
 };
 
-export type SocialNavLinks = {
+export type SocialNavLink = {
   iconName: string;
   link: string;
 };

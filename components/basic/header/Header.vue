@@ -12,23 +12,12 @@
         </p>
       </v-col>
     </v-row>
-
-    <!-- <FuzzyImage
-      img="/img/background.jpg"
-      min-img="/img/background-min.jpg"
-      background
-    /> -->
   </div>
 </template>
 
 <script lang="ts">
-// import FuzzyImage from "../fuzzy-image/FuzzyImage.vue";
-
 export default defineComponent({
   name: "Header",
-  components: {
-    // FuzzyImage,
-  },
   props: {
     title: {
       type: String,
@@ -59,13 +48,8 @@ export default defineComponent({
   background-size: cover;
   background-position: center;
 
-  &-text {
-    // margin-left: 40px;
-  }
-
   h1 {
     font-size: 48px;
-    // letter-spacing: 3px;
     line-height: 45px;
   }
 

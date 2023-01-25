@@ -9,17 +9,19 @@
   },
   "dependencies": {
     "@funken-studio/sitemap-nuxt-3": "^4.0.4",
-    "@mdi/font": "^7.0.96",
-    "axios": "^1.1.3",
+    "@mdi/font": "^7.1.96",
+    "axios": "^1.2.3",
     "node-sass": "^7.0.3",
     "vee-validate": "^4.7.3",
     "vue-gtag": "^2.0.1",
-    "vue3-carousel": "^0.2.5",
-    "vuetify": "^3.0.2"
+    "vue3-carousel": "^0.2.9",
+    "vuetify": "^3.1.2"
   },
   "devDependencies": {
+    "@vueuse/core": "^9.11.1",
+    "@vueuse/nuxt": "^9.11.1",
     "nuxt": "^3.0.0",
-    "sass": "^1.56.1",
+    "sass": "^1.57.1",
     "sass-loader": "^13.2.0"
   }
 }

@@ -14,6 +14,7 @@ import { isMobile } from "@/utility/width";
 export default defineComponent({
   name: "Footer",
   setup() {
+    // Variables
     const currentYear: number = new Date().getFullYear();
 
     return {

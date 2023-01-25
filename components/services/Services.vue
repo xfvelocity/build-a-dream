@@ -28,11 +28,13 @@
 </template>
 
 <script lang="ts">
-import { ServicesInfo, servicesInfoData } from "./data/servicesInfo";
+import { servicesInfoData } from "./data/servicesInfo";
+import { ServicesInfo } from "./types/services.types";
 
 export default defineComponent({
   name: "Services",
   setup() {
+    // Methods
     const servicesInfo: ServicesInfo[] = servicesInfoData;
 
     return {

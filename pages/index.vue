@@ -1,10 +1,10 @@
 <template>
-  <Header
+  <header
     title="Build A-Dream"
     titleTwo="Landscape Gardening"
     subHeading="Dream gardens that don't cost the earth"
   />
-  <Services />
+  <services />
 
   <div class="about">
     <div class="about-content w-90-center mb-6">
@@ -106,29 +106,21 @@ import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 import { isMobile } from "@/utility/width";
 import { Project } from "@/types/app.types";
 
-import Header from "../components/basic/header/Header.vue";
-import Services from "../components/home/services/Services.vue";
-
-import SectionTitle from "@/components/basic/title/SectionTitle.vue";
-import ContactForm from "@/components/basic/contact-form/ContactForm.vue";
-
 export default defineComponent({
   name: "Index",
   components: {
-    Header,
-    Services,
-    SectionTitle,
-    ContactForm,
     Carousel,
     Slide,
     Pagination,
     Navigation,
   },
   setup() {
+    // Variables
     const isModalOpen = ref<boolean>(false);
     const selectedProject = ref<Project>();
     const projectsCarousel = ref();
 
+    // Methods
     const openModal = (project: Project): void => {
       selectedProject.value = project;
       isModalOpen.value = true;
