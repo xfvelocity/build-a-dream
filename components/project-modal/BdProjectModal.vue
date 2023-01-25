@@ -70,7 +70,7 @@ import { Project } from "@/types/app.types";
 import { isMobile } from "@/utility/width";
 
 export default defineComponent({
-  name: "ProjectModal",
+  name: "BdProjectModal",
   props: {
     item: {
       type: Object as PropType<Project>,

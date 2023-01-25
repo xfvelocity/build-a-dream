@@ -52,7 +52,7 @@ import { NavLink, SocialNavLink } from "./types/nav.types";
 import { navLinksData, socialLinksData } from "./data/navLinks";
 
 export default defineComponent({
-  name: "MobileNavBar",
+  name: "BdNavDrawer",
   props: {
     modelValue: {
       type: Boolean,

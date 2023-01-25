@@ -26,7 +26,7 @@
 
 <script lang="ts">
 export default defineComponent({
-  name: "ContactBar",
+  name: "BdContactBar",
   setup() {
     // Methods
     const sendEmail = (): void => {

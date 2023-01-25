@@ -6,10 +6,7 @@
     >
       <v-col class="header-text text-center" cols="12" md="9">
         <h1 v-if="title">{{ title }}</h1>
-        <!-- <h1 v-if="titleTwo">{{ titleTwo }}</h1> -->
-        <p v-if="subHeading">
-          {{ subHeading }}
-        </p>
+        <p v-if="subHeading">{{ subHeading }}</p>
       </v-col>
     </v-row>
   </div>
@@ -17,7 +14,7 @@
 
 <script lang="ts">
 export default defineComponent({
-  name: "Header",
+  name: "BdHeader",
   props: {
     title: {
       type: String,

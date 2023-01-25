@@ -1,13 +1,13 @@
 <template>
   <v-app>
-    <ContactBar v-if="!isMobile" />
-    <NavBar />
+    <bd-contact-bar v-if="!isMobile" />
+    <bd-nav />
 
     <v-main class="pa-0">
-      <NuxtPage />
+      <nuxt-page />
     </v-main>
 
-    <Footer />
+    <bd-footer />
   </v-app>
 </template>
 
@@ -15,18 +15,10 @@
 import { onMounted } from "vue";
 import { isMobile, setWidthValues } from "@/utility/width";
 
-import NavBar from "@/components/nav-bar/NavBar.vue";
-import ContactBar from "@/components/nav-bar/ContactBar.vue";
-import Footer from "@/components/footer/Footer.vue";
-
 export default defineComponent({
   name: "App",
-  components: {
-    NavBar,
-    ContactBar,
-    Footer,
-  },
   setup() {
+    // Lifecycle
     onMounted(() => {
       setWidthValues(window.innerWidth);
 

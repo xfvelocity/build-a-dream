@@ -1,5 +1,5 @@
 <template>
-  <header title="Our Work" height="40vh" />
+  <bd-header title="Our Work" height="40vh" />
 
   <div class="our-work max-width my-6 d-flex justify-center flex-wrap">
     <div
@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <project-modal v-model="isModalOpen" :item="selectedProject" />
+    <bd-project-modal v-model="isModalOpen" :item="selectedProject" />
   </div>
 </template>
 

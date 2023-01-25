@@ -1,10 +1,11 @@
 <template>
-  <header
+  <bd-header
     title="Build A-Dream"
     titleTwo="Landscape Gardening"
     subHeading="Dream gardens that don't cost the earth"
   />
-  <services />
+
+  <bd-services />
 
   <div class="about">
     <div class="about-content w-90-center mb-6">
@@ -33,7 +34,7 @@
   </div>
 
   <div class="projects max-width">
-    <section-title
+    <bd-section-title
       title="Our work"
       desc="Here are just a few examples of our work, if you wish to see more click"
       :link="{
@@ -65,9 +66,7 @@
     </carousel>
   </div>
 
-  <div>
-    <project-modal v-model="isModalOpen" :item="selectedProject" />
-  </div>
+  <bd-project-modal v-model="isModalOpen" :item="selectedProject" />
 
   <div class="reviews">
     <div class="w-90-center text-center max-width">
@@ -91,12 +90,13 @@
   </div>
 
   <div class="contact">
-    <section-title
+    <bd-section-title
       title="Contact Us"
       desc="Looking for a free quote or simply got a question to ask? Get in touch."
       :width="130"
     />
-    <contact-form />
+
+    <bd-contact-form />
   </div>
 </template>
 

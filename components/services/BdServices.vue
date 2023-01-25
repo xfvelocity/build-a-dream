@@ -32,7 +32,7 @@ import { servicesInfoData } from "./data/servicesInfo";
 import { ServicesInfo } from "./types/services.types";
 
 export default defineComponent({
-  name: "Services",
+  name: "BdServices",
   setup() {
     // Methods
     const servicesInfo: ServicesInfo[] = servicesInfoData;

@@ -1,9 +1,13 @@
 <template>
-  <Header title="Contact Us" height="40vh" />
+  <bd-header title="Contact Us" height="40vh" />
 
   <div class="contact-page">
     <div class="contact-info">
-      <SectionTitle title="Contact Info" class="section-title" :width="145" />
+      <bd-section-title
+        title="Contact Info"
+        class="section-title"
+        :width="145"
+      />
 
       <div class="contact-links">
         <span class="d-flex align-center mb-4 cursor-default">
@@ -27,7 +31,7 @@
       </div>
     </div>
 
-    <ContactForm class="contact-form mt-8" />
+    <bd-contact-form class="contact-form mt-8" />
   </div>
 </template>
 

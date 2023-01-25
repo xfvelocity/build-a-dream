@@ -46,12 +46,12 @@
 <script lang="ts">
 import { validationSchema } from "@/utility/validation";
 import { Form, Field, ValidationResult } from "vee-validate";
-import { ContactInfo } from "./types/contactForm.types";
+import { ContactInfo } from "./types/bdContactForm.types";
 
 import axios from "axios";
 
 export default defineComponent({
-  name: "ContactForm",
+  name: "BdContactForm",
   components: {
     Form,
     Field,

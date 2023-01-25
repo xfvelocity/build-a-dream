@@ -21,7 +21,7 @@ import { PropType } from "vue";
 import { TitleLink } from "./types/sectionTitle.types";
 
 export default defineComponent({
-  name: "SectionTitle",
+  name: "BdSectionTitle",
   props: {
     title: {
       type: String,

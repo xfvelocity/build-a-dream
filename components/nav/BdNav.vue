@@ -33,7 +33,7 @@
     </div>
   </v-app-bar>
 
-  <mobile-nav-bar v-if="isMobile" v-model="isNavDrawerOpen" />
+  <bd-nav-drawer v-if="isMobile" v-model="isNavDrawerOpen" />
 </template>
 
 <script lang="ts">
@@ -42,8 +42,7 @@ import { navLinksData } from "./data/navLinks";
 import { isMobile } from "@/utility/width";
 
 export default defineComponent({
-  name: "NavBar",
-
+  name: "BdNav",
   setup() {
     // Variables
     const route = useRoute();
