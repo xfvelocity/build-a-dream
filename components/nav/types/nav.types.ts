@@ -1,6 +1,6 @@
-export type NavLink = {
+export type Route = {
   name: string;
-  link: string;
+  href: string;
   active: boolean;
 };
 

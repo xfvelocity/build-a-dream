@@ -20,10 +20,6 @@ export default defineNuxtConfig({
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap",
-        },
-        {
-          rel: "stylesheet",
           href: "https://cdn.jsdelivr.net/npm/font-awesome@4.x/css/font-awesome.min.css",
         },
       ],

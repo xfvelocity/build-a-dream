@@ -1,35 +1,28 @@
 <template>
-  <v-app-bar class="w-100 navbar" :height="70" app>
+  <v-app-bar class="pos-relative w-100 bd-nav" :height="70" app>
     <div class="d-flex align-center max-width w-100 px-4">
-      <img
-        class="cursor-pointer"
-        src="/img/build-a-dream-logo.png"
-        alt="Build A-Dream Logo"
-        @click="$router.push('/')"
-      />
+      <nuxt-link to="/">
+        <img src="/img/build-a-dream-logo.png" alt="" />
+      </nuxt-link>
 
       <v-spacer />
 
       <div
         v-if="isMobile"
-        class="navbar-mobile-btn"
-        :class="isNavDrawerOpen ? 'navbar-mobile-btn__open' : ''"
+        class="bd-nav-btn"
+        :class="{ 'bd-nav-btn-open': isNavDrawerOpen }"
         @click="isNavDrawerOpen = !isNavDrawerOpen"
       >
         <span v-for="i in 4" :key="i" />
       </div>
 
-      <div v-else class="d-flex">
-        <span
-          class="mr-3"
-          :class="link.active ? 'text-primary' : 'link'"
-          v-for="(link, i) in navLinks"
-          :key="i"
-          @click="$router.push(link.link)"
-        >
-          {{ link.name }}
-        </span>
-      </div>
+      <ul v-else class="d-flex">
+        <li v-for="(route, i) in routes" class="mr-6" :key="i">
+          <nuxt-link class="internal-link" :to="route.href">
+            {{ route.name }}
+          </nuxt-link>
+        </li>
+      </ul>
     </div>
   </v-app-bar>
 
@@ -37,8 +30,8 @@
 </template>
 
 <script lang="ts">
-import { NavLink } from "./types/nav.types";
-import { navLinksData } from "./data/navLinks";
+import { Route } from "./types/nav.types";
+import { navRoutes } from "./data/nav";
 import { isMobile } from "@/utility/width";
 
 export default defineComponent({
@@ -47,19 +40,20 @@ export default defineComponent({
     // Variables
     const route = useRoute();
 
-    const navLinks = ref<NavLink[]>(navLinksData);
+    const routes = ref<Route[]>(navRoutes);
     const isNavDrawerOpen = ref<boolean>(false);
 
     // Methods
+    // TODO: Refactor/Reuse this function
     const setActiveRoute = (path: string): void => {
-      navLinks.value = JSON.parse(JSON.stringify([...navLinksData]));
+      routes.value = JSON.parse(JSON.stringify([...navRoutes]));
 
-      const matchingNavLink: NavLink | undefined = navLinks.value.find(
-        (link) => link.link === path
+      const matchingRoute: Route | undefined = routes.value.find(
+        (link) => link.href === path
       );
 
-      if (matchingNavLink) {
-        matchingNavLink.active = true;
+      if (matchingRoute) {
+        matchingRoute.active = true;
       }
     };
 
@@ -68,7 +62,7 @@ export default defineComponent({
 
     return {
       isMobile,
-      navLinks,
+      routes,
       isNavDrawerOpen,
     };
   },
@@ -76,15 +70,22 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.navbar {
-  position: relative;
-  z-index: 999;
+.bd-nav {
+  z-index: 99;
+
+  li {
+    list-style: none;
+
+    a {
+      text-decoration: none;
+    }
+  }
 
   img {
     width: 220px;
   }
 
-  &-mobile-btn {
+  &-btn {
     width: 25px;
     height: 15px;
     position: relative;
@@ -116,7 +117,7 @@ export default defineComponent({
       }
     }
 
-    &__open span {
+    &-open span {
       &:nth-child(1),
       &:nth-child(4) {
         top: 18px;

@@ -1,45 +1,37 @@
 <template>
   <v-navigation-drawer
     :model-value="modelValue"
-    class="pt-6 w-80"
+    class="bd-nav-drawer pt-6 w-80"
     location="right"
     @update:model-value="closeModal"
   >
     <template v-slot:prepend>
       <v-list>
         <v-list-item
+          v-for="(link, i) in routes"
+          :key="i"
           class="justify-center text-20"
           :class="{ 'text-primary': link.active }"
-          v-for="(link, i) in navLinks"
-          :key="i"
-          @click="goToLink(link.link)"
         >
-          {{ link.name }}
+          <nuxt-link class="internal-link" :to="link.href" @click="closeModal">
+            {{ link.name }}
+          </nuxt-link>
         </v-list-item>
       </v-list>
     </template>
 
     <template v-slot:append>
       <div class="d-flex flex-wrap justify-center my-6">
-        <!-- Add back in once facebook is re-created -->
-        <!-- <div class="mb-4">
-          <v-icon
-            v-for="(link, i) in socialLinks"
-            :key="i"
-            class="mx-1"
-            aria-label="facebook"
-            @click="goToSocialLink(link.link)"
-          >
-            {{ link.iconName }}
-          </v-icon>
-        </div> -->
+        <a
+          class="link mb-4 text-primary d-flex align-center"
+          href="https://www.facebook.com/buildadreamlandscapers"
+          target="_blank"
+        >
+          <v-icon color="primary" aria-label="facebook"> mdi-facebook </v-icon>
+          <span class="ml-2 text-14">Find us on facebook</span>
+        </a>
 
-        <p class="disclaimer-text">
-          Created by
-          <a href="https://www.alexlong.dev" target="_blank"> Alex </a>
-        </p>
-
-        <p class="disclaimer-text">
+        <p class="bd-nav-drawer-disclaimer">
           &copy; {{ currentYear }} Build A-Dream Landscape Gardeners
         </p>
       </div>
@@ -48,8 +40,8 @@
 </template>
 
 <script lang="ts">
-import { NavLink, SocialNavLink } from "./types/nav.types";
-import { navLinksData, socialLinksData } from "./data/navLinks";
+import { Route } from "./types/nav.types";
+import { navRoutes } from "./data/nav";
 
 export default defineComponent({
   name: "BdNavDrawer",
@@ -63,37 +55,26 @@ export default defineComponent({
   setup(props, context) {
     // Variables
     const route = useRoute();
-    const router = useRouter();
 
-    const socialLinks: SocialNavLink[] = socialLinksData;
     const currentYear: number = new Date().getFullYear();
 
-    const navLinks = ref<NavLink[]>([]);
+    const routes = ref<Route[]>(navRoutes);
 
     // Methods
-    const goToSocialLink = (link: string): void => {
-      window.open(link);
-      closeModal();
-    };
-
-    const goToLink = (link: string): void => {
-      router.push(link);
-      closeModal();
-    };
-
     const closeModal = (): void => {
       context.emit("update:modelValue", false);
     };
 
+    // TODO: Refactor/Reuse this function
     const setActiveRoute = (path: string): void => {
-      navLinks.value = JSON.parse(JSON.stringify([...navLinksData]));
+      routes.value = JSON.parse(JSON.stringify([...navRoutes]));
 
-      const matchingNavLink: NavLink | undefined = navLinks.value.find(
-        (link) => link.link === path
+      const matchingRoute: Route | undefined = routes.value.find(
+        (link) => link.href === path
       );
 
-      if (matchingNavLink) {
-        matchingNavLink.active = true;
+      if (matchingRoute) {
+        matchingRoute.active = true;
       }
     };
 
@@ -101,27 +82,32 @@ export default defineComponent({
     watch(route, () => setActiveRoute(route.path), { immediate: true });
 
     return {
-      navLinks,
-      socialLinks,
+      routes,
       currentYear,
       closeModal,
-      goToSocialLink,
-      goToLink,
     };
   },
 });
 </script>
 
 <style lang="scss" scoped>
-.disclaimer-text {
-  font-size: 12px;
-  width: 100%;
-  text-align: center;
-  color: #616161;
-  margin: 0;
-
+.bd-nav-drawer {
+  // TODO: Better solution
   a {
+    text-decoration: none;
+  }
+
+  &-disclaimer {
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+    // TODO: Update this with colour variable
     color: #616161;
+    margin: 0;
+
+    a {
+      color: #616161;
+    }
   }
 }
 </style>
