@@ -1,15 +1,21 @@
 <template>
   <div>
-    <xf-nav> Test </xf-nav>
+    <navbar />
 
     <nuxt-page />
   </div>
 </template>
 
-<script type="ts" setup>
-import { XfNav } from 'xf-cmpt-lib'
-</script>
+<script type="ts" setup></script>
 
 <style lang="scss">
 @import "xf-cmpt-lib/dist/cmpt-lib-ts.css";
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    color: green;
+  }
+}
 </style>
