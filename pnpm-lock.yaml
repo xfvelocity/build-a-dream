@@ -4,13 +4,13 @@ specifiers:
   nuxt: ^3.2.2
   sass: ^1.58.3
   sass-loader: ^10.4.1
-  xf-cmpt-lib: ^0.0.8
+  xf-cmpt-lib: ^0.0.9
 
 devDependencies:
   nuxt: 3.2.2_sass@1.58.3
   sass: 1.58.3
   sass-loader: 10.4.1_sass@1.58.3
-  xf-cmpt-lib: 0.0.8
+  xf-cmpt-lib: 0.0.9
 
 packages:
 
@@ -4915,8 +4915,8 @@ packages:
         optional: true
     dev: true
 
-  /xf-cmpt-lib/0.0.8:
-    resolution: {integrity: sha512-Lbhz+0osS5bTjVl881AiMUBntRWRf/D/De4rhwOdEgjFfXIEuJdSk3PLWiTyfQDhYYZQX/b9ODoIsFAcjlTrjg==}
+  /xf-cmpt-lib/0.0.9:
+    resolution: {integrity: sha512-KIaFtRFv+q83gT1NheIxT46OVVBBdh8Pouu/KVP+gaSItfg8MV7eWYj7mW5VZNLOSoI675L21umP+UqmvDgAWg==}
     dependencies:
       vue: 3.2.47
       vue-inline-svg: 3.1.2_vue@3.2.47

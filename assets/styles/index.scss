@@ -1,0 +1,20 @@
+@import "./variables.scss";
+
+body {
+  line-height: 1.5;
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+  color: map-get($bd-colours, "black");
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+@each $name, $colour in $bd-colours {
+  .xf-bg-#{$name} {
+    background: $colour;
+  }
+
+  .xf-colour-#{$name} {
+    color: $colour;
+  }
+}

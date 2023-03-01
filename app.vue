@@ -10,12 +10,13 @@
 
 <style lang="scss">
 @import "xf-cmpt-lib/dist/cmpt-lib-ts.css";
+@import "@/assets/styles/index.scss";
 
 a {
   text-decoration: none;
 
   &:hover {
-    color: green;
+    color: map-get($bd-colours, "primary");
   }
 }
 </style>
