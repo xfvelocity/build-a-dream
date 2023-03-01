@@ -4,13 +4,15 @@ specifiers:
   nuxt: ^3.2.2
   sass: ^1.58.3
   sass-loader: ^10.4.1
-  xf-cmpt-lib: ^0.0.9
+  vue3-carousel: ^0.2.11
+  xf-cmpt-lib: ^0.0.11
 
 devDependencies:
   nuxt: 3.2.2_sass@1.58.3
   sass: 1.58.3
   sass-loader: 10.4.1_sass@1.58.3
-  xf-cmpt-lib: 0.0.9
+  vue3-carousel: 0.2.11
+  xf-cmpt-lib: 0.0.11
 
 packages:
 
@@ -4835,6 +4837,12 @@ packages:
       '@vue/shared': 3.2.47
     dev: true
 
+  /vue3-carousel/0.2.11:
+    resolution: {integrity: sha512-VUKdJ7EmAhulCxfowtlyvo5U8f70Fp3BWVcv7azn6Y2P8bFiasd2RMlollAFY4lrkHPitmw0FoT8CEVZCWD4lw==}
+    peerDependencies:
+      vue: ^3.2.0
+    dev: true
+
   /wcwidth/1.0.1:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}
     dependencies:
@@ -4915,8 +4923,8 @@ packages:
         optional: true
     dev: true
 
-  /xf-cmpt-lib/0.0.9:
-    resolution: {integrity: sha512-KIaFtRFv+q83gT1NheIxT46OVVBBdh8Pouu/KVP+gaSItfg8MV7eWYj7mW5VZNLOSoI675L21umP+UqmvDgAWg==}
+  /xf-cmpt-lib/0.0.11:
+    resolution: {integrity: sha512-PUOgnzaPDOvmf4M4rSFaXy0TXGmc09FnlLk8e541P3OBjAomJXE67o1TR0WLf7c61v4WYkxmTAQIHlBNTzZmbg==}
     dependencies:
       vue: 3.2.47
       vue-inline-svg: 3.1.2_vue@3.2.47

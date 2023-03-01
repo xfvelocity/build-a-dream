@@ -1,20 +1,34 @@
+@import "./mixins";
 @import "./variables.scss";
 
 body {
   line-height: 1.5;
   font-weight: 500;
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: map-get($bd-colours, "black");
   font-size: 16px;
   overflow-x: hidden;
 }
 
+.bd-center {
+  @include center(true, true);
+
+  &-horizontal {
+    @include center(true, false);
+  }
+
+  &-vertical {
+    @include center(false, true);
+  }
+}
+
+// Extend on xf colour variables
 @each $name, $colour in $bd-colours {
   .xf-bg-#{$name} {
     background: $colour;
   }
 
-  .xf-colour-#{$name} {
+  .xf-text-colour-#{$name} {
     color: $colour;
   }
 }
