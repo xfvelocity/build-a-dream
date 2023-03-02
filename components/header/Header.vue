@@ -1,6 +1,6 @@
 <template>
   <header class="bd-header">
-    <div class="bd-header-content xf-p-4 bd-center">
+    <div class="bd-header-content bd-max-width xf-p-6 bd-center">
       <h1>{{ title }}</h1>
       <h5 v-if="subTitle" class="xf-text-14 xf-mb-2">{{ subTitle }}</h5>
 
@@ -20,11 +20,11 @@ defineProps<{
 .bd-header {
   position: relative;
   background: url("~/assets/images/background.png");
-  height: 600px;
+  height: 500px;
 
   &-content {
     color: white;
-    width: 95%;
+    width: 90%;
     background: linear-gradient(
       180deg,
       #086500 0%,

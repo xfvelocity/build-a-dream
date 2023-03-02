@@ -10,6 +10,11 @@ body {
   overflow-x: hidden;
 }
 
+.bd-max-width {
+  max-width: 375px;
+  margin: 0 auto;
+}
+
 .bd-center {
   @include center(true, true);
 
