@@ -33,6 +33,13 @@ body {
     background: $colour;
   }
 
+  .xf-icon-colour-#{$name} {
+    :deep(path),
+    :deep(rect) {
+      fill: #{$colour} !important;
+    }
+  }
+
   .xf-text-colour-#{$name} {
     color: $colour;
   }

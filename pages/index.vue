@@ -22,9 +22,9 @@
   </Header>
 
   <!-- About me -->
-  <div class="bd-about bd-max-width xf-p-4 xf-py-8">
+  <div class="bd-about bd-max-width xf-px-4 xf-py-8">
     <XfBanner
-      class="xf-mx-auto xf-my-4"
+      class="xf-mx-auto xf-mb-8"
       :font-size="32"
       background-colour="primary"
     >
@@ -41,7 +41,7 @@
       cras consequat mattis.
     </p>
 
-    <img class="xf-mt-6 xf-w-100" src="~/assets/images/logo-big.png" />
+    <img class="xf-my-6 xf-w-100" src="~/assets/images/logo-big.png" />
   </div>
 
   <!-- Services -->
@@ -73,10 +73,61 @@
       </div>
     </div>
   </div>
+
+  <!-- Our work -->
+  <div class="bd-our-work">
+    <XfBanner
+      class="xf-mx-auto xf-my-4"
+      :font-size="32"
+      background-colour="primary"
+    >
+      Our work
+    </XfBanner>
+
+    <p class="bd-max-width xf-text-center">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent proin ac
+      bibendum id ut ut suspendisse. Pharetra viverra ipsum non viverra
+    </p>
+
+    <WorkCarousel class="xf-my-6" :slides="workSlides" />
+  </div>
 </template>
 
 <script lang="ts" setup>
 import { XfButton, XfBanner, XfIcon } from "xf-cmpt-lib";
+
+const workSlides = [
+  {
+    id: 1,
+    title: "Indian Sandstone Patio",
+    desc: "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
+    image: "images/1.png",
+  },
+  {
+    id: 2,
+    title: "Indian Sandstone Patio",
+    desc: "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
+    image: "images/1.png",
+  },
+  {
+    id: 3,
+    title: "Indian Sandstone Patio",
+    desc: "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
+    image: "images/1.png",
+  },
+  {
+    id: 4,
+    title: "Indian Sandstone Patio",
+    desc: "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
+    image: "images/1.png",
+  },
+  {
+    id: 5,
+    title: "Indian Sandstone Patio",
+    desc: "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
+    image: "images/1.png",
+  },
+];
 
 const services = [
   {

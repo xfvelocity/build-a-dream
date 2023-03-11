@@ -5,37 +5,41 @@
     </nuxt-link>
 
     <template #drawer>
-      <div class="xf-flex-center">
-        <ul class="xf-mt-6">
-          <li
-            v-for="(route, i) in routes"
-            :key="i"
-            class="xf-py-2 xf-text-20 xf-text-center"
+      <div class="xf-flex xf-flex-direction-col xf-h-100">
+        <div class="xf-flex-center">
+          <ul class="xf-mt-6">
+            <li
+              v-for="(route, i) in routes"
+              :key="i"
+              class="xf-py-2 xf-text-20 xf-text-center"
+            >
+              <nuxt-link :to="route.route">
+                {{ route.text }}
+              </nuxt-link>
+            </li>
+          </ul>
+        </div>
+
+        <div class="xf-flex-1" />
+
+        <div class="xf-flex-center xf-flex-direction-col xf-my-6">
+          <a
+            class="xf-colour-primary xf-flex xf-flex-direction-col xf-flex-align-items-center"
+            href="https://www.facebook.com/buildadreamlandscapers"
+            target="_blank"
           >
-            <nuxt-link :to="route.route">
-              {{ route.text }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </div>
+            <xf-icon
+              :src="getDynamicAsset('icons/facebook.svg')"
+              fill="primary"
+              aria-label="facebook"
+            />
+            <div class="xf-ml-2 xf-text-14">Find us on facebook</div>
+          </a>
 
-      <div class="xf-flex-center xf-flex-direction-col xf-my-6">
-        <a
-          class="xf-colour-primary xf-flex xf-flex-align-center"
-          href="https://www.facebook.com/buildadreamlandscapers"
-          target="_blank"
-        >
-          <xf-icon
-            :src="getDynamicAsset('icons/facebook.svg')"
-            color="primary"
-            aria-label="facebook"
-          />
-          <span class="xf-ml-2 xf-text-14">Find us on facebook</span>
-        </a>
-
-        <p class="xf-text-12">
-          &copy; {{ currentYear }} Build A-Dream Landscape Gardeners
-        </p>
+          <p class="xf-text-12">
+            &copy; {{ currentYear }} Build A-Dream Landscape Gardeners
+          </p>
+        </div>
       </div>
     </template>
   </xf-nav>

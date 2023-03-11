@@ -15,6 +15,7 @@
 
 a {
   text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     color: map-get($bd-colours, "primary");
