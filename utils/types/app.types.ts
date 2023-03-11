@@ -9,3 +9,8 @@ export interface WorkCarousel {
   image: string;
   desc: string;
 }
+
+export interface ReviewCarousel {
+  review: string;
+  name: string;
+}

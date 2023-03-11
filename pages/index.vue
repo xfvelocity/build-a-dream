@@ -7,8 +7,7 @@
     <p class="xf-mt-4 xf-mb-8 xf-text-14">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent proin ac
       bibendum id ut ut suspendisse. Pharetra viverra ipsum non viverra
-      consectetur. Dignissim sed sed egestas facilisis. Quis id quam cras
-      consequat mattis.
+      consectetur.
     </p>
 
     <div class="xf-flex">
@@ -24,7 +23,7 @@
   <!-- About me -->
   <div class="bd-about bd-max-width xf-px-4 xf-py-8">
     <XfBanner
-      class="xf-mx-auto xf-mb-8"
+      class="xf-mx-auto xf-mb-6"
       :font-size="32"
       background-colour="primary"
     >
@@ -75,7 +74,7 @@
   </div>
 
   <!-- Our work -->
-  <div class="bd-our-work">
+  <div class="bd-our-work xf-my-8">
     <XfBanner
       class="xf-mx-auto xf-my-4"
       :font-size="32"
@@ -91,10 +90,33 @@
 
     <WorkCarousel class="xf-my-6" :slides="workSlides" />
   </div>
+
+  <!-- Reviews -->
+  <div class="bd-reviews xf-position-relative">
+    <ReviewCarousel class="bd-center" :slides="reviewSlides" />
+  </div>
 </template>
 
 <script lang="ts" setup>
 import { XfButton, XfBanner, XfIcon } from "xf-cmpt-lib";
+
+const reviewSlides = [
+  {
+    review:
+      "Dominic has done several pieces of work from laying a patio circle to a full brick driveway. The quality of work is excellent, I have no hesitation in recommending him.",
+    name: "Keith Duke",
+  },
+  {
+    review:
+      "Dominic has done several pieces of work from laying a patio circle to a full brick driveway. The quality of work is excellent, I have no hesitation in recommending him.",
+    name: "Keith Duke",
+  },
+  {
+    review:
+      "Dominic has done several pieces of work from laying a patio circle to a full brick driveway. The quality of work is excellent, I have no hesitation in recommending him.",
+    name: "Keith Duke",
+  },
+];
 
 const workSlides = [
   {
@@ -185,6 +207,11 @@ const services = [
       background: white;
       border-radius: 5px;
     }
+  }
+
+  &-reviews {
+    height: 400px;
+    background: url("~/assets/images/grass-background.png");
   }
 }
 </style>
