@@ -1,0 +1,19 @@
+{
+  "routes": [
+    {
+      "text": "Home",
+      "route": "/home"
+    },
+    {
+      "text": "Our work",
+      "route": "/our-work"
+    },
+    {
+      "text": "Contact us",
+      "route": "/contact"
+    }
+  ],
+  "facebook": "https://www.facebook.com/buildadreamlandscaper",
+  "email": "contact@buildadream.co.uk",
+  "phone": "07414 095408"
+}

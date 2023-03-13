@@ -9,7 +9,7 @@
         <div class="xf-flex-center">
           <ul class="xf-mt-6">
             <li
-              v-for="(route, i) in routes"
+              v-for="(route, i) in content.routes"
               :key="i"
               class="xf-py-2 xf-text-20 xf-text-center"
             >
@@ -25,7 +25,7 @@
         <div class="xf-flex-center xf-flex-direction-col xf-my-6">
           <a
             class="xf-colour-primary xf-flex xf-flex-direction-col xf-flex-align-items-center"
-            href="https://www.facebook.com/buildadreamlandscapers"
+            :href="content.facebook"
             target="_blank"
           >
             <xf-icon
@@ -49,6 +49,7 @@
 import { XfNav, XfIcon } from "xf-cmpt-lib";
 import { Route } from "~~/utils/types/app.types";
 import { getDynamicAsset } from "~/composables/generic";
+import content from "~/content/navigation.json";
 
 const routes: Route[] = [
   {

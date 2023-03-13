@@ -93,7 +93,17 @@
 
   <!-- Reviews -->
   <div class="bd-reviews xf-position-relative">
-    <ReviewCarousel class="bd-center" :slides="reviewSlides" />
+    <div class="bd-center">
+      <div class="xf-text-colour-white xf-text-center xf-mb-8">
+        <h2>What our customers say</h2>
+        <p class="xf-mt-1 xf-text-14">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit praesent proin
+          ac.
+        </p>
+      </div>
+
+      <ReviewCarousel :slides="reviewSlides" />
+    </div>
   </div>
 </template>
 
