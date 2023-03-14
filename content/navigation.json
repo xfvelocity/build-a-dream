@@ -2,7 +2,7 @@
   "routes": [
     {
       "text": "Home",
-      "route": "/home"
+      "route": "/"
     },
     {
       "text": "Our work",

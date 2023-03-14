@@ -16,9 +16,7 @@ body {
 }
 
 .bd-navigation-max-width {
-  max-width: 700px;
-  width: 90%;
-  margin: 0 auto;
+  @include navigationMaxWidth;
 }
 
 .bd-center {

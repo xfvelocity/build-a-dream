@@ -47,24 +47,8 @@
 
 <script lang="ts" setup>
 import { XfNav, XfIcon } from "xf-cmpt-lib";
-import { Route } from "~~/utils/types/app.types";
 import { getDynamicAsset } from "~/composables/generic";
 import content from "~/content/navigation.json";
-
-const routes: Route[] = [
-  {
-    text: "Home",
-    route: "/home",
-  },
-  {
-    text: "Our work",
-    route: "/our-work",
-  },
-  {
-    text: "Contact us",
-    route: "/contact",
-  },
-];
 
 const currentYear: number = new Date().getFullYear();
 </script>
