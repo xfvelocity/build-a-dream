@@ -11,24 +11,28 @@
     </p>
 
     <div class="xf-flex">
-      <XfButton class="xf-mr-2" text-colour="primary" background-colour="white">
+      <xf-button
+        class="xf-mr-2"
+        text-colour="primary"
+        background-colour="white"
+      >
         View our work
-      </XfButton>
-      <XfButton background-colour="white" :outlined="true">
+      </xf-button>
+      <xf-button background-colour="white" :outlined="true">
         Contact us
-      </XfButton>
+      </xf-button>
     </div>
   </Header>
 
   <!-- About me -->
   <div class="bd-about bd-max-width xf-px-4 xf-py-8">
-    <XfBanner
+    <xf-banner
       class="xf-mx-auto xf-mb-6"
       :font-size="32"
       background-colour="primary"
     >
       About us
-    </XfBanner>
+    </xf-banner>
 
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent proin ac
@@ -45,24 +49,25 @@
 
   <!-- Services -->
   <div class="bd-services xf-px-4 xf-py-6">
-    <XfBanner
+    <xf-banner
       class="xf-mx-auto xf-mt-4 xf-mb-6"
       :font-size="32"
       background-colour="white"
       text-colour="primary"
     >
       Services
-    </XfBanner>
+    </xf-banner>
 
-    <div class="bd-max-width xf-flex xf-flex-wrap xf-gap-3">
+    <!-- <div class="bd-max-width xf-flex xf-flex-wrap xf-gap-3">
       <div
         v-for="(service, i) in services"
         :key="i"
         class="bd-services-item xf-p-4"
       >
-        <XfIcon
+        <xf-icon
           :class="{ 'xf-flex-order-1': i % 2 === 0 }"
           :src="getDynamicAsset(service.icon)"
+          :size="128"
         />
 
         <div :class="i % 2 === 0 ? 'xf-mr-4' : 'xf-ml-4'">
@@ -70,25 +75,25 @@
           <p>{{ service.text }}</p>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <!-- Our work -->
   <div class="bd-our-work xf-my-8">
-    <XfBanner
+    <xf-banner
       class="xf-mx-auto xf-my-4"
       :font-size="32"
       background-colour="primary"
     >
       Our work
-    </XfBanner>
+    </xf-banner>
 
     <p class="bd-max-width xf-text-center">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent proin ac
       bibendum id ut ut suspendisse. Pharetra viverra ipsum non viverra
     </p>
 
-    <WorkCarousel class="xf-my-6" :slides="workSlides" />
+    <work-carousel class="xf-my-6" :slides="workSlides" />
   </div>
 
   <!-- Reviews -->
@@ -102,7 +107,7 @@
         </p>
       </div>
 
-      <ReviewCarousel :slides="reviewSlides" />
+      <review-carousel :slides="reviewSlides" />
     </div>
   </div>
 </template>

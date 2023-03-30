@@ -6,7 +6,7 @@
           <h4 class="xf-mb-2">Contact</h4>
 
           <a class="bd-footer-link" :href="`mailto:${content.email}`">
-            <XfIcon
+            <xf-icon
               class="xf-mr-2"
               :src="getDynamicAsset('icons/mail.svg')"
               :size="14"
@@ -15,7 +15,7 @@
           </a>
 
           <div>
-            <XfIcon
+            <xf-icon
               class="xf-mr-1"
               :src="getDynamicAsset('icons/phone.svg')"
               :size="14"
@@ -24,7 +24,7 @@
           </div>
 
           <div>
-            <XfIcon
+            <xf-icon
               class="xf-mr-1"
               :src="getDynamicAsset('icons/location.svg')"
               :size="14"
