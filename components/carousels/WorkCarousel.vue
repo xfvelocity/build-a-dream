@@ -5,7 +5,11 @@
         class="xf-grid xf-cursor-pointer bd-max-width xf-mx-auto"
         @click="router.push(`/work?post=${slide.id}`)"
       >
-        <img class="xf-col-12" :src="getDynamicAsset(slide.image)" alt="" />
+        <img
+          class="xf-col-12 xf-border-colour-grey"
+          :src="getDynamicAsset(slide.image)"
+          alt=""
+        />
 
         <div class="xf-col-12 xf-my-4">
           <h3 class="xf-text-colour-primary">{{ slide.title }}</h3>
@@ -36,8 +40,8 @@ const router = useRouter();
 <style lang="scss">
 .bd-work-carousel {
   img {
-    border: 1px solid map-get($bd-colours, "secondary");
-    border-radius: 10px;
+    border: 1px solid;
+    border-radius: 5px;
   }
 
   .carousel {

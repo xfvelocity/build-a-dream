@@ -1,56 +1,22 @@
 <template>
-  <footer class="bd-footer xf-pt-8">
+  <footer class="bd-footer xf-py-6">
     <div class="bd-navigation-max-width">
-      <div class="xf-flex-center">
-        <div class="xf-text-14">
-          <h4 class="xf-mb-2">Contact</h4>
+      <ul class="xf-flex-center">
+        <li
+          v-for="(route, i) in content.routes"
+          :key="i"
+          class="xf-text-12 xf-px-2"
+          :class="{
+            'bd-footer-border-right': i !== 2,
+          }"
+        >
+          <nuxt-link :to="route.route">
+            {{ route.text }}
+          </nuxt-link>
+        </li>
+      </ul>
 
-          <a class="bd-footer-link" :href="`mailto:${content.email}`">
-            <xf-icon
-              class="xf-mr-2"
-              :src="getDynamicAsset('icons/mail.svg')"
-              :size="14"
-            />
-            {{ content.email }}
-          </a>
-
-          <div>
-            <xf-icon
-              class="xf-mr-1"
-              :src="getDynamicAsset('icons/phone.svg')"
-              :size="14"
-            />
-            {{ content.phone }}
-          </div>
-
-          <div>
-            <xf-icon
-              class="xf-mr-1"
-              :src="getDynamicAsset('icons/location.svg')"
-              :size="14"
-            />
-            {{ content.location }}
-          </div>
-        </div>
-
-        <div class="xf-ml-10">
-          <h4 class="xf-mb-2">Pages</h4>
-
-          <ul>
-            <li
-              v-for="(route, i) in content.routes"
-              :key="i"
-              class="xf-text-14"
-            >
-              <nuxt-link :to="route.route">
-                {{ route.text }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="xf-text-center xf-text-12 xf-mt-8 xf-pb-4">
+      <p class="xf-text-center xf-text-12 xf-mt-2">
         &copy; {{ currentYear }} Build A-Dream Landscape Gardeners
       </p>
     </div>
@@ -68,6 +34,7 @@ const currentYear: number = new Date().getFullYear();
 <style lang="scss" scoped>
 .bd-footer {
   background: white;
+  border-top: 1px solid rgb(199, 199, 199);
 
   &-link {
     display: flex;

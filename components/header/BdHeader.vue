@@ -1,8 +1,8 @@
 <template>
   <header class="bd-header">
-    <div class="bd-header-content bd-max-width xf-p-6 bd-center">
+    <div class="bd-header-content bd-max-width xf-p-6 xf-center xf-text-center">
       <h1>{{ title }}</h1>
-      <h5 v-if="subTitle" class="xf-text-14 xf-mb-2">{{ subTitle }}</h5>
+      <h5 v-if="subTitle" class="xf-text-12">{{ subTitle }}</h5>
 
       <slot />
     </div>
@@ -20,11 +20,14 @@ defineProps<{
 .bd-header {
   position: relative;
   background: url("~/assets/images/background.png");
-  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 450px;
 
   &-content {
     color: white;
-    width: 90%;
+    width: 85%;
     background: linear-gradient(
       180deg,
       #086500 0%,
@@ -32,10 +35,6 @@ defineProps<{
       rgba(8, 101, 0, 0.66) 100%
     );
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-    h1 {
-      line-height: 0.8;
-    }
   }
 }
 </style>

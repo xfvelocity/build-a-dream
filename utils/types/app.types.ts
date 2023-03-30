@@ -14,3 +14,10 @@ export interface ReviewCarousel {
   review: string;
   name: string;
 }
+
+export interface ContactForm {
+  name: string;
+  phone: string;
+  email: string;
+  message: string;
+}

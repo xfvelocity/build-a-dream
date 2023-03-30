@@ -1,16 +1,24 @@
 @import "./mixins.scss";
 @import "./variables.scss";
 
+html,
+body,
+#__nuxt,
+#__layout {
+  margin: 0 !important;
+  overflow-x: hidden;
+}
+
 body {
   line-height: 1.5;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   color: map-get($bd-colours, "black");
   font-size: 16px;
-  overflow-x: hidden;
 }
 
 .bd-max-width {
+  width: 85%;
   max-width: 375px;
   margin: 0 auto;
 }
@@ -19,16 +27,8 @@ body {
   @include navigationMaxWidth;
 }
 
-.bd-center {
-  @include center(true, true);
-
-  &-horizontal {
-    @include center(true, false);
-  }
-
-  &-vertical {
-    @include center(false, true);
-  }
+p {
+  font-size: 14px;
 }
 
 // Extend on xf colour variables

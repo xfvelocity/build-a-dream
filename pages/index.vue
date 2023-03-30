@@ -1,33 +1,29 @@
 <template>
   <!-- Header -->
-  <Header
+  <bd-header
     title="Build A-Dream"
     sub-title="Dream gardens that don’t cost the earth"
   >
-    <p class="xf-mt-4 xf-mb-8 xf-text-14">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent proin ac
-      bibendum id ut ut suspendisse. Pharetra viverra ipsum non viverra
-      consectetur.
-    </p>
-
-    <div class="xf-flex">
+    <div class="xf-flex xf-flex-justify-content-center xf-mt-6">
       <xf-button
         class="xf-mr-2"
         text-colour="primary"
+        :font-size="12"
         background-colour="white"
       >
-        View our work
+        Our work
       </xf-button>
-      <xf-button background-colour="white" :outlined="true">
+
+      <xf-button background-colour="white" :font-size="12" :outlined="true">
         Contact us
       </xf-button>
     </div>
-  </Header>
+  </bd-header>
 
   <!-- About me -->
-  <div class="bd-about bd-max-width xf-px-4 xf-py-8">
+  <div class="bd-about bd-max-width xf-px-4 xf-py-10">
     <xf-banner
-      class="xf-mx-auto xf-mb-6"
+      class="xf-mx-auto xf-mb-4"
       :font-size="32"
       background-colour="primary"
     >
@@ -38,13 +34,20 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent proin ac
       bibendum id ut ut suspendisse. Pharetra viverra ipsum non viverra
       consectetur. Dignissim sed sed egestas facilisis. Quis id quam cras
-      consequat mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Praesent proin ac bibendum id ut ut suspendisse. Pharetra viverra ipsum
-      non viverra consectetur. Dignissim sed sed egestas facilisis. Quis id quam
-      cras consequat mattis.
+      consequat mattis.
     </p>
 
-    <img class="xf-my-6 xf-w-100" src="~/assets/images/logo-big.png" />
+    <p class="xf-mt-3">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent proin ac
+      bibendum id ut ut suspendisse. Pharetra viverra ipsum non viverra
+      consectetur. Dignissim sed sed egestas facilisis. Quis id quam cras
+      consequat mattis.
+    </p>
+
+    <img
+      class="xf-my-8 xf-w-100 xf-border-colour-grey"
+      src="~/assets/images/logo-big.png"
+    />
   </div>
 
   <!-- Services -->
@@ -98,10 +101,10 @@
 
   <!-- Reviews -->
   <div class="bd-reviews xf-position-relative">
-    <div class="bd-center">
-      <div class="xf-text-colour-white xf-text-center xf-mb-8">
+    <div class="xf-center">
+      <div class="xf-text-colour-white xf-text-center xf-mb-8 bd-max-width">
         <h2>What our customers say</h2>
-        <p class="xf-mt-1 xf-text-14">
+        <p class="xf-mt-1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit praesent proin
           ac.
         </p>
@@ -110,10 +113,54 @@
       <review-carousel :slides="reviewSlides" />
     </div>
   </div>
+
+  <!-- Contact us -->
+  <div class="bd-contact bd-max-width xf-pt-10 xf-pb-6">
+    <xf-banner
+      class="xf-mx-auto xf-mb-2"
+      :font-size="32"
+      background-colour="primary"
+    >
+      Contact us
+    </xf-banner>
+
+    <p class="xf-text-center">Lorem ipsum dolor sit amet consectetur.</p>
+
+    <div class="bd-contact-form xf-grid xf-mt-2 xf-mb-6">
+      <xf-text-input v-model="contact.name" class="xf-col-6" label="Name" />
+      <xf-text-input
+        v-model="contact.phone"
+        class="xf-col-6"
+        type="tel"
+        label="Phone number"
+      />
+      <xf-text-input
+        v-model="contact.email"
+        class="xf-col-12"
+        label="Email"
+        type="email"
+      />
+      <!-- TODO: UPDATE WITH TEXT AREA -->
+      <xf-text-input
+        v-model="contact.message"
+        class="xf-col-12"
+        label="Message"
+      />
+
+      <xf-button
+        class="xf-mt-4 xf-col-12 xf-w-100"
+        background-colour="primary"
+        @click="submitForm"
+      >
+        Submit
+      </xf-button>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { XfButton, XfBanner, XfIcon } from "xf-cmpt-lib";
+import { XfButton, XfBanner, XfIcon, XfTextInput } from "xf-cmpt-lib";
+import { ContactForm } from "@/utils/types/app.types";
 
 const reviewSlides = [
   {
@@ -198,14 +245,25 @@ const services = [
     icon: "icons/tree.svg",
   },
 ];
+
+const contact = ref<ContactForm>({
+  name: "",
+  phone: "",
+  email: "",
+  message: "",
+});
+
+const submitForm = (): void => {
+  console.log(contact.value);
+};
 </script>
 
 <style lang="scss" scoped>
 .bd {
   &-about {
     img {
-      border: 1px solid black;
-      border-radius: 20px;
+      border: 1px solid;
+      border-radius: 5px;
     }
   }
 
@@ -227,6 +285,14 @@ const services = [
   &-reviews {
     height: 400px;
     background: url("~/assets/images/grass-background.png");
+  }
+
+  &-contact {
+    &-form {
+      max-width: 300px;
+      width: 85%;
+      margin: 0 auto;
+    }
   }
 }
 </style>
