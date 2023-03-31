@@ -127,24 +127,31 @@
     <p class="xf-text-center">Lorem ipsum dolor sit amet consectetur.</p>
 
     <div class="bd-contact-form xf-grid xf-mt-2 xf-mb-6">
-      <xf-text-input v-model="contact.name" class="xf-col-6" label="Name" />
+      <xf-text-input
+        v-model="contact.name"
+        class="xf-col-6"
+        label="Name"
+        outlined
+      />
       <xf-text-input
         v-model="contact.phone"
         class="xf-col-6"
         type="tel"
         label="Phone number"
+        outlined
       />
       <xf-text-input
         v-model="contact.email"
         class="xf-col-12"
         label="Email"
         type="email"
+        outlined
       />
-      <!-- TODO: UPDATE WITH TEXT AREA -->
-      <xf-text-input
+      <xf-text-area
         v-model="contact.message"
         class="xf-col-12"
         label="Message"
+        outlined
       />
 
       <xf-button
@@ -159,7 +166,13 @@
 </template>
 
 <script lang="ts" setup>
-import { XfButton, XfBanner, XfIcon, XfTextInput } from "xf-cmpt-lib";
+import {
+  XfButton,
+  XfBanner,
+  XfIcon,
+  XfTextInput,
+  XfTextArea,
+} from "xf-cmpt-lib";
 import { ContactForm } from "@/utils/types/app.types";
 
 const reviewSlides = [
