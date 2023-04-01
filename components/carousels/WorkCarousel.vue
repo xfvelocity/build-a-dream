@@ -7,7 +7,7 @@
       >
         <img
           class="xf-col-12 xf-border-colour-grey"
-          :src="getDynamicAsset(slide.image)"
+          :src="getDynamicAsset(slide.images[0])"
           alt=""
         />
 

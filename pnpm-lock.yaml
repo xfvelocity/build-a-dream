@@ -5,14 +5,14 @@ specifiers:
   sass: ^1.60.0
   sass-loader: ^13.2.2
   vue3-carousel: ^0.2.14
-  xf-cmpt-lib: ^0.0.40
+  xf-cmpt-lib: ^0.0.41
 
 devDependencies:
   nuxt: 3.3.2_sass@1.60.0
   sass: 1.60.0
   sass-loader: 13.2.2_sass@1.60.0
   vue3-carousel: 0.2.14
-  xf-cmpt-lib: 0.0.40
+  xf-cmpt-lib: 0.0.41
 
 packages:
 
@@ -4674,8 +4674,8 @@ packages:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
-  /xf-cmpt-lib/0.0.40:
-    resolution: {integrity: sha512-w8E5juyFIQvs6ClRvFU5t1ob/JEfZys0GH8MjGjT+tffij1GzJS0U9OBzmuChvTI1quOtuHSA/IQvg3Oi2R9hA==}
+  /xf-cmpt-lib/0.0.41:
+    resolution: {integrity: sha512-PQImjxRq0IRHVcaP1sl08zwngZ5XjQ/hvJdDh40nA7PXJuq7OLwcD9986OdzI+F/3Zti2fQDFFbcNuz2B3ncaw==}
     dependencies:
       '@vueuse/core': 9.13.0_vue@3.2.47
       vue: 3.2.47

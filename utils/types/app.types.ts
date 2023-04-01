@@ -5,8 +5,9 @@ export interface Route {
 
 export interface WorkCarousel {
   id: number;
+  location: string;
   title: string;
-  image: string;
+  images: string[];
   desc: string;
 }
 

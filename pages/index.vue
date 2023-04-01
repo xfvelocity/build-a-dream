@@ -96,7 +96,7 @@
       bibendum id ut ut suspendisse. Pharetra viverra ipsum non viverra
     </p>
 
-    <work-carousel class="xf-my-6" :slides="workSlides" />
+    <work-carousel class="xf-my-6" :slides="work.list" />
   </div>
 
   <!-- Reviews -->
@@ -174,6 +174,7 @@ import {
   XfTextArea,
 } from "xf-cmpt-lib";
 import { ContactForm } from "@/utils/types/app.types";
+import work from "@/content/work.json";
 
 const reviewSlides = [
   {
@@ -190,39 +191,6 @@ const reviewSlides = [
     review:
       "Dominic has done several pieces of work from laying a patio circle to a full brick driveway. The quality of work is excellent, I have no hesitation in recommending him.",
     name: "Keith Duke",
-  },
-];
-
-const workSlides = [
-  {
-    id: 1,
-    title: "Indian Sandstone Patio",
-    desc: "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
-    image: "images/1.png",
-  },
-  {
-    id: 2,
-    title: "Indian Sandstone Patio",
-    desc: "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
-    image: "images/1.png",
-  },
-  {
-    id: 3,
-    title: "Indian Sandstone Patio",
-    desc: "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
-    image: "images/1.png",
-  },
-  {
-    id: 4,
-    title: "Indian Sandstone Patio",
-    desc: "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
-    image: "images/1.png",
-  },
-  {
-    id: 5,
-    title: "Indian Sandstone Patio",
-    desc: "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
-    image: "images/1.png",
   },
 ];
 
