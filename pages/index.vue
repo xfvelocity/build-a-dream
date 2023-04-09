@@ -151,6 +151,7 @@
         v-model="contact.message"
         class="xf-col-12"
         label="Message"
+        :rows="4"
         outlined
       />
 

@@ -10,10 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.3.2",
-    "sass": "^1.60.0",
+    "nuxt": "^3.3.3",
+    "sass": "^1.61.0",
     "sass-loader": "^13.2.2",
-    "vue3-carousel": "^0.2.14",
-    "xf-cmpt-lib": "^0.0.41"
+    "vue3-carousel": "^0.2.16",
+    "xf-cmpt-lib": "^0.1.1"
   }
 }

@@ -1,6 +1,6 @@
 <template>
-  <xf-nav>
-    <nuxt-link class="xf-h-max-content" to="/">
+  <xf-nav v-model="isNavOpen" drawer-width="90%">
+    <nuxt-link class="xf-h-max-content" to="/" @click="isNavOpen = false">
       <img src="~/assets/images/logo.png" />
     </nuxt-link>
 
@@ -16,6 +16,7 @@
               <nuxt-link
                 :to="route.route"
                 active-class="xf-text-colour-green-darken-4"
+                @click="isNavOpen = false"
               >
                 {{ route.text }}
               </nuxt-link>
@@ -53,6 +54,9 @@
 import { XfNav, XfIcon } from "xf-cmpt-lib";
 import { getDynamicAsset } from "~/composables/generic";
 import content from "~/content/navigation.json";
+
+// ** Data **
+const isNavOpen = ref<boolean>(false);
 </script>
 
 <style lang="scss" scoped>
