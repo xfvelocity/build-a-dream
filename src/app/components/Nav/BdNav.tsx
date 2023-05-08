@@ -37,8 +37,8 @@ const BdNav = () => {
 
   return (
     <nav className={navDrawerOpen ? "bd-nav-open" : ""}>
-      <header className={`bd-nav xf-p-4`}>
-        <div className="bd-max-width xf-flex-center-between xf-w-100">
+      <header className={`bd-nav xf-py-4 xf-px-8`}>
+        <div className="bd-nav-max-width xf-flex-center-between xf-w-100">
           <Image src="/images/logo.png" alt="" width="210" height="40" />
 
           <div
