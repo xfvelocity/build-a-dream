@@ -4,6 +4,7 @@ export const metadata = {
 };
 
 import "./assets/styles/index.scss";
+import BdFooter from "./components/Footer/BdFooter";
 import BdNav from "./components/Nav/BdNav";
 
 export default function RootLayout({
@@ -16,6 +17,7 @@ export default function RootLayout({
       <body>
         <BdNav />
         <main>{children}</main>
+        <BdFooter />
       </body>
     </html>
   );
