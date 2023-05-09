@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Mobile",
+    "value": "+44 7412 829067",
+    "icon": "mobile.svg"
+  },
+  {
+    "name": "Email",
+    "value": "contact@buildadream.com",
+    "icon": "email.svg"
+  },
+  {
+    "name": "Facebook",
+    "value": "facebook.com/buildadream",
+    "icon": "facebook.svg"
+  }
+]
