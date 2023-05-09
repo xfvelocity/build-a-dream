@@ -1,6 +1,11 @@
 import Image from "next/image";
 
 import "./styles/home.scss";
+
+// Content
+import Services from "../content/services.json";
+
+// Components
 import HeaderImage from "../assets/images/header.png";
 import BdButton from "../components/Button/BdButton";
 import BdBanner from "@/components/Banner/BdBanner";
@@ -78,6 +83,38 @@ const Home = () => {
               <p className="xf-text-colour-grey-lighten-1">{fact.desc} </p>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Services */}
+      <div className="home-services">
+        <div className="home-services-content bd-max-width xf-py-10">
+          <div className="xf-text-center">
+            <h2>Our Services</h2>
+            <p>
+              We provide a diverse range of services, some of which include:
+            </p>
+          </div>
+
+          <div className="home-services-item-container xf-mt-6">
+            {Services.map((service, i) => (
+              <div
+                className={`home-services-item xf-p-6 xf-mb-2 ${
+                  i === 1
+                    ? "home-services-item-middle xf-bg-white xf-text-colour-primary"
+                    : ""
+                }`}
+                key={i}
+              >
+                <h3 className="xf-text-center xf-text-24">{service.title}</h3>
+                <ul className="xf-pl-2">
+                  {service.list.map((item, ii) => (
+                    <li key={ii}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
