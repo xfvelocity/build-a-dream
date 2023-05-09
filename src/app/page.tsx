@@ -3,6 +3,7 @@ import Image from "next/image";
 import "./styles/home.scss";
 import HeaderImage from "../assets/images/header.png";
 import BdButton from "../components/Button/BdButton";
+import BdBanner from "@/components/Banner/BdBanner";
 
 const Home = () => {
   const aboutFacts = [
@@ -30,26 +31,28 @@ const Home = () => {
           style={{ width: "100%", height: "auto" }}
         />
 
-        <div className="home-header-text xf-p-6 bd-max-width">
-          <h1 className="xf-text-24 xf-mb-4">
-            Dream gardens that don’t cost the earth
-          </h1>
-          <p className="xf-text-12 xf-mb-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            proin ac bibendum id ut ut suspendisse. Pharetra viverra ipsum non
-            viverra consectetur.
-          </p>
+        <div className="home-header-text-container">
+          <div className="home-header-text xf-p-6 bd-max-width">
+            <h1 className="xf-text-24 xf-mb-4">
+              Dream gardens that don’t cost the earth
+            </h1>
+            <p className="xf-text-12 xf-mb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+              proin ac bibendum id ut ut suspendisse. Pharetra viverra ipsum non
+              viverra consectetur.
+            </p>
 
-          <BdButton>View our work</BdButton>
+            <BdButton>View our work</BdButton>
+          </div>
         </div>
       </div>
 
       {/*  About */}
       <div className="home-about">
         <div className="bd-max-width">
-          <h3>About us</h3>
+          <BdBanner>About us</BdBanner>
 
-          <p className="xf-mb-4">
+          <p className="xf-my-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
             proin ac bibendum id ut ut suspendisse. Pharetra viverra ipsum non
             viverra consectetur. Praesent proin ac bibendum id ut ut
@@ -63,7 +66,7 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="xf-grid xf-my-4">
+        <div className="xf-grid xf-mt-6">
           {aboutFacts.map((fact, i) => (
             <div
               className={`home-about-item xf-bg-primary xf-p-3 xf-text-center ${
@@ -71,7 +74,7 @@ const Home = () => {
               }`}
               key={i}
             >
-              <h4 className="xf-text-colour-white">{fact.title} </h4>
+              <h4 className="xf-text-colour-white xf-text-20">{fact.title} </h4>
               <p className="xf-text-colour-grey-lighten-1">{fact.desc} </p>
             </div>
           ))}
