@@ -2,11 +2,13 @@ import Image from "next/image";
 
 import "./styles/home.scss";
 
+// Images
+import HeaderImage from "../assets/images/header.png";
+
 // Content
-import Services from "../content/services.json";
+import Services from "../content/services";
 
 // Components
-import HeaderImage from "../assets/images/header.png";
 import BdButton from "../components/Button/BdButton";
 import BdBanner from "@/components/Banner/BdBanner";
 
@@ -49,6 +51,11 @@ const Home = () => {
 
             <BdButton>View our work</BdButton>
           </div>
+
+          {/* TODO: 
+          - Social icons
+          - Carousel
+          */}
         </div>
       </div>
 
@@ -98,20 +105,24 @@ const Home = () => {
 
           <div className="home-services-item-container xf-mt-6">
             {Services.map((service, i) => (
-              <div
-                className={`home-services-item xf-p-6 xf-mb-2 ${
-                  i === 1
-                    ? "home-services-item-middle xf-bg-white xf-text-colour-primary"
-                    : ""
-                }`}
-                key={i}
-              >
-                <h3 className="xf-text-center xf-text-24">{service.title}</h3>
-                <ul className="xf-pl-2">
-                  {service.list.map((item, ii) => (
-                    <li key={ii}>{item}</li>
-                  ))}
-                </ul>
+              <div className={`home-services-item xf-p-6 xf-mb-2`} key={i}>
+                <div className="xf-flex xf-flex-align-items-center xf-mb-3">
+                  <div
+                    className={`home-services-item-icon xf-bg-red-lighten-4 xf-mr-2 xf-bg-${service.colour}`}
+                  >
+                    {/* TODO: Update to use icon */}
+                    <Image
+                      className="xf-center"
+                      src={service.icon}
+                      alt=""
+                      height="12"
+                    />
+                  </div>
+
+                  <h3 className="xf-text-20 xf-mb-0">{service.title}</h3>
+                </div>
+
+                <p className="xf-text-12">{service.text}</p>
               </div>
             ))}
           </div>
