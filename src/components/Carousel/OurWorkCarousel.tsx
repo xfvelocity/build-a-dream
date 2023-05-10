@@ -110,12 +110,12 @@ const OurWorkCarousel = () => {
         ))}
 
         {/* TODO: Update with icon */}
-        <div className="prev-arrow" ref={prevRef}>
+        {/* <div className="prev-arrow" ref={prevRef}>
           <Image src={LeftArrowIcon} alt="" />
         </div>
         <div className="next-arrow" ref={nextRef}>
           <Image src={RightArrowIcon} alt="" />
-        </div>
+        </div> */}
       </Swiper>
     </div>
   );

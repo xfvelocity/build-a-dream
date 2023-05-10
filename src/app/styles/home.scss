@@ -67,26 +67,26 @@
     background: url("../../assets/images/home/about-top-bg.png");
     background-repeat: no-repeat;
 
-    .our-work-carousel {
-      position: relative;
-      width: 100%;
+    // .our-work-carousel {
+    //   position: relative;
+    //   width: 100%;
 
-      .prev-arrow,
-      .next-arrow {
-        position: absolute;
-        bottom: 4px;
-        z-index: 10;
-        cursor: pointer;
-      }
+    //   .prev-arrow,
+    //   .next-arrow {
+    //     position: absolute;
+    //     bottom: 4px;
+    //     z-index: 10;
+    //     cursor: pointer;
+    //   }
 
-      .prev-arrow {
-        left: 0;
-      }
+    //   .prev-arrow {
+    //     left: 0;
+    //   }
 
-      .next-arrow {
-        right: 0;
-      }
-    }
+    //   .next-arrow {
+    //     right: 0;
+    //   }
+    // }
 
     img {
       border-radius: 5px;
