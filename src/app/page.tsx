@@ -9,6 +9,7 @@ import Services from "../content/services";
 import BdButton from "../components/Button/BdButton";
 import BdBanner from "@/components/Banner/BdBanner";
 import HeaderCarousel from "@/components/Carousel/HeaderCarousel";
+import OurWorkCarousel from "@/components/Carousel/OurWorkCarousel";
 
 const Home = () => {
   const aboutFacts = [
@@ -119,6 +120,13 @@ const Home = () => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/*  Our Work */}
+      <div className="home-our-work">
+        <div className="bd-max-width xf-py-15">
+          <OurWorkCarousel />
         </div>
       </div>
     </>
