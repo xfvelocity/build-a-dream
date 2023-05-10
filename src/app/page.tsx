@@ -2,15 +2,13 @@ import Image from "next/image";
 
 import "./styles/home.scss";
 
-// Images
-import HeaderImage from "../assets/images/header.png";
-
 // Content
 import Services from "../content/services";
 
 // Components
 import BdButton from "../components/Button/BdButton";
 import BdBanner from "@/components/Banner/BdBanner";
+import HeaderCarousel from "@/components/Carousel/HeaderCarousel";
 
 const Home = () => {
   const aboutFacts = [
@@ -32,11 +30,7 @@ const Home = () => {
     <>
       {/*  Header */}
       <div className="home-header">
-        <Image
-          src={HeaderImage}
-          alt=""
-          style={{ width: "100%", height: "auto" }}
-        />
+        <HeaderCarousel />
 
         <div className="home-header-text-container">
           <div className="home-header-text xf-p-6 bd-max-width">
@@ -54,7 +48,6 @@ const Home = () => {
 
           {/* TODO: 
           - Social icons
-          - Carousel
           */}
         </div>
       </div>

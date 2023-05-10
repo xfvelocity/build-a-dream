@@ -1,11 +1,23 @@
+@import "../../assets//styles/index.scss";
+
 .home {
   &-header {
+    --swiper-pagination-bullet-inactive-color: #e0e0e0;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-color: #0c9900;
+
+    .swiper-pagination {
+      top: initial;
+      bottom: 60px !important;
+    }
+
     &-text {
       position: relative;
-      top: -60px;
+      top: -50px;
       background: linear-gradient(153.19deg, #053f00 11.14%, #065000 100%);
       color: white;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      z-index: 5;
     }
 
     &-text-container {
