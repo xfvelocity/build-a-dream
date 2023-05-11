@@ -1,0 +1,29 @@
+---
+import BdFooter from "../components/Footer/BdFooter";
+import BdNav from "../components/Nav/BdNav";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Build A-Dream | Lincoln Landscape Gardeners</title>
+  </head>
+
+  <body>
+    <BdNav client:load />
+
+    <main>
+      <slot />
+    </main>
+
+    <BdFooter />
+  </body>
+</html>
+
+<style lang="scss" is:global>
+  @import "../styles/index.scss";
+</style>
