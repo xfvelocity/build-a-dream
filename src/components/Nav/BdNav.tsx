@@ -25,62 +25,66 @@ const BdNav = () => {
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
 
   return (
-    <nav className={navDrawerOpen ? "bd-nav-open" : ""}>
-      <header className={`bd-nav xf-p-4 xf-px-lg-8`}>
-        <div className="bd-nav-max-width xf-flex-center-between xf-w-100">
-          <img src={Logo} alt="" width="160" />
-
-          <div
-            className={`bd-nav-btn ${navDrawerOpen ? "bd-nav-btn-open" : ""}`}
-            onClick={() => setNavDrawerOpen(!navDrawerOpen)}
-          >
-            {Array.from(Array(4).keys()).map((x) => (
-              <span className="xf-bg-secondary" key={x} />
-            ))}
-          </div>
-
-          <div className="bd-nav-items xf-ml-auto">
-            <ul className="xf-flex">
-              {routes.map((route, i) => (
-                <li className="bd-nav-item xf-p-1" key={i}>
-                  <a href={route.path}>{route.name}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </header>
-
+    <>
       <div style={{ height: `68px` }} />
 
-      {navDrawerOpen && (
-        <div
-          className="bd-nav-drawer-overlay"
-          onClick={() => setNavDrawerOpen(false)}
-        >
-          <div
-            className="bd-nav-drawer-content xf-pt-4 xf-bg-white"
-            style={{
-              height: `calc(100% - 68px)`,
-              top: `68px`,
-            }}
-            onClick={(event) => event.stopPropagation()}
-          >
-            <ul>
-              {routes.map((route, i) => (
-                <li
-                  className="bd-nav-drawer-item xf-p-1 xf-text-right xf-pr-8"
-                  key={i}
-                  onClick={() => setNavDrawerOpen(false)}
-                >
-                  <a href={route.path}>{route.name}</a>
-                </li>
+      <nav className={navDrawerOpen ? "bd-nav-open" : ""}>
+        <header className={`bd-nav xf-p-4 xf-px-lg-8`}>
+          <div className="bd-nav-max-width xf-flex-center-between xf-w-100">
+            <a href="/">
+              <img src={Logo} alt="" width="160" />
+            </a>
+
+            <div
+              className={`bd-nav-btn ${navDrawerOpen ? "bd-nav-btn-open" : ""}`}
+              onClick={() => setNavDrawerOpen(!navDrawerOpen)}
+            >
+              {Array.from(Array(4).keys()).map((x) => (
+                <span className="xf-bg-secondary" key={x} />
               ))}
-            </ul>
+            </div>
+
+            <div className="bd-nav-items xf-ml-auto">
+              <ul className="xf-flex">
+                {routes.map((route, i) => (
+                  <li className="bd-nav-item xf-p-1" key={i}>
+                    <a href={route.path}>{route.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-      )}
-    </nav>
+        </header>
+
+        {navDrawerOpen && (
+          <div
+            className="bd-nav-drawer-overlay"
+            onClick={() => setNavDrawerOpen(false)}
+          >
+            <div
+              className="bd-nav-drawer-content xf-pt-4 xf-bg-white"
+              style={{
+                height: `calc(100% - 68px)`,
+                top: `68px`,
+              }}
+              onClick={(event) => event.stopPropagation()}
+            >
+              <ul>
+                {routes.map((route, i) => (
+                  <li
+                    className="bd-nav-drawer-item xf-p-1 xf-text-right xf-pr-8"
+                    key={i}
+                    onClick={() => setNavDrawerOpen(false)}
+                  >
+                    <a href={route.path}>{route.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
+      </nav>
+    </>
   );
 };
 

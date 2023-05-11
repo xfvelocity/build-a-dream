@@ -93,7 +93,7 @@ const aboutFacts = [
 
       <div class="home-services-item-container xf-mt-6">
         {
-          Services.map((service, i) => (
+          Services.map((service) => (
             <div class={`home-services-item xf-p-6 xf-mb-2`}>
               <div class="xf-flex xf-flex-align-items-center xf-mb-3">
                 <div
@@ -126,6 +126,7 @@ const aboutFacts = [
   </div>
 
   <!-- Contact us -->
+  <a id="contact"></a>
   <div class="home-contact">
     <div class="bd-max-width xf-pt-10 xf-pb-15">
       <div class="xf-text-center">
@@ -138,7 +139,7 @@ const aboutFacts = [
 
       <div class="xf-pl-4 xf-my-8">
         {
-          Social.map((s, i) => (
+          Social.map((s) => (
             <a href={s.href} target="_blank" aria-label={s.title}>
               <div class="xf-flex xf-flex-align-items-center xf-mb-3">
                 <div class="home-contact-icon xf-bg-white xf-mr-3">
@@ -195,6 +196,10 @@ const aboutFacts = [
 
 <style lang="scss" is:global>
   @import "../styles/index.scss";
+
+  #contact {
+    scroll-margin-top: 80px;
+  }
 
   .home {
     &-header {
