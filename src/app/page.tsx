@@ -11,6 +11,7 @@ import BdButton from "../components/Button/BdButton";
 import BdBanner from "@/components/Banner/BdBanner";
 import HeaderCarousel from "@/components/Carousel/HeaderCarousel";
 import OurWorkCarousel from "@/components/Carousel/OurWorkCarousel";
+import ReviewsCarousel from "@/components/Carousel/ReviewsCarousel";
 
 const Home = () => {
   const aboutFacts = [
@@ -185,6 +186,13 @@ const Home = () => {
               Send your message
             </BdButton>
           </div>
+        </div>
+      </div>
+
+      {/* Reviews */}
+      <div className="home-reviews xf-pt-15 xf-pb-10">
+        <div className="bd-max-width">
+          <ReviewsCarousel />
         </div>
       </div>
     </>

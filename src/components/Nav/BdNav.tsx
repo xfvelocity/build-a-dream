@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./BdNav.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,17 +23,6 @@ const BdNav = () => {
   ];
 
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
-  const [navbarHeight, setNavbarHeight] = useState(0);
-
-  const setNavDrawerHeight = (): void => {
-    const headerElem = document.querySelector(".bd-nav");
-
-    if (headerElem) {
-      setNavbarHeight(headerElem.clientHeight);
-    }
-  };
-
-  useEffect(setNavDrawerHeight);
 
   return (
     <nav className={navDrawerOpen ? "bd-nav-open" : ""}>
@@ -62,14 +51,20 @@ const BdNav = () => {
         </div>
       </header>
 
+      <div style={{ height: `68px` }} />
+
       {navDrawerOpen && (
-        <div className="bd-nav-drawer-overlay">
+        <div
+          className="bd-nav-drawer-overlay"
+          onClick={() => setNavDrawerOpen(false)}
+        >
           <div
             className="bd-nav-drawer-content xf-pt-4 xf-bg-white"
             style={{
-              height: `calc(100% - ${navbarHeight}px)`,
-              top: `${navbarHeight}px`,
+              height: `calc(100% - 68px)`,
+              top: `68px`,
             }}
+            onClick={(event) => event.stopPropagation()}
           >
             <ul>
               {routes.map((route, i) => (

@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
+import { NavigationOptions } from "swiper/types";
 
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -14,9 +15,6 @@ import Image from "next/image";
 
 // Images
 import HeaderImage from "../../assets/images/header.png";
-import LeftArrowIcon from "../../assets/icons/left-arrow.svg";
-import RightArrowIcon from "../../assets/icons/right-arrow.svg";
-import { NavigationOptions } from "swiper/types";
 
 const OurWorkCarousel = () => {
   const workExamples = [
