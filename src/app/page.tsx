@@ -161,22 +161,22 @@ const Home = () => {
           </div>
 
           <div className=" xf-bg-white home-contact-form xf-text-colour-secondary xf-p-6 xf-pb-8 xf-w-100">
-            <div className="xf-mb-2">
+            <div className="xf-mb-3">
               <label>Name</label>
               <input type="text" placeholder="John Smith" />
             </div>
 
-            <div className="xf-mb-2">
+            <div className="xf-mb-3">
               <label>Email Address</label>
               <input type="text" placeholder="john@gmail.com" />
             </div>
 
-            <div className="xf-mb-2">
+            <div className="xf-mb-3">
               <label>Phone Number</label>
               <input type="text" placeholder="07400 820600" />
             </div>
 
-            <div className="xf-mb-2">
+            <div className="xf-mb-1">
               <label>Message</label>
               <textarea placeholder="Write your query here.." rows={5} />
             </div>

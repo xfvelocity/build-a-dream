@@ -9,7 +9,7 @@ const BdButton = ({
 }) => {
   return (
     <button
-      className={`bd-button xf-text-${fontSize} xf-px-4 xf-py-1 xf-bg-${backgroundColour} xf-text-colour-${textColour} ${
+      className={`bd-button xf-text-${fontSize} xf-px-4 xf-py-2 xf-bg-${backgroundColour} xf-text-colour-${textColour} ${
         fullWidth ? "xf-w-100" : ""
       }`}
     >

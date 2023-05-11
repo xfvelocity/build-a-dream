@@ -115,21 +115,17 @@
 
     label {
       font-size: 14px;
-      padding-left: 7px !important;
+      font-weight: 400;
     }
 
     input,
     textarea {
       margin-top: 3px;
-      border: 0;
+      border: 1px solid #dfdfdf;
       background: #ececec;
-      padding: 10px;
+      padding: 15px 10px;
       border-radius: 5px;
       width: 100%;
-
-      &::placeholder {
-        opacity: 0.5;
-      }
     }
 
     textarea {
