@@ -134,7 +134,7 @@ const Home = () => {
       {/* Contact us */}
       <div className="home-contact">
         <div className="bd-max-width xf-pt-10 xf-pb-15">
-          <div className="xf-text-center xf-mb-6">
+          <div className="xf-text-center">
             <h3 className="xf-text-24">Looking for a free quote?</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipi elit. Praesent proin
@@ -142,21 +142,25 @@ const Home = () => {
             </p>
           </div>
 
-          {Social.map((s, i) => (
-            <div className="xf-flex xf-flex-align-items-center xf-mb-3" key={i}>
-              <div className="home-contact-icon xf-bg-white xf-mr-3">
-                {/* TODO: Update to use icon */}
-                <Image className="xf-center" src={s.icon} alt="" />
-              </div>
+          <div className="xf-pl-4 xf-my-8">
+            {Social.map((s, i) => (
+              <a href={s.href} target="_blank" aria-label={s.title} key={i}>
+                <div className="xf-flex xf-flex-align-items-center xf-mb-3">
+                  <div className="home-contact-icon xf-bg-white xf-mr-3">
+                    {/* TODO: Update to use icon */}
+                    <Image className="xf-center" src={s.icon} alt="" />
+                  </div>
 
-              <div>
-                <h4>{s.name}</h4>
-                <p>{s.value}</p>
-              </div>
-            </div>
-          ))}
+                  <div>
+                    <h4>{s.title}</h4>
+                    <p>{s.text}</p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
 
-          <div className="xf-mt-8 xf-bg-white home-contact-form xf-text-colour-secondary xf-p-6 xf-pb-8 xf-w-100">
+          <div className=" xf-bg-white home-contact-form xf-text-colour-secondary xf-p-6 xf-pb-8 xf-w-100">
             <div className="xf-mb-2">
               <label>Name</label>
               <input type="text" placeholder="John Smith" />

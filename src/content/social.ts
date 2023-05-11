@@ -4,18 +4,21 @@ import EmailIcon from "../assets/icons/email.svg";
 
 const social = [
   {
-    name: "Mobile",
-    value: "+44 7412 829067",
+    title: "Mobile",
+    text: "074140 95408",
+    href: "tel:07414095408",
     icon: MobileIcon,
   },
   {
-    name: "Email",
-    value: "contact@buildadream.com",
+    title: "Email",
+    text: "contact@buildadream.com",
+    href: "mailto:contact@buildadream.com",
     icon: EmailIcon,
   },
   {
-    name: "Facebook",
-    value: "facebook.com/buildadream",
+    title: "Facebook",
+    text: "Find us on facebook",
+    href: "https://facebook.com/buildadreamlandscapers",
     icon: FacebookIcon,
   },
 ];
