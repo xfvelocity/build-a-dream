@@ -92,4 +92,44 @@
       border-radius: 5px;
     }
   }
+
+  &-contact {
+    background: url("../../assets/images/home/services-bg.png"),
+      linear-gradient(153.19deg, #053f00 11.14%, #065000 100%);
+    color: white;
+
+    &-form {
+      border-radius: 5px;
+    }
+
+    &-icon {
+      position: relative;
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+    }
+
+    label {
+      font-size: 14px;
+      padding-left: 7px !important;
+    }
+
+    input,
+    textarea {
+      margin-top: 3px;
+      border: 0;
+      background: #ececec;
+      padding: 10px;
+      border-radius: 5px;
+      width: 100%;
+
+      &::placeholder {
+        opacity: 0.5;
+      }
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
 }
