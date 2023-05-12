@@ -18,12 +18,12 @@ const ReviewsCarousel = () => {
       reviewer: "Keith Duke",
     },
     {
-      text: "Dominic has done several pieces of work from laying a patio circle to a full brick driveway. The quality of work is excellent and I have no hesitation in recommending him to everyone.",
-      reviewer: "Keith Duke",
+      text: "Completed my decking, turfing and patio exactly as requested. Could not be happier. Hassle free and excellent quality end result. Would recommend 100%",
+      reviewer: "Michelle Rachael",
     },
     {
-      text: "Dominic has done several pieces of work from laying a patio circle to a full brick driveway. The quality of work is excellent and I have no hesitation in recommending him to everyone.",
-      reviewer: "Keith Duke",
+      text: "Experienced, professional and competitive, Dominic is reliable and very creative and can easily turn your dream garden into a reality!!",
+      reviewer: "MacDougall",
     },
   ];
 

@@ -1,0 +1,148 @@
+@import "../../styles/index.scss";
+
+.home {
+  --swiper-pagination-bullet-inactive-color: #e0e0e0;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+
+  &-reviews,
+  &-our-work {
+    --swiper-pagination-color: #{map-get($xf-colours, "primary")};
+    --swiper-pagination-bullet-width: 12px;
+    --swiper-pagination-bullet-height: 12px;
+  }
+
+  &-header {
+    --swiper-pagination-color: #0c9900;
+
+    .swiper-pagination {
+      top: initial;
+      bottom: 60px !important;
+    }
+
+    &-text {
+      position: relative;
+      top: -50px;
+      background: linear-gradient(153.19deg, #053f00 11.14%, #065000 100%);
+      color: white;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      z-index: 5;
+    }
+
+    &-text-container {
+      background: url("../../images/home/about-top-bg.png");
+      position: relative;
+      top: -10px;
+    }
+  }
+
+  &-about {
+    background: url("../../images/home/about-bottom-bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-bottom: 80px;
+
+    &-item {
+      border-radius: 5px;
+    }
+  }
+
+  &-services {
+    background: url("../../images/home/services-bg.png"),
+      linear-gradient(146.72deg, #042f00 0.86%, #043600 100%);
+    color: white;
+
+    &-item {
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+      &-icon {
+        position: relative;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        box-shadow: 4px 4px 4px 4px rgba(106, 106, 106, 0.1);
+      }
+    }
+  }
+
+  &-our-work {
+    background: url("../../images/home/about-top-bg.png");
+    background-repeat: no-repeat;
+
+    img {
+      border-radius: 5px;
+    }
+  }
+
+  #contact {
+    scroll-margin-top: 80px;
+  }
+
+  &-contact {
+    background: url("../../images/home/services-bg.png"),
+      linear-gradient(146.72deg, #042f00 0.86%, #043600 100%);
+    color: white;
+
+    a {
+      text-decoration: none;
+    }
+
+    &-form {
+      border-radius: 5px;
+    }
+
+    &-icon {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    input,
+    textarea {
+      margin-top: 3px;
+      border: 1px solid #dfdfdf;
+      background: #ececec;
+      padding: 15px 10px;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
+
+  &-reviews {
+    background: url("../../images/home/about-bottom-bg.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    .reviews-carousel {
+      position: relative;
+    }
+
+    p {
+      letter-spacing: 0.07em !important;
+    }
+
+    .start-quote {
+      position: absolute;
+      top: 0px;
+      left: 0;
+    }
+
+    .end-quote {
+      position: absolute;
+      bottom: 8px;
+      right: 0;
+    }
+  }
+}

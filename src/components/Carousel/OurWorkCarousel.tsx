@@ -27,7 +27,7 @@ const OurWorkCarousel = () => {
     {
       id: 2,
       image: HeaderImage,
-      title: "Indian Sandstone patio 2",
+      title: "Outdoor living area",
       text: [
         "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. ",
         "Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
@@ -36,7 +36,7 @@ const OurWorkCarousel = () => {
     {
       id: 3,
       image: HeaderImage,
-      title: "Indian Sandstone patio 3",
+      title: "Circular patio & lawn",
       text: [
         "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. ",
         "Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
@@ -45,7 +45,7 @@ const OurWorkCarousel = () => {
     {
       id: 4,
       image: HeaderImage,
-      title: "Indian Sandstone patio 3",
+      title: "Decking",
       text: [
         "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. ",
         "Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
@@ -54,7 +54,7 @@ const OurWorkCarousel = () => {
     {
       id: 5,
       image: HeaderImage,
-      title: "Indian Sandstone patio 3",
+      title: "Driveway",
       text: [
         "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. ",
         "Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
