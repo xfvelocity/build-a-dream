@@ -20,11 +20,15 @@
 
     &-text-container {
       background: url("../../images/home/about-top-bg.png");
+      background-size: cover;
+      background-repeat: no-repeat;
       position: relative;
     }
 
     @include sm-down {
       &-text {
+        @include maxWidth;
+
         position: relative;
         top: -50px;
         z-index: 5;
@@ -48,6 +52,7 @@
 
       &-text-container {
         @include center;
+        @include maxWidth;
 
         background: none;
         width: 100%;
@@ -112,8 +117,6 @@
   &-contact {
     background: url("../../images/home/services-bg.png"),
       linear-gradient(146.72deg, #042f00 0.86%, #043600 100%);
-    background-repeat: no-repeat;
-    background-size: cover;
     color: white;
 
     a {

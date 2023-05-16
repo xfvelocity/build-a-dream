@@ -17,3 +17,17 @@
     transform: translate(0, -50%) !important;
   }
 }
+
+@mixin maxWidth() {
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include sm-up {
+    max-width: 700px;
+  }
+
+  @include md-up {
+    max-width: 1600px;
+  }
+}
