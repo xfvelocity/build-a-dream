@@ -5,9 +5,12 @@ const BdBanner = ({
   fontSize = 24,
   textColour = "white",
   children = "",
+  classNames = "",
 }) => {
   return (
-    <h2 className="xf-fw-700 xf-mx-auto xf-w-max-content xf-z-5 xf-h-max-content">
+    <h2
+      className={`xf-fw-700  xf-w-max-content xf-z-5 xf-h-max-content ${classNames}`}
+    >
       <div
         className={`xf-py-2 xf-px-6 xf-w-max-content xf-mb-1 xf-bg-${backgroundColour} xf-text-colour-${textColour}`}
         style={{ fontSize: `${fontSize}px` }}

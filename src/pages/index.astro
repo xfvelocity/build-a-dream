@@ -32,8 +32,8 @@ const aboutFacts = [
   <div class="home-header">
     <HeaderCarousel client:load />
 
-    <div class="home-header-text-container">
-      <div class="home-header-text xf-p-6 bd-max-width">
+    <div class="home-header-text-container bd-max-width">
+      <div class="home-header-text xf-p-6">
         <h1 class="xf-text-24 xf-mb-4">
           Dream gardens that don’t cost the earth
         </h1>
@@ -50,41 +50,46 @@ const aboutFacts = [
 
   <!-- About -->
   <div class="home-about">
-    <div class="bd-max-width">
-      <BdBanner>About us</BdBanner>
+    <div class="bd-max-width xf-grid xf-py-md-15">
+      <div class="xf-col-12 xf-col-md-6">
+        <BdBanner class-names="xf-mx-auto xf-mx-md-0">About us</BdBanner>
 
-      <p class="xf-my-4">
-        At our landscaping company, we are dedicated to transforming ordinary
-        outdoor spaces into extraordinary landscapes. With our passion for
-        creating stunning and functional designs, we offer a wide range of
-        services to meet all of your landscaping needs. From expert landscape
-        design and installation to meticulous lawn maintenance and care, we
-        strive for excellence in every project.
-      </p>
+        <p class="xf-my-4">
+          At our landscaping company, we are dedicated to transforming ordinary
+          outdoor spaces into extraordinary landscapes. With our passion for
+          creating stunning and functional designs, we offer a wide range of
+          services to meet all of your landscaping needs. From expert landscape
+          design and installation to meticulous lawn maintenance and care, we
+          strive for excellence in every project.
+        </p>
 
-      <p>
-        Our team of skilled professionals takes pride in their craftsmanship and
-        attention to detail, ensuring that each landscape we create is a
-        masterpiece. With a commitment to customer satisfaction, we work closely
-        with you to bring your vision to life and exceed your expectations.
-      </p>
-    </div>
+        <p>
+          Our team of skilled professionals takes pride in their craftsmanship
+          and attention to detail, ensuring that each landscape we create is a
+          masterpiece. With a commitment to customer satisfaction, we work
+          closely with you to bring your vision to life and exceed your
+          expectations.
+        </p>
+      </div>
 
-    <div class="xf-grid xf-mt-6">
-      {
-        aboutFacts.map((fact, i) => (
-          <div
-            class={`home-about-item xf-bg-primary xf-p-3 xf-text-center ${
-              i == 2 ? "xf-col-12" : "xf-col-6"
-            }`}
-          >
-            <p class="xf-text-colour-white xf-text-20 xf-fw-700">
-              {fact.title}{" "}
-            </p>
-            <p class="xf-text-colour-grey-lighten-1">{fact.desc} </p>
-          </div>
-        ))
-      }
+      <div
+        class="home-about-facts xf-col-12 xf-col-md-5 xf-col-offset-md-8 xf-grid xf-mt-6"
+      >
+        {
+          aboutFacts.map((fact, i) => (
+            <div
+              class={`home-about-item xf-bg-primary xf-p-3 xf-text-center ${
+                i == 2 ? "xf-col-12" : "xf-col-6"
+              }`}
+            >
+              <p class="xf-text-colour-white xf-text-20 xf-fw-700">
+                {fact.title}{" "}
+              </p>
+              <p class="xf-text-colour-grey-lighten-1">{fact.desc} </p>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 
@@ -96,10 +101,12 @@ const aboutFacts = [
         <p>We provide a diverse range of services, some of which include:</p>
       </div>
 
-      <div class="home-services-item-container xf-mt-6">
+      <div class="home-services-item-container xf-mt-6 xf-grid">
         {
           Services.map((service) => (
-            <div class={`home-services-item xf-p-6 xf-mb-2`}>
+            <div
+              class={`xf-col-12 xf-col-md-6 home-services-item xf-p-6 xf-mb-2`}
+            >
               <div class="xf-flex xf-flex-align-items-center xf-mb-3">
                 <div
                   class={`home-services-item-icon xf-mr-2 xf-bg-${service.colour}`}
@@ -133,36 +140,38 @@ const aboutFacts = [
   <!-- Contact us -->
   <a id="contact"></a>
   <div class="home-contact">
-    <div class="bd-max-width xf-pt-10 xf-pb-15">
-      <div class="xf-text-center">
-        <h3 class="xf-text-24">Looking for a free quote?</h3>
-        <p>
-          Contact us today for a free quote and let us bring your dream
-          landscape to life.
-        </p>
-      </div>
+    <div class="bd-max-width xf-pt-10 xf-pb-15 xf-grid">
+      <div class="xf-col-12 xf-col-md-6">
+        <div class="home-contact-title">
+          <h3 class="xf-text-24 xf-mt-md-4">Looking for a free quote?</h3>
+          <p>
+            Contact us today for a free quote and let us bring your dream
+            landscape to life.
+          </p>
+        </div>
 
-      <div class="xf-pl-4 xf-my-8">
-        {
-          Social.map((s) => (
-            <a href={s.href} target="_blank" aria-label={s.title}>
-              <div class="xf-flex xf-flex-align-items-center xf-mb-3">
-                <div class="home-contact-icon xf-bg-white xf-mr-3">
-                  <img class="xf-center" src={s.icon} alt="" />
-                </div>
+        <div class="xf-pl-4 xf-my-8 xf-pl-md-0">
+          {
+            Social.map((s) => (
+              <a href={s.href} target="_blank" aria-label={s.title}>
+                <div class="xf-flex xf-flex-align-items-center xf-mb-3">
+                  <div class="home-contact-icon xf-bg-white xf-mr-3">
+                    <img class="xf-center" src={s.icon} alt="" />
+                  </div>
 
-                <div>
-                  <h4>{s.title}</h4>
-                  <p>{s.text}</p>
+                  <div>
+                    <h4>{s.title}</h4>
+                    <p>{s.text}</p>
+                  </div>
                 </div>
-              </div>
-            </a>
-          ))
-        }
+              </a>
+            ))
+          }
+        </div>
       </div>
 
       <div
-        class="xf-bg-white home-contact-form xf-text-colour-secondary xf-p-6 xf-pb-8 xf-w-100"
+        class="xf-bg-white home-contact-form xf-text-colour-secondary xf-p-6 xf-pb-8 xf-w-100 xf-col-12 xf-col-md-6"
       >
         <div class="xf-mb-3">
           <label>Name</label>
@@ -193,12 +202,12 @@ const aboutFacts = [
 
   <!-- Reviews -->
   <div class="home-reviews xf-pt-15 xf-pb-10">
-    <div class="bd-max-width">
+    <div class="home-reviews-content">
       <ReviewsCarousel client:load />
     </div>
   </div>
 </Layout>
 
-<style lang="scss" is:global>
+<style lang="scss">
   @import "./styles/home.scss";
 </style>

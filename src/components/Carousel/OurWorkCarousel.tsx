@@ -85,17 +85,23 @@ const OurWorkCarousel = () => {
       >
         {workExamples.map((example, i) => (
           <SwiperSlide key={i}>
-            <div className="xf-pb-10">
-              <img className="xf-w-100" src={example.image} alt="" />
+            <div className="xf-grid xf-pb-10">
+              <img
+                className="xf-w-100 xf-col-12 xf-col-md-6"
+                src={example.image}
+                alt=""
+              />
 
-              <h3 className="xf-text-colour-primary xf-mt-2">
-                {example.title}
-              </h3>
-              {example.text.map((t, ti) => (
-                <p className="xf-mb-2" key={ti}>
-                  {t}
-                </p>
-              ))}
+              <div className="xf-col-12 xf-col-md-6 xf-ml-md-3">
+                <h3 className="xf-text-colour-primary xf-mt-2 xf-mt-md-0">
+                  {example.title}
+                </h3>
+                {example.text.map((t, ti) => (
+                  <p className="xf-mb-2" key={ti}>
+                    {t}
+                  </p>
+                ))}
+              </div>
             </div>
           </SwiperSlide>
         ))}
