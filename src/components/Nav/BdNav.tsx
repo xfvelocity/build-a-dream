@@ -30,9 +30,9 @@ const BdNav = () => {
 
       <nav className={navDrawerOpen ? "bd-nav-open" : ""}>
         <header className={`bd-nav xf-p-4 xf-px-lg-8`}>
-          <div className="bd-nav-max-width xf-flex-center-between xf-w-100">
+          <div className="bd-nav-content bd-max-width xf-flex-center-between xf-w-100">
             <a href="/" aria-label="home">
-              <img src={Logo} alt="" width="160" />
+              <img src={Logo} alt="" />
             </a>
 
             <div

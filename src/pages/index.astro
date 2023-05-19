@@ -34,10 +34,10 @@ const aboutFacts = [
 
     <div class="home-header-text-container">
       <div class="home-header-text xf-p-6 xf-p-lg-10">
-        <h1 class="xf-text-24 xf-mb-4">
+        <h1 class="xf-text-24 xf-mb-2">
           Dream gardens that don’t cost the earth
         </h1>
-        <p class="xf-text-12 xf-text-14-lg xf-mb-5">
+        <p class="xf-text-12 xf-text-14-lg xf-fw-400 xf-mb-5 xf-mb-lg-7">
           With competitive pricing, experience the value of our affordable
           landscaping solutions as we create stunning outdoor spaces that suit
           your needs and exceed your expectations.
@@ -51,10 +51,10 @@ const aboutFacts = [
   <!-- About -->
   <div class="home-about">
     <div class="bd-max-width xf-grid xf-py-md-15">
-      <div class="xf-col-12 xf-col-md-6 xf-col-xl-7">
+      <div class="xf-col-12 xf-col-md-6">
         <BdBanner class-names="xf-mx-auto xf-mx-md-0">About us</BdBanner>
 
-        <p class="xf-my-4">
+        <p class="xf-my-4 xf-mt-lg-6">
           At our landscaping company, we are dedicated to transforming ordinary
           outdoor spaces into extraordinary landscapes. With our passion for
           creating stunning and functional designs, we offer a wide range of
@@ -73,14 +73,14 @@ const aboutFacts = [
       </div>
 
       <div
-        class="home-about-facts xf-col-12 xf-col-md-4 xf-col-offset-md-8 xf-mt-6 xf-mt-md-12"
+        class="home-about-facts xf-col-12 xf-col-md-4 xf-col-offset-md-8 xf-col-lg-3 xf-col-offset-lg-9 xf-mt-6 xf-mt-md-10 xf-mt-lg-6"
       >
         {
           aboutFacts.map((fact) => (
             <div
-              class={`home-about-item xf-bg-primary xf-p-3 xf-text-center xf-mb-2`}
+              class={`home-about-item xf-bg-primary xf-p-3 xf-py-lg-6 xf-text-center xf-mb-2`}
             >
-              <p class="xf-text-colour-white xf-text-20 xf-fw-700">
+              <p class="xf-text-colour-white xf-text-20 xf-text-28-lg xf-fw-700">
                 {fact.title}
               </p>
               <p class="xf-text-colour-grey-lighten-1">{fact.desc} </p>
@@ -103,7 +103,7 @@ const aboutFacts = [
         {
           Services.map((service) => (
             <div
-              class={`xf-col-12 xf-col-md-6 home-services-item xf-p-6 xf-mb-2`}
+              class={`xf-col-12 xf-col-md-6 xf-col-lg-4 home-services-item xf-p-6 xf-mb-2`}
             >
               <div class="xf-flex xf-flex-align-items-center xf-mb-3">
                 <div
