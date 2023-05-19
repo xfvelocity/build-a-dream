@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import React from "react";
 
 // Swiper
@@ -61,15 +61,28 @@ const OurWorkCarousel = () => {
       ],
     },
   ];
+
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  const [isLarge, setIsLarge] = useState(false);
+
+  useEffect(() => {
+    setIsLarge(window.matchMedia("(min-width: 1366px)").matches);
+
+    window.addEventListener("resize", () => {
+      setIsLarge(window.matchMedia("(min-width: 1366px)").matches);
+    });
+  });
 
   return (
     <div className="our-work-carousel">
       <Swiper
         modules={[Pagination, Navigation]}
         speed={1000}
-        spaceBetween={50}
+        slidesPerView={isLarge ? 1.5 : 1}
+        spaceBetween={80}
+        centeredSlides
         loop
         pagination
         onInit={(swiper) => {
@@ -87,7 +100,7 @@ const OurWorkCarousel = () => {
           <SwiperSlide key={i}>
             <div className="xf-grid xf-pb-10 xf-pb-lg-15">
               <img
-                className="xf-w-100 xf-h-100 xf-col-12 xf-col-md-6"
+                className="xf-h-100 xf-col-12 xf-col-md-6"
                 src={example.image}
                 alt=""
               />

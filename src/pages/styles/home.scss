@@ -136,10 +136,19 @@
 
     img {
       border-radius: 5px;
+      object-fit: cover;
     }
 
     @include md-up {
       padding: 60px 0;
+    }
+
+    @include lg-up {
+      .swiper-slide-prev,
+      .swiper-slide-next {
+        opacity: 0.4;
+        transition: opacity 0.8s;
+      }
     }
   }
 
