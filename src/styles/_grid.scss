@@ -35,6 +35,12 @@ $xf-grid-alignments: (center, start, end);
           align-items: $alignment;
         }
       }
+
+      &-self {
+        &-#{$alignment} {
+          align-self: $alignment;
+        }
+      }
     }
 
     &-justify {
@@ -42,12 +48,6 @@ $xf-grid-alignments: (center, start, end);
         &-#{$alignment} {
           justify-self: $alignment;
         }
-      }
-    }
-
-    &-self {
-      &-#{$alignment} {
-        align-self: $alignment;
       }
     }
   }
@@ -78,12 +78,15 @@ $xf-grid-alignments: (center, start, end);
       &-col#{$infix}-#{$i} {
         grid-column-end: span $i;
       }
+
       &-col-offset#{$infix}-#{$i} {
         grid-column-start: $i;
       }
+
       &-row#{$infix}-#{$i} {
         grid-row-end: span $i;
       }
+
       &-row-offset#{$infix}-#{$i} {
         grid-row-start: $i;
       }

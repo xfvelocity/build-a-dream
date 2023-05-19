@@ -23,7 +23,7 @@ const ReviewsCarousel = () => {
     },
     {
       text: "Experienced, professional and competitive, Dominic is reliable and very creative and can easily turn your dream garden into a reality!!",
-      reviewer: "MacDougall",
+      reviewer: "Zara MacDougall",
     },
   ];
 

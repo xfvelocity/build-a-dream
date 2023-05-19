@@ -33,11 +33,11 @@ const aboutFacts = [
     <HeaderCarousel client:load />
 
     <div class="home-header-text-container">
-      <div class="home-header-text xf-p-6">
+      <div class="home-header-text xf-p-6 xf-p-lg-10">
         <h1 class="xf-text-24 xf-mb-4">
           Dream gardens that don’t cost the earth
         </h1>
-        <p class="xf-text-12 xf-mb-5">
+        <p class="xf-text-12 xf-text-14-lg xf-mb-5">
           With competitive pricing, experience the value of our affordable
           landscaping solutions as we create stunning outdoor spaces that suit
           your needs and exceed your expectations.
@@ -51,7 +51,7 @@ const aboutFacts = [
   <!-- About -->
   <div class="home-about">
     <div class="bd-max-width xf-grid xf-py-md-15">
-      <div class="xf-col-12 xf-col-md-6">
+      <div class="xf-col-12 xf-col-md-6 xf-col-xl-7">
         <BdBanner class-names="xf-mx-auto xf-mx-md-0">About us</BdBanner>
 
         <p class="xf-my-4">
@@ -73,17 +73,15 @@ const aboutFacts = [
       </div>
 
       <div
-        class="home-about-facts xf-col-12 xf-col-md-5 xf-col-offset-md-8 xf-grid xf-mt-6"
+        class="home-about-facts xf-col-12 xf-col-md-4 xf-col-offset-md-8 xf-mt-6 xf-mt-md-12"
       >
         {
-          aboutFacts.map((fact, i) => (
+          aboutFacts.map((fact) => (
             <div
-              class={`home-about-item xf-bg-primary xf-p-3 xf-text-center ${
-                i == 2 ? "xf-col-12" : "xf-col-6"
-              }`}
+              class={`home-about-item xf-bg-primary xf-p-3 xf-text-center xf-mb-2`}
             >
               <p class="xf-text-colour-white xf-text-20 xf-fw-700">
-                {fact.title}{" "}
+                {fact.title}
               </p>
               <p class="xf-text-colour-grey-lighten-1">{fact.desc} </p>
             </div>
@@ -97,11 +95,11 @@ const aboutFacts = [
   <div class="home-services">
     <div class="home-services-content bd-max-width xf-py-10">
       <div class="xf-text-center">
-        <h2>Our Services</h2>
+        <h2 class="xf-text-32-lg">Our Services</h2>
         <p>We provide a diverse range of services, some of which include:</p>
       </div>
 
-      <div class="home-services-item-container xf-mt-6 xf-grid">
+      <div class="home-services-item-container xf-mt-6 xf-mt-lg-10 xf-grid">
         {
           Services.map((service) => (
             <div
@@ -109,7 +107,7 @@ const aboutFacts = [
             >
               <div class="xf-flex xf-flex-align-items-center xf-mb-3">
                 <div
-                  class={`home-services-item-icon xf-mr-2 xf-bg-${service.colour}`}
+                  class={`home-services-item-icon xf-mr-2 xf-mr-lg-3 xf-bg-${service.colour}`}
                 >
                   <img
                     class="xf-center"
@@ -119,10 +117,12 @@ const aboutFacts = [
                   />
                 </div>
 
-                <h3 class="xf-text-20 xf-mb-0">{service.title}</h3>
+                <h3 class="xf-text-20 xf-text-24-lg xf-mb-0">
+                  {service.title}
+                </h3>
               </div>
 
-              <p class="xf-text-12">{service.text}</p>
+              <p class="xf-text-12 xf-text-14-lg">{service.text}</p>
             </div>
           ))
         }
@@ -140,10 +140,12 @@ const aboutFacts = [
   <!-- Contact us -->
   <a id="contact"></a>
   <div class="home-contact">
-    <div class="bd-max-width xf-pt-10 xf-pb-15 xf-grid">
+    <div class="bd-max-width xf-pt-10 xf-pb-15 xf-pt-md-15 xf-grid">
       <div class="xf-col-12 xf-col-md-6">
         <div class="home-contact-title">
-          <h3 class="xf-text-24 xf-mt-md-4">Looking for a free quote?</h3>
+          <h3 class="xf-text-24 xf-text-32-lg xf-mb-lg-1">
+            Looking for a free quote?
+          </h3>
           <p>
             Contact us today for a free quote and let us bring your dream
             landscape to life.

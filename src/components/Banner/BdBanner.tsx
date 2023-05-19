@@ -2,7 +2,6 @@ import React from "react";
 
 const BdBanner = ({
   backgroundColour = "primary",
-  fontSize = 24,
   textColour = "white",
   children = "",
   classNames = "",
@@ -12,8 +11,7 @@ const BdBanner = ({
       className={`xf-fw-700  xf-w-max-content xf-z-5 xf-h-max-content ${classNames}`}
     >
       <div
-        className={`xf-py-2 xf-px-6 xf-w-max-content xf-mb-1 xf-bg-${backgroundColour} xf-text-colour-${textColour}`}
-        style={{ fontSize: `${fontSize}px` }}
+        className={`xf-py-2 xf-px-6 xf-w-max-content xf-mb-1 xf-text-24 xf-text-28-lg xf-bg-${backgroundColour} xf-text-colour-${textColour}`}
       >
         {children}
       </div>

@@ -14,7 +14,7 @@ const HeaderCarousel = () => {
   const images = [HeaderImage, HeaderImage, HeaderImage, HeaderImage];
 
   return (
-    <Swiper modules={[Autoplay]} speed={1000} autoplay loop>
+    <Swiper modules={[Autoplay]} speed={1000} autoHeight autoplay loop>
       {images.map((image, i) => (
         <SwiperSlide key={i}>
           <img className="xf-w-100" src={image} alt="" />

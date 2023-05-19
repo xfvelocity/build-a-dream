@@ -85,15 +85,15 @@ const OurWorkCarousel = () => {
       >
         {workExamples.map((example, i) => (
           <SwiperSlide key={i}>
-            <div className="xf-grid xf-pb-10">
+            <div className="xf-grid xf-pb-10 xf-pb-lg-15">
               <img
-                className="xf-w-100 xf-col-12 xf-col-md-6"
+                className="xf-w-100 xf-h-100 xf-col-12 xf-col-md-6"
                 src={example.image}
                 alt=""
               />
 
-              <div className="xf-col-12 xf-col-md-6 xf-ml-md-3">
-                <h3 className="xf-text-colour-primary xf-mt-2 xf-mt-md-0">
+              <div className="xf-col-12 xf-col-md-6 xf-ml-md-3 xf-py-lg-4">
+                <h3 className="xf-text-colour-primary xf-text-24-lg xf-mt-2 xf-mt-md-0">
                   {example.title}
                 </h3>
                 {example.text.map((t, ti) => (
