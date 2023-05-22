@@ -11,7 +11,7 @@ const BdBanner = ({
       className={`xf-fw-700  xf-w-max-content xf-z-5 xf-h-max-content ${classNames}`}
     >
       <div
-        className={`xf-py-2 xf-px-6 xf-w-max-content xf-mb-1 xf-text-24 xf-text-28-lg xf-bg-${backgroundColour} xf-text-colour-${textColour}`}
+        className={`xf-py-2 xf-px-6 xf-w-max-content xf-mb-1 xf-text-24 xf-text-28-lg xf-text-32-xl2 xf-bg-${backgroundColour} xf-text-colour-${textColour}`}
       >
         {children}
       </div>

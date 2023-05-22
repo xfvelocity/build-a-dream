@@ -6,12 +6,11 @@ const BdButton = ({
   children = "",
   backgroundColour = "white",
   textColour = "primary",
-  fontSize = 14,
   fullWidth = false,
 }) => {
   return (
     <button
-      className={`bd-button xf-text-${fontSize} xf-px-4 xf-py-2 xf-bg-${backgroundColour} xf-text-colour-${textColour} ${
+      className={`bd-button xf-text-14 xf-text-18-xl2 xf-px-4 xf-px-xl2-6 xf-py-2 xf-bg-${backgroundColour} xf-text-colour-${textColour} ${
         fullWidth ? "xf-w-100" : ""
       }`}
     >

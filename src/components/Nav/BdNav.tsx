@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { Route } from "./BdNav.types";
 
 import "./BdNav.scss";
+
 import Logo from "../../images/logo.png";
 
 const BdNav = () => {

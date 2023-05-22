@@ -93,12 +93,12 @@ const OurWorkCarousel = () => {
           <SwiperSlide key={i}>
             <div className="xf-grid xf-pb-10 xf-pb-lg-15">
               <img
-                className="xf-h-100 xf-col-12 xf-col-md-6"
+                className="xf-h-100 xf-col-12 xf-col-md-6 xf-col-lg-5 xf-col-offset-lg-2"
                 src={example.image}
                 alt=""
               />
 
-              <div className="xf-col-12 xf-col-md-6 xf-ml-md-3 xf-py-lg-4">
+              <div className="xf-col-12 xf-col-md-6 xf-col-lg-5 xf-ml-md-3 xf-py-lg-4">
                 <h3 className="xf-text-colour-primary xf-text-24-lg xf-mt-2 xf-mt-md-0">
                   {example.title}
                 </h3>

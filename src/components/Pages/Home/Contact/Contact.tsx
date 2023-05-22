@@ -45,7 +45,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="xf-bg-white contact-form xf-text-colour-secondary xf-p-6 xf-pb-8 xf-w-100 xf-col-12 xf-col-md-6">
+          <div className="xf-bg-white contact-form xf-text-colour-secondary xf-p-6 xf-pb-8 xf-w-100 xf-col-12 xf-col-md-6 xf-col-offset-lg-8">
             <div className="xf-mb-3">
               <label>Name</label>
               <input type="text" placeholder="John Smith" />

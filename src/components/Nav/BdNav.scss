@@ -1,5 +1,14 @@
 @import "../../styles/variables.scss";
 
+// @keyframes slideInFromRight {
+//   0% {
+//     transform: translateX(100%);
+//   }
+//   100% {
+//     transform: translateX(0);
+//   }
+// }
+
 .bd-nav {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
@@ -45,6 +54,7 @@
       height: 100%;
       width: 60%;
       max-width: 300px;
+      // animation: 0.4s ease-in-out slideInFromRight;
     }
 
     &-overlay {

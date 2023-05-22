@@ -21,5 +21,16 @@
 
   @include md-up {
     padding: 40px 0 80px 0;
+
+    &-item {
+      &-icon {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+
+  @include lg-up {
+    padding: 60px 0 120px 0;
   }
 }

@@ -21,7 +21,7 @@ const Services = () => {
         <div className="services-item-container xf-mt-6 xf-mt-lg-10 xf-grid">
           {Content.map((service, i) => (
             <div
-              className={`xf-col-12 xf-col-md-6 xf-col-lg-4 services-item xf-p-6 xf-mb-2`}
+              className={`xf-col-12 xf-col-md-6 xf-col-xl-4 services-item xf-p-6 xf-mb-2`}
               key={i}
             >
               <div className="xf-flex xf-flex-align-items-center xf-mb-3">
@@ -36,9 +36,7 @@ const Services = () => {
                   />
                 </div>
 
-                <h3 className="xf-text-20 xf-text-24-lg xf-mb-0">
-                  {service.title}
-                </h3>
+                <h3 className="xf-text-20 xf-mb-0">{service.title}</h3>
               </div>
 
               <p className="xf-text-12 xf-text-14-lg">{service.text}</p>

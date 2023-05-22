@@ -62,10 +62,16 @@
 
     &-text {
       max-width: 500px;
+    }
+  }
 
-      h1 {
-        font-size: 32px !important;
-      }
+  @include xl2 {
+    .swiper {
+      max-height: 650px;
+    }
+
+    &-text {
+      max-width: 600px;
     }
   }
 }
