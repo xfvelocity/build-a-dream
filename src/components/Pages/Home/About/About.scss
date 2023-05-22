@@ -1,0 +1,25 @@
+@import "../../../../styles/variables.scss";
+
+.about {
+  background: url("../../../../images/home/about-bottom-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding-bottom: 80px;
+
+  &-item {
+    border-radius: 5px;
+  }
+
+  &-facts {
+    align-self: center;
+  }
+
+  @include md-up {
+    padding: 40px 0 60px 0;
+  }
+
+  @include lg-up {
+    padding: 60px 0 80px 0;
+  }
+}

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import React from "react";
 
 // Swiper
@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 
 // Images
 import HeaderImage from "../../images/header.png";
+import { useMediaQuery } from "../../composables/mediaQueries";
 
 const OurWorkCarousel = () => {
   const workExamples = [
@@ -65,15 +66,7 @@ const OurWorkCarousel = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
-  const [isLarge, setIsLarge] = useState(false);
-
-  useEffect(() => {
-    setIsLarge(window.matchMedia("(min-width: 1366px)").matches);
-
-    window.addEventListener("resize", () => {
-      setIsLarge(window.matchMedia("(min-width: 1366px)").matches);
-    });
-  });
+  const { isLarge } = useMediaQuery();
 
   return (
     <div className="our-work-carousel">

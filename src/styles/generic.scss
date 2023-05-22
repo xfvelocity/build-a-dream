@@ -15,6 +15,9 @@ body {
   font-size: 16px;
   overflow-x: hidden;
   color: map-get($xf-colours, "secondary");
+
+  --swiper-pagination-bullet-inactive-color: #e0e0e0;
+  --swiper-pagination-bullet-inactive-opacity: 1;
 }
 
 input,

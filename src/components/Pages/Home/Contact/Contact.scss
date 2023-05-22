@@ -1,0 +1,56 @@
+@import "../../../../styles/variables.scss";
+
+#contact {
+  scroll-margin-top: 80px;
+}
+
+.contact {
+  background: url("../../../../images/home/services-bg.png"),
+    linear-gradient(146.72deg, #042f00 0.86%, #043600 100%);
+  color: white;
+
+  a {
+    text-decoration: none;
+  }
+
+  &-form {
+    border-radius: 5px;
+    max-width: 450px;
+  }
+
+  &-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  input,
+  textarea {
+    margin-top: 3px;
+    border: 1px solid #dfdfdf;
+    background: #ececec;
+    padding: 15px 10px;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  @include sm-down {
+    &-title {
+      text-align: center;
+    }
+  }
+
+  @include md-up {
+    padding: 30px 0 50px 0;
+  }
+}

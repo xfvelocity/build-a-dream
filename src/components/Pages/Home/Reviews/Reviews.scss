@@ -1,0 +1,47 @@
+@import "../../../../styles/variables.scss";
+
+.reviews {
+  background: url("../../../../images/home/about-bottom-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+
+  --swiper-pagination-color: #{map-get($xf-colours, "primary")};
+  --swiper-pagination-bullet-width: 12px;
+  --swiper-pagination-bullet-height: 12px;
+
+  &-content {
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include sm-up {
+      max-width: 500px;
+    }
+
+    @include md-up {
+      max-width: 600px;
+      padding: 20px 0;
+    }
+  }
+
+  .reviews-carousel {
+    position: relative;
+  }
+
+  p {
+    letter-spacing: 0.07em !important;
+  }
+
+  .start-quote {
+    position: absolute;
+    top: 0px;
+    left: 0;
+  }
+
+  .end-quote {
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+  }
+}

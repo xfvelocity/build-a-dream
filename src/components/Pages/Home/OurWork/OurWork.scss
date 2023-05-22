@@ -1,0 +1,28 @@
+@import "../../../../styles/variables.scss";
+
+.our-work {
+  background: url("../../../../images/home/about-top-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  --swiper-pagination-color: #{map-get($xf-colours, "primary")};
+  --swiper-pagination-bullet-width: 12px;
+  --swiper-pagination-bullet-height: 12px;
+
+  img {
+    border-radius: 5px;
+    object-fit: cover;
+  }
+
+  @include md-up {
+    padding: 60px 0;
+  }
+
+  @include lg-up {
+    .swiper-slide-prev,
+    .swiper-slide-next {
+      opacity: 0.4;
+      transition: opacity 0.8s;
+    }
+  }
+}
