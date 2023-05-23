@@ -30,7 +30,7 @@ const About = () => {
   return (
     <div className="about">
       <div className="bd-max-width xf-grid xf-py-md-15">
-        <div className="xf-col-12 xf-col-md-6 xf-text-18-xl2 xf-col-xl-5 xf-col-offset-xl-2">
+        <div className="xf-col-12 xf-col-md-6 xf-text-18-xl">
           <BdBanner class-names="xf-mx-auto xf-mx-md-0">About us</BdBanner>
 
           <p className="xf-my-4 xf-mt-lg-6">

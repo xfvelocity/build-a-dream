@@ -31,6 +31,10 @@
     @include md-up {
       width: 200px;
     }
+
+    @include lg-up {
+      width: 240px;
+    }
   }
 
   &-content {

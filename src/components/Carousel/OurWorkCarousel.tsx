@@ -93,13 +93,13 @@ const OurWorkCarousel = () => {
           <SwiperSlide key={i}>
             <div className="xf-grid xf-pb-10 xf-pb-lg-15">
               <img
-                className="xf-h-100 xf-col-12 xf-col-md-6 xf-col-lg-5 xf-col-offset-lg-2"
+                className="xf-h-100 xf-col-12 xf-col-md-6 xf-col-lg-6"
                 src={example.image}
                 alt=""
               />
 
               <div className="xf-col-12 xf-col-md-6 xf-col-lg-5 xf-ml-md-3 xf-py-lg-4">
-                <h3 className="xf-text-colour-primary xf-text-24-lg xf-mt-2 xf-mt-md-0">
+                <h3 className="xf-text-colour-primary xf-text-24-lg xf-text-28-xl xf-fw-600 xf-mb-xl-2 xf-mt-2 xf-mt-md-0">
                   {example.title}
                 </h3>
                 {example.text.map((t, ti) => (
@@ -107,6 +107,12 @@ const OurWorkCarousel = () => {
                     {t}
                   </p>
                 ))}
+                <a
+                  href={`/our-work?id=${example.id}`}
+                  className="xf-text-colour-primary"
+                >
+                  Learn more
+                </a>
               </div>
             </div>
           </SwiperSlide>

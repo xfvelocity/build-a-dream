@@ -65,7 +65,7 @@
     }
   }
 
-  @include xl2 {
+  @include lg-up {
     .swiper {
       max-height: 650px;
     }

@@ -23,6 +23,11 @@
       max-width: 600px;
       padding: 20px 0;
     }
+
+    @include lg-up {
+      max-width: 700px;
+      padding: 40px 0;
+    }
   }
 
   .reviews-carousel {

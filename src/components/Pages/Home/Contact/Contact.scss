@@ -27,7 +27,7 @@
 
   label {
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   input,
@@ -52,5 +52,37 @@
 
   @include md-up {
     padding: 30px 0 50px 0;
+  }
+
+  @include lg-up {
+    padding: 60px 0 70px 0;
+
+    &-title {
+      &-desc {
+        max-width: 450px;
+      }
+    }
+
+    &-icon {
+      width: 55px;
+      height: 55px;
+    }
+
+    &-form {
+      max-width: 500px;
+    }
+
+    label {
+      font-size: 16px;
+    }
+
+    input,
+    textarea {
+      padding: 20px 15px;
+
+      &::placeholder {
+        font-size: 16px;
+      }
+    }
   }
 }

@@ -37,11 +37,11 @@ const ReviewsCarousel = () => {
     >
       {reviews.map((review, i) => (
         <SwiperSlide key={i}>
-          <div className="xf-text-center xf-pb-10">
+          <div className="xf-text-center xf-pb-10 xf-pb-xl-15">
             <div className="reviews-carousel">
               <img className="start-quote" src={StartQuoteIcon} alt="" />
 
-              <p className="xf-text-16 xf-mx-4">{review.text}</p>
+              <p className="xf-text-16 xf-mx-4 xf-text-20-lg">{review.text}</p>
 
               <img className="end-quote" src={EndQuoteIcon} alt="" />
             </div>

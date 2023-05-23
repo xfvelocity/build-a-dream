@@ -1,11 +1,16 @@
 import React from "react";
 
 import { useState } from "react";
-import type { Route } from "./BdNav.types";
 
 import "./BdNav.scss";
 
 import Logo from "../../images/logo.png";
+import { useMediaQuery } from "../../composables/mediaQueries";
+
+interface Route {
+  name: string;
+  path: string;
+}
 
 const BdNav = () => {
   const routes: Route[] = [
@@ -24,6 +29,7 @@ const BdNav = () => {
   ];
 
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
+  const { isExtraLarge } = useMediaQuery();
 
   return (
     <>
@@ -46,9 +52,9 @@ const BdNav = () => {
             </div>
 
             <div className="bd-nav-items xf-ml-auto">
-              <ul className="xf-flex">
+              <ul className={`xf-flex ${isExtraLarge ? "xf-gap-3" : ""}`}>
                 {routes.map((route, i) => (
-                  <li className="bd-nav-item xf-p-1" key={i}>
+                  <li className="bd-nav-item xf-p-1 xf-text-18-xl" key={i}>
                     <a href={route.path}>{route.name}</a>
                   </li>
                 ))}

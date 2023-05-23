@@ -8,14 +8,18 @@ import "./Services.scss";
 import Content from "../../../../content/services";
 
 const Services = () => {
-  const { isMedium } = useMediaQuery();
+  const { isMedium, isExtraLarge } = useMediaQuery();
 
   return (
     <div className="services">
       <div className="services-content bd-max-width xf-py-10">
         <div className="xf-text-center">
-          <h2 className="xf-text-32-lg">Our Services</h2>
-          <p>We provide a diverse range of services, some of which include:</p>
+          <h2 className="xf-text-32-lg xf-text-44-xl xf-fw-700">
+            Our Services
+          </h2>
+          <p className="xf-text-18-xl">
+            We provide a diverse range of services, some of which include:
+          </p>
         </div>
 
         <div className="services-item-container xf-mt-6 xf-mt-lg-10 xf-grid">
@@ -32,14 +36,18 @@ const Services = () => {
                     className="xf-center"
                     src={service.icon}
                     alt=""
-                    height={isMedium ? 18 : 14}
+                    height={isExtraLarge ? 22 : isMedium ? 18 : 14}
                   />
                 </div>
 
-                <h3 className="xf-text-20 xf-mb-0">{service.title}</h3>
+                <h3 className="xf-text-20 xf-mb-0 xf-text-24-xl xf-fw-600">
+                  {service.title}
+                </h3>
               </div>
 
-              <p className="xf-text-12 xf-text-14-lg">{service.text}</p>
+              <p className="xf-text-12 xf-text-14-lg xf-text-16-xl">
+                {service.text}
+              </p>
             </div>
           ))}
         </div>
