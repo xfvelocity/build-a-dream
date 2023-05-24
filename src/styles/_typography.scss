@@ -191,8 +191,7 @@ h6,
   }
 }
 
-// Text decoration
-.xf-text-decoration {
+.xf-text-d {
   &-none {
     text-decoration: none !important;
   }
@@ -202,7 +201,6 @@ h6,
   }
 }
 
-// White space
 .xf-ws {
   &-nowrap {
     white-space: nowrap;

@@ -1,7 +1,12 @@
 ---
+import OurWork from "../components/Pages/OurWork/OurWork";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <div></div>
+  <OurWork client:load />
 </Layout>
+
+<style lang="scss">
+  @import "../styles/index.scss";
+</style>
