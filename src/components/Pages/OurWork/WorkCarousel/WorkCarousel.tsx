@@ -20,7 +20,7 @@ const WorkCarousel = ({ images }: Props) => {
   return (
     <Swiper
       modules={[Pagination, Navigation]}
-      speed={1000}
+      speed={500}
       spaceBetween={5}
       loop
       pagination
@@ -45,7 +45,7 @@ const WorkCarousel = ({ images }: Props) => {
       ))}
 
       {/* TODO: Update with icon */}
-      <div className="arrows xf-flex xf-z-5">
+      <div className="arrows xf-flex xf-z-5 xf-px-2">
         <div className="prev-arrow" ref={prevRef}>
           <img src="/icons/left-arrow.svg" alt="" />
         </div>

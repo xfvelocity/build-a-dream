@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import React from "react";
+import { useMediaQuery } from "../../../../composables/mediaQueries";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,59 +11,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// Images
-import HeaderImage from "../../../../images/header.png";
-import { useMediaQuery } from "../../../../composables/mediaQueries";
+// Content
+import { examplesOfWork } from "../../../../content/our-work";
 
 const OurWorkCarousel = () => {
-  const workExamples = [
-    {
-      id: 1,
-      image: HeaderImage,
-      title: "Indian Sandstone patio",
-      text: [
-        "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. ",
-        "Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
-      ],
-    },
-    {
-      id: 2,
-      image: HeaderImage,
-      title: "Outdoor living area",
-      text: [
-        "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. ",
-        "Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
-      ],
-    },
-    {
-      id: 3,
-      image: HeaderImage,
-      title: "Circular patio & lawn",
-      text: [
-        "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. ",
-        "Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
-      ],
-    },
-    {
-      id: 4,
-      image: HeaderImage,
-      title: "Decking",
-      text: [
-        "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. ",
-        "Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
-      ],
-    },
-    {
-      id: 5,
-      image: HeaderImage,
-      title: "Driveway",
-      text: [
-        "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. ",
-        "Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
-      ],
-    },
-  ];
-
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
@@ -72,7 +24,7 @@ const OurWorkCarousel = () => {
     <div className="our-work-carousel">
       <Swiper
         modules={[Pagination, Navigation]}
-        speed={1000}
+        speed={800}
         slidesPerView={isLarge ? 1.5 : 1}
         spaceBetween={80}
         centeredSlides
@@ -89,12 +41,12 @@ const OurWorkCarousel = () => {
           }
         }}
       >
-        {workExamples.map((example, i) => (
+        {examplesOfWork.map((example, i) => (
           <SwiperSlide key={i}>
             <div className="xf-grid xf-pb-10 xf-pb-lg-15">
               <img
                 className="xf-col-12 xf-col-md-6 xf-col-lg-6"
-                src={example.image}
+                src={example.img}
                 alt=""
               />
 
@@ -102,13 +54,13 @@ const OurWorkCarousel = () => {
                 <h3 className="xf-text-colour-primary xf-text-24-lg xf-text-28-xl xf-fw-600 xf-mb-xl-2 xf-mt-2 xf-mt-md-0">
                   {example.title}
                 </h3>
-                {example.text.map((t, ti) => (
+                {example.desc.map((desc, ti) => (
                   <p className="xf-mb-2" key={ti}>
-                    {t}
+                    {desc}
                   </p>
                 ))}
                 <a
-                  href={`/our-work?id=${example.id}`}
+                  href={`/our-work#${example.id}`}
                   className="xf-text-colour-primary"
                 >
                   Learn more

@@ -2,18 +2,16 @@ import React, { useState } from "react";
 
 // Styles
 import "./WorkItem.scss";
+
+// Components
 import Modal from "../../../Modal/Modal";
 import WorkCarousel from "../WorkCarousel/WorkCarousel";
 
+// Types
+import type { WorkExample } from "../../../../content/our-work";
+
 interface Props {
-  item: {
-    img: string;
-    location: string;
-    completedDate: string;
-    title: string;
-    desc: string[];
-    additionalImages: string[];
-  };
+  item: WorkExample;
   evenIndex: boolean;
 }
 
@@ -23,6 +21,8 @@ const WorkItem = ({ item, evenIndex }: Props) => {
   return (
     <>
       <div className="work-item">
+        <a id={`${item.id}`} />
+
         <div
           className={`${
             evenIndex ? "xf-bg-primary xf-text-colour-white" : ""
