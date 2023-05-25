@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 
 // Images
 import HeaderImage from "../../images/header.png";
-import { useMediaQuery } from "../../composables/mediaQueries";
+import { useMediaQuery } from "../../../../composables/mediaQueries";
 
 const OurWorkCarousel = () => {
   const workExamples = [

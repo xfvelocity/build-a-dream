@@ -4,7 +4,7 @@ import React from "react";
 import "./OurWork.scss";
 
 // Components
-import OurWorkCarousel from "../../../Carousel/OurWorkCarousel";
+import OurWorkCarousel from "./OurWorkCarousel";
 
 const OurWork = () => {
   return (

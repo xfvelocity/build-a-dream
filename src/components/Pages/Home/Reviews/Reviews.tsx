@@ -4,7 +4,7 @@ import React from "react";
 import "./Reviews.scss";
 
 // Components
-import ReviewsCarousel from "../../../Carousel/ReviewsCarousel";
+import ReviewsCarousel from "./ReviewsCarousel";
 
 const Reviews = () => {
   return (

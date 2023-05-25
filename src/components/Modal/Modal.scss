@@ -2,20 +2,21 @@
 
 .modal {
   &-overlay {
-    position: absolute;
+    z-index: 100;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.7);
   }
 
   &-content {
     @include center;
 
     background: white;
-    min-height: 300px;
-    min-width: 300px;
+    min-height: 100px;
+    min-width: 200px;
     border-radius: 5px;
   }
 }

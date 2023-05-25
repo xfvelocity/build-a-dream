@@ -18,6 +18,7 @@ body {
 
   --swiper-pagination-bullet-inactive-color: #e0e0e0;
   --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-color: #{map-get($xf-colours, "primary")};
 }
 
 input,

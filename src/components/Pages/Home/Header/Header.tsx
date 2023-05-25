@@ -4,7 +4,7 @@ import React from "react";
 import "./Header.scss";
 
 // Components
-import HeaderCarousel from "../../../Carousel/HeaderCarousel";
+import HeaderCarousel from "./HeaderCarousel";
 import BdButton from "../../../Button/BdButton";
 
 const Header = () => {
