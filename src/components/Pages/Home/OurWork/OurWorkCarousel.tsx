@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // Images
-import HeaderImage from "../../images/header.png";
+import HeaderImage from "../../../../images/header.png";
 import { useMediaQuery } from "../../../../composables/mediaQueries";
 
 const OurWorkCarousel = () => {
@@ -93,7 +93,7 @@ const OurWorkCarousel = () => {
           <SwiperSlide key={i}>
             <div className="xf-grid xf-pb-10 xf-pb-lg-15">
               <img
-                className="xf-h-100 xf-col-12 xf-col-md-6 xf-col-lg-6"
+                className="xf-col-12 xf-col-md-6 xf-col-lg-6"
                 src={example.image}
                 alt=""
               />
