@@ -33,7 +33,7 @@ const WorkItem = ({ item, evenIndex }: Props) => {
               : ""
           } work-item-content `}
         >
-          <div className="bd-max-width xf-grid">
+          <div className="bd-max-width xf-grid xf-align-items-center">
             <img
               className={`xf-w-100 xf-col-12 xf-col-lg-6 ${
                 evenIndex ? "" : "xf-col-offset-lg-7"
@@ -56,7 +56,7 @@ const WorkItem = ({ item, evenIndex }: Props) => {
               <h2
                 className={`${
                   evenIndex ? "" : "xf-text-colour-primary"
-                } xf-fw-700 xf-text-20 xf-text-28-md xf-mt-2 xf-mt-md-4 xf-mt-lg-0 xf-mb-1`}
+                } xf-fw-700 xf-text-20 xf-text-28-md xf-mt-1 xf-mt-lg-0 xf-mb-1`}
               >
                 {item.title}
               </h2>
@@ -74,7 +74,7 @@ const WorkItem = ({ item, evenIndex }: Props) => {
 
               <p
                 className={`${
-                  evenIndex ? "" : "xf-text-colour-primary"
+                  evenIndex ? "" : "xf-text-colour-primary xf-mb-4"
                 } xf-mt-4 xf-mt-lg-8 xf-text-12 xf-text-14-md xf-fw-600 xf-text-d-underline xf-cursor-pointer xf-hover`}
                 onClick={() => setIsModalOpen(true)}
               >

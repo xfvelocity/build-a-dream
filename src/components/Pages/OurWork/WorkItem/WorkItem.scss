@@ -18,9 +18,17 @@
     border: 1px solid grey;
   }
 
+  &-content {
+    padding: 80px 0 !important;
+  }
+
   @include sm-up {
     p {
       max-width: 500px;
+    }
+
+    &-content {
+      padding: 80px 0 100px 0 !important;
     }
   }
 
