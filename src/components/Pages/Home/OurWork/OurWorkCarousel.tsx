@@ -18,14 +18,14 @@ const OurWorkCarousel = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
-  const { isLarge } = useMediaQuery();
+  const { isExtraLarge } = useMediaQuery();
 
   return (
     <div className="our-work-carousel">
       <Swiper
         modules={[Pagination, Navigation]}
         speed={800}
-        slidesPerView={isLarge ? 1.5 : 1}
+        slidesPerView={isExtraLarge ? 1.5 : 1}
         spaceBetween={80}
         centeredSlides
         loop
@@ -50,7 +50,7 @@ const OurWorkCarousel = () => {
                 alt=""
               />
 
-              <div className="xf-col-12 xf-col-md-6 xf-col-lg-5 xf-ml-md-3 xf-py-lg-4">
+              <div className="xf-col-12 xf-col-md-6 xf-col-xl-5 xf-ml-md-3">
                 <h3 className="xf-text-colour-primary xf-text-24-lg xf-text-28-xl xf-fw-600 xf-mb-xl-2 xf-mt-2 xf-mt-md-0">
                   {example.title}
                 </h3>
@@ -61,7 +61,7 @@ const OurWorkCarousel = () => {
                 ))}
                 <a
                   href={`/our-work#${example.id}`}
-                  className="xf-text-colour-primary"
+                  className="xf-text-colour-primary xf-fw-600"
                 >
                   Learn more
                 </a>

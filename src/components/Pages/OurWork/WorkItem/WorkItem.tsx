@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useMediaQuery } from "../../../../composables/mediaQueries";
 
 // Styles
 import "./WorkItem.scss";
@@ -18,6 +19,8 @@ interface Props {
 const WorkItem = ({ item, evenIndex }: Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const { isMedium } = useMediaQuery();
+
   return (
     <>
       <div className="work-item">
@@ -25,54 +28,67 @@ const WorkItem = ({ item, evenIndex }: Props) => {
 
         <div
           className={`${
-            evenIndex ? "xf-bg-primary xf-text-colour-white" : ""
-          } xf-py-10`}
+            evenIndex
+              ? "xf-bg-primary xf-text-colour-white work-item-content-even"
+              : ""
+          } work-item-content `}
         >
-          <div className="bd-max-width">
-            <img className="xf-w-100" src={item.img} alt="" />
+          <div className="bd-max-width xf-grid">
+            <img
+              className={`xf-w-100 xf-col-12 xf-col-lg-6 ${
+                evenIndex ? "" : "xf-col-offset-lg-7"
+              }`}
+              src={item.img}
+              alt=""
+            />
 
             <div
-              className="xf-flex xf-text-8"
-              style={{
-                marginTop: "-3px",
-              }}
+              className={`xf-col-12 xf-col-lg-6 ${
+                evenIndex ? "" : "xf-col-offset-lg-1 xf-flex-order-minus-1"
+              }`}
             >
-              <p>{item.location}</p>
+              <div className="xf-flex xf-text-8 xf-text-10-md">
+                <p>{item.location}</p>
 
-              <p className="xf-ml-auto">{item.completedDate}</p>
-            </div>
+                <p className="xf-ml-auto">{item.completedDate}</p>
+              </div>
 
-            <h2
-              className={`${
-                evenIndex ? "" : "xf-text-colour-primary"
-              } xf-fw-700 xf-text-20 xf-mt-2 xf-mb-1`}
-            >
-              {item.title}
-            </h2>
-
-            {item.desc.map((desc, i) => (
-              <p
-                key={i}
+              <h2
                 className={`${
-                  evenIndex ? "xf-text-colour-grey-lighten-2" : ""
-                } xf-text-12 xf-mb-2`}
+                  evenIndex ? "" : "xf-text-colour-primary"
+                } xf-fw-700 xf-text-20 xf-text-28-md xf-mt-2 xf-mt-md-4 xf-mt-lg-0 xf-mb-1`}
               >
-                {desc}
-              </p>
-            ))}
+                {item.title}
+              </h2>
 
-            <p
-              className={`${
-                evenIndex ? "" : "xf-text-colour-primary"
-              } xf-mt-4 xf-text-12 xf-text-d-underline xf-cursor-pointer`}
-              onClick={() => setIsModalOpen(true)}
-            >
-              View more
-            </p>
+              {item.desc.map((desc, i) => (
+                <p
+                  key={i}
+                  className={`${
+                    evenIndex ? "xf-text-colour-grey-lighten-2" : ""
+                  } xf-text-12 xf-text-14-md xf-mb-2`}
+                >
+                  {desc}
+                </p>
+              ))}
+
+              <p
+                className={`${
+                  evenIndex ? "" : "xf-text-colour-primary"
+                } xf-mt-4 xf-mt-lg-8 xf-text-12 xf-text-14-md xf-fw-600 xf-text-d-underline xf-cursor-pointer xf-hover`}
+                onClick={() => setIsModalOpen(true)}
+              >
+                View more images
+              </p>
+            </div>
           </div>
         </div>
 
-        <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen} width="95%">
+        <Modal
+          isOpen={isModalOpen}
+          setIsOpen={setIsModalOpen}
+          width={!isMedium ? "95%" : "750px"}
+        >
           <WorkCarousel images={item.additionalImages} />
         </Modal>
       </div>

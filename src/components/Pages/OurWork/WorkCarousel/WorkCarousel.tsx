@@ -46,11 +46,14 @@ const WorkCarousel = ({ images }: Props) => {
 
       {/* TODO: Update with icon */}
       <div className="arrows xf-flex xf-z-5 xf-px-2">
-        <div className="prev-arrow" ref={prevRef}>
+        <div className="prev-arrow xf-cursor-pointer xf-hover" ref={prevRef}>
           <img src="/icons/left-arrow.svg" alt="" />
         </div>
 
-        <div className="xf-ml-auto next-arrow" ref={nextRef}>
+        <div
+          className="xf-ml-auto next-arrow xf-cursor-pointer xf-hover"
+          ref={nextRef}
+        >
           <img src="/icons/right-arrow.svg" alt="" />
         </div>
       </div>

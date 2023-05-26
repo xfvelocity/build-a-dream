@@ -23,7 +23,9 @@ const Header = () => {
             your needs and exceed your expectations.
           </p>
 
-          <BdButton>View our work</BdButton>
+          <a href="/our-work">
+            <BdButton>View our work</BdButton>
+          </a>
         </div>
       </div>
     </div>
