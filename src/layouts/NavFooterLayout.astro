@@ -1,5 +1,7 @@
 ---
 import "../styles/index.scss";
+import BdFooter from "../components/Footer/BdFooter";
+import BdNav from "../components/Nav/BdNav";
 ---
 
 <!DOCTYPE html>
@@ -17,6 +19,12 @@ import "../styles/index.scss";
   </head>
 
   <body>
-    <slot />
+    <BdNav client:load />
+
+    <main>
+      <slot />
+    </main>
+
+    <BdFooter />
   </body>
 </html>

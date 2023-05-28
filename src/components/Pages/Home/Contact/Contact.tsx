@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { useMediaQuery } from "../../../../composables/mediaQueries";
 
 // Styles
 import "./Contact.scss";
@@ -8,10 +10,32 @@ import Content from "../../../../content/social";
 
 // Components
 import BdButton from "../../../Button/BdButton";
-import { useMediaQuery } from "../../../../composables/mediaQueries";
 
 const Contact = () => {
+  const form = useRef();
   const { isExtraLarge } = useMediaQuery();
+
+  const submitForm = (e: SubmitEvent): void => {
+    e.preventDefault();
+
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_t2y7wm5",
+          "contact",
+          form.current,
+          "oyQQfWCUpZg4ShEo8"
+        )
+        .then(
+          () => {
+            window.location.href = "/thank-you";
+          },
+          () => {
+            window.location.href = "/error";
+          }
+        );
+    }
+  };
 
   return (
     <>
@@ -54,29 +78,40 @@ const Contact = () => {
           </div>
 
           <div className="xf-bg-white contact-form xf-text-colour-secondary xf-p-6 xf-pb-8 xf-p-xl-10 xf-w-100 xf-col-12 xf-col-md-6 xf-col-offset-lg-8">
-            <div className="xf-mb-3 xf-mb-xl-4">
-              <label>Name</label>
-              <input type="text" placeholder="John Smith" />
-            </div>
+            <form ref={form} onSubmit={submitForm}>
+              <div className="xf-mb-3 xf-mb-xl-4">
+                <label>Name</label>
+                <input type="text" name="name" placeholder="John Smith" />
+              </div>
 
-            <div className="xf-mb-3 xf-mb-xl-4">
-              <label>Email Address</label>
-              <input type="text" placeholder="john@gmail.com" />
-            </div>
+              <div className="xf-mb-3 xf-mb-xl-4">
+                <label>Email Address</label>
+                <input type="text" name="email" placeholder="john@gmail.com" />
+              </div>
 
-            <div className="xf-mb-3 xf-mb-xl-4">
-              <label>Phone Number</label>
-              <input type="text" placeholder="07400 820600" />
-            </div>
+              <div className="xf-mb-3 xf-mb-xl-4">
+                <label>Phone Number</label>
+                <input type="text" name="phone" placeholder="07400 820600" />
+              </div>
 
-            <div className="xf-mb-1 xf-mb-xl-4">
-              <label>Message</label>
-              <textarea placeholder="Write your query here.." rows={5} />
-            </div>
+              <div className="xf-mb-1 xf-mb-xl-4">
+                <label>Message</label>
+                <textarea
+                  placeholder="Write your query here.."
+                  name="message"
+                  rows={5}
+                />
+              </div>
 
-            <BdButton backgroundColour="primary" textColour="white" fullWidth>
-              Send your message
-            </BdButton>
+              <BdButton
+                backgroundColour="primary"
+                textColour="white"
+                fullWidth
+                type="submit"
+              >
+                Send your message
+              </BdButton>
+            </form>
           </div>
         </div>
       </div>
