@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useMediaQuery } from "../../../../composables/mediaQueries";
 
@@ -10,31 +10,81 @@ import Content from "../../../../content/social";
 
 // Components
 import BdButton from "../../../Button/BdButton";
+import TextInput from "../../../TextInput/TextInput";
+import TextArea from "../../../TextArea/TextArea";
 
 const Contact = () => {
   const form = useRef();
   const { isExtraLarge } = useMediaQuery();
 
+  const [formItems, setFormItems] = useState([
+    {
+      label: "Name",
+      placeholder: "John Smith",
+      name: "name",
+      errorMessage: "",
+    },
+    {
+      label: "Email Address",
+      placeholder: "john@gmail.com",
+      name: "email",
+      errorMessage: "",
+    },
+    {
+      label: "Phone Number",
+      placeholder: "07400820600",
+      name: "phone",
+      errorMessage: "",
+    },
+    {
+      label: "Message",
+      placeholder: "Write your query here..",
+      name: "message",
+      errorMessage: "",
+    },
+  ]);
+
+  const validatedFields = (): boolean => {
+    // const { name, phone, email, message } = form.current;
+
+    // if (!name.value) {
+    //   const index = formItems.findIndex((x) => x.name === "name");
+
+    //   formItems[index]!.errorMessage = "Field is required";
+
+    //   setFormItems(formItems);
+    // }
+
+    // const nameValid: boolean = !!name.value;
+    // const messageValid: boolean = !!name.value;
+
+    return true;
+  };
+
   const submitForm = (e: SubmitEvent): void => {
     e.preventDefault();
 
-    if (form.current) {
-      emailjs
-        .sendForm(
-          "service_t2y7wm5",
-          "contact",
-          form.current,
-          "oyQQfWCUpZg4ShEo8"
-        )
-        .then(
-          () => {
-            window.location.href = "/thank-you";
-          },
-          () => {
-            window.location.href = "/error";
-          }
-        );
-    }
+    validatedFields();
+
+    // if (validatedFields() && form.current) {
+    //   emailjs
+    //     .sendForm(
+    //       "service_t2y7wm5",
+    //       "contact",
+
+    //       form.current,
+    //       "oyQQfWCUpZg4ShEo8"
+    //     )
+    //     .then(
+    //       () => {
+    //         window.location.href = "/thank-you";
+    //       },
+    //       () => {
+    //         window.location.href = "/error";
+    //       }
+    //     );
+    // } else {
+    // }
   };
 
   return (
@@ -78,30 +128,41 @@ const Contact = () => {
           </div>
 
           <div className="xf-bg-white contact-form xf-text-colour-secondary xf-p-4 xf-pb-8 xf-p-xl-10 xf-w-100 xf-col-12 xf-col-md-6 xf-col-offset-lg-8">
+            {/* TODO: Implement validation & fix type errors */}
             <form ref={form} onSubmit={submitForm}>
-              <div className="xf-mb-3 xf-mb-xl-4">
-                <label>Name</label>
-                <input type="text" name="name" placeholder="John Smith" />
-              </div>
+              {formItems.map((item, i) => {
+                if (item.name === "message") {
+                  return (
+                    <TextArea
+                      key={i}
+                      classNames="xf-mb-1 xf-mb-xl-4"
+                      label={item.label}
+                      placeholder={item.placeholder}
+                      name={item.name}
+                      errorMessage={item.errorMessage}
+                    />
+                  );
+                } else {
+                  return (
+                    <TextInput
+                      key={i}
+                      classNames="xf-mb-3 xf-mb-xl-4"
+                      label={item.label}
+                      placeholder={item.placeholder}
+                      name={item.name}
+                      errorMessage={item.errorMessage}
+                    />
+                  );
+                }
+              })}
 
-              <div className="xf-mb-3 xf-mb-xl-4">
-                <label>Email Address</label>
-                <input type="text" name="email" placeholder="john@gmail.com" />
-              </div>
-
-              <div className="xf-mb-3 xf-mb-xl-4">
-                <label>Phone Number</label>
-                <input type="text" name="phone" placeholder="07400 820600" />
-              </div>
-
-              <div className="xf-mb-1 xf-mb-xl-4">
-                <label>Message</label>
-                <textarea
-                  placeholder="Write your query here.."
-                  name="message"
-                  rows={5}
+              {/* TODO: Implement reCAPTCHA */}
+              {/* <div>
+                <div
+                  className="g-recaptcha"
+                  data-sitekey="6Lf290gmAAAAAIY1DxS9nUbfkI-LQWP71h1HNkY6"
                 />
-              </div>
+              </div> */}
 
               <BdButton
                 backgroundColour="primary"
