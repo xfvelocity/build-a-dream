@@ -77,7 +77,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="xf-bg-white contact-form xf-text-colour-secondary xf-p-6 xf-pb-8 xf-p-xl-10 xf-w-100 xf-col-12 xf-col-md-6 xf-col-offset-lg-8">
+          <div className="xf-bg-white contact-form xf-text-colour-secondary xf-p-4 xf-pb-8 xf-p-xl-10 xf-w-100 xf-col-12 xf-col-md-6 xf-col-offset-lg-8">
             <form ref={form} onSubmit={submitForm}>
               <div className="xf-mb-3 xf-mb-xl-4">
                 <label>Name</label>

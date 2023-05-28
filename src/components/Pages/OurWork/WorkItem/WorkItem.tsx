@@ -56,7 +56,7 @@ const WorkItem = ({ item, evenIndex }: Props) => {
               <h2
                 className={`${
                   evenIndex ? "" : "xf-text-colour-primary"
-                } xf-fw-700 xf-text-20 xf-text-28-md xf-mt-1 xf-mt-lg-0 xf-mb-1`}
+                } xf-fw-700 xf-text-20 xf-text-28-md xf-mt-1 xf-mt-lg-0 xf-mb-2`}
               >
                 {item.title}
               </h2>
