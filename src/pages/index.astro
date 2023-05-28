@@ -1,22 +1,28 @@
 ---
+// Styles
+import "../components/Pages/Home/Header/Header.scss";
+
+// Components
+import Layout from "../layouts/Layout.astro";
+
 import Header from "../components/Pages/Home/Header/Header";
 import About from "../components/Pages/Home/About/About";
 import Services from "../components/Pages/Home/Services/Services";
 import OurWork from "../components/Pages/Home/OurWork/OurWork";
 import Contact from "../components/Pages/Home/Contact/Contact";
 import Reviews from "../components/Pages/Home/Reviews/Reviews";
-import NavFooterLayout from "../layouts/NavFooterLayout.astro";
+import HeaderCarousel from "../components/Pages/Home/Header/HeaderCarousel";
 ---
 
-<NavFooterLayout>
-  <Header client:load />
-  <About client:load />
-  <Services client:load />
-  <OurWork client:load />
-  <Contact client:load />
-  <Reviews client:load />
-</NavFooterLayout>
-
-<style lang="scss">
-  @import "../styles/index.scss";
-</style>
+<!-- TODO: Fix importing multiple css files  -->
+<Layout title="Build A-Dream | Lincoln Landscape Gardeners" navFooter={true}>
+  <div class="header">
+    <HeaderCarousel client:load />
+    <Header />
+  </div>
+  <About />
+  <Services client:idle />
+  <OurWork client:visible />
+  <Contact client:visible />
+  <Reviews client:visible />
+</Layout>

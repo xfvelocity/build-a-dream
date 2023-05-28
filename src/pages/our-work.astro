@@ -1,12 +1,10 @@
 ---
+// Components
+import Layout from "../layouts/Layout.astro";
+
 import OurWork from "../components/Pages/OurWork/OurWork";
-import NavFooterLayout from "../layouts/NavFooterLayout.astro";
 ---
 
-<NavFooterLayout>
+<Layout title="Our work | Latest examples" navFooter={true}>
   <OurWork client:load />
-</NavFooterLayout>
-
-<style lang="scss">
-  @import "../styles/index.scss";
-</style>
+</Layout>
