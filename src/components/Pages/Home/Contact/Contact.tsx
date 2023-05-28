@@ -93,7 +93,7 @@ const Contact = () => {
 
       <div className="contact">
         <div className="bd-max-width xf-pt-10 xf-pb-15 xf-pt-md-15 xf-grid">
-          <div className="xf-col-12 xf-col-md-6 xf-col-offset-xl-2 xf-mt-xl-10">
+          <div className="xf-col-12 xf-col-md-6 xf-col-lg-7 xf-col-xl-6 xf-col-offset-xl-2 xf-mt-xl-10">
             <div className="contact-title">
               <h3 className="xf-text-24 xf-text-32-lg xf-text-40-xl xf-fw-600 xf-mb-1">
                 Looking for a free quote?
@@ -127,7 +127,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="xf-bg-white contact-form xf-text-colour-secondary xf-p-4 xf-pb-8 xf-p-xl-10 xf-w-100 xf-col-12 xf-col-md-6 xf-col-offset-lg-8">
+          <div className="xf-bg-white contact-form xf-text-colour-secondary xf-p-4 xf-pb-8 xf-px-lg-6 xf-p-xl-10 xf-w-100 xf-col-12 xf-col-md-6 xf-col-offset-lg-8">
             {/* TODO: Implement validation & fix type errors */}
             <form ref={form} onSubmit={submitForm}>
               {formItems.map((item, i) => {

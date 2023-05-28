@@ -19,7 +19,7 @@ interface Props {
 const WorkItem = ({ item, evenIndex }: Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { isMedium } = useMediaQuery();
+  const { isLarge, isMedium } = useMediaQuery();
 
   return (
     <>
@@ -28,12 +28,10 @@ const WorkItem = ({ item, evenIndex }: Props) => {
 
         <div
           className={`${
-            evenIndex
-              ? "xf-bg-primary xf-text-colour-white work-item-content-even"
-              : ""
+            evenIndex ? "work-item-content-even" : ""
           } work-item-content `}
         >
-          <div className="bd-max-width xf-grid xf-align-items-center">
+          <div className="bd-max-width work-item-content-inner xf-grid xf-align-items-center">
             <img
               className={`xf-w-100 xf-col-12 xf-col-lg-6 ${
                 evenIndex ? "" : "xf-col-offset-lg-7"
@@ -44,7 +42,9 @@ const WorkItem = ({ item, evenIndex }: Props) => {
 
             <div
               className={`xf-col-12 xf-col-lg-6 ${
-                evenIndex ? "" : "xf-col-offset-lg-1 xf-flex-order-minus-1"
+                evenIndex
+                  ? "xf-ml-lg-4"
+                  : "xf-col-offset-lg-1 xf-flex-order-minus-1 xf-mr-lg-4"
               }`}
             >
               <div className="xf-flex xf-text-8 xf-text-10-md">
@@ -87,7 +87,7 @@ const WorkItem = ({ item, evenIndex }: Props) => {
         <Modal
           isOpen={isModalOpen}
           setIsOpen={setIsModalOpen}
-          width={!isMedium ? "95%" : "750px"}
+          width={isLarge ? "1000px" : !isMedium ? "95%" : "650px"}
         >
           <WorkCarousel images={item.additionalImages} />
         </Modal>

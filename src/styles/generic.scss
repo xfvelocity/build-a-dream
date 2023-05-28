@@ -1,11 +1,7 @@
-html,
-body {
-  height: 100%;
-  margin: 0 !important;
-}
-
 html {
   scroll-behavior: smooth;
+  margin: 0 !important;
+  height: 100%;
 }
 
 body {
@@ -15,10 +11,18 @@ body {
   font-size: 16px;
   overflow-x: hidden;
   color: map-get($xf-colours, "secondary");
+  background: #282828;
+  max-width: 1920px;
+  margin: 0 auto !important;
+  height: 100%;
 
   --swiper-pagination-bullet-inactive-color: #e0e0e0;
   --swiper-pagination-bullet-inactive-opacity: 1;
   --swiper-pagination-color: #{map-get($xf-colours, "primary")};
+}
+
+main {
+  background: white;
 }
 
 input,

@@ -4,6 +4,7 @@
   background: url("../../../../images/home/about-top-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 20px 0;
 
   --swiper-pagination-color: #{map-get($xf-colours, "primary")};
   --swiper-pagination-bullet-width: 12px;
@@ -12,19 +13,21 @@
   img {
     border-radius: 5px;
     object-fit: cover;
-  }
 
-  padding: 20px 0;
-
-  @include md-up {
-    padding: 60px 0;
-
-    img {
+    @include sm-up {
       height: 100%;
     }
   }
 
+  @include md-up {
+    padding: 60px 0;
+  }
+
   @include lg-up {
+    img {
+      min-height: 320px;
+    }
+
     .swiper-slide-prev,
     .swiper-slide-next {
       opacity: 0.4;

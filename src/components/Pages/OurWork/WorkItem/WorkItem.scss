@@ -13,13 +13,24 @@
     width: 100%;
   }
 
-  img {
-    border-radius: 5px;
-    border: 1px solid grey;
-  }
-
   &-content {
     padding: 80px 0 !important;
+
+    img {
+      border-radius: 5px;
+      border: 1px solid grey;
+    }
+
+    &-even {
+      background: linear-gradient(153.19deg, #053f00 11.14%, #065000 100%);
+      color: white;
+    }
+
+    @include md {
+      &-inner {
+        max-width: 500px !important;
+      }
+    }
   }
 
   @include sm-up {
@@ -33,13 +44,25 @@
   }
 
   @include md-up {
-    img {
-      height: 100%;
-      object-fit: cover;
-    }
-
     &-content {
       padding: 120px 0 !important;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  @include lg-up {
+    &-content {
+      img {
+        min-height: 300px;
+      }
+
+      &-inner {
+        max-width: 1000px !important;
+      }
     }
   }
 }

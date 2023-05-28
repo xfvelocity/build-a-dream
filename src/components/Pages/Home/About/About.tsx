@@ -30,7 +30,7 @@ const About = () => {
   return (
     <div className="about">
       <div className="bd-max-width xf-grid xf-py-md-15">
-        <div className="xf-col-12 xf-col-md-6 xf-text-18-xl">
+        <div className="xf-col-12 xf-col-md-7 xf-text-18-xl">
           <BdBanner class-names="xf-mx-auto xf-mx-md-0">About us</BdBanner>
 
           <p className="xf-my-4 xf-mt-lg-6">
@@ -51,7 +51,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="about-facts xf-col-12 xf-col-md-4 xf-col-offset-md-8 xf-col-lg-3 xf-col-offset-lg-10 xf-col-offset-xl-9 xf-mt-6 xf-mt-md-10 xf-mt-lg-6">
+        <div className="about-facts xf-col-12 xf-col-md-3 xf-col-offset-md-9 xf-col-lg-3 xf-col-offset-lg-10 xf-col-offset-xl-9 xf-mt-6 xf-mt-md-10 xf-mt-xl-6">
           {aboutFacts.map((fact, i) => (
             <div
               className={`about-item xf-bg-primary xf-p-3 xf-py-lg-6 xf-text-center xf-mb-2`}

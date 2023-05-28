@@ -52,6 +52,12 @@
 
   @include md-up {
     padding: 30px 0 50px 0;
+
+    &-title {
+      &-desc {
+        max-width: 350px !important;
+      }
+    }
   }
 
   @include lg-up {
@@ -59,7 +65,7 @@
 
     &-title {
       &-desc {
-        max-width: 450px;
+        max-width: 450px !important;
       }
     }
 

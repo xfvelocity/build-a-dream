@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { useMediaQuery } from "../../composables/mediaQueries";
 
-import { useState } from "react";
-
+// Styles
 import "./BdNav.scss";
 
+// Images
 import Logo from "../../images/logo.png";
-import { useMediaQuery } from "../../composables/mediaQueries";
 
 interface Route {
   name: string;
@@ -33,6 +33,7 @@ const BdNav = () => {
 
   return (
     <>
+      {/* TODO: Show current route */}
       <div style={{ height: `68px` }} />
 
       <nav className={navDrawerOpen ? "bd-nav-open" : ""}>
