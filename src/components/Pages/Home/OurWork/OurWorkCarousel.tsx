@@ -51,14 +51,16 @@ const OurWorkCarousel = () => {
               />
 
               <div className="xf-col-12 xf-col-md-6 xf-col-xl-5 xf-ml-md-3">
-                <h3 className="xf-text-colour-primary xf-text-24-lg xf-text-28-xl xf-fw-600 xf-mb-xl-2 xf-mt-2 xf-mt-md-0">
+                <h3 className="xf-text-colour-primary xf-mb-2 xf-text-20 xf-text-24-lg xf-text-28-xl xf-fw-600 xf-mb-xl-2 xf-mt-2 xf-mt-md-0">
                   {example.title}
                 </h3>
+
                 {example.desc.map((desc, ti) => (
                   <p className="xf-mb-2" key={ti}>
                     {desc}
                   </p>
                 ))}
+
                 <a
                   href={`/our-work#${example.id}`}
                   className="xf-text-colour-primary xf-fw-600"

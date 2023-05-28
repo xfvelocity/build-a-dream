@@ -45,10 +45,10 @@ const Contact = () => {
         <div className="bd-max-width xf-pt-10 xf-pb-15 xf-pt-md-15 xf-grid">
           <div className="xf-col-12 xf-col-md-6 xf-col-offset-xl-2 xf-mt-xl-10">
             <div className="contact-title">
-              <h3 className="xf-text-24 xf-text-32-lg xf-text-40-xl xf-fw-600 xf-mb-lg-1">
+              <h3 className="xf-text-24 xf-text-32-lg xf-text-40-xl xf-fw-600 xf-mb-1">
                 Looking for a free quote?
               </h3>
-              <p className="contact-title-desc xf-text-18-xl">
+              <p className="contact-title-desc xf-text-14 xf-text-18-xl">
                 Contact us today for a free quote and let us bring your dream
                 landscape to life.
               </p>

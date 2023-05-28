@@ -12,12 +12,12 @@ const Services = () => {
 
   return (
     <div className="services">
-      <div className="services-content bd-max-width xf-py-10">
+      <div className="services-content bd-max-width xf-py-15">
         <div className="xf-text-center">
-          <h2 className="xf-text-32-lg xf-text-44-xl xf-fw-700">
+          <h2 className="xf-text-28 xf-mb-1 xf-text-32-lg xf-text-44-xl xf-fw-700">
             Our Services
           </h2>
-          <p className="xf-text-18-xl">
+          <p className="xf-text-14 xf-text-18-xl">
             We provide a diverse range of services, some of which include:
           </p>
         </div>
