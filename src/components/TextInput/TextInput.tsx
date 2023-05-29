@@ -7,6 +7,7 @@ interface Props {
   label: string;
   classNames?: string;
   errorMessage?: string;
+  required?: boolean;
 }
 
 const TextInput = ({
@@ -16,11 +17,17 @@ const TextInput = ({
   label,
   classNames,
   errorMessage,
+  required,
 }: Props) => {
   return (
     <div className={classNames}>
       <label>{label}</label>
-      <input type={type} name={name} placeholder={placeholder} />
+      <input
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        required={required}
+      />
       {errorMessage && (
         <span className="xf-ml-1 xf-text-12 xf-text-colour-red-darken-2">
           {errorMessage}

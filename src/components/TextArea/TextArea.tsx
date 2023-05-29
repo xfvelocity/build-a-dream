@@ -8,6 +8,7 @@ interface Props {
   classNames?: string;
   rows?: number;
   errorMessage?: string;
+  required?: boolean;
 }
 
 const TextArea = ({
@@ -17,11 +18,17 @@ const TextArea = ({
   classNames,
   rows = 5,
   errorMessage,
+  required,
 }: Props) => {
   return (
     <div className={classNames}>
       <label>{label}</label>
-      <textarea name={name} rows={rows} placeholder={placeholder} />
+      <textarea
+        name={name}
+        rows={rows}
+        placeholder={placeholder}
+        required={required}
+      />
       {errorMessage && (
         <span className="xf-ml-1 xf-text-12 xf-text-colour-red-darken-2">
           {errorMessage}

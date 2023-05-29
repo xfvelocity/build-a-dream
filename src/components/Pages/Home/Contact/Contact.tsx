@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { FormEvent, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { useMediaQuery } from "../../../../composables/mediaQueries";
 
@@ -14,77 +14,57 @@ import TextInput from "../../../TextInput/TextInput";
 import TextArea from "../../../TextArea/TextArea";
 
 const Contact = () => {
-  const form = useRef();
+  const form = useRef<HTMLFormElement>();
   const { isExtraLarge } = useMediaQuery();
 
-  const [formItems, setFormItems] = useState([
+  const formItems = [
     {
       label: "Name",
       placeholder: "John Smith",
       name: "name",
-      errorMessage: "",
+      type: "text",
     },
     {
       label: "Email Address",
       placeholder: "john@gmail.com",
       name: "email",
-      errorMessage: "",
+      type: "email",
     },
     {
       label: "Phone Number",
       placeholder: "07400820600",
       name: "phone",
-      errorMessage: "",
+      type: "tel",
     },
     {
       label: "Message",
       placeholder: "Write your query here..",
       name: "message",
-      errorMessage: "",
+      type: "text",
     },
-  ]);
+  ];
 
-  const validatedFields = (): boolean => {
-    // const { name, phone, email, message } = form.current;
+  const submitForm = (event: FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
 
-    // if (!name.value) {
-    //   const index = formItems.findIndex((x) => x.name === "name");
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_t2y7wm5",
+          "contact",
 
-    //   formItems[index]!.errorMessage = "Field is required";
-
-    //   setFormItems(formItems);
-    // }
-
-    // const nameValid: boolean = !!name.value;
-    // const messageValid: boolean = !!name.value;
-
-    return true;
-  };
-
-  const submitForm = (e: SubmitEvent): void => {
-    e.preventDefault();
-
-    validatedFields();
-
-    // if (validatedFields() && form.current) {
-    //   emailjs
-    //     .sendForm(
-    //       "service_t2y7wm5",
-    //       "contact",
-
-    //       form.current,
-    //       "oyQQfWCUpZg4ShEo8"
-    //     )
-    //     .then(
-    //       () => {
-    //         window.location.href = "/thank-you";
-    //       },
-    //       () => {
-    //         window.location.href = "/error";
-    //       }
-    //     );
-    // } else {
-    // }
+          form.current,
+          "oyQQfWCUpZg4ShEo8"
+        )
+        .then(
+          () => {
+            window.location.href = "/thank-you";
+          },
+          () => {
+            window.location.href = "/error";
+          }
+        );
+    }
   };
 
   return (
@@ -128,8 +108,11 @@ const Contact = () => {
           </div>
 
           <div className="xf-bg-white contact-form xf-text-colour-secondary xf-p-4 xf-pb-8 xf-px-lg-6 xf-p-xl-10 xf-w-100 xf-col-12 xf-col-md-6 xf-col-offset-lg-8">
-            {/* TODO: Implement validation & fix type errors */}
-            <form ref={form} onSubmit={submitForm}>
+            {/* TODO: Implement validation */}
+            <form
+              ref={form as React.RefObject<HTMLFormElement>}
+              onSubmit={submitForm}
+            >
               {formItems.map((item, i) => {
                 if (item.name === "message") {
                   return (
@@ -137,9 +120,10 @@ const Contact = () => {
                       key={i}
                       classNames="xf-mb-1 xf-mb-xl-4"
                       label={item.label}
+                      type={item.type}
                       placeholder={item.placeholder}
                       name={item.name}
-                      errorMessage={item.errorMessage}
+                      required
                     />
                   );
                 } else {
@@ -148,9 +132,10 @@ const Contact = () => {
                       key={i}
                       classNames="xf-mb-3 xf-mb-xl-4"
                       label={item.label}
+                      type={item.type}
                       placeholder={item.placeholder}
                       name={item.name}
-                      errorMessage={item.errorMessage}
+                      required
                     />
                   );
                 }
