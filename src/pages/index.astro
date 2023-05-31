@@ -11,15 +11,11 @@ import Services from "../components/Pages/Home/Services/Services";
 import OurWork from "../components/Pages/Home/OurWork/OurWork";
 import Contact from "../components/Pages/Home/Contact/Contact";
 import Reviews from "../components/Pages/Home/Reviews/Reviews";
-import HeaderCarousel from "../components/Pages/Home/Header/HeaderCarousel";
 ---
 
 <!-- TODO: Fix importing multiple css files  -->
 <Layout title="Build A-Dream | Lincoln Landscape Gardeners" navFooter={true}>
-  <div class="header">
-    <HeaderCarousel client:load />
-    <Header />
-  </div>
+  <Header />
   <About />
   <Services client:idle />
   <OurWork client:visible />

@@ -5,8 +5,7 @@ import { useMediaQuery } from "../../../../composables/mediaQueries";
 import "./WorkItem.scss";
 
 // Components
-import Modal from "../../../Modal/Modal";
-import WorkCarousel from "../WorkCarousel/WorkCarousel";
+import OurWorkModal from "../../../OurWorkModal/OurWorkModal";
 
 // Types
 import type { WorkExample } from "../../../../content/our-work";
@@ -17,15 +16,19 @@ interface Props {
 }
 
 const WorkItem = ({ item, evenIndex }: Props) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedItem, setSelectedItem] = useState<WorkExample | null>(null);
 
-  const { isLarge, isMedium } = useMediaQuery();
+  const { isMedium } = useMediaQuery();
+
+  const viewImages = (): void => {
+    setSelectedItem(item);
+    setIsModalOpen(true);
+  };
 
   return (
     <>
       <div className="work-item">
-        <a id={`${item.id}`} />
-
         <div
           className={`${
             evenIndex ? "work-item-content-even" : ""
@@ -33,26 +36,23 @@ const WorkItem = ({ item, evenIndex }: Props) => {
         >
           <div className="bd-max-width work-item-content-inner xf-grid xf-align-items-center">
             <img
-              className={`xf-w-100 xf-col-12 xf-col-lg-6 ${
+              className={`xf-w-100 xf-col-12 xf-cursor-pointer xf-hover xf-col-lg-6 ${
                 evenIndex ? "" : "xf-col-offset-lg-7"
               }`}
               src={item.img}
               alt=""
+              onClick={viewImages}
             />
 
             <div
               className={`xf-col-12 xf-col-lg-6 ${
                 evenIndex
                   ? "xf-ml-lg-4"
-                  : "xf-col-offset-lg-1 xf-flex-order-minus-1 xf-mr-lg-4"
+                  : isMedium
+                  ? "xf-col-offset-lg-1 xf-flex-order-minus-1 xf-mr-lg-4"
+                  : ""
               }`}
             >
-              <div className="xf-flex xf-text-8 xf-text-10-md">
-                <p>{item.location}</p>
-
-                <p className="xf-ml-auto">{item.completedDate}</p>
-              </div>
-
               <h2
                 className={`${
                   evenIndex ? "" : "xf-text-colour-primary"
@@ -71,26 +71,15 @@ const WorkItem = ({ item, evenIndex }: Props) => {
                   {desc}
                 </p>
               ))}
-
-              <p
-                className={`${
-                  evenIndex ? "" : "xf-text-colour-primary xf-mb-4"
-                } xf-mt-4 xf-mt-lg-8 xf-text-12 xf-text-14-md xf-fw-600 xf-text-d-underline xf-cursor-pointer xf-hover`}
-                onClick={() => setIsModalOpen(true)}
-              >
-                View more images
-              </p>
             </div>
           </div>
         </div>
 
-        <Modal
-          isOpen={isModalOpen}
-          setIsOpen={setIsModalOpen}
-          width={isLarge ? "1000px" : !isMedium ? "95%" : "650px"}
-        >
-          <WorkCarousel images={item.additionalImages} />
-        </Modal>
+        <OurWorkModal
+          item={selectedItem}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+        />
       </div>
     </>
   );

@@ -69,7 +69,7 @@ const Contact = () => {
 
   return (
     <>
-      <a id="contact" />
+      <span id="contact" />
 
       <div className="contact">
         <div className="bd-max-width xf-pt-10 xf-pb-15 xf-pt-md-15 xf-grid">

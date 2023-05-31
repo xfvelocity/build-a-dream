@@ -21,10 +21,6 @@ const About = () => {
       title: "200+",
       desc: "clients",
     },
-    {
-      title: "30+",
-      desc: "years experience",
-    },
   ];
 
   return (
@@ -51,13 +47,13 @@ const About = () => {
           </p>
         </div>
 
-        <div className="about-facts xf-col-12 xf-col-md-3 xf-col-offset-md-9 xf-col-lg-3 xf-col-offset-lg-10 xf-col-offset-xl-9 xf-mt-6 xf-mt-md-10 xf-mt-xl-6">
+        <div className="about-facts xf-col-12 xf-col-md-3 xf-col-offset-md-9 xf-col-lg-3 xf-col-offset-lg-10 xf-col-offset-xl-9 xf-mt-6 xf-mt-md-10 xf-mt-xl-15">
           {aboutFacts.map((fact, i) => (
             <div
-              className={`about-item xf-bg-primary xf-p-3 xf-py-lg-6 xf-text-center xf-mb-2`}
+              className={`about-item xf-bg-primary xf-p-3 xf-py-6 xf-py-lg-6 xf-text-center xf-mb-2`}
               key={i}
             >
-              <p className="xf-text-colour-white xf-text-20 xf-text-28-lg xf-fw-700">
+              <p className="xf-text-colour-white xf-text-24 xf-text-28-lg xf-fw-700">
                 {fact.title}
               </p>
               <p className="xf-text-colour-grey-lighten-1">{fact.desc} </p>

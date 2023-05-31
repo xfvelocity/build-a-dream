@@ -10,12 +10,16 @@
   --swiper-pagination-bullet-width: 12px;
   --swiper-pagination-bullet-height: 12px;
 
-  img {
-    border-radius: 5px;
-    object-fit: cover;
+  .work-carousel {
+    img {
+      border-radius: 5px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 1px solid rgb(167, 167, 167);
 
-    @include sm-up {
-      height: 100%;
+      @include sm-up {
+        height: 100%;
+      }
     }
   }
 

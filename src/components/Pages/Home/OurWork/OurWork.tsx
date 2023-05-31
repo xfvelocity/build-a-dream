@@ -9,9 +9,10 @@ import BdBanner from "../../../Banner/BdBanner";
 
 // Content
 import { WorkExample, examplesOfWork } from "../../../../content/our-work";
+import BdButton from "../../../Button/BdButton";
 
 const OurWork = () => {
-  const workIds: number[] = [1, 2, 3, 4, 5];
+  const workIds: number[] = [2, 3, 4, 5, 6];
   const workExamples: (WorkExample | undefined)[] = workIds.map((id) =>
     examplesOfWork.find((e) => e.id === id)
   );
@@ -24,6 +25,14 @@ const OurWork = () => {
         </BdBanner>
 
         <OurWorkCarousel items={workExamples} />
+
+        <div className="xf-flex-center xf-mt-8">
+          <a href="/our-work">
+            <BdButton backgroundColour="primary" textColour="white">
+              View more examples
+            </BdButton>
+          </a>
+        </div>
       </div>
     </div>
   );

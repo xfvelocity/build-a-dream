@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useMediaQuery } from "../../../../composables/mediaQueries";
 import type { WorkExample } from "../../../../content/our-work";
@@ -10,12 +10,23 @@ import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
+// Components
+import OurWorkModal from "../../../OurWorkModal/OurWorkModal";
+
 interface Props {
   items: (WorkExample | undefined)[];
 }
 
 const OurWorkCarousel = ({ items }: Props) => {
   const { isExtraLarge } = useMediaQuery();
+
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedItem, setSelectedItem] = useState<WorkExample | null>(null);
+
+  const viewImages = (item: WorkExample): void => {
+    setSelectedItem(item);
+    setIsModalOpen(true);
+  };
 
   return (
     <div className="our-work-carousel">
@@ -32,11 +43,12 @@ const OurWorkCarousel = ({ items }: Props) => {
           (example, i) =>
             example && (
               <SwiperSlide key={i}>
-                <div className="xf-grid xf-pb-10 xf-pb-md-15 xf-align-items-center">
+                <div className="work-carousel xf-grid xf-pb-10 xf-pb-md-15 xf-align-items-center">
                   <img
-                    className="xf-col-12 xf-col-md-6 xf-col-lg-6"
+                    className="xf-cursor-pointer xf-hover xf-col-12 xf-col-md-6 xf-col-lg-6"
                     src={example.img}
                     alt=""
+                    onClick={() => viewImages(example)}
                   />
 
                   <div className="xf-col-12 xf-col-md-6 xf-col-xl-5 xf-ml-md-3">
@@ -49,21 +61,18 @@ const OurWorkCarousel = ({ items }: Props) => {
                         {desc}
                       </p>
                     ))}
-
-                    <div className="xf-mt-4">
-                      <a
-                        href={`/our-work#${example.id}`}
-                        className="xf-text-colour-primary  xf-fw-600"
-                      >
-                        Learn more
-                      </a>
-                    </div>
                   </div>
                 </div>
               </SwiperSlide>
             )
         )}
       </Swiper>
+
+      <OurWorkModal
+        item={selectedItem}
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      />
     </div>
   );
 };
