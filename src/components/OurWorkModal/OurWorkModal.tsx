@@ -19,14 +19,22 @@ interface Props {
 }
 
 const OurWorkModal = ({ item, isModalOpen, setIsModalOpen }: Props) => {
-  const { isLarge, isMedium } = useMediaQuery();
+  const { isExtraLarge, isLarge, isMedium } = useMediaQuery();
 
   return (
     <div className="our-work-modal">
       <Modal
         isOpen={isModalOpen}
         setIsOpen={setIsModalOpen}
-        width={isLarge ? "1000px" : !isMedium ? "95%" : "650px"}
+        width={
+          isExtraLarge
+            ? "1000px"
+            : isLarge
+            ? "800px"
+            : isMedium
+            ? "600px"
+            : "95%"
+        }
       >
         <WorkCarousel images={item ? item.additionalImages : []} />
       </Modal>

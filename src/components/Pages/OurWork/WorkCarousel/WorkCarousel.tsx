@@ -38,7 +38,7 @@ const WorkCarousel = ({ images }: Props) => {
     >
       {images.map((img, i) => (
         <SwiperSlide key={i}>
-          <div className="xf-pb-8">
+          <div className="work-carousel-img xf-pb-8">
             <img className="xf-w-100" src={img} alt="" />
           </div>
         </SwiperSlide>

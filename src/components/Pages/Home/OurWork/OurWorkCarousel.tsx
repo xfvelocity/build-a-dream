@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import { useMediaQuery } from "../../../../composables/mediaQueries";
 import type { WorkExample } from "../../../../content/our-work";
 
 // Swiper
@@ -18,8 +17,6 @@ interface Props {
 }
 
 const OurWorkCarousel = ({ items }: Props) => {
-  const { isExtraLarge } = useMediaQuery();
-
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<WorkExample | null>(null);
 
@@ -33,8 +30,8 @@ const OurWorkCarousel = ({ items }: Props) => {
       <Swiper
         modules={[Pagination]}
         speed={800}
-        slidesPerView={isExtraLarge ? 1.5 : 1}
-        spaceBetween={80}
+        slidesPerView={1}
+        spaceBetween={30}
         centeredSlides
         loop
         pagination
@@ -45,7 +42,7 @@ const OurWorkCarousel = ({ items }: Props) => {
               <SwiperSlide key={i}>
                 <div className="work-carousel xf-grid xf-pb-10 xf-pb-md-15 xf-align-items-center">
                   <img
-                    className="xf-cursor-pointer xf-hover xf-col-12 xf-col-md-6 xf-col-lg-6"
+                    className="our-work-carousel-img xf-cursor-pointer xf-hover xf-col-12 xf-col-md-6 xf-col-lg-6 xf-col-xl-5 xf-col-offset-xl-2"
                     src={example.img}
                     alt=""
                     onClick={() => viewImages(example)}
