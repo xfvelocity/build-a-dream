@@ -1,63 +1,53 @@
 <template>
-  <Form v-slot="{ validate }" :validation-schema="validationSchema">
-    <Field v-model="contactInfo.name" name="name" v-slot="{ field, errors }">
-      <v-text-field
-        v-bind="field"
-        label="Name"
-        placeholder="John Smith"
-        outline
-        :error-messages="errors"
-      />
-    </Field>
+  <form @submit="submitMessage">
+    <v-text-field
+      v-model="contactInfo.name"
+      label="Name"
+      name="name"
+      type="name"
+      placeholder="John Smith"
+      outline
+      required
+    />
 
-    <Field
+    <v-text-field
       v-model="contactInfo.phoneNumber"
+      label="Phone Number"
       name="number"
-      v-slot="{ field, errors }"
-    >
-      <v-text-field
-        v-bind="field"
-        label="Phone Number"
-        @keydown.space.prevent
-        placeholder="07414095408"
-        :error-messages="errors"
-      />
-    </Field>
+      type="tel"
+      @keydown.space.prevent
+      placeholder="07414095408"
+      required
+    />
 
-    <Field
+    <v-textarea
       v-model="contactInfo.message"
       name="message"
-      v-slot="{ field, errors }"
-    >
-      <v-textarea
-        v-bind="field"
-        label="Message"
-        placeholder="How can we help.."
-        :error-messages="errors"
-      />
-    </Field>
+      label="Message"
+      type="text"
+      placeholder="How can we help.."
+      required
+    />
 
-    <v-btn class="w-100" color="primary" @click="submitMessage(validate)">
-      Submit
-    </v-btn>
-  </Form>
+    <v-btn class="w-100" color="primary" type="submit"> Submit </v-btn>
+
+    <p v-if="messageSent" class="text-center mt-4 text-primary">
+      Thank you for your submission!
+    </p>
+  </form>
 </template>
 
 <script lang="ts">
 import { validationSchema } from "@/utility/validation";
-import { Form, Field, ValidationResult } from "vee-validate";
 import { ContactInfo } from "./types/bdContactForm.types";
 
 import axios from "axios";
 
 export default defineComponent({
   name: "BdContactForm",
-  components: {
-    Form,
-    Field,
-  },
   setup() {
     // Variables
+    const messageSent = ref<boolean>(false);
     const contactInfo = ref<ContactInfo>({
       name: "",
       phoneNumber: "",
@@ -65,17 +55,30 @@ export default defineComponent({
     });
 
     // Methods
-    const submitMessage = async (validateFn: Function): Promise<void> => {
-      const valid: ValidationResult = await validateFn();
+    const submitMessage = async (event: Event): Promise<void> => {
+      event.preventDefault();
 
-      if (valid.valid) {
-        axios.post("https://usebasin.com/f/5d041ec64531", contactInfo.value);
-      }
+      messageSent.value = true;
+
+      axios
+        .post("https://usebasin.com/f/5d041ec64531", contactInfo.value)
+        .then(() => {
+          contactInfo.value = {
+            name: "",
+            phoneNumber: "",
+            message: "",
+          };
+
+          setTimeout(() => {
+            messageSent.value = false;
+          }, 3000);
+        });
     };
 
     return {
       validationSchema,
       contactInfo,
+      messageSent,
       submitMessage,
     };
   },
