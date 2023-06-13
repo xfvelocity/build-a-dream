@@ -1,5 +1,8 @@
 import React from "react";
 
+// Icons
+import Close from "/icons/close.svg";
+
 // Styles
 import "./Modal.scss";
 
@@ -21,6 +24,16 @@ const Modal = ({ isOpen, setIsOpen, children, height, width }: Props) => {
             style={{ height, width }}
             onClick={(e) => e.stopPropagation()}
           >
+            <div className="xf-flex xf-mb-2">
+              <img
+                className="xf-cursor-pointer xf-hover xf-ml-auto"
+                src={Close}
+                alt=""
+                height={24}
+                width={24}
+                onClick={() => setIsOpen(false)}
+              />
+            </div>
             {children}
           </div>
         </div>

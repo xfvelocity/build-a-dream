@@ -1,0 +1,27 @@
+.fuzzy-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(5px);
+  background-image: var(--minImg);
+
+  &-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  & > img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  &-loaded {
+    filter: none;
+    transition: filter 3s;
+  }
+}

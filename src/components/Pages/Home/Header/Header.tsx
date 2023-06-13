@@ -1,12 +1,18 @@
 import React from "react";
 
+import HeaderImage from "../../../../images/home/header.jpg";
+import HeaderMinImage from "../../../../images/home/header-min.jpg";
+
 // Components
 import BdButton from "../../../Button/BdButton";
+import FuzzyImage from "../../../FuzzyImage/FuzzyImage";
 
 const Header = () => {
   return (
     <div className="header">
-      <div className="header-img" />
+      <div className="header-img">
+        <FuzzyImage img={HeaderImage} minImg={HeaderMinImage} background />
+      </div>
 
       <div className="header-text-container">
         <div className="header-text xf-p-6 xf-p-lg-10">
