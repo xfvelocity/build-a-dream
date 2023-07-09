@@ -14,13 +14,19 @@ const Services = () => {
   const { inView } = initObserver("services");
   const { isMedium, isExtraLarge } = useMediaQuery();
 
+  let itemsInView: any[] = [];
+
+  Content.forEach((_c, i) => {
+    itemsInView[i] = initObserver(`services-item-${i}`);
+  });
+
   return (
     <div
       className={`services ${inView ? "services-in-view" : ""}`}
       id="services"
     >
       <div className="services-content bd-max-width xf-py-15">
-        <div className="xf-text-center">
+        <div className="services-title xf-text-center">
           <h2 className="xf-text-28 xf-mb-1 xf-text-32-lg xf-text-44-xl xf-fw-700">
             Our Services
           </h2>
@@ -32,7 +38,10 @@ const Services = () => {
         <div className="services-item-container xf-mt-6 xf-mt-lg-10 xf-grid">
           {Content.map((service, i) => (
             <div
-              className={`xf-col-12 xf-col-md-6 xf-col-xl-4 services-item xf-p-6 xf-mb-2`}
+              id={`services-item-${i}`}
+              className={`xf-col-12 xf-col-md-6 xf-col-xl-4 services-item xf-p-6 xf-mb-2 ${
+                itemsInView[i].inView ? "services-item-in-view" : ""
+              }`}
               key={i}
             >
               <div className="xf-flex xf-flex-align-items-center xf-mb-3">
