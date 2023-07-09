@@ -1,9 +1,12 @@
 import React from "react";
 
-// Styles
+// ** Composables **
+import { initObserver } from "../../../../composables/intersectionObserver";
+
+// ** Styles **
 import "./About.scss";
 
-// Components
+// ** Components **
 import BdBanner from "../../../Banner/BdBanner";
 
 interface AboutFact {
@@ -12,6 +15,8 @@ interface AboutFact {
 }
 
 const About = () => {
+  const { inView } = initObserver("about");
+
   const aboutFacts: AboutFact[] = [
     {
       title: "30+",
@@ -24,7 +29,7 @@ const About = () => {
   ];
 
   return (
-    <div className="about">
+    <div className={`about ${inView ? "about-in-view" : ""}`} id="about">
       <div className="bd-max-width xf-grid xf-py-md-15">
         <div className="xf-col-12 xf-col-md-7 xf-text-18-xl">
           <BdBanner class-names="xf-mx-auto xf-mx-md-0">About us</BdBanner>

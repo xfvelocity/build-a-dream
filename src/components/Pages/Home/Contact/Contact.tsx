@@ -1,20 +1,25 @@
 import React, { FormEvent, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { useMediaQuery } from "../../../../composables/mediaQueries";
 
-// Styles
+// ** Composables **
+import { useMediaQuery } from "../../../../composables/mediaQueries";
+import { initObserver } from "../../../../composables/intersectionObserver";
+
+//  ** Styles **
 import "./Contact.scss";
 
-// Content
+// ** Content **
 import Content from "../../../../content/social";
 
-// Components
+// ** Components **
 import BdButton from "../../../Button/BdButton";
 import TextInput from "../../../TextInput/TextInput";
 import TextArea from "../../../TextArea/TextArea";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>();
+
+  const { inView } = initObserver("contact");
   const { isExtraLarge } = useMediaQuery();
 
   const formItems = [
@@ -71,7 +76,10 @@ const Contact = () => {
     <>
       <span id="contact" />
 
-      <div className="contact">
+      <div
+        className={`contact ${inView ? "contact-in-view" : ""}`}
+        id="contact"
+      >
         <div className="bd-max-width xf-pt-10 xf-pb-15 xf-pt-md-15 xf-grid">
           <div className="xf-col-12 xf-col-md-6 xf-col-lg-7 xf-col-xl-6 xf-col-offset-xl-2 xf-mt-xl-10">
             <div className="contact-title">

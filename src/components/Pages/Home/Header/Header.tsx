@@ -1,15 +1,21 @@
 import React from "react";
 
+// ** Composables **
+import { initObserver } from "../../../../composables/intersectionObserver";
+
+// ** Images **
 import HeaderImage from "../../../../images/home/header.jpg";
 import HeaderMinImage from "../../../../images/home/header-min.jpg";
 
-// Components
+// ** Components **
 import BdButton from "../../../Button/BdButton";
 import FuzzyImage from "../../../FuzzyImage/FuzzyImage";
 
 const Header = () => {
+  const { inView } = initObserver("header");
+
   return (
-    <div className="header">
+    <div className={`header ${inView ? "header-in-view" : ""}`} id="header">
       <div className="header-img">
         <FuzzyImage img={HeaderImage} minImg={HeaderMinImage} background />
       </div>

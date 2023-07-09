@@ -1,14 +1,22 @@
 import React from "react";
 
-// Styles
+// ** Composables **
+import { initObserver } from "../../../../composables/intersectionObserver";
+
+// ** Styles **
 import "./Reviews.scss";
 
-// Components
+// ** Components **
 import ReviewsCarousel from "./ReviewsCarousel";
 
 const Reviews = () => {
+  const { inView } = initObserver("reviews");
+
   return (
-    <div className="reviews xf-pt-15 xf-pb-10">
+    <div
+      className={`reviews xf-pt-15 xf-pb-10 ${inView ? "reviews-in-view" : ""}`}
+      id="reviews"
+    >
       <div className="reviews-content">
         <ReviewsCarousel />
       </div>

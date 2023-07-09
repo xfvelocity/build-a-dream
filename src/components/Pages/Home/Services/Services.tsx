@@ -1,17 +1,24 @@
 import React from "react";
-import { useMediaQuery } from "../../../../composables/mediaQueries";
 
-// Styles
+// ** Composables **
+import { useMediaQuery } from "../../../../composables/mediaQueries";
+import { initObserver } from "../../../../composables/intersectionObserver";
+
+// ** Styles **
 import "./Services.scss";
 
-// Content
+// ** Content **
 import Content from "../../../../content/services";
 
 const Services = () => {
+  const { inView } = initObserver("services");
   const { isMedium, isExtraLarge } = useMediaQuery();
 
   return (
-    <div className="services">
+    <div
+      className={`services ${inView ? "services-in-view" : ""}`}
+      id="services"
+    >
       <div className="services-content bd-max-width xf-py-15">
         <div className="xf-text-center">
           <h2 className="xf-text-28 xf-mb-1 xf-text-32-lg xf-text-44-xl xf-fw-700">
