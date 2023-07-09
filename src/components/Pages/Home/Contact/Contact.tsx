@@ -19,7 +19,9 @@ import TextArea from "../../../TextArea/TextArea";
 const Contact = () => {
   const form = useRef<HTMLFormElement>();
 
-  const { inView } = initObserver("contact");
+  const { inView: contactInfoInView } = initObserver("contact-info");
+  const { inView: contactFormInView } = initObserver("contact-form");
+
   const { isExtraLarge } = useMediaQuery();
 
   const formItems = [
@@ -76,12 +78,14 @@ const Contact = () => {
     <>
       <span id="contact" />
 
-      <div
-        className={`contact ${inView ? "contact-in-view" : ""}`}
-        id="contact"
-      >
+      <div className="contact">
         <div className="bd-max-width xf-pt-10 xf-pb-15 xf-pt-md-15 xf-grid">
-          <div className="xf-col-12 xf-col-md-6 xf-col-lg-7 xf-col-xl-6 xf-col-offset-xl-2 xf-mt-xl-10">
+          <div
+            id="contact-info"
+            className={`contact-info xf-col-12 xf-col-md-6 xf-col-lg-7 xf-col-xl-6 xf-col-offset-xl-2 xf-mt-xl-10 ${
+              contactInfoInView ? "contact-info-in-view" : ""
+            }`}
+          >
             <div className="contact-title">
               <h3 className="xf-text-24 xf-text-32-lg xf-text-40-xl xf-fw-600 xf-mb-1">
                 Looking for a free quote?
@@ -115,7 +119,12 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="xf-bg-white contact-form xf-text-colour-secondary xf-p-4 xf-pb-8 xf-px-lg-6 xf-p-xl-10 xf-w-100 xf-col-12 xf-col-md-6 xf-col-offset-lg-8">
+          <div
+            id="contact-form"
+            className={`xf-bg-white contact-form xf-text-colour-secondary xf-p-4 xf-pb-8 xf-px-lg-6 xf-p-xl-10 xf-w-100 xf-col-12 xf-col-md-6 xf-col-offset-lg-8 ${
+              contactFormInView ? "contact-form-in-view" : ""
+            }`}
+          >
             {/* TODO: Implement validation */}
             <form
               ref={form as React.RefObject<HTMLFormElement>}

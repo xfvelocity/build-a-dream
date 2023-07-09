@@ -5,6 +5,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 20px 0;
+  opacity: 0;
+  transform: translateY(20px);
+
+  &-in-view {
+    @include inView;
+  }
 
   --swiper-pagination-color: #{map-get($xf-colours, "primary")};
   --swiper-pagination-bullet-width: 12px;
