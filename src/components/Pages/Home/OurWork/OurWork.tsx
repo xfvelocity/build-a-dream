@@ -2,6 +2,7 @@ import React from "react";
 
 // ** Composables **
 import { initObserver } from "../../../../composables/intersectionObserver";
+import { preloadImages } from "../../../../composables/preloadImages";
 
 // ** Styles **
 import "./OurWork.scss";
@@ -22,6 +23,9 @@ const OurWork = () => {
   const workExamples: (WorkExample | undefined)[] = workIds.map((id) =>
     examplesOfWork.find((e) => e.id === id)
   );
+
+  // ** Methods **
+  preloadImages(examplesOfWork.flatMap((x) => x.additionalImages));
 
   return (
     <div
