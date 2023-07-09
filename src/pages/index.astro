@@ -16,9 +16,9 @@ import Reviews from "../components/Pages/Home/Reviews/Reviews";
 <!-- TODO: Fix importing multiple css files  -->
 <Layout title="Build A-Dream | Lincoln Landscape Gardeners" navFooter={true}>
   <Header client:load />
-  <About client:idle />
-  <Services client:visible />
+  <About client:load />
+  <Services client:load />
   <OurWork client:idle />
-  <Contact client:visible />
-  <Reviews client:visible />
+  <Contact client:load />
+  <Reviews client:load />
 </Layout>
