@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-// Swiper
+// ** Swiper **
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { NavigationOptions } from "swiper/types";
@@ -14,6 +14,7 @@ interface Props {
 }
 
 const WorkCarousel = ({ images }: Props) => {
+  // ** Data **
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 

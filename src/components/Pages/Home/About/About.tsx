@@ -15,6 +15,7 @@ interface AboutFact {
 }
 
 const About = () => {
+  // ** Data **
   const { inView: aboutInView } = initObserver("about");
   const { inView: aboutFactsInView } = initObserver("about-facts");
 

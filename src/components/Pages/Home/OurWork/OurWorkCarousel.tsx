@@ -17,9 +17,11 @@ interface Props {
 }
 
 const OurWorkCarousel = ({ items }: Props) => {
+  // ** Data **
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<WorkExample | null>(null);
 
+  // ** Methods **
   const viewImages = (item: WorkExample): void => {
     setSelectedItem(item);
     setIsModalOpen(true);

@@ -17,6 +17,7 @@ import TextInput from "../../../TextInput/TextInput";
 import TextArea from "../../../TextArea/TextArea";
 
 const Contact = () => {
+  // ** Data **
   const form = useRef<HTMLFormElement>();
 
   const { inView: contactInfoInView } = initObserver("contact-info");
@@ -51,6 +52,7 @@ const Contact = () => {
     },
   ];
 
+  // ** Methods **
   const submitForm = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
 

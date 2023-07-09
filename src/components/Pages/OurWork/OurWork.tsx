@@ -1,16 +1,34 @@
 import React from "react";
 
-// Content
+// ** Composables **
+import { initObserver } from "../../../composables/intersectionObserver";
+
+// ** Content **
 import { examplesOfWork } from "../../../content/our-work";
 
-// Component
+// ** Components **
 import WorkItem from "./WorkItem/WorkItem";
 
 const OurWork = () => {
+  // ** Data **
+  let itemsInView: { inView: boolean }[] = [];
+
+  examplesOfWork.forEach((_e, i) => {
+    itemsInView[i] = initObserver(`work-item-${i}`);
+  });
+
   return (
     <div>
       {examplesOfWork.map((example, i) => (
-        <WorkItem key={i} item={example} evenIndex={i % 2 === 0} />
+        <WorkItem
+          elementId={`work-item-${i}`}
+          elementClass={`transition ${
+            itemsInView[i]?.inView ? "transition-in-view" : ""
+          }`}
+          key={i}
+          item={example}
+          evenIndex={i % 2 === 0}
+        />
       ))}
     </div>
   );

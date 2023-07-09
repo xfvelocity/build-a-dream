@@ -12,6 +12,7 @@ import BdButton from "../../../Button/BdButton";
 import FuzzyImage from "../../../FuzzyImage/FuzzyImage";
 
 const Header = () => {
+  // ** Data **
   const { inView } = initObserver("header");
 
   return (

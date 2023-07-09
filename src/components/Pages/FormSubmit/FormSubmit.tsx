@@ -1,9 +1,9 @@
 import React from "react";
 
-// Styles
+// ** Styles **
 import "./FormSubmit.scss";
 
-// Components
+// ** Components **
 import BdButton from "../../Button/BdButton";
 
 interface Props {
@@ -22,6 +22,7 @@ interface TextContent {
 }
 
 const FormSubmit = ({ type }: Props) => {
+  // ** Data **
   const text: Text = {
     success: {
       title: "Thank you for your submission",

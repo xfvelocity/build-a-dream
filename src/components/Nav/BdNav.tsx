@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+
+// ** Composables **
 import { useMediaQuery } from "../../composables/mediaQueries";
 
-// Styles
+// ** Styles **
 import "./BdNav.scss";
 
-// Images
+// ** Images **
 import Logo from "../../images/logo.png";
 
 interface Route {
@@ -13,6 +15,7 @@ interface Route {
 }
 
 const BdNav = () => {
+  // ** Data **
   const routes: Route[] = [
     {
       name: "Home",

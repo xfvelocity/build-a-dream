@@ -15,6 +15,7 @@ import BdBanner from "../../../Banner/BdBanner";
 import BdButton from "../../../Button/BdButton";
 
 const OurWork = () => {
+  // ** Data **
   const { inView } = initObserver("our-work");
 
   const workIds: number[] = [2, 3, 4, 5, 6];

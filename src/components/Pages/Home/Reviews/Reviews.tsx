@@ -10,14 +10,15 @@ import "./Reviews.scss";
 import ReviewsCarousel from "./ReviewsCarousel";
 
 const Reviews = () => {
+  // ** Data **
   const { inView } = initObserver("reviews");
 
   return (
     <div
+      id="reviews"
       className={`reviews xf-pt-15 xf-pb-10 transition ${
         inView ? "transition-in-view" : ""
       }`}
-      id="reviews"
     >
       <div className="reviews-content">
         <ReviewsCarousel />

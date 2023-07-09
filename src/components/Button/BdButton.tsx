@@ -1,5 +1,6 @@
 import React from "react";
 
+// ** Styles **
 import "./BdButton.scss";
 
 interface Props {

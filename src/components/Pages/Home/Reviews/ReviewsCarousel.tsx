@@ -1,17 +1,18 @@
 import React from "react";
 
-// Swiper
+// ** Swiper **
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
-// Images
+// ** Images **
 import StartQuoteIcon from "/icons/start-quote.svg";
 import EndQuoteIcon from "/icons/end-quote.svg";
 
 const ReviewsCarousel = () => {
+  // ** Data **
   const reviews = [
     {
       text: "Dominic has done several pieces of work from laying a patio circle to a full brick driveway. The quality of work is excellent and I have no hesitation in recommending him to everyone.",

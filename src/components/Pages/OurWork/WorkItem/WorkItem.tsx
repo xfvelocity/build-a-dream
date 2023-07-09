@@ -1,26 +1,30 @@
 import React, { useState } from "react";
+import type { WorkExample } from "../../../../content/our-work";
+
+// ** Composables **
 import { useMediaQuery } from "../../../../composables/mediaQueries";
 
-// Styles
+// ** Styles **
 import "./WorkItem.scss";
 
-// Components
+// ** Components **
 import OurWorkModal from "../../../OurWorkModal/OurWorkModal";
-
-// Types
-import type { WorkExample } from "../../../../content/our-work";
 
 interface Props {
   item: WorkExample;
   evenIndex: boolean;
+  elementId: string;
+  elementClass: string;
 }
 
-const WorkItem = ({ item, evenIndex }: Props) => {
+const WorkItem = ({ item, evenIndex, elementId, elementClass }: Props) => {
+  // ** Data **
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<WorkExample | null>(null);
 
   const { isMedium } = useMediaQuery();
 
+  // ** Methods **
   const viewImages = (): void => {
     setSelectedItem(item);
     setIsModalOpen(true);
@@ -30,9 +34,10 @@ const WorkItem = ({ item, evenIndex }: Props) => {
     <>
       <div className="work-item">
         <div
+          id={elementId}
           className={`${
             evenIndex ? "work-item-content-even" : ""
-          } work-item-content `}
+          } ${elementClass} work-item-content `}
         >
           <div className="bd-max-width work-item-content-inner xf-grid xf-align-items-center">
             <img

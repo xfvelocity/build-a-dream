@@ -11,17 +11,18 @@ import "./Services.scss";
 import Content from "../../../../content/services";
 
 const Services = () => {
+  // ** Data **
   const { inView } = initObserver("services-title");
   const { isMedium, isExtraLarge } = useMediaQuery();
 
-  let itemsInView: any[] = [];
+  let itemsInView: { inView: boolean }[] = [];
 
   Content.forEach((_c, i) => {
     itemsInView[i] = initObserver(`services-item-${i}`);
   });
 
   return (
-    <div className={`services `} id="services">
+    <div className="services">
       <div className="services-content bd-max-width xf-py-15">
         <div
           id="services-title"
@@ -42,7 +43,7 @@ const Services = () => {
             <div
               id={`services-item-${i}`}
               className={`xf-col-12 xf-col-md-6 xf-col-xl-4 services-item xf-p-6 xf-mb-2 transition ${
-                itemsInView[i].inView ? "transition-in-view" : ""
+                itemsInView[i]?.inView ? "transition-in-view" : ""
               }`}
               key={i}
             >

@@ -1,10 +1,10 @@
 import React from "react";
 
-// Icons
-import Close from "/icons/close.svg";
-
-// Styles
+// ** Styles **
 import "./Modal.scss";
+
+// ** Images **
+import Close from "/icons/close.svg";
 
 interface Props {
   isOpen: boolean;

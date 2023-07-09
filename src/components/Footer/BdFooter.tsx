@@ -1,8 +1,10 @@
 import React from "react";
 
+// ** Styles **
 import "./BdFooter.scss";
 
 const BdFooter = () => {
+  // ** Data **
   const currentYear: number = new Date().getFullYear();
 
   return (

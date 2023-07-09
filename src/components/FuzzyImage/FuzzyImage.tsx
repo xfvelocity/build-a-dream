@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 
-// Styles
+// ** Styles **
 import "./FuzzyImage.scss";
 
 interface Props {

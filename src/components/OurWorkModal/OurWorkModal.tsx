@@ -1,14 +1,13 @@
 import React from "react";
-
-import { useMediaQuery } from "../../composables/mediaQueries";
-
-// Styles
-import "./OurWorkModal.scss";
-
-// Types
 import type { WorkExample } from "../../content/our-work";
 
-// Components
+// ** Composables **
+import { useMediaQuery } from "../../composables/mediaQueries";
+
+// ** Styles **
+import "./OurWorkModal.scss";
+
+// ** Components **
 import Modal from "../Modal/Modal";
 import WorkCarousel from "../Pages/OurWork/WorkCarousel/WorkCarousel";
 
@@ -19,6 +18,7 @@ interface Props {
 }
 
 const OurWorkModal = ({ item, isModalOpen, setIsModalOpen }: Props) => {
+  // ** Data **
   const { isExtraLarge, isLarge, isMedium } = useMediaQuery();
 
   return (
