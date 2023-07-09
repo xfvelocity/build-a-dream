@@ -3,6 +3,19 @@
 .header {
   position: relative;
 
+  &-text {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  &-in-view {
+    .header-text {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.3s linear;
+    }
+  }
+
   &-img {
     position: relative;
     left: 0;

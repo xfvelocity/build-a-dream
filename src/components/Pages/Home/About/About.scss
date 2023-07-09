@@ -6,6 +6,14 @@
   background-repeat: no-repeat;
   background-position: bottom;
   padding-bottom: 80px;
+  opacity: 0;
+  transform: translateX(-50px);
+
+  &-in-view {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.3s linear;
+  }
 
   &-item {
     border-radius: 5px;
@@ -13,6 +21,14 @@
 
   &-facts {
     align-self: center;
+    opacity: 0;
+    transform: translateY(50px);
+
+    &-in-view {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.3s linear 0.2s;
+    }
   }
 
   @include md-up {

@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 
-export const initObserver = (
-  elementId: string
-): {
+interface InitObserver {
   inView: boolean;
-} => {
-  const [inView, setInView] = useState(false);
+}
+
+export const initObserver = (elementId: string): InitObserver => {
+  const [inView, setInView] = useState<boolean>(false);
 
   useEffect(() => {
-    const element = document.getElementById(elementId);
+    const element: HTMLElement | null = document.getElementById(elementId);
 
     const intersectionObserver: IntersectionObserver = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => setInView(entry.isIntersecting)),
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setInView(true);
+          }
+        }),
       { rootMargin: "-50px" }
     );
 
