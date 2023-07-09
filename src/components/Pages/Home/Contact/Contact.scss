@@ -13,25 +13,9 @@
     text-decoration: none;
   }
 
-  &-info {
-    opacity: 0;
-    transform: translateY(20px);
-
-    &-in-view {
-      @include inView;
-    }
-  }
-
   &-form {
     border-radius: 5px;
     max-width: 450px;
-
-    opacity: 0;
-    transform: translateY(20px);
-
-    &-in-view {
-      @include inView;
-    }
   }
 
   &-icon {

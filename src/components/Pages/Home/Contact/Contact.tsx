@@ -82,8 +82,8 @@ const Contact = () => {
         <div className="bd-max-width xf-pt-10 xf-pb-15 xf-pt-md-15 xf-grid">
           <div
             id="contact-info"
-            className={`contact-info xf-col-12 xf-col-md-6 xf-col-lg-7 xf-col-xl-6 xf-col-offset-xl-2 xf-mt-xl-10 ${
-              contactInfoInView ? "contact-info-in-view" : ""
+            className={`transition xf-col-12 xf-col-md-6 xf-col-lg-7 xf-col-xl-6 xf-col-offset-xl-2 xf-mt-xl-10 ${
+              contactInfoInView ? "transition-in-view" : ""
             }`}
           >
             <div className="contact-title">
@@ -121,8 +121,8 @@ const Contact = () => {
 
           <div
             id="contact-form"
-            className={`xf-bg-white contact-form xf-text-colour-secondary xf-p-4 xf-pb-8 xf-px-lg-6 xf-p-xl-10 xf-w-100 xf-col-12 xf-col-md-6 xf-col-offset-lg-8 ${
-              contactFormInView ? "contact-form-in-view" : ""
+            className={`transition xf-bg-white contact-form xf-text-colour-secondary xf-p-4 xf-pb-8 xf-px-lg-6 xf-p-xl-10 xf-w-100 xf-col-12 xf-col-md-6 xf-col-offset-lg-8 ${
+              contactFormInView ? "transition-in-view" : ""
             }`}
           >
             {/* TODO: Implement validation */}

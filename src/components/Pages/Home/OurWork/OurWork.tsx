@@ -24,7 +24,7 @@ const OurWork = () => {
 
   return (
     <div
-      className={`our-work ${inView ? "our-work-in-view" : ""}`}
+      className={`our-work transition ${inView ? "transition-in-view" : ""}`}
       id="our-work"
     >
       <div className="xf-py-15">

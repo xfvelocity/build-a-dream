@@ -14,7 +14,9 @@ const Reviews = () => {
 
   return (
     <div
-      className={`reviews xf-pt-15 xf-pb-10 ${inView ? "reviews-in-view" : ""}`}
+      className={`reviews xf-pt-15 xf-pb-10 transition ${
+        inView ? "transition-in-view" : ""
+      }`}
       id="reviews"
     >
       <div className="reviews-content">

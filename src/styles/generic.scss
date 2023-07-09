@@ -31,6 +31,17 @@ button {
   font-family: "Montserrat", sans-serif;
 }
 
+.transition {
+  opacity: 0;
+  transform: translateY(20px);
+
+  &-in-view {
+    opacity: 1;
+    transform: translate(0);
+    transition: all 0.3s linear;
+  }
+}
+
 .xf-center {
   @include center(true, true);
 

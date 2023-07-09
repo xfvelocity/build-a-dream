@@ -10,13 +10,6 @@
   --swiper-pagination-bullet-width: 12px;
   --swiper-pagination-bullet-height: 12px;
 
-  opacity: 0;
-  transform: translateY(20px);
-
-  &-in-view {
-    @include inView;
-  }
-
   &-content {
     max-width: 340px;
     margin-left: auto;

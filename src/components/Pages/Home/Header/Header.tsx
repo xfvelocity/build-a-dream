@@ -15,13 +15,18 @@ const Header = () => {
   const { inView } = initObserver("header");
 
   return (
-    <div className={`header ${inView ? "header-in-view" : ""}`} id="header">
+    <div className="header">
       <div className="header-img">
         <FuzzyImage img={HeaderImage} minImg={HeaderMinImage} background />
       </div>
 
       <div className="header-text-container">
-        <div className="header-text xf-p-6 xf-p-lg-10">
+        <div
+          id="header"
+          className={`header-text xf-p-6 xf-p-lg-10 transition ${
+            inView ? "transition-in-view" : ""
+          }`}
+        >
           <h1 className="xf-text-24 xf-text-40-xl xf-mb-2">
             Dream gardens that don’t cost the earth
           </h1>

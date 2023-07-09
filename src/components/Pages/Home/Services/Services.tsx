@@ -11,7 +11,7 @@ import "./Services.scss";
 import Content from "../../../../content/services";
 
 const Services = () => {
-  const { inView } = initObserver("services");
+  const { inView } = initObserver("services-title");
   const { isMedium, isExtraLarge } = useMediaQuery();
 
   let itemsInView: any[] = [];
@@ -21,12 +21,14 @@ const Services = () => {
   });
 
   return (
-    <div
-      className={`services ${inView ? "services-in-view" : ""}`}
-      id="services"
-    >
+    <div className={`services `} id="services">
       <div className="services-content bd-max-width xf-py-15">
-        <div className="services-title xf-text-center">
+        <div
+          id="services-title"
+          className={`services-title xf-text-center transition ${
+            inView ? "transition-in-view" : ""
+          }`}
+        >
           <h2 className="xf-text-28 xf-mb-1 xf-text-32-lg xf-text-44-xl xf-fw-700">
             Our Services
           </h2>
@@ -39,8 +41,8 @@ const Services = () => {
           {Content.map((service, i) => (
             <div
               id={`services-item-${i}`}
-              className={`xf-col-12 xf-col-md-6 xf-col-xl-4 services-item xf-p-6 xf-mb-2 ${
-                itemsInView[i].inView ? "services-item-in-view" : ""
+              className={`xf-col-12 xf-col-md-6 xf-col-xl-4 services-item xf-p-6 xf-mb-2 transition ${
+                itemsInView[i].inView ? "transition-in-view" : ""
               }`}
               key={i}
             >

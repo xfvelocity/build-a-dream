@@ -3,17 +3,6 @@
 .header {
   position: relative;
 
-  &-text {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  &-in-view {
-    .header-text {
-      @include inView;
-    }
-  }
-
   &-img {
     position: relative;
     left: 0;

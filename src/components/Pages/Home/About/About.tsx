@@ -30,8 +30,13 @@ const About = () => {
   ];
 
   return (
-    <div id="about" className={`about ${aboutInView ? "about-in-view" : ""}`}>
-      <div className="bd-max-width xf-grid xf-py-md-15">
+    <div className="about">
+      <div
+        id="about"
+        className={`bd-max-width xf-grid xf-py-md-15 transition ${
+          aboutInView ? "transition-in-view" : ""
+        }`}
+      >
         <div className="xf-col-12 xf-col-md-7 xf-text-18-xl">
           <BdBanner class-names="about-banner xf-mx-auto xf-mx-md-0">
             About us
@@ -57,8 +62,8 @@ const About = () => {
 
         <div
           id="about-facts"
-          className={`about-facts xf-col-12 xf-col-md-3 xf-col-offset-md-9 xf-col-lg-3 xf-col-offset-lg-10 xf-col-offset-xl-9 xf-mt-6 xf-mt-md-10 xf-mt-xl-15 ${
-            aboutFactsInView ? "about-facts-in-view" : ""
+          className={`about-facts transition xf-col-12 xf-col-md-3 xf-col-offset-md-9 xf-col-lg-3 xf-col-offset-lg-10 xf-col-offset-xl-9 xf-mt-6 xf-mt-md-10 xf-mt-xl-15 ${
+            aboutFactsInView ? "transition-in-view" : ""
           }`}
         >
           {aboutFacts.map((fact, i) => (
