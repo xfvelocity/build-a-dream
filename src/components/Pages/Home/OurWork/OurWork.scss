@@ -7,10 +7,24 @@
   padding: 20px 0;
 
   --swiper-pagination-color: #{map-get($xf-colours, "primary")};
-  --swiper-pagination-bullet-width: 12px;
-  --swiper-pagination-bullet-height: 12px;
+  --swiper-pagination-bullet-width: 15px;
+  --swiper-pagination-bullet-height: 15px;
+
+  &-content {
+    opacity: 0;
+    position: relative;
+    top: 20px;
+
+    &-in-view {
+      opacity: 1;
+      top: 0;
+      transition: all 0.3s linear;
+    }
+  }
 
   .work-carousel {
+    cursor: grab;
+
     img {
       border-radius: 5px;
       aspect-ratio: 4 / 3;

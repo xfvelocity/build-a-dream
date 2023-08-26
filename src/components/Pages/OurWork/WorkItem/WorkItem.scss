@@ -1,6 +1,9 @@
 @import "../../../../styles/variables.scss";
 
 .work-item {
+  --swiper-pagination-bullet-width: 15px;
+  --swiper-pagination-bullet-height: 15px;
+
   img {
     aspect-ratio: 4 / 3;
     object-fit: cover;

@@ -28,11 +28,13 @@ const OurWork = () => {
   preloadImages(examplesOfWork.flatMap((x) => x.additionalImages));
 
   return (
-    <div
-      className={`our-work transition ${inView ? "transition-in-view" : ""}`}
-      id="our-work"
-    >
-      <div className="xf-py-15">
+    <div className="our-work">
+      <div
+        className={`our-work-content xf-py-15 ${
+          inView && "our-work-content-in-view"
+        }`}
+        id="our-work"
+      >
         <BdBanner classNames="xf-mx-auto xf-mb-10 xf-mb-lg-15">
           Our Latest Work
         </BdBanner>

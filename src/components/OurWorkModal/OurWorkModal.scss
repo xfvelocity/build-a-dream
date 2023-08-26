@@ -1,28 +1,15 @@
 @import "../../styles/variables.scss";
 
 .our-work-modal {
-  .arrows {
-    position: absolute;
-    left: 0;
-    bottom: 2px;
-    z-index: 10;
-    width: 100%;
-
-    @include md-up {
-      .prev-arrow,
-      .next-arrow {
-        img {
-          width: 30px;
-        }
-      }
-    }
-  }
-
   .modal-content {
+    padding: 20px !important;
+
     .work-carousel-img {
       img {
+        border: 1px solid rgb(210, 210, 210);
         aspect-ratio: 4 / 3;
         object-fit: contain;
+        border-radius: 3px;
       }
     }
   }
