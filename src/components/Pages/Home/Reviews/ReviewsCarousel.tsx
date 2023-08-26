@@ -38,7 +38,7 @@ const ReviewsCarousel = () => {
     >
       {reviews.map((review, i) => (
         <SwiperSlide key={i}>
-          <div className="xf-text-center xf-pb-10 xf-pb-xl-15">
+          <div className="xf-text-center xf-pb-10 xf-pb-xl-15 xf-cursor-grab">
             <div className="reviews-carousel">
               <img className="start-quote" src={StartQuoteIcon} alt="" />
 
