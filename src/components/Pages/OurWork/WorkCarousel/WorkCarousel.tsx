@@ -9,7 +9,7 @@ import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 
 interface Props {
-  images: string[];
+  images: ImageMetadata[];
 }
 
 const WorkCarousel = ({ images }: Props) => {
@@ -24,7 +24,7 @@ const WorkCarousel = ({ images }: Props) => {
       {images.map((img, i) => (
         <SwiperSlide key={i}>
           <div className="work-carousel-img xf-mb-7 xf-p-1 xf-cursor-grab">
-            <img className="xf-w-100" src={img} alt="" />
+            <img className="xf-w-100" src={img.src} alt="" />
           </div>
         </SwiperSlide>
       ))}

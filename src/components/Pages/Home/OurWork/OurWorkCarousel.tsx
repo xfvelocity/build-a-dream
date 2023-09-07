@@ -46,7 +46,7 @@ const OurWorkCarousel = ({ items }: Props) => {
                   <div className="work-carousel xf-grid xf-pb-10 xf-pb-md-15 xf-align-items-center">
                     <img
                       className="our-work-carousel-img xf-cursor-pointer xf-hover xf-col-12 xf-col-md-6 xf-col-lg-6 xf-col-xl-5 xf-col-offset-xl-2"
-                      src={example.img}
+                      src={example.img.src}
                       alt=""
                       onClick={() => viewImages(example)}
                     />

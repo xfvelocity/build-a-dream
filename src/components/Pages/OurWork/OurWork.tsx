@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // ** Composables **
 import { initObserver } from "../../../composables/intersectionObserver";
@@ -19,7 +19,11 @@ const OurWork = () => {
   });
 
   // ** Methods **
-  preloadImages(examplesOfWork.flatMap((x) => x.additionalImages));
+  useState(() => {
+    setTimeout(() => {
+      preloadImages(examplesOfWork.flatMap((x) => x.additionalImages));
+    }, 200);
+  });
 
   return (
     <div>

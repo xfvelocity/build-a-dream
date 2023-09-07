@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+
+// ** Types **
+import type { WorkExample } from "../../../../content/our-work";
 
 // ** Composables **
 import { initObserver } from "../../../../composables/intersectionObserver";
@@ -8,7 +11,7 @@ import { preloadImages } from "../../../../composables/preloadImages";
 import "./OurWork.scss";
 
 // ** Content **
-import { WorkExample, examplesOfWork } from "../../../../content/our-work";
+import { examplesOfWork } from "../../../../content/our-work";
 
 // ** Components **
 import OurWorkCarousel from "./OurWorkCarousel";
@@ -25,7 +28,9 @@ const OurWork = () => {
   );
 
   // ** Methods **
-  preloadImages(examplesOfWork.flatMap((x) => x.additionalImages));
+  useState(() => {
+    preloadImages(examplesOfWork.flatMap((x) => x.additionalImages));
+  });
 
   return (
     <div className="our-work">

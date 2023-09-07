@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactSVG } from "react-svg";
 
 // ** Composables **
 import { useMediaQuery } from "../../../../composables/mediaQueries";
@@ -51,11 +52,11 @@ const Services = () => {
                 <div
                   className={`services-item-icon xf-mr-2 xf-mr-lg-3 xf-bg-${service.colour}`}
                 >
-                  <img
+                  <ReactSVG
                     className="xf-center"
-                    src={service.icon}
-                    alt=""
+                    src={`icons/${service.icon}.svg`}
                     height={isExtraLarge ? 22 : isMedium ? 18 : 14}
+                    style={{ marginTop: "3px" }}
                   />
                 </div>
 

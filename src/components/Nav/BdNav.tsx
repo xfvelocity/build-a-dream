@@ -43,7 +43,7 @@ const BdNav = () => {
         <header className={`bd-nav xf-p-4 xf-px-lg-8`}>
           <div className="bd-nav-content bd-max-width xf-flex-center-between xf-w-100">
             <a href="/" aria-label="home">
-              <img src={Logo} alt="" />
+              <img src={Logo.src} alt="" />
             </a>
 
             <div

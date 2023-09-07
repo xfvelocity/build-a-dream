@@ -1,4 +1,5 @@
 import React, { FormEvent, useRef } from "react";
+import { ReactSVG } from "react-svg";
 import emailjs from "@emailjs/browser";
 
 // ** Composables **
@@ -8,13 +9,59 @@ import { initObserver } from "../../../../composables/intersectionObserver";
 //  ** Styles **
 import "./Contact.scss";
 
-// ** Content **
-import Content from "../../../../content/social";
-
 // ** Components **
 import BdButton from "../../../Button/BdButton";
 import TextInput from "../../../TextInput/TextInput";
 import TextArea from "../../../TextArea/TextArea";
+
+// ** Content **
+const social = [
+  {
+    title: "Mobile",
+    text: "074140 95408",
+    href: "tel:07414095408",
+    icon: "mobile",
+  },
+  {
+    title: "Email",
+    text: "contact@buildadream.com",
+    href: "mailto:contact@buildadream.com",
+    icon: "email",
+  },
+  {
+    title: "Facebook",
+    text: "Find us on facebook",
+    href: "https://facebook.com/buildadreamlandscapers",
+    icon: "facebook",
+  },
+];
+
+const formItems = [
+  {
+    label: "Name",
+    placeholder: "John Smith",
+    name: "name",
+    type: "text",
+  },
+  {
+    label: "Email Address",
+    placeholder: "john@gmail.com",
+    name: "email",
+    type: "email",
+  },
+  {
+    label: "Phone Number",
+    placeholder: "07400820600",
+    name: "phone",
+    type: "tel",
+  },
+  {
+    label: "Message",
+    placeholder: "Write your query here..",
+    name: "message",
+    type: "text",
+  },
+];
 
 const Contact = () => {
   // ** Data **
@@ -25,33 +72,6 @@ const Contact = () => {
 
   const { isExtraLarge } = useMediaQuery();
 
-  const formItems = [
-    {
-      label: "Name",
-      placeholder: "John Smith",
-      name: "name",
-      type: "text",
-    },
-    {
-      label: "Email Address",
-      placeholder: "john@gmail.com",
-      name: "email",
-      type: "email",
-    },
-    {
-      label: "Phone Number",
-      placeholder: "07400820600",
-      name: "phone",
-      type: "tel",
-    },
-    {
-      label: "Message",
-      placeholder: "Write your query here..",
-      name: "message",
-      type: "text",
-    },
-  ];
-
   // ** Methods **
   const submitForm = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
@@ -61,7 +81,6 @@ const Contact = () => {
         .sendForm(
           "service_t2y7wm5",
           "contact",
-
           form.current,
           "oyQQfWCUpZg4ShEo8"
         )
@@ -99,15 +118,15 @@ const Contact = () => {
             </div>
 
             <div className="xf-pl-4 xf-my-8 xf-pl-md-0">
-              {Content.map((s, i) => (
+              {social.map((s, i) => (
                 <a href={s.href} target="_blank" aria-label={s.title} key={i}>
                   <div className="xf-flex xf-flex-align-items-center xf-mb-3 xf-mb-xl-6">
                     <div className="contact-icon xf-bg-white xf-mr-3">
-                      <img
-                        className="xf-center"
-                        src={s.icon}
-                        alt=""
+                      <ReactSVG
+                        className="xf-center xf-h-max-content"
+                        src={`icons/${s.icon}.svg`}
                         width={isExtraLarge ? 24 : "auto"}
+                        style={{ marginTop: "3px" }}
                       />
                     </div>
 

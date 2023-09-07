@@ -18,7 +18,11 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-img">
-        <FuzzyImage img={HeaderImage} minImg={HeaderMinImage} background />
+        <FuzzyImage
+          img={HeaderImage.src}
+          minImg={HeaderMinImage.src}
+          background
+        />
       </div>
 
       <div className="header-text-container">

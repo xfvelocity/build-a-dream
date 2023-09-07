@@ -57,10 +57,10 @@ import Eight4 from "../images/work/8/4.jpg";
 
 export interface WorkExample {
   id: number;
-  img: string;
+  img: ImageMetadata;
   title: string;
   desc: string[];
-  additionalImages: string[];
+  additionalImages: ImageMetadata[];
 }
 
 export const examplesOfWork: WorkExample[] = [

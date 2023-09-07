@@ -1,10 +1,8 @@
 import React from "react";
+import { ReactSVG } from "react-svg";
 
 // ** Styles **
 import "./Modal.scss";
-
-// ** Images **
-import Close from "/icons/close.svg";
 
 interface Props {
   isOpen: boolean;
@@ -25,12 +23,10 @@ const Modal = ({ isOpen, setIsOpen, children, height, width }: Props) => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="xf-flex xf-mb-2">
-              <img
-                className="xf-cursor-pointer xf-hover xf-ml-auto"
-                src={Close}
-                alt=""
-                height={24}
-                width={24}
+              <ReactSVG
+                className="xf-cursor-pointer xf-hover xf-ml-auto xf-mb-1"
+                src="/icons/close.svg"
+                style={{ height: 20, width: 20 }}
                 onClick={() => setIsOpen(false)}
               />
             </div>

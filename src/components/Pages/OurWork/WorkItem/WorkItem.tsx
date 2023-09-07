@@ -44,7 +44,7 @@ const WorkItem = ({ item, evenIndex, elementId, elementClass }: Props) => {
               className={`xf-w-100 xf-col-12 xf-cursor-pointer xf-hover xf-col-lg-6 ${
                 evenIndex ? "" : "xf-col-offset-lg-7"
               }`}
-              src={item.img}
+              src={item.img.src}
               alt=""
               onClick={viewImages}
             />
