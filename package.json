@@ -10,17 +10,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^3.0.1",
-    "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/react": "^3.0.4",
+    "@astrojs/sitemap": "^3.0.2",
     "@emailjs/browser": "^3.11.0",
-    "astro": "^3.0.10",
+    "astro": "^3.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "swiper": "^10.2.0"
+    "swiper": "^11.0.1"
   },
   "devDependencies": {
-    "react-svg": "^16.1.23",
-    "sass": "^1.66.1",
+    "react-svg": "^16.1.29",
+    "sass": "^1.69.4",
     "typescript": "^5.2.2"
   }
 }

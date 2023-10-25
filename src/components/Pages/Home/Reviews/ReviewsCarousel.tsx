@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactSVG } from "react-svg";
 
 // ** Swiper **
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,8 +9,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // ** Images **
-import StartQuoteIcon from "/icons/start-quote.svg";
-import EndQuoteIcon from "/icons/end-quote.svg";
 
 const ReviewsCarousel = () => {
   // ** Data **
@@ -40,11 +39,11 @@ const ReviewsCarousel = () => {
         <SwiperSlide key={i}>
           <div className="xf-text-center xf-pb-10 xf-pb-xl-15 xf-cursor-grab">
             <div className="reviews-carousel">
-              <img className="start-quote" src={StartQuoteIcon} alt="" />
+              <ReactSVG className="start-quote" src={`icons/start-quote.svg`} />
 
               <p className="xf-text-16 xf-mx-4 xf-text-20-lg">{review.text}</p>
 
-              <img className="end-quote" src={EndQuoteIcon} alt="" />
+              <ReactSVG className="end-quote" src={`icons/end-quote.svg`} />
             </div>
 
             <p className="xf-mt-4 xf-text-colour-primary xf-fw-600">
