@@ -1,59 +1,59 @@
 // 1
-import One1 from "../images/work/1/1.jpg";
-import One2 from "../images/work/1/2.jpg";
-import One3 from "../images/work/1/3.jpg";
-import One4 from "../images/work/1/4.jpg";
-import One5 from "../images/work/1/5.jpg";
-import One6 from "../images/work/1/6.jpg";
+import One1 from "../images/work/1/1-min.jpg";
+import One2 from "../images/work/1/2-min.jpg";
+import One3 from "../images/work/1/3-min.jpg";
+import One4 from "../images/work/1/4-min.jpg";
+import One5 from "../images/work/1/5-min.jpg";
+import One6 from "../images/work/1/6-min.jpg";
 
 // 2
-import Two1 from "../images/work/2/1.jpg";
-import Two2 from "../images/work/2/2.jpg";
-import Two3 from "../images/work/2/3.jpg";
-import Two4 from "../images/work/2/4.jpg";
-import Two5 from "../images/work/2/5.jpg";
-import Two6 from "../images/work/2/6.jpg";
+import Two1 from "../images/work/2/1-min.jpg";
+import Two2 from "../images/work/2/2-min.jpg";
+import Two3 from "../images/work/2/3-min.jpg";
+import Two4 from "../images/work/2/4-min.jpg";
+import Two5 from "../images/work/2/5-min.jpg";
+import Two6 from "../images/work/2/6-min.jpg";
 
 // 3
-import Three1 from "../images/work/3/1.jpg";
-import Three2 from "../images/work/3/2.jpg";
-import Three3 from "../images/work/3/3.jpg";
-import Three4 from "../images/work/3/4.jpg";
-import Three5 from "../images/work/3/5.jpg";
-import Three6 from "../images/work/3/6.jpg";
+import Three1 from "../images/work/3/1-min.jpg";
+import Three2 from "../images/work/3/2-min.jpg";
+import Three3 from "../images/work/3/3-min.jpg";
+import Three4 from "../images/work/3/4-min.jpg";
+import Three5 from "../images/work/3/5-min.jpg";
+import Three6 from "../images/work/3/6-min.jpg";
 
 // 4
-import Four1 from "../images/work/4/1.jpg";
-import Four2 from "../images/work/4/2.jpg";
-import Four3 from "../images/work/4/3.jpg";
-import Four4 from "../images/work/4/4.jpg";
-import Four5 from "../images/work/4/5.jpg";
-import Four6 from "../images/work/4/6.jpg";
+import Four1 from "../images/work/4/1-min.jpg";
+import Four2 from "../images/work/4/2-min.jpg";
+import Four3 from "../images/work/4/3-min.jpg";
+import Four4 from "../images/work/4/4-min.jpg";
+import Four5 from "../images/work/4/5-min.jpg";
+import Four6 from "../images/work/4/6-min.jpg";
 
 // 5
-import Five1 from "../images/work/5/1.jpg";
-import Five2 from "../images/work/5/2.jpg";
-import Five3 from "../images/work/5/3.jpg";
-import Five4 from "../images/work/5/4.jpg";
+import Five1 from "../images/work/5/1-min.jpg";
+import Five2 from "../images/work/5/2-min.jpg";
+import Five3 from "../images/work/5/3-min.jpg";
+import Five4 from "../images/work/5/4-min.jpg";
 
 // 6
-import Six1 from "../images/work/6/1.jpg";
-import Six2 from "../images/work/6/2.jpg";
-import Six3 from "../images/work/6/3.jpg";
-import Six4 from "../images/work/6/4.jpg";
+import Six1 from "../images/work/6/1-min.jpg";
+import Six2 from "../images/work/6/2-min.jpg";
+import Six3 from "../images/work/6/3-min.jpg";
+import Six4 from "../images/work/6/4-min.jpg";
 
 // 7
-import Seven1 from "../images/work/7/1.jpg";
-import Seven2 from "../images/work/7/2.jpg";
-import Seven3 from "../images/work/7/3.jpg";
-import Seven4 from "../images/work/7/4.jpg";
-import Seven5 from "../images/work/7/5.jpg";
+import Seven1 from "../images/work/7/1-min.jpg";
+import Seven2 from "../images/work/7/2-min.jpg";
+import Seven3 from "../images/work/7/3-min.jpg";
+import Seven4 from "../images/work/7/4-min.jpg";
+import Seven5 from "../images/work/7/5-min.jpg";
 
 // 8
-import Eight1 from "../images/work/8/1.jpg";
-import Eight2 from "../images/work/8/2.jpg";
-import Eight3 from "../images/work/8/3.jpg";
-import Eight4 from "../images/work/8/4.jpg";
+import Eight1 from "../images/work/8/1-min.jpg";
+import Eight2 from "../images/work/8/2-min.jpg";
+import Eight3 from "../images/work/8/3-min.jpg";
+import Eight4 from "../images/work/8/4-min.jpg";
 
 export interface WorkExample {
   id: number;
