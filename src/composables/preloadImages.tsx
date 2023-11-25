@@ -10,8 +10,8 @@ const preloadImage = async (url: string): Promise<any> => {
   }
 };
 
-export const preloadImages = (imageUrls: any[]): Promise<any[]> => {
-  const preloadPromises = imageUrls.map((url) => preloadImage(url.src));
+export const preloadImages = (imageUrls: string[]): Promise<any[]> => {
+  const preloadPromises = imageUrls.map((url) => preloadImage(url));
 
   return Promise.all(preloadPromises);
 };

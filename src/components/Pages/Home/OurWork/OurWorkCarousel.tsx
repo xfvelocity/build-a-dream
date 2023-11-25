@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useMediaQuery } from "../../../../composables/mediaQueries";
 
 import type { WorkExample } from "../../../../content/our-work";
 
@@ -18,6 +19,7 @@ interface Props {
 
 const OurWorkCarousel = ({ items }: Props) => {
   // ** Data **
+  const { isSmall } = useMediaQuery();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<WorkExample | null>(null);
 
@@ -46,7 +48,7 @@ const OurWorkCarousel = ({ items }: Props) => {
                   <div className="work-carousel xf-grid xf-pb-10 xf-pb-md-15 xf-align-items-center">
                     <img
                       className="our-work-carousel-img xf-cursor-pointer xf-hover xf-col-12 xf-col-md-6 xf-col-lg-6 xf-col-xl-5 xf-col-offset-xl-2"
-                      src={example.img.src}
+                      src={isSmall ? example.img.large : example.img.small}
                       alt=""
                       onClick={() => viewImages(example)}
                     />

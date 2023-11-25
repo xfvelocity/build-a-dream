@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 // ** Types **
 import type { WorkExample } from "../../../../content/our-work";
 
 // ** Composables **
 import { initObserver } from "../../../../composables/intersectionObserver";
-import { preloadImages } from "../../../../composables/preloadImages";
 
 // ** Styles **
 import "./OurWork.scss";
@@ -26,11 +25,6 @@ const OurWork = () => {
   const workExamples: (WorkExample | undefined)[] = workIds.map((id) =>
     examplesOfWork.find((e) => e.id === id)
   );
-
-  // ** Methods **
-  useState(() => {
-    preloadImages(examplesOfWork.flatMap((x) => x.additionalImages));
-  });
 
   return (
     <div className="our-work">

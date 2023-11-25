@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 // ** Composables **
 import { initObserver } from "../../../composables/intersectionObserver";
-import { preloadImages } from "../../../composables/preloadImages";
 
 // ** Content **
 import { examplesOfWork } from "../../../content/our-work";
@@ -16,13 +15,6 @@ const OurWork = () => {
 
   examplesOfWork.forEach((_e, i) => {
     itemsInView[i] = initObserver(`work-item-${i}`);
-  });
-
-  // ** Methods **
-  useState(() => {
-    setTimeout(() => {
-      preloadImages(examplesOfWork.flatMap((x) => x.additionalImages));
-    }, 200);
   });
 
   return (

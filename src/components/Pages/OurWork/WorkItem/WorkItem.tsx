@@ -22,7 +22,7 @@ const WorkItem = ({ item, evenIndex, elementId, elementClass }: Props) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<WorkExample | null>(null);
 
-  const { isMedium } = useMediaQuery();
+  const { isSmall, isMedium } = useMediaQuery();
 
   // ** Methods **
   const viewImages = (): void => {
@@ -44,7 +44,7 @@ const WorkItem = ({ item, evenIndex, elementId, elementClass }: Props) => {
               className={`xf-w-100 xf-col-12 xf-cursor-pointer xf-hover xf-col-lg-6 ${
                 evenIndex ? "" : "xf-col-offset-lg-7"
               }`}
-              src={item.img.src}
+              src={isSmall ? item.img.large : item.img.small}
               alt=""
               onClick={viewImages}
             />

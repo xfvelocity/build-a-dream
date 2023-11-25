@@ -1,4 +1,6 @@
 import React from "react";
+import type { Image } from "../../../../content/our-work";
+import { useMediaQuery } from "../../../../composables/mediaQueries";
 
 // ** Swiper **
 import { Navigation, Pagination } from "swiper/modules";
@@ -9,10 +11,13 @@ import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 
 interface Props {
-  images: ImageMetadata[];
+  images: Image[];
 }
 
 const WorkCarousel = ({ images }: Props) => {
+  // ** Data **
+  const { isSmall } = useMediaQuery();
+
   return (
     <Swiper
       modules={[Pagination, Navigation]}
@@ -24,7 +29,11 @@ const WorkCarousel = ({ images }: Props) => {
       {images.map((img, i) => (
         <SwiperSlide key={i}>
           <div className="work-carousel-img xf-mb-7 xf-p-1 xf-cursor-grab">
-            <img className="xf-w-100" src={img.src} alt="" />
+            <img
+              className="xf-w-100"
+              src={isSmall ? img.large : img.small}
+              alt=""
+            />
           </div>
         </SwiperSlide>
       ))}
