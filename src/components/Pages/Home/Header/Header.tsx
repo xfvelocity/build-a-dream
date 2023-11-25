@@ -1,11 +1,13 @@
 import React from "react";
 
 // ** Composables **
+import { useMediaQuery } from "../../../../composables/mediaQueries";
 import { initObserver } from "../../../../composables/intersectionObserver";
 
 // ** Images **
-import HeaderImage from "../../../../images/home/header.jpg";
-import HeaderMinImage from "../../../../images/home/header-min.jpg";
+import HeaderImage1920 from "../../../../images/home/header-w1920.webp";
+import HeaderImage500 from "../../../../images/home/header-w500.webp";
+import HeaderImage50 from "../../../../images/home/header-w50.webp";
 
 // ** Components **
 import BdButton from "../../../Button/BdButton";
@@ -13,14 +15,15 @@ import FuzzyImage from "../../../FuzzyImage/FuzzyImage";
 
 const Header = () => {
   // ** Data **
+  const { isSmall } = useMediaQuery();
   const { inView } = initObserver("header");
 
   return (
     <div className="header">
       <div className="header-img">
         <FuzzyImage
-          img={HeaderImage.src}
-          minImg={HeaderMinImage.src}
+          img={isSmall ? HeaderImage1920.src : HeaderImage500.src}
+          minImg={isSmall ? HeaderImage500.src : HeaderImage50.src}
           background
         />
       </div>
