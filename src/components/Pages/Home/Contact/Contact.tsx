@@ -1,4 +1,5 @@
-import React, { FormEvent, useRef } from "react";
+import type { FormEvent } from "react";
+import React, { useRef } from "react";
 import { ReactSVG } from "react-svg";
 import emailjs from "@emailjs/browser";
 
