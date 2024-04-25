@@ -71,7 +71,7 @@ const WorkItem = ({ item, evenIndex, elementId, elementClass }: Props) => {
                   key={i}
                   className={`${
                     evenIndex ? "xf-text-colour-grey-lighten-2" : ""
-                  } xf-text-12 xf-text-14-md xf-mb-2`}
+                  } xf-text-12 xf-text-14-md xf-mb-2 xf-text-ellipsis-3`}
                 >
                   {desc}
                 </p>

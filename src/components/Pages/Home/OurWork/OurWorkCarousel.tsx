@@ -59,7 +59,7 @@ const OurWorkCarousel = ({ items }: Props) => {
                       </h3>
 
                       {example.desc.map((desc, ti) => (
-                        <p className="xf-mb-2" key={ti}>
+                        <p className="xf-mb-2 xf-text-ellipsis-3" key={ti}>
                           {desc}
                         </p>
                       ))}

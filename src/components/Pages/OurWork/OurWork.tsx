@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 // ** Composables **
 import { initObserver } from "../../../composables/intersectionObserver";

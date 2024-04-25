@@ -32,60 +32,68 @@ const getImages = async (
 };
 
 export const examplesOfWork: WorkExample[] = [
-  {
-    id: 1,
-    img: (await getImages(1, 1)) as Image,
-    title: "Title (1)",
-    desc: ["Description (1)"],
-    additionalImages: (await getImages(1, 5)) as Image[],
-  },
+  // {
+  //   id: 1,
+  //   img: (await getImages(1, 1)) as Image,
+  //   title: "Title (1)",
+  //   desc: ["Description (1)"],
+  //   additionalImages: (await getImages(1, 5)) as Image[],
+  // },
   {
     id: 2,
     img: (await getImages(2, 1)) as Image,
-    title: "Title (2)",
-    desc: ["Description (2)"],
+    title: "Indian Sandstone Patio",
+    desc: [
+      "Our ever-popular Indian Sandstone paving slabs. All our paving work is laid on tarram, hardcore and a wet mortar base. Raised planters built using new pressure-treated sleepers with the addition of low voltage LED lights.",
+    ],
     additionalImages: (await getImages(2, 6)) as Image[],
   },
   {
     id: 3,
     img: (await getImages(3, 1)) as Image,
-    title: "Title (3)",
-    desc: ["Description (3)"],
+    title: "Circular Patio & Lawn",
+    desc: [
+      "Stage two of the garden I designed and completed earlier in the year. Raised decking with blue spotlights. Large circular patio with natural sandstone paving slabs. Large circular lawn area with Pennant grey blocks around the outer edge.",
+    ],
     additionalImages: (await getImages(3, 5)) as Image[],
   },
   {
     id: 4,
     img: (await getImages(4, 1)) as Image,
-    title: "Title (4)",
-    desc: ["Description (4)"],
+    title: "Decking Area",
+    desc: [
+      "New decking work was carried out to give easy access to the water's edge.",
+    ],
     additionalImages: (await getImages(4, 5)) as Image[],
   },
   {
     id: 5,
     img: (await getImages(5, 1)) as Image,
-    title: "Title (5)",
-    desc: ["Description (5)"],
+    title: "Outdoor living Area",
+    desc: [
+      "Transformed from just a plain lawn area into a maintainable garden ready for the summer!",
+    ],
     additionalImages: (await getImages(5, 4)) as Image[],
   },
   {
     id: 6,
     img: (await getImages(6, 1)) as Image,
-    title: "Title (6)",
-    desc: ["Description (6)"],
+    title: "Indian Sandstone Patio",
+    desc: ["Silver grey Indian sandstone paving slabs in four different sizes"],
     additionalImages: (await getImages(6, 4)) as Image[],
   },
-  {
-    id: 7,
-    img: (await getImages(7, 1)) as Image,
-    title: "Title (7)",
-    desc: ["Description (7)"],
-    additionalImages: (await getImages(7, 4)) as Image[],
-  },
-  {
-    id: 8,
-    img: (await getImages(8, 1)) as Image,
-    title: "Title (8)",
-    desc: ["Description (8)"],
-    additionalImages: (await getImages(8, 4)) as Image[],
-  },
+  // {
+  //   id: 7,
+  //   img: (await getImages(7, 1)) as Image,
+  //   title: "Title (7)",
+  //   desc: ["Description (7)"],
+  //   additionalImages: (await getImages(7, 4)) as Image[],
+  // },
+  // {
+  //   id: 8,
+  //   img: (await getImages(8, 1)) as Image,
+  //   title: "Title (8)",
+  //   desc: ["Description (8)"],
+  //   additionalImages: (await getImages(8, 4)) as Image[],
+  // },
 ];

@@ -100,6 +100,16 @@ button {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    @for $i from 1 through 5 {
+      &-#{$i} {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: $i;
+        line-clamp: $i;
+        -webkit-box-orient: vertical;
+      }
+    }
   }
 }
 
