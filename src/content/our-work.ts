@@ -16,15 +16,25 @@ const getImages = async (
   amount: number
 ): Promise<Image | Image[]> => {
   const arr: Image[] = [];
+  const images = import.meta.glob(`../images/work/**/*.webp`);
+
+  // Create an array of promises for both small and large images
+  const smallPromises = [];
+  const largePromises = [];
 
   for (let i = 1; i <= amount; i++) {
-    const images = import.meta.glob(`../images/work/*/*.webp`);
+    smallPromises.push(images[`../images/work/${directory}/${i}-w500.webp`]());
+    largePromises.push(images[`../images/work/${directory}/${i}-w1000.webp`]());
+  }
 
+  // Wait for all promises to resolve concurrently
+  const smallImages = await Promise.all(smallPromises);
+  const largeImages = await Promise.all(largePromises);
+
+  for (let i = 0; i < amount; i++) {
     arr.push({
-      small: (await images[`../images/work/${directory}/${i}-w500.webp`]())
-        ?.default?.src,
-      large: (await images[`../images/work/${directory}/${i}-w1000.webp`]())
-        ?.default?.src,
+      small: smallImages[i]?.default?.src,
+      large: largeImages[i]?.default?.src,
     });
   }
 
