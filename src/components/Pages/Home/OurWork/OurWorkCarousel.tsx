@@ -66,7 +66,7 @@ const OurWorkCarousel = ({ items }: Props) => {
                     </div>
                   </div>
                 </SwiperSlide>
-              )
+              ),
           )}
         </Swiper>
       </div>

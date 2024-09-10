@@ -17,7 +17,7 @@ export const initObserver = (elementId: string): InitObserver => {
             setInView(true);
           }
         }),
-      { rootMargin: "-50px" }
+      { rootMargin: "-50px" },
     );
 
     if (element) {

@@ -23,7 +23,7 @@ const OurWork = () => {
 
   const workIds: number[] = [2, 3, 4, 5, 6];
   const workExamples: (WorkExample | undefined)[] = workIds.map((id) =>
-    examplesOfWork.find((e) => e.id === id)
+    examplesOfWork.find((e) => e.id === id),
   );
 
   return (

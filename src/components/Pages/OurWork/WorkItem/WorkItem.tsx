@@ -54,8 +54,8 @@ const WorkItem = ({ item, evenIndex, elementId, elementClass }: Props) => {
                 evenIndex
                   ? "xf-ml-lg-4"
                   : isMedium
-                  ? "xf-col-offset-lg-1 xf-flex-order-minus-1 xf-mr-lg-4"
-                  : ""
+                    ? "xf-col-offset-lg-1 xf-flex-order-minus-1 xf-mr-lg-4"
+                    : ""
               }`}
             >
               <h2

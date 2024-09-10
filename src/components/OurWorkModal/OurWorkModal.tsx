@@ -30,10 +30,10 @@ const OurWorkModal = ({ item, isModalOpen, setIsModalOpen }: Props) => {
           isExtraLarge
             ? "1000px"
             : isLarge
-            ? "800px"
-            : isMedium
-            ? "600px"
-            : "95%"
+              ? "800px"
+              : isMedium
+                ? "600px"
+                : "95%"
         }
       >
         <WorkCarousel images={item ? item.additionalImages : []} />

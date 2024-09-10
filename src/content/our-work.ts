@@ -13,7 +13,7 @@ export interface WorkExample {
 
 const getImages = async (
   directory: number,
-  amount: number
+  amount: number,
 ): Promise<Image | Image[]> => {
   const arr: Image[] = [];
   const images = import.meta.glob(`../images/work/**/*.webp`);

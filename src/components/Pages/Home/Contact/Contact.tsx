@@ -83,7 +83,7 @@ const Contact = () => {
           "service_t2y7wm5",
           "contact",
           form.current,
-          "oyQQfWCUpZg4ShEo8"
+          "oyQQfWCUpZg4ShEo8",
         )
         .then(
           () => {
@@ -91,7 +91,7 @@ const Contact = () => {
           },
           () => {
             window.location.href = "/error";
-          }
+          },
         );
     }
   };
