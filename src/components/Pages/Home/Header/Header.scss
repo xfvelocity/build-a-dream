@@ -1,4 +1,5 @@
-@import "../../../../styles/variables.scss";
+@use "../../../../styles/variables";
+@use "../../../../styles/mixins";
 
 .header {
   position: relative;
@@ -24,9 +25,9 @@
     position: relative;
   }
 
-  @include sm-down {
+  @include mixins.sm-down {
     &-text {
-      @include maxWidth;
+      @include mixins.maxWidth;
 
       position: relative;
       top: -60px;
@@ -38,7 +39,7 @@
     }
   }
 
-  @include sm-up {
+  @include mixins.sm-up {
     position: relative;
 
     &-img {
@@ -55,12 +56,12 @@
         rgba(6, 80, 0, 0.9) 100%
       );
 
-      @include center(false, true);
+      @include mixins.center(false, true);
     }
 
     &-text-container {
-      @include center;
-      @include maxWidth;
+      @include mixins.center;
+      @include mixins.maxWidth;
 
       background: none;
       width: 100%;
@@ -69,7 +70,7 @@
     }
   }
 
-  @include md-up {
+  @include mixins.md-up {
     &-img {
       height: 650px;
     }
@@ -79,7 +80,7 @@
     }
   }
 
-  @include lg-up {
+  @include mixins.lg-up {
     &-img {
       height: 800px;
     }

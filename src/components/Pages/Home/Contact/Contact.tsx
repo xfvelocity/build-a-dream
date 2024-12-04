@@ -120,7 +120,7 @@ const Contact = () => {
 
             <div className="xf-pl-4 xf-my-8 xf-pl-md-0">
               {social.map((s, i) => (
-                <a href={s.href} target="_blank" aria-label={s.title} key={i}>
+                <a href={s.href} target="_blank" aria-label={s.title} key={i} rel="noreferrer">
                   <div className="xf-flex xf-flex-align-items-center xf-mb-3 xf-mb-xl-6">
                     <div className="contact-icon xf-bg-white xf-mr-3">
                       <ReactSVG

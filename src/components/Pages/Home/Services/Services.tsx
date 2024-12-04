@@ -16,7 +16,7 @@ const Services = () => {
   const { inView } = initObserver("services-title");
   const { isMedium, isExtraLarge } = useMediaQuery();
 
-  let itemsInView: { inView: boolean }[] = [];
+  const itemsInView: { inView: boolean }[] = [];
 
   Content.forEach((_c, i) => {
     itemsInView[i] = initObserver(`services-item-${i}`);

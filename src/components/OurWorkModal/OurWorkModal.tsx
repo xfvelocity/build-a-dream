@@ -14,7 +14,7 @@ import WorkCarousel from "../Pages/OurWork/WorkCarousel/WorkCarousel";
 interface Props {
   item: WorkExample | null;
   isModalOpen: boolean;
-  setIsModalOpen: Function;
+  setIsModalOpen: (value: React.SetStateAction<boolean>) => void;
 }
 
 const OurWorkModal = ({ item, isModalOpen, setIsModalOpen }: Props) => {

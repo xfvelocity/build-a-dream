@@ -5,23 +5,29 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "npm run lint && astro build",
     "preview": "astro preview",
-    "prettier": "prettier . --write"
+    "prettier": "prettier . --write",
+    "lint": "eslint . --fix --ignore-pattern .gitignore"
   },
   "dependencies": {
-    "@astrojs/react": "^3.6.2",
-    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/react": "^4.0.0",
+    "@astrojs/sitemap": "^3.2.1",
     "@emailjs/browser": "^4.4.1",
-    "astro": "^4.15.4",
-    "prettier": "^3.3.3",
+    "astro": "^5.0.2",
+    "prettier": "^3.4.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "swiper": "^11.1.12"
+    "swiper": "^11.1.15"
   },
   "devDependencies": {
-    "react-svg": "^16.1.34",
-    "sass": "^1.78.0",
-    "typescript": "^5.6.2"
+    "@eslint/js": "^9.16.0",
+    "eslint": "^9.16.0",
+    "eslint-plugin-react": "^7.37.2",
+    "globals": "^15.13.0",
+    "react-svg": "^16.2.0",
+    "sass": "^1.82.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.17.0"
   }
 }

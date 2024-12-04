@@ -1,4 +1,5 @@
-@import "../../../../styles/variables.scss";
+@use "../../../../styles/variables";
+@use "../../../../styles/mixins";
 
 .work-item {
   --swiper-pagination-bullet-width: 15px;
@@ -22,14 +23,14 @@
       color: white;
     }
 
-    @include md {
+    @include mixins.md {
       &-inner {
         max-width: 500px !important;
       }
     }
   }
 
-  @include sm-up {
+  @include mixins.sm-up {
     p {
       max-width: 500px;
     }
@@ -39,7 +40,7 @@
     }
   }
 
-  @include md-up {
+  @include mixins.md-up {
     &-content {
       padding: 120px 0 !important;
 
@@ -50,7 +51,7 @@
     }
   }
 
-  @include lg-up {
+  @include mixins.lg-up {
     &-content {
       img {
         min-height: 300px;

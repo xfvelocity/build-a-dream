@@ -1,3 +1,5 @@
+@use "./media-queries.scss";
+
 // Center Mixin
 @mixin center($horizontal: true, $vertical: true) {
   position: absolute;
@@ -29,19 +31,19 @@
   margin-left: auto;
   margin-right: auto;
 
-  @include sm-up {
+  @include media-queries.sm-up {
     max-width: 700px;
   }
 
-  @include md-up {
+  @include media-queries.md-up {
     max-width: 850px;
   }
 
-  @include lg-up {
+  @include media-queries.lg-up {
     max-width: 1100px;
   }
 
-  @include lg-up {
+  @include media-queries.lg-up {
     max-width: 1300px;
   }
 }

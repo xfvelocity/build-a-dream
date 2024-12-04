@@ -1,15 +1,9 @@
-// Variables
-@import "variables.scss";
-
-// Styles
-@import "_reset.scss";
-
-@import "_fonts.scss";
-@import "_typography.scss";
-@import "_spacing.scss";
-@import "_flex.scss";
-@import "_grid.scss";
-@import "_inputs.scss";
-@import "_transitions.scss";
-
-@import "generic.scss";
+@use "reset";
+@use "fonts";
+@use "typography";
+@use "spacing";
+@use "flex";
+@use "grid";
+@use "inputs";
+@use "transitions";
+@use "generic";

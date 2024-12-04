@@ -6,8 +6,8 @@ import "./Modal.scss";
 
 interface Props {
   isOpen: boolean;
-  setIsOpen: any;
-  children: any;
+  setIsOpen: (value: React.SetStateAction<boolean>) => void;
+  children: React.ReactNode;
   height?: string;
   width?: string;
 }

@@ -11,7 +11,7 @@ import WorkItem from "./WorkItem/WorkItem";
 
 const OurWork = () => {
   // ** Data **
-  let itemsInView: { inView: boolean }[] = [];
+  const itemsInView: { inView: boolean }[] = [];
 
   examplesOfWork.forEach((_e, i) => {
     itemsInView[i] = initObserver(`work-item-${i}`);

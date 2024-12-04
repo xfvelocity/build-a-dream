@@ -1,4 +1,5 @@
-@import "../../styles/variables.scss";
+@use "../../styles/variables";
+@use "../../styles/mixins";
 
 // @keyframes slideInFromRight {
 //   0% {
@@ -29,17 +30,17 @@
   img {
     width: 160px;
 
-    @include md-up {
+    @include mixins.md-up {
       width: 200px;
     }
 
-    @include lg-up {
+    @include mixins.lg-up {
       width: 240px;
     }
   }
 
   &-content {
-    @include sm-down {
+    @include mixins.sm-down {
       max-width: none !important;
     }
   }

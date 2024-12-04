@@ -4,7 +4,7 @@ import React from "react";
 import "./BdButton.scss";
 
 interface Props {
-  children: any;
+  children: React.ReactNode;
   backgroundColour?: string;
   textColour?: string;
   fullWidth?: boolean;

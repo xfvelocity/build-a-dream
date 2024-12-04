@@ -1,11 +1,18 @@
 import React from "react";
 
+interface Props {
+  backgroundColour?: string;
+  textColour?: string;
+  children?: React.ReactNode;
+  classNames?: string;
+}
+
 const BdBanner = ({
   backgroundColour = "primary",
   textColour = "white",
   children = "",
   classNames = "",
-}) => {
+}: Props) => {
   return (
     <h2
       className={`xf-fw-700  xf-w-max-content xf-z-5 xf-h-max-content ${classNames}`}
