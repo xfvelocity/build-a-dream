@@ -1,28 +1,14 @@
 <template>
-  <footer class="footer py-6">
-    <div class="d-flex footer-content max-width">
-      <v-spacer v-if="!isMobile" />
-
-      <p>&copy; {{ currentYear }} Build A-Dream Landscape Gardeners</p>
-    </div>
+  <footer class="footer py-6 text-center">
+    <p>&copy; {{ currentYear }} Build A-Dream Landscape Gardeners</p>
   </footer>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { isMobile } from "@/utility/width";
 
-export default defineComponent({
-  name: "BdFooter",
-  setup() {
-    // Variables
-    const currentYear: number = new Date().getFullYear();
-
-    return {
-      currentYear,
-      isMobile,
-    };
-  },
-});
+// ** Data **
+const currentYear: number = new Date().getFullYear();
 </script>
 
 <style lang="scss" scoped>
@@ -30,25 +16,5 @@ export default defineComponent({
   box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.03);
   border-top: 1px solid #e5e5e5;
   font-size: 14px;
-
-  &-content {
-    width: 90%;
-    flex-wrap: wrap;
-    text-align: center;
-
-    p {
-      width: 100%;
-    }
-  }
-
-  @media (min-width: 768px) {
-    &-content {
-      justify-content: space-between;
-
-      p {
-        width: auto;
-      }
-    }
-  }
 }
 </style>

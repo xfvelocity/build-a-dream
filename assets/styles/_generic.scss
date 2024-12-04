@@ -1,12 +1,19 @@
+@use "sass:map";
+@use "variables";
+
 :root {
-  --vc-clr-primary: #{map-get($colours, "primary")} !important;
-  --vc-clr-secondary: #{rgba(map-get($colours, "secondary"), 0.4)} !important;
+  --vc-pgn-active-color: #{map.get(variables.$colours, "primary")} !important;
+  --vc-clr-secondary: rgba(0, 0, 0, 0.4) !important;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: "Raleway", sans-serif;
+}
+
+p {
+  margin: 0;
 }
 
 h2 {
@@ -108,7 +115,7 @@ h3 {
   cursor: pointer;
 
   &:hover {
-    color: map-get($colours, "secondary") !important;
+    opacity: 0.7;
   }
 }
 
@@ -124,7 +131,7 @@ h3 {
   cursor: pointer;
 
   &:hover {
-    color: map-get($colours, "secondary") !important;
+    color: map.get(variables.$colours, "secondary") !important;
   }
 }
 

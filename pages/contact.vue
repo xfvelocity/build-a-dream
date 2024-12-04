@@ -6,21 +6,27 @@
       <bd-section-title
         title="Contact Info"
         class="section-title"
-        :width="145"
+        :width="160"
       />
 
       <div class="contact-links">
-        <span class="d-flex align-center mb-4 cursor-default">
-          <v-icon class="mr-3" small aria-label="mobile phone">
+        <a
+          class="d-flex align-center text-black link mb-4"
+          :href="`tel:${config.public.PHONE as string}`"
+        >
+          <v-icon class="mr-2" aria-label="mobile phone" small>
             mdi-phone
           </v-icon>
-          07414 095408
-        </span>
+          {{ config.public.PHONE }}
+        </a>
 
-        <span class="d-flex align-center mb-4 link" @click="sendEmail">
-          <v-icon class="mr-3" small aria-label="email"> mdi-email </v-icon>
-          contact@buildadream.co.uk
-        </span>
+        <a
+          class="d-flex align-center text-black link mb-4"
+          :href="`mailto:${config.public.EMAIL as string}`"
+        >
+          <v-icon class="mr-2" small aria-label="email"> mdi-email </v-icon>
+          {{ config.public.EMAIL }}
+        </a>
 
         <span class="d-flex align-center mobile-icon cursor-default">
           <v-icon class="mr-3" small aria-label="location">
@@ -35,31 +41,27 @@
   </div>
 </template>
 
-<script lang="ts">
-export default defineComponent({
-  name: "Contact",
-  head: {
-    title: "Contact Us | Build A-Dream | Lincoln Landscape Gardeners",
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content:
-          "Contact us now to get a professional free quotation from landscapers with over 25 years experience to help transform your garden",
-      },
-    ],
-  },
-  setup() {
-    // Methods
-    const sendEmail = (): void => {
-      window.location.href = "mailto:contact@builda-dream.com";
-    };
-
-    return {
-      sendEmail,
-    };
-  },
+<script lang="ts" setup>
+// ** Head **
+useHead({
+  title: "Contact Us | Build A-Dream | Lincoln Landscape Gardeners",
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content:
+        "Contact us now to get a professional free quotation from landscapers with over 25 years experience to help transform your garden",
+    },
+  ],
 });
+
+// ** Data **
+const config = useRuntimeConfig();
+
+// ** Methods **
+const sendEmail = (): void => {
+  window.location.href = `mailto:${config.public.EMAIL}`;
+};
 </script>
 
 <style lang="scss" scoped>
@@ -67,6 +69,12 @@ export default defineComponent({
   &-page {
     padding-top: 20px;
     padding-bottom: 60px;
+  }
+
+  &-links {
+    a {
+      text-decoration: none !important;
+    }
   }
 
   &-info {

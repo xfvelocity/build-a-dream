@@ -12,26 +12,24 @@
   </div>
 </template>
 
-<script lang="ts">
-export default defineComponent({
-  name: "BdHeader",
-  props: {
-    title: {
-      type: String,
-      default: "",
-    },
-    titleTwo: {
-      type: String,
-      default: "",
-    },
-    subHeading: {
-      type: String,
-      default: "",
-    },
-    height: {
-      type: String,
-      default: "65vh",
-    },
+<script lang="ts" setup>
+// ** Props **
+defineProps({
+  title: {
+    type: String,
+    default: "",
+  },
+  titleTwo: {
+    type: String,
+    default: "",
+  },
+  subHeading: {
+    type: String,
+    default: "",
+  },
+  height: {
+    type: String,
+    default: "65vh",
   },
 });
 </script>

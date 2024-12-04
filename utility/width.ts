@@ -1,11 +1,12 @@
 import { ref } from "vue";
+import { debounce } from "./generic";
 
 const isMobile = ref<boolean>(false);
 const isTablet = ref<boolean>(false);
 const isDesktop = ref<boolean>(false);
 const windowWidth = ref<number>(0);
 
-const setWidthValues = useDebounceFn((width: number): void => {
+const setWidthValues = debounce((width: number): void => {
   windowWidth.value = width;
   isMobile.value = width < 769;
   isTablet.value = width >= 769 && width < 1340;

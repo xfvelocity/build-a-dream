@@ -24,44 +24,35 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import type { Project } from "@/types/app.types";
+
 import { projects } from "@/content/ourwork";
-import { Project } from "@/types/app.types";
 
-export default defineComponent({
-  name: "OurWork",
-  head: {
-    title: "Our Work | Build A-Dream | Lincoln Landscape Gardeners",
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content:
-          "Take a look at our work which we've completed, landscaping services such as fencing, patio, decking, turfing etc.",
-      },
-    ],
-  },
-  setup() {
-    // Variables
-    const projectsList: Project[] = projects;
-
-    const isModalOpen = ref<boolean>(false);
-    const selectedProject = ref<Project>();
-
-    // Methods
-    const toggleModal = (caseStudy: Project): void => {
-      selectedProject.value = caseStudy;
-      isModalOpen.value = true;
-    };
-
-    return {
-      projectsList,
-      selectedProject,
-      isModalOpen,
-      toggleModal,
-    };
-  },
+// ** Head **
+useHead({
+  title: "Our Work | Build A-Dream | Lincoln Landscape Gardeners",
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content:
+        "Take a look at our work which we've completed, landscaping services such as fencing, patio, decking, turfing etc.",
+    },
+  ],
 });
+
+// ** Data **
+const projectsList: Project[] = projects;
+
+const isModalOpen = ref<boolean>(false);
+const selectedProject = ref<Project>();
+
+// ** Methods **
+const toggleModal = (caseStudy: Project): void => {
+  selectedProject.value = caseStudy;
+  isModalOpen.value = true;
+};
 </script>
 
 <style lang="scss" scoped>

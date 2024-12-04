@@ -1,4 +1,4 @@
-import { ServicesInfo } from "../types/services.types";
+import type { ServicesInfo } from "../types/services.types";
 
 export const servicesInfoData: ServicesInfo[] = [
   {

@@ -24,7 +24,7 @@
         If you have any questions or would like a free quote, please don't
         hesitate to
         <nuxt-link
-          class="internal-link text-decoration-underline text-white"
+          class="link text-decoration-underline text-white"
           to="/contact"
         >
           contact us
@@ -93,55 +93,34 @@
     <bd-section-title
       title="Contact Us"
       desc="Looking for a free quote or simply got a question to ask? Get in touch."
-      :width="130"
+      :width="150"
     />
 
     <bd-contact-form />
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import type { Project } from "@/types/app.types";
+
 import { reviews, projects } from "@/content/index";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 import { isMobile } from "@/utility/width";
-import { Project } from "@/types/app.types";
 
-export default defineComponent({
-  name: "Index",
-  components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
-  },
-  setup() {
-    // Variables
-    const isModalOpen = ref<boolean>(false);
-    const selectedProject = ref<Project>();
-    const projectsCarousel = ref();
+// ** Data **
+const isModalOpen = ref<boolean>(false);
+const selectedProject = ref<Project>();
+const projectsCarousel = ref();
 
-    // Methods
-    const openModal = (project: Project): void => {
-      selectedProject.value = project;
-      isModalOpen.value = true;
-    };
+// ** Methods **
+const openModal = (project: Project): void => {
+  selectedProject.value = project;
+  isModalOpen.value = true;
+};
 
-    const currentSlide = computed<number>(
-      () => projectsCarousel.value?.data?.currentSlide?.value
-    );
-
-    return {
-      reviews,
-      isModalOpen,
-      isMobile,
-      selectedProject,
-      projects,
-      projectsCarousel,
-      currentSlide,
-      openModal,
-    };
-  },
-});
+const currentSlide = computed<number>(
+  () => projectsCarousel.value?.data?.currentSlide?.value,
+);
 </script>
 
 <style lang="scss" scoped>
@@ -216,25 +195,14 @@ export default defineComponent({
   }
 
   .carousel {
-    &__next,
-    &__prev {
-      background: #086500;
-      border-radius: 50% !important;
-      color: white;
-    }
-
-    &__pagination-item {
-      button:after {
-        border-radius: 50% !important;
-        width: 10px;
-        height: 10px;
-      }
-    }
+    --vc-pgn-border-radius: 50%;
+    --vc-pgn-height: 12px;
+    --vc-pgn-width: 12px;
 
     &__slide {
       img {
         width: 100%;
-        border: 1px solid #828282;
+        border: 1px solid #9f9f9f;
       }
 
       @media (min-width: 769px) {
@@ -247,9 +215,8 @@ export default defineComponent({
         }
 
         &--active {
-          transform: scale(1.1);
+          transform: scale(1.2);
           opacity: 1;
-          border: 1px solid black;
           z-index: 10;
         }
       }

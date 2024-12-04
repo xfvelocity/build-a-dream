@@ -1,5 +1,5 @@
-import { Review } from "@/types/index.types";
-import { Project } from "@/types/app.types";
+import type { Review } from "@/types/index.types";
+import type { Project } from "@/types/app.types";
 
 export const reviews: Review[] = [
   {

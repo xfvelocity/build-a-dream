@@ -1,10 +1,12 @@
+import type { ThemeDefinition } from "vuetify";
+
 import "vuetify/styles";
 
 import "vue3-carousel/dist/carousel.css";
 import "@mdi/font/css/materialdesignicons.css";
 
 import { defineNuxtPlugin } from "#app";
-import { createVuetify, ThemeDefinition } from "vuetify";
+import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 
@@ -28,6 +30,6 @@ export default defineNuxtPlugin((nuxtApp) => {
           customTheme,
         },
       },
-    })
+    }),
   );
 });

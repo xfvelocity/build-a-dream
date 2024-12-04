@@ -27,21 +27,13 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import type { ServicesInfo } from "./types/services.types";
+
 import { servicesInfoData } from "./data/servicesInfo";
-import { ServicesInfo } from "./types/services.types";
 
-export default defineComponent({
-  name: "BdServices",
-  setup() {
-    // Methods
-    const servicesInfo: ServicesInfo[] = servicesInfoData;
-
-    return {
-      servicesInfo,
-    };
-  },
-});
+// ** Data **
+const servicesInfo: ServicesInfo[] = servicesInfoData;
 </script>
 
 <style lang="scss" scoped>

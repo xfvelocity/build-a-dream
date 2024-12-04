@@ -29,44 +29,33 @@
   <bd-nav-drawer v-if="isMobile" v-model="isNavDrawerOpen" />
 </template>
 
-<script lang="ts">
-import { Route } from "./types/nav.types";
+<script lang="ts" setup>
+import type { Route } from "./types/nav.types";
+
 import { navRoutes } from "./data/nav";
 import { isMobile } from "@/utility/width";
 
-export default defineComponent({
-  name: "BdNav",
-  setup() {
-    // Variables
-    const route = useRoute();
+// ** Data **
+const route = useRoute();
 
-    const routes = ref<Route[]>(navRoutes);
-    const isNavDrawerOpen = ref<boolean>(false);
+const routes = ref<Route[]>(navRoutes);
+const isNavDrawerOpen = ref<boolean>(false);
 
-    // Methods
-    // TODO: Refactor/Reuse this function
-    const setActiveRoute = (path: string): void => {
-      routes.value = JSON.parse(JSON.stringify([...navRoutes]));
+// ** Methods **
+const setActiveRoute = (path: string): void => {
+  routes.value = JSON.parse(JSON.stringify([...navRoutes]));
 
-      const matchingRoute: Route | undefined = routes.value.find(
-        (link) => link.href === path
-      );
+  const matchingRoute: Route | undefined = routes.value.find(
+    (link) => link.href === path,
+  );
 
-      if (matchingRoute) {
-        matchingRoute.active = true;
-      }
-    };
+  if (matchingRoute) {
+    matchingRoute.active = true;
+  }
+};
 
-    // Watchers
-    watch(route, () => setActiveRoute(route.path), { immediate: true });
-
-    return {
-      isMobile,
-      routes,
-      isNavDrawerOpen,
-    };
-  },
-});
+// ** Watchers **
+watch(route, () => setActiveRoute(route.path), { immediate: true });
 </script>
 
 <style lang="scss" scoped>

@@ -7,8 +7,8 @@
     @click:outside="toggleModal"
   >
     <v-card>
-      <v-card
-        class="bg-primary d-flex align-center py-4 rounded-0"
+      <div
+        class="d-flex align-center pt-4 rounded-0"
         :class="isMobile ? 'px-6' : 'px-8 rounded-t'"
       >
         <h3>{{ item.title }}</h3>
@@ -16,9 +16,9 @@
         <v-icon class="cursor-pointer pa-2" @click="toggleModal">
           mdi-close
         </v-icon>
-      </v-card>
+      </div>
 
-      <div :class="isMobile ? 'pa-6' : 'pa-8'">
+      <div :class="isMobile ? 'py-4 px-6' : 'py-4 px-8'">
         <div class="project-modal-section">
           <div class="project-modal-section-main">
             <img
@@ -47,12 +47,13 @@
                   @click="selectedImage = item.detailedImgList[i - 1]"
                 />
               </div>
+
               <div
+                v-else
                 class="project-modal-section-no-img"
                 :class="{
                   'mr-1': i !== 5,
                 }"
-                v-else
               />
             </template>
           </div>
@@ -64,55 +65,49 @@
   </v-dialog>
 </template>
 
-<script lang="ts">
-import { PropType } from "vue";
-import { Project } from "@/types/app.types";
+<script lang="ts" setup>
+import type { Project } from "@/types/app.types";
+import type { PropType } from "vue";
+
 import { isMobile } from "@/utility/width";
 
-export default defineComponent({
-  name: "BdProjectModal",
-  props: {
-    item: {
-      type: Object as PropType<Project>,
-      default: () => ({}),
-    },
-    modelValue: {
-      type: Boolean,
-      default: false,
-    },
+// ** Props **
+const props = defineProps({
+  item: {
+    type: Object as PropType<Project>,
+    default: () => ({}),
   },
-  emits: ["update:modelValue"],
-  setup(props, context) {
-    // Variables
-    const selectedImage = ref<string>("");
-
-    // Methods
-    const toggleModal = (): void => {
-      context.emit("update:modelValue");
-    };
-
-    // Watchers
-    watch(
-      () => props.item,
-      () => {
-        selectedImage.value = props.item.img;
-      },
-      { immediate: true }
-    );
-
-    return {
-      isMobile,
-      selectedImage,
-      toggleModal,
-    };
+  modelValue: {
+    type: Boolean,
+    default: false,
   },
 });
+
+// ** Emits **
+const emits = defineEmits(["update:modelValue"]);
+
+// ** Data **
+const selectedImage = ref<string>("");
+
+// ** Methods **
+const toggleModal = (): void => {
+  emits("update:modelValue");
+};
+
+// ** Watchers **
+watch(
+  () => props.item,
+  () => {
+    selectedImage.value = props.item.img;
+  },
+  { immediate: true },
+);
 </script>
 
 <style lang="scss">
 .project-modal {
   &-img {
-    border: 1px solid #828282;
+    border: 1px solid #c0c0c0;
 
     &-active {
       filter: brightness(0.5);
@@ -132,7 +127,7 @@ export default defineComponent({
 
     &-no-img {
       width: 20%;
-      background: rgb(230, 230, 230);
+      background: rgb(240, 240, 240);
     }
   }
 }

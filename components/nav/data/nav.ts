@@ -1,4 +1,4 @@
-import { Route } from "../types/nav.types";
+import type { Route } from "../types/nav.types";
 
 export const navRoutes: Route[] = [
   {

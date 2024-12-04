@@ -37,50 +37,39 @@
   </form>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import type { ContactInfo } from "./types/bdContactForm.types";
+
 import { validationSchema } from "@/utility/validation";
-import { ContactInfo } from "./types/bdContactForm.types";
 
 import axios from "axios";
 
-export default defineComponent({
-  name: "BdContactForm",
-  setup() {
-    // Variables
-    const messageSent = ref<boolean>(false);
-    const contactInfo = ref<ContactInfo>({
+// ** Data **
+const config = useRuntimeConfig();
+
+const messageSent = ref<boolean>(false);
+const contactInfo = ref<ContactInfo>({
+  name: "",
+  phoneNumber: "",
+  message: "",
+});
+
+// ** Methods **
+const submitMessage = async (event: Event): Promise<void> => {
+  event.preventDefault();
+
+  messageSent.value = true;
+
+  axios.post(config.public.BASIN_URL as string, contactInfo.value).then(() => {
+    contactInfo.value = {
       name: "",
       phoneNumber: "",
       message: "",
-    });
-
-    // Methods
-    const submitMessage = async (event: Event): Promise<void> => {
-      event.preventDefault();
-
-      messageSent.value = true;
-
-      axios
-        .post("https://usebasin.com/f/5d041ec64531", contactInfo.value)
-        .then(() => {
-          contactInfo.value = {
-            name: "",
-            phoneNumber: "",
-            message: "",
-          };
-
-          setTimeout(() => {
-            messageSent.value = false;
-          }, 3000);
-        });
     };
 
-    return {
-      validationSchema,
-      contactInfo,
-      messageSent,
-      submitMessage,
-    };
-  },
-});
+    setTimeout(() => {
+      messageSent.value = false;
+    }, 3000);
+  });
+};
 </script>

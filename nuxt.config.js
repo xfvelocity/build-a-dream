@@ -1,5 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      BASIN_URL: process.env.BASIN_URL,
+      FACEBOOK_URL: process.env.FACEBOOK_URL,
+      EMAIL: process.env.EMAIL,
+      PHONE: process.env.PHONE,
+    },
+  },
+
   app: {
     head: {
       title: "Build A-Dream | Lincoln Landscape Gardeners",
@@ -25,10 +34,13 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   css: ["vuetify"],
+
   build: {
     transpile: ["vuetify", "mixins"],
   },
+
   vite: {
     define: {
       "process.env.DEBUG": "false",
@@ -36,24 +48,20 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "@/assets/styles/_variables.scss";',
+          api: "modern-compiler",
         },
       },
     },
   },
-  modules: ["@funken-studio/sitemap-nuxt-3", "@vueuse/nuxt"],
-  sitemap: {
-    hostname: "https://buildadream.co.uk",
-    defaults: {
-      changefreq: "daily",
-      priority: 1,
-      lastmod: new Date().toISOString(),
-    },
-  },
+
+  modules: ["@nuxtjs/sitemap"],
+
   components: [
     {
       path: "~/components",
       pathPrefix: false,
     },
   ],
+
+  compatibilityDate: "2024-11-27",
 });
